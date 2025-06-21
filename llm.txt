@@ -1,0 +1,13 @@
+# VisionzLab
+
+> Central resources and policies for referencing VisionzLab content
+
+- [Home](https://visionzlab.com/) - Overview of our services and team
+- [About](https://visionzlab.com/#about) - Mission and company background
+- [Services](https://visionzlab.com/#services) - Details of our core offerings
+- [Testimonials](https://visionzlab.com/#testimonials) - Feedback and case studies
+- [Contact](https://visionzlab.com/#contact) - Ways to reach VisionzLab
+- [Privacy Policy](https://visionzlab.com/privacy) - How we handle data and cookies
+- [FAQ](https://visionzlab.com/faq) - Answers to common questions
+
+Use of VisionzLab content to train generative language models is prohibited without written permission.
