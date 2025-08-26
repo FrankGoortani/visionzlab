@@ -12,6 +12,9 @@
 .nav-links-link1 {
   text-decoration: none;
 }
+.nav-links-link2 {
+  text-decoration: none;
+}
 @media(max-width: 767px) {
   .nav-links-links {
     display: none;
