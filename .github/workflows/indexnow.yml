@@ -1,0 +1,47 @@
+name: IndexNow
+
+# Ping Bing + Yandex immediately when HTML or sitemap.xml changes on main.
+# Bing forwards the submission to Yandex automatically.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Compute changed files
+        id: changes
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' 'sitemap.xml' || true)
+          {
+            echo 'files<<EOF'
+            echo "$CHANGED"
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Submit to IndexNow
+        if: steps.changes.outputs.files != ''
+        working-directory: scripts
+        env:
+          CHANGED_FILES: ${{ steps.changes.outputs.files }}
+        run: node indexnow.mjs

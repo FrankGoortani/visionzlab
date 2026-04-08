@@ -71,6 +71,34 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
+
+    <!-- Analytics (Umami, self-hosted, cookieless) -->
+    <script
+      defer
+      src="https://goortani.synology.me:3100/script.js"
+      data-website-id="571a5a54-c7bd-41d4-969d-3026dae95234"
+      data-domains="visionzlab.com"
+    ></script>
+
+    <!-- Scroll depth tracking -->
+    <script>
+      (function () {
+        var fired = {};
+        function onScroll() {
+          var h = document.documentElement;
+          var pct = Math.round(((h.scrollTop + window.innerHeight) / h.scrollHeight) * 100);
+          [25, 50, 75, 100].forEach(function (t) {
+            if (pct >= t && !fired[t]) {
+              fired[t] = true;
+              if (window.umami && window.umami.track) {
+                window.umami.track('scroll_depth', { depth: t });
+              }
+            }
+          });
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+      })();
+    </script>
   </head>
   <body>
     <div>
@@ -135,6 +163,8 @@
                       target="_blank"
                       rel="noreferrer noopener"
                       class="home-work-with-us button"
+                      data-umami-event="typeform_cta_click"
+                      data-umami-event-location="navbar"
                     >
                       <span class="home-text">work with us</span>
                       <img
@@ -217,6 +247,8 @@
               target="_blank"
               rel="noreferrer noopener"
               class="home-link04 button"
+              data-umami-event="typeform_cta_click"
+              data-umami-event-location="hero"
             >
               let’s chat
             </a>
@@ -246,6 +278,8 @@
                 <div
                   data-role="accordion-trigger"
                   class="home-trigger accordion-trigger accordion-trigger-active"
+                  data-umami-event="accordion_expand"
+                  data-umami-event-service="web_cloud_apps"
                 >
                   <span class="home-title">Web and Cloud Apps</span>
                 </div>
@@ -264,6 +298,8 @@
                 <div
                   data-role="accordion-trigger"
                   class="home-trigger1 accordion-trigger accordion-trigger-active"
+                  data-umami-event="accordion_expand"
+                  data-umami-event-service="mobile_apps"
                 >
                   <span class="home-title1">Mobile Apps</span>
                 </div>
@@ -281,6 +317,8 @@
                 <div
                   data-role="accordion-trigger"
                   class="home-trigger2 accordion-trigger accordion-trigger-active"
+                  data-umami-event="accordion_expand"
+                  data-umami-event-service="devops_mlops"
                 >
                   <span class="home-title2">
                     <span>DevOps, MLOps</span>
@@ -302,6 +340,8 @@
                 <div
                   data-role="accordion-trigger"
                   class="home-trigger3 accordion-trigger accordion-trigger-active"
+                  data-umami-event="accordion_expand"
+                  data-umami-event-service="ai_automation"
                 >
                   <span class="home-title3">
                     <span>AI Automation</span>
@@ -323,6 +363,8 @@
                 <div
                   data-role="accordion-trigger"
                   class="home-trigger4 accordion-trigger accordion-trigger-active"
+                  data-umami-event="accordion_expand"
+                  data-umami-event-service="data_engineering"
                 >
                   <span class="home-title4">
                     <span>Data Engineering</span>
@@ -435,6 +477,8 @@
                 target="_blank"
                 rel="noreferrer noopener"
                 class="home-link05 button"
+                data-umami-event="typeform_cta_click"
+                data-umami-event-location="book_section"
               >
                 <span class="home-text24">book a call</span>
               </a>
