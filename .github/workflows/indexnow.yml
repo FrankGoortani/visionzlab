@@ -1,6 +1,6 @@
 name: IndexNow
 
-# Ping Bing + Yandex immediately when HTML or sitemap.xml changes on main.
+# Ping Bing + Yandex immediately when HTML or sitemap.xml changes.
 # Bing forwards the submission to Yandex automatically.
 
 on:
@@ -24,24 +24,48 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Compute changed files
-        id: changes
+      - name: Submit changed URLs to IndexNow
         run: |
-          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' 'sitemap.xml' || true)
-          {
-            echo 'files<<EOF'
-            echo "$CHANGED"
-            echo 'EOF'
-          } >> "$GITHUB_OUTPUT"
+          set -euo pipefail
+          HOST="visionzlab.com"
+          KEY="78f888072235b3e12856407f854a166f"
+          KEY_LOCATION="https://${HOST}/${KEY}.txt"
 
-      - name: Submit to IndexNow
-        if: steps.changes.outputs.files != ''
-        working-directory: scripts
-        env:
-          CHANGED_FILES: ${{ steps.changes.outputs.files }}
-        run: node indexnow.mjs
+          mapfile -t CHANGED < <(git diff --name-only HEAD~1 HEAD -- '*.html' 'sitemap.xml' || true)
+
+          if [ "${#CHANGED[@]}" -eq 0 ]; then
+            echo "No HTML/sitemap changes — skipping IndexNow submission."
+            exit 0
+          fi
+
+          URLS=()
+          for f in "${CHANGED[@]}"; do
+            [ -z "$f" ] && continue
+            case "$f" in
+              index.html)        URLS+=("https://${HOST}/") ;;
+              */index.html)      URLS+=("https://${HOST}/${f%index.html}") ;;
+              *)                 URLS+=("https://${HOST}/${f}") ;;
+            esac
+          done
+
+          echo "Submitting ${#URLS[@]} URLs to IndexNow:"
+          printf '  %s\n' "${URLS[@]}"
+
+          PAYLOAD=$(jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg keyLocation "$KEY_LOCATION" \
+            --argjson urlList "$(printf '%s\n' "${URLS[@]}" | jq -R . | jq -s .)" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+
+          HTTP_CODE=$(curl -sS -o /tmp/indexnow.out -w '%{http_code}' \
+            -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json' \
+            -d "$PAYLOAD")
+
+          echo "IndexNow response: HTTP $HTTP_CODE"
+          cat /tmp/indexnow.out || true
+
+          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "202" ]; then
+            exit 1
+          fi
