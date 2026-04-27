@@ -1,0 +1,23 @@
+# VisionzLab
+
+> AI consulting brand by Frank Goortani — AI-driven architecture, automation, and cloud-native solutions for organizations integrating AI into production.
+
+VisionzLab specializes in helping organizations adopt and operationalize AI/LLM systems: production RAG pipelines, agentic workflows, infrastructure design, and team enablement. Led by Frank Goortani, currently CTO at FasterOutcomes; previously Solution Architect at Uber and Lead Solution Architect at Home Depot Canada.
+
+## Pages
+
+- [Home](https://visionzlab.com/): Services overview, who we are, contact.
+
+## About Frank Goortani
+
+- [Personal site](https://goortani.com/): CV, resume variants, full career history.
+- [Architect.Solutions](https://architect.solutions/): Personal CTO portfolio and book site.
+- [LinkedIn](https://linkedin.com/in/frankgoortani): 13K+ followers; primary thought-leadership channel.
+- [Medium](https://medium.com/@FrankGoortani): Articles on AI engineering and CTO leadership.
+- [GitHub](https://github.com/FrankGoortani): Open source projects.
+
+## Contact
+
+- Email: frank@goortani.com
+- Phone: +1 647.983.5277
+- Booking: https://frankgoortani.typeform.com/to/VaoYV6iJ
