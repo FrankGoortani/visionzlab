@@ -71,6 +71,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preload" href="./public/computer.webp" as="image" type="image/webp" fetchpriority="high" />
 
     <!-- Analytics (Umami, self-hosted, cookieless) -->
     <script
@@ -224,7 +225,18 @@
             <img alt="scroll icon" src="public/mouse.svg" class="home-image02" />
           </div>
           <div class="home-hero-image">
-            <img alt="computer illustration" src="public/computer.svg" class="home-image03" />
+            <picture>
+              <source srcset="public/computer.webp" type="image/webp" />
+              <img
+                alt="computer illustration"
+                src="public/computer.svg"
+                class="home-image03"
+                width="640"
+                height="540"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
           </div>
         </div>
         <div class="home-who">
@@ -255,7 +267,18 @@
           </div>
           <div class="home-preview">
             <div class="home-image04">
-              <img alt="design preview illustration" src="public/preview.svg" class="home-image05" />
+              <picture>
+                <source srcset="public/preview.webp" type="image/webp" />
+                <img
+                  alt="design preview illustration"
+                  src="public/preview.svg"
+                  class="home-image05"
+                  width="1000"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div class="home-purpose">
               <span class="home-caption">What we do</span>

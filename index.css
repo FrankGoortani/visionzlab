@@ -267,6 +267,9 @@
   height: 540px;
   object-fit: cover;
 }
+.home-hero-image picture {
+  display: block;
+}
 .home-who {
   gap: 120px;
   width: 100%;
@@ -337,6 +340,9 @@
 .home-image05 {
   object-fit: cover;
   margin-left: -160px;
+}
+.home-image04 picture {
+  display: block;
 }
 .home-purpose {
   gap: var(--dl-space-space-twounits);
