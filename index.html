@@ -24,6 +24,7 @@
       content="Frank Goortani's VisionzLab delivers AI-driven architecture, automation, and cloud-native solutions."
     />
     <meta name="twitter:image" content="https://visionzlab.com/public/preview.svg" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -45,7 +46,7 @@
     </style>
     <style data-tag="default-style-sheet">
       html {
-        font-family: Inter;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 16px;
       }
 
@@ -61,53 +62,12 @@
 
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
     <link rel="stylesheet" href="./style.css" />
     <link rel="preload" href="./public/computer.webp" as="image" type="image/webp" fetchpriority="high" />
-
-    <!-- Analytics (Umami, self-hosted, cookieless) -->
-    <script
-      defer
-      src="https://goortani.synology.me:3100/script.js"
-      data-website-id="571a5a54-c7bd-41d4-969d-3026dae95234"
-      data-domains="visionzlab.com"
-    ></script>
-
-    <!-- Scroll depth tracking -->
-    <script>
-      (function () {
-        var fired = {};
-        function onScroll() {
-          var h = document.documentElement;
-          var pct = Math.round(((h.scrollTop + window.innerHeight) / h.scrollHeight) * 100);
-          [25, 50, 75, 100].forEach(function (t) {
-            if (pct >= t && !fired[t]) {
-              fired[t] = true;
-              if (window.umami && window.umami.track) {
-                window.umami.track('scroll_depth', { depth: t });
-              }
-            }
-          });
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-      })();
-    </script>
   </head>
   <body>
     <div>
       <link href="./index.css" rel="stylesheet" />
-      <script
-        type="text/javascript"
-        src="https://unpkg.com/dangerous-html/dist/default/lib.umd.js"
-      ></script>
 
       <div class="home-container">
         <div class="home-navbar">
@@ -408,85 +368,6 @@
                 </div>
               </div>
             </div>
-            <div>
-              <dangerous-html
-                html="<script>
-      /*
-  Accordion - Code Embed
-  */
-
-  /* listenForUrlChangesAccordion() makes sure that if you changes pages inside your app,
-  the Accordions will still work*/
-
-  const listenForUrlChangesAccordion = () => {
-        let url = location.href;
-        document.body.addEventListener(
-          'click',
-          () => {
-            requestAnimationFrame(() => {
-              if (url !== location.href) {
-                runAccordionCodeEmbed();
-                url = location.href;
-              }
-            });
-          },
-          true
-        );
-      };
-
-
-  const runAccordionCodeEmbed = () => {
-      const accordionContainers = document.querySelectorAll('[data-role='accordion-container']'); // All accordion containers
-      const allTriggers = document.querySelectorAll('[data-role='accordion-trigger']'); // All accordion triggers
-      const allContents = document.querySelectorAll('[data-role='accordion-content']'); // All accordion content
-
-      accordionContainers.forEach((container) => {
-        const accordionTrigger = container.querySelector('[data-role='accordion-trigger']'); // Scopped accordion trigger
-        const accordionContent = container.querySelector('[data-role='accordion-content']'); // Scopped accordion content
-
-        accordionTrigger.addEventListener('click', ()=>{
-          /*
-          Uncomment the code bellow to make all the other sections
-          collapse when clicking on one of them.
-
-          allTriggers.forEach(trigger => trigger.classList.remove('accordion-trigger-active'))
-          allContents.forEach(content => content.classList.remove('accordion-content-active'))
-          */
-          if(accordionContent.classList.contains('accordion-content-active')){
-            accordionContent.classList.remove('accordion-content-active');
-            accordionTrigger.classList.remove('accordion-trigger-active')
-          } else {
-            accordionContent.classList.add('accordion-content-active');
-            accordionTrigger.classList.add('accordion-trigger-active')
-          }
-        })
-
-      });
-  }
-
-  runAccordionCodeEmbed()
-  listenForUrlChangesAccordion()
-
-  /*
-  Here's what the above is doing:
-      1. Selects all accordion containers, contents, and icons
-      2. Hides all accordion contents
-      3. Adds an event listener to each accordion container
-      4. When an accordion container is clicked, it:
-          - Hides all accordion contents
-          - Resets all icon transforms to 0deg (default)
-          - Checks if this container has class 'accordion-open'
-              - If it does, it removes class 'accordion-open'
-              - If it doesn't, it:
-                  - Removes class 'accordion-open' from all containers
-                  - Adds class 'accordion-open' to this container
-                  - Shows accordion content
-                  - Rotates accordion icon 180deg
-  */
-</script>
-"
-              ></dangerous-html>
-            </div>
           </div>
         </div>
         <div class="home-book">
@@ -556,9 +437,128 @@
         </footer>
       </div>
     </div>
-    <script
-      data-section-id="navbar"
-      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
-    ></script>
+    <script>
+      (function () {
+        var UMAMI_HOST = 'https://goortani.synology.me:3100';
+        var WEBSITE_ID = '571a5a54-c7bd-41d4-969d-3026dae95234';
+        var queue = [];
+        var trackerRequested = false;
+
+        function flushQueue() {
+          if (!window.umami || typeof window.umami.track !== 'function' || !queue) return;
+          queue.forEach(function (args) {
+            try { window.umami.track.apply(window.umami, args); } catch (_) {}
+          });
+          queue = null;
+        }
+
+        function loadTracker() {
+          if (trackerRequested) return;
+          trackerRequested = true;
+
+          var script = document.createElement('script');
+          script.defer = true;
+          script.src = UMAMI_HOST + '/script.js';
+          script.setAttribute('data-website-id', WEBSITE_ID);
+          script.setAttribute('data-domains', 'visionzlab.com');
+          script.addEventListener('load', flushQueue, { once: true });
+          document.head.appendChild(script);
+        }
+
+        function scheduleTracker() {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadTracker, { timeout: 2500 });
+          } else {
+            setTimeout(loadTracker, 1200);
+          }
+        }
+
+        function track(name, data) {
+          if (window.umami && typeof window.umami.track === 'function') {
+            try { window.umami.track(name, data || {}); } catch (_) {}
+          } else if (queue) {
+            queue.push([name, data || {}]);
+            scheduleTracker();
+          }
+        }
+
+        function wireMobileMenu() {
+          var burger = document.querySelector('[data-thq="thq-burger-menu"]');
+          var close = document.querySelector('[data-thq="thq-close-menu"]');
+          var menu = document.querySelector('[data-thq="thq-mobile-menu"]');
+          if (!menu) return;
+
+          if (burger) {
+            burger.addEventListener('click', function () {
+              menu.classList.add('teleport-show');
+            });
+          }
+
+          if (close) {
+            close.addEventListener('click', function () {
+              menu.classList.remove('teleport-show');
+            });
+          }
+        }
+
+        function wireAccordions() {
+          document.querySelectorAll('[data-role="accordion-container"]').forEach(function (container) {
+            var trigger = container.querySelector('[data-role="accordion-trigger"]');
+            var content = container.querySelector('[data-role="accordion-content"]');
+            if (!trigger || !content) return;
+
+            trigger.addEventListener('click', function () {
+              var isOpen = content.classList.contains('accordion-content-active');
+              content.classList.toggle('accordion-content-active', !isOpen);
+              trigger.classList.toggle('accordion-trigger-active', !isOpen);
+              track('accordion_toggle', {
+                service: trigger.getAttribute('data-umami-event-service') || '',
+                open: !isOpen
+              });
+            });
+          });
+        }
+
+        function wireTrackedClicks() {
+          document.addEventListener('click', function (event) {
+            var link = event.target.closest && event.target.closest('a[href], [data-umami-event]');
+            if (!link) return;
+
+            var eventName = link.getAttribute('data-umami-event');
+            if (eventName) {
+              track(eventName, {
+                href: link.getAttribute('href') || '',
+                location: link.getAttribute('data-umami-event-location') || ''
+              });
+            }
+          }, { capture: true });
+        }
+
+        function wireScrollDepth() {
+          var fired = {};
+          window.addEventListener('scroll', function () {
+            var h = document.documentElement;
+            var pct = Math.round(((h.scrollTop + window.innerHeight) / h.scrollHeight) * 100);
+            [25, 50, 75, 100].forEach(function (threshold) {
+              if (pct >= threshold && !fired[threshold]) {
+                fired[threshold] = true;
+                track('scroll_depth', { depth: threshold });
+              }
+            });
+          }, { passive: true });
+        }
+
+        wireMobileMenu();
+        wireAccordions();
+        wireTrackedClicks();
+        wireScrollDepth();
+
+        if (document.readyState === 'complete') {
+          scheduleTracker();
+        } else {
+          window.addEventListener('load', scheduleTracker, { once: true });
+        }
+      })();
+    </script>
   </body>
 </html>
