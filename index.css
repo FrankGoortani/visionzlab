@@ -338,6 +338,8 @@
   background-color: #E5FE58;
 }
 .home-image05 {
+  width: 100%;
+  height: auto;
   object-fit: cover;
   margin-left: -160px;
 }
