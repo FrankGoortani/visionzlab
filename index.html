@@ -28,16 +28,31 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Frank Goortani | VisionzLab",
-        "url": "https://visionzlab.com",
-        "logo": "https://visionzlab.com/public/preview.webp",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "frank@goortani.com",
-          "telephone": "+1 647.983.5277",
-          "contactType": "customer service"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://visionzlab.com/#organization",
+            "name": "VisionzLab",
+            "url": "https://visionzlab.com/",
+            "logo": "https://visionzlab.com/public/preview.webp",
+            "description": "VisionzLab is the AI architecture and development studio of Frank Goortani, full-time CTO at FasterOutcomes.",
+            "founder": {
+              "@id": "https://goortani.com/#person"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "frank@goortani.com",
+              "telephone": "+1 647.983.5277",
+              "contactType": "customer service"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://goortani.com/#person",
+            "name": "Frank Goortani",
+            "url": "https://goortani.com/"
+          }
+        ]
       }
     </script>
 
