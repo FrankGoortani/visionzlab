@@ -57,7 +57,7 @@ Then inspect `http://localhost:8000` for desktop/mobile layout, links, console e
 Acid-lime editorial neo-brutalism with isometric technical line-art.
 
 - Palette: lime `#E1FF3F`, ink `#16052D`, paper `#FAFAF7` (plus white). No gradients, glows, glass or soft shadows.
-- 2.5px ink borders; hard offset shadow only on hover. Oversized Inter headings (800–900) with a lime highlight bar.
+- 2.5px ink borders; hard offset shadow only on hover. Large Inter headings at weight 600 (not heavier) with a lime highlight bar; wordmark at 500. Logo: lime four-point star plus small sparkle, ink outline (`public/logo.svg`).
 - Alternate paper and lime sections; ink for the stats strip and CTA band.
 - Illustrations live in `public/art/`: off-white background, ink outlines, lime/white fills, halftone dot shadows, no text.
   New ones are generated with Codex using the existing art as the style reference, then converted to WebP.

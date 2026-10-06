@@ -45,7 +45,7 @@ ORG = {
     "@id": ORG_ID,
     "name": BRAND,
     "url": f"{SITE}/",
-    "logo": f"{SITE}/public/preview.webp",
+    "logo": f"{SITE}/public/logo.png",
     "description": "VisionzLab helps small and mid-sized businesses put AI to work — "
                    "from teaching teams to build their own agents to building and running AI employees.",
     "legalName": "VisionZone One Consulting Inc.",
@@ -470,17 +470,18 @@ def page(slug, title, description, main, ld=None, ref="site"):
     <meta name="twitter:title" content="{e(full_title)}" />
     <meta name="twitter:description" content="{e(description)}" />
     <meta name="twitter:image" content="{SITE}/public/og.jpg" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cg%20fill%3D%22%23E1FF3F%22%20stroke%3D%22%2316052D%22%20stroke-width%3D%223.5%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M38%2027%20Q49.22%2048.78%2071%2060%20Q49.22%2071.22%2038%2093%20Q26.78%2071.22%205%2060%20Q26.78%2048.78%2038%2027%20Z%22/%3E%3Cpath%20d%3D%22M79%209%20Q84.1%2018.9%2094%2024%20Q84.1%2029.1%2079%2039%20Q73.9%2029.1%2064%2024%20Q73.9%2018.9%2079%209%20Z%22/%3E%3C/g%3E%3C/svg%3E" />
+    <link rel="apple-touch-icon" href="{SITE}/public/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="{css}" />
     <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=None)}</script>
   </head>
   <body>
     <header class="top">
       <div class="wrap top-in">
-        <a class="brand" href="{rel(slug, '')}"><span class="mark" aria-hidden="true"></span>{BRAND}</a>
+        <a class="brand" href="{rel(slug, '')}"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round"><path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/><path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g></svg>{BRAND}</a>
         <nav class="nav">{nav_html}{contact(ref + '-nav', 'Book a call', 'btn btn-sm')}</nav>
       </div>
     </header>
@@ -489,7 +490,7 @@ def page(slug, title, description, main, ld=None, ref="site"):
     </main>
     <footer class="foot">
       <div class="wrap foot-in">
-        <div><a class="brand" href="{rel(slug, '')}"><span class="mark" aria-hidden="true"></span>{BRAND}</a>
+        <div><a class="brand" href="{rel(slug, '')}"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round"><path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/><path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g></svg>{BRAND}</a>
           <p class="muted">AI agents and automation for small and mid-sized businesses.<br />
           Based in Ontario, Canada · serving Canada and the US.</p></div>
         <div><h4>Services</h4><ul>{foot_tiers}<li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li></ul></div>
