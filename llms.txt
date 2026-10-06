@@ -10,14 +10,23 @@
 - [AI Agent Training for Small Businesses](https://visionzlab.com/services/ai-training/): Hands-on workshops and coaching that teach your team to set up and run their own AI agents and automations with tools you already pay for.
 - [AI Agent Setup Service](https://visionzlab.com/services/ai-agent-setup/): We set up your first AI agent with your team, connect it to your tools, and hand it over with a playbook so you can run it yourselves.
 - [Custom AI Agent Development](https://visionzlab.com/services/ai-development/): Fixed-scope, fixed-price development of production AI agents and automations, built to your requirements and handed over to your team.
-- [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee. Cheaper than a hire, without the upkeep.
-- [An AI Engineering Team Instead of a New Hire](https://visionzlab.com/services/ai-team/): Before you hire a software or AI engineer, consider an alternative: senior AI engineering capacity on retainer, building what the role would build, with an AI-first stack.
+- [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee. Cheaper than a hire.
+- [An AI Engineering Team Instead of a New Hire](https://visionzlab.com/services/ai-team/): Before you hire a software or AI engineer, consider senior AI engineering capacity on retainer, building what the role would build with an AI-first stack.
+- [AI Agent Use Cases](https://visionzlab.com/use-cases/): Agents for strategy, growth and finance teams.
+- [AI Market Intelligence Agent](https://visionzlab.com/use-cases/market-intelligence/): An AI agent that tracks competitors, pricing, news and market signals and delivers a weekly brief your leadership team can act on.
+- [AI Prospect Research and Account Planning Agent](https://visionzlab.com/use-cases/prospect-research/): An AI agent that researches target accounts, maps buying teams and drafts account plans, so your business development team spends its time selling.
+- [AI Planning and OKR Assistant](https://visionzlab.com/use-cases/planning-okrs/): An AI assistant that turns leadership goals into tracked objectives and key results, collects progress from your tools, and writes the monthly update.
+- [AI Financial Reporting Agent](https://visionzlab.com/use-cases/financial-reporting/): An AI agent that pulls numbers from your accounting and business systems, prepares monthly reports and drafts variance commentary for your finance team to review.
 - [AI for Small Business](https://visionzlab.com/for/small-business/): Practical AI for owner-run businesses: learn to build your own agents, get one set up with you, or have us build and run one.
 - [AI Bookkeeping Automation for Accounting Firms](https://visionzlab.com/for/accountants-bookkeepers/): An AI employee that handles routine bookkeeping tasks for accounting and bookkeeping practices — or training so your team can build it themselves.
-- [Hiring a Software or AI Engineer? Consider an Alternative](https://visionzlab.com/instead-of-hiring/): Before you fill a software, automation or AI role, see whether a senior AI engineering team can build what the role would build — faster, with no hiring cycle.
+- [Hiring an AI or Software Engineer? Try This First](https://visionzlab.com/instead-of-hiring/): Before you fill a software, automation or AI role, see whether a senior AI engineering team can build what the role would build — faster, with no hiring cycle.
 - [About](https://visionzlab.com/about/): Who we are and how we work.
 - [Asal Matinsadeghy, VP Business Development](https://visionzlab.com/team/asal-matinsadeghy/): Business development and new clients.
 
 ## Contact
 
+- New business: asal@visionzlab.com
+- General: frank@visionzlab.com
 - Book a discovery session: https://frankgoortani.typeform.com/to/VaoYV6iJ
+
+VisionzLab is a brand of VisionZone One Consulting Inc., an Ontario corporation.

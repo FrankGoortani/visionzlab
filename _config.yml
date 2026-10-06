@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll) publishes the files in this repo as the site.
+# Keep internal files out of the published site. The repo itself is public.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - tools/
+  - _config.yml
+  - .github/

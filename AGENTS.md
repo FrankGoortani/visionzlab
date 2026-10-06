@@ -17,9 +17,8 @@ This repository contains the static VisionzLab marketing website. It is primaril
 ## Project Map
 
 - `index.html` - main single-page site.
-- `style.css` - global design tokens and base styles.
-- `index.css` - page and section styles.
-- `components/` - reusable HTML/CSS snippets.
+- `site.css` - all styles (generated pages share it).
+- `tools/build.py` - generates every page, `sitemap.xml` and `llms.txt`.
 - `public/` - icons and static assets.
 - `CNAME`, `sitemap.xml`, `robots.txt`, `llms.txt` - deployment and discovery metadata.
 
@@ -37,8 +36,8 @@ This repository contains the static VisionzLab marketing website. It is primaril
 
 - Avoid committing the `node_modules/` directory or other generated files.
 - Keep commits small and descriptive.
-- When adding components or pages, update the main HTML and accompanying CSS.
-- Maintain the existing TeleportHQ/accordion behavior unless replacing it is part of the request.
+- Add or change pages in `tools/build.py`, run it, and commit the generated output.
+- Nothing private in this repo: it is public and GitHub Pages serves it.
 - Check mobile responsiveness when changing layout or navigation.
 
 ## Testing / Build
