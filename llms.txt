@@ -1,23 +1,23 @@
 # VisionzLab
 
-> AI consulting brand by Frank Goortani — AI-driven architecture, automation, and cloud-native solutions for organizations integrating AI into production.
-
-VisionzLab is Frank Goortani's AI architecture studio for adopting and operationalizing AI/LLM systems: production RAG pipelines, agentic workflows, infrastructure design, and team enablement. Frank Goortani has been full-time CTO at FasterOutcomes since June 2025, focused on production LLM systems for legal and healthcare workflows, AI governance, and engineering leadership. Previously Solution Architect at Uber (2021–2025) and Software Consultant at The Home Depot Canada.
+> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: training, guided agent setup, custom AI development, managed AI employees, and AI engineering capacity instead of a new hire.
 
 ## Pages
 
-- [Home](https://visionzlab.com/): Services overview, who we are, contact.
-
-## About Frank Goortani
-
-- [Personal site](https://goortani.com/): Current public career summary.
-- [Architect.Solutions](https://architect.solutions/): Personal CTO portfolio and book site.
-- [LinkedIn](https://linkedin.com/in/frankgoortani): 13K+ followers; primary thought-leadership channel.
-- [Medium](https://medium.com/@FrankGoortani): Articles on AI engineering and CTO leadership.
-- [GitHub](https://github.com/FrankGoortani): Open source projects.
+- [Home](https://visionzlab.com/): VisionzLab helps small and mid-sized businesses put AI to work — from teaching teams to build their own agents to building and running AI employees.
+- [Services](https://visionzlab.com/services/): The five ways to work with us.
+- [Discovery Sprint](https://visionzlab.com/discovery-sprint/): The paid sprint most engagements start with.
+- [AI Agent Training for Small Businesses](https://visionzlab.com/services/ai-training/): Hands-on workshops and coaching that teach your team to set up and run their own AI agents and automations with tools you already pay for.
+- [AI Agent Setup Service](https://visionzlab.com/services/ai-agent-setup/): We set up your first AI agent with your team, connect it to your tools, and hand it over with a playbook so you can run it yourselves.
+- [Custom AI Agent Development](https://visionzlab.com/services/ai-development/): Fixed-scope, fixed-price development of production AI agents and automations, built to your requirements and handed over to your team.
+- [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee. Cheaper than a hire, without the upkeep.
+- [An AI Engineering Team Instead of a New Hire](https://visionzlab.com/services/ai-team/): Before you hire a software or AI engineer, consider an alternative: senior AI engineering capacity on retainer, building what the role would build, with an AI-first stack.
+- [AI for Small Business](https://visionzlab.com/for/small-business/): Practical AI for owner-run businesses: learn to build your own agents, get one set up with you, or have us build and run one.
+- [AI Bookkeeping Automation for Accounting Firms](https://visionzlab.com/for/accountants-bookkeepers/): An AI employee that handles routine bookkeeping tasks for accounting and bookkeeping practices — or training so your team can build it themselves.
+- [Hiring a Software or AI Engineer? Consider an Alternative](https://visionzlab.com/instead-of-hiring/): Before you fill a software, automation or AI role, see whether a senior AI engineering team can build what the role would build — faster, with no hiring cycle.
+- [About](https://visionzlab.com/about/): Who we are and how we work.
+- [Asal Matinsadeghy, VP Business Development](https://visionzlab.com/team/asal-matinsadeghy/): Business development and new clients.
 
 ## Contact
 
-- Email: frank@goortani.com
-- Phone: +1 647.983.5277
-- Booking: https://frankgoortani.typeform.com/to/VaoYV6iJ
+- Book a discovery session: https://frankgoortani.typeform.com/to/VaoYV6iJ

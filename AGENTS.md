@@ -1,5 +1,17 @@
 # VisionzLab Agent Instructions
 
+## Site generator (added 2026-10-06)
+
+The site is now multi-page. **Do not hand-edit generated pages.** All pages (`index.html` and every
+`*/index.html`), `sitemap.xml` and `llms.txt` are written by `python3 tools/build.py` (stdlib only) from
+the content in that script; shared styles live in `site.css`. Edit content in `tools/build.py`, run it,
+and commit the generated output — GitHub Pages serves the files as-is, there is no deploy-time build.
+Contact URL and analytics host are constants at the top of `tools/build.py`.
+
+Positioning rule: the site is brand-led. No individual's name, employer or personal contact details
+appear on it, except the dedicated business-development team page.
+
+
 This repository contains the static VisionzLab marketing website. It is primarily HTML and CSS, with reusable snippets in `components/` and assets in `public/`. Use `CLAUDE.md` for background, but follow this file first for Codex workflow.
 
 ## Project Map
