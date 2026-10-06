@@ -24,6 +24,18 @@ UMAMI_HOST = "https://goortani.synology.me:3100"
 UMAMI_SITE_ID = "571a5a54-c7bd-41d4-969d-3026dae95234"
 
 LEGAL_NAME = "VisionZone One Consulting Inc."
+
+# Illustrations (generated in the site's isometric line-art style). Missing files fall back to computer.webp.
+ART = {
+    "hero": ("public/art/hero-agents.webp", 1200, 800),
+    "sprint": ("public/art/sprint.webp", 900, 900),
+    "lab": ("public/art/lab.webp", 900, 900),
+    "teach": ("public/art/tier-teach.webp", 900, 900),
+    "setup": ("public/art/tier-setup.webp", 900, 900),
+    "build": ("public/art/tier-build.webp", 900, 900),
+    "employee": ("public/art/tier-employee.webp", 900, 900),
+    "team": ("public/art/tier-team.webp", 900, 900),
+}
 EMAIL_GENERAL = "frank@visionzlab.com"
 EMAIL_SALES = "asal@visionzlab.com"
 
@@ -56,7 +68,7 @@ e = html.escape
 
 TIERS = [
     {
-        "slug": "services/ai-training/",
+        "slug": "services/ai-training/", "art": "teach",
         "tier": "Teach",
         "nav": "AI Training",
         "title": "AI Agent Training for Small Businesses",
@@ -85,7 +97,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-agent-setup/",
+        "slug": "services/ai-agent-setup/", "art": "setup",
         "tier": "Guided setup",
         "nav": "Agent Setup",
         "title": "AI Agent Setup Service",
@@ -112,7 +124,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-development/",
+        "slug": "services/ai-development/", "art": "build",
         "tier": "Build",
         "nav": "AI Development",
         "title": "Custom AI Agent Development",
@@ -139,7 +151,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-employee/",
+        "slug": "services/ai-employee/", "art": "employee",
         "tier": "Build & maintain",
         "nav": "AI Employee",
         "title": "Managed AI Employee for Your Business",
@@ -168,7 +180,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-team/",
+        "slug": "services/ai-team/", "art": "team",
         "tier": "Embedded capacity",
         "nav": "AI Team",
         "title": "An AI Engineering Team Instead of a New Hire",
@@ -199,7 +211,7 @@ TIERS = [
 
 PLAYS = [
     {
-        "slug": "for/small-business/",
+        "slug": "for/small-business/", "art": "teach",
         "nav": "Small Business",
         "title": "AI for Small Business",
         "description": "Practical AI for owner-run businesses: learn to build your own agents, get one set up "
@@ -214,7 +226,7 @@ PLAYS = [
         "ref": "play-a",
     },
     {
-        "slug": "for/accountants-bookkeepers/",
+        "slug": "for/accountants-bookkeepers/", "art": "employee",
         "nav": "Accountants & Bookkeepers",
         "title": "AI Bookkeeping Automation for Accounting Firms",
         "description": "An AI employee that handles routine bookkeeping tasks for accounting and bookkeeping "
@@ -231,7 +243,7 @@ PLAYS = [
         "ref": "play-c",
     },
     {
-        "slug": "instead-of-hiring/",
+        "slug": "instead-of-hiring/", "art": "team",
         "nav": "Instead of Hiring",
         "title": "Hiring an AI or Software Engineer? Try This First",
         "description": "Before you fill a software, automation or AI role, see whether a senior AI engineering "
@@ -406,6 +418,14 @@ def faq_ld(faq):
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
 
 
+def art(slug, key, alt="", eager=False):
+    path, w, h = ART[key]
+    if not (ROOT / path).exists():
+        path, w, h = "public/computer.webp", 640, 540
+    load = 'fetchpriority="high"' if eager else 'loading="lazy"'
+    return f'<img src="{rel(slug, path)}" alt="{e(alt)}" width="{w}" height="{h}" {load} decoding="async" />'
+
+
 def ladder(slug, highlight=None, only=None):
     cards = []
     for i, t in enumerate(TIERS):
@@ -413,10 +433,11 @@ def ladder(slug, highlight=None, only=None):
             continue
         on = " card-on" if t["slug"] == highlight else ""
         cards.append(
-            f'<a class="card{on}" href="{rel(slug, t["slug"])}">'
-            f'<span class="tag">{i + 1} · {e(t["tier"])}</span>'
-            f'<h3>{e(t["nav"])}</h3><p>{e(t["lead"])}</p></a>')
-    return f'<div class="cards">{"".join(cards)}</div>'
+            f'<a class="card tier{on}" href="{rel(slug, t["slug"])}">'
+            f'<span class="num">0{i + 1}</span><span class="tag">{e(t["tier"])}</span>'
+            f'<div class="thumb">{art(slug, t["art"])}</div>'
+            f'<h3>{e(t["nav"])}</h3><p>{e(t["lead"])}</p><span class="arrow">→</span></a>')
+    return f'<div class="cards cards-tiers">{"".join(cards)}</div>'
 
 
 def page(slug, title, description, main, ld=None, ref="site"):
@@ -444,22 +465,22 @@ def page(slug, title, description, main, ld=None, ref="site"):
     <meta property="og:title" content="{e(full_title)}" />
     <meta property="og:description" content="{e(description)}" />
     <meta property="og:url" content="{canonical}" />
-    <meta property="og:image" content="{SITE}/public/preview.webp" />
+    <meta property="og:image" content="{SITE}/public/og.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{e(full_title)}" />
     <meta name="twitter:description" content="{e(description)}" />
-    <meta name="twitter:image" content="{SITE}/public/preview.webp" />
+    <meta name="twitter:image" content="{SITE}/public/og.jpg" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
     <link rel="stylesheet" href="{css}" />
     <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=None)}</script>
   </head>
   <body>
     <header class="top">
       <div class="wrap top-in">
-        <a class="brand" href="{rel(slug, '')}">{BRAND}</a>
+        <a class="brand" href="{rel(slug, '')}"><span class="mark" aria-hidden="true"></span>{BRAND}</a>
         <nav class="nav">{nav_html}{contact(ref + '-nav', 'Book a call', 'btn btn-sm')}</nav>
       </div>
     </header>
@@ -468,7 +489,7 @@ def page(slug, title, description, main, ld=None, ref="site"):
     </main>
     <footer class="foot">
       <div class="wrap foot-in">
-        <div><a class="brand" href="{rel(slug, '')}">{BRAND}</a>
+        <div><a class="brand" href="{rel(slug, '')}"><span class="mark" aria-hidden="true"></span>{BRAND}</a>
           <p class="muted">AI agents and automation for small and mid-sized businesses.<br />
           Based in Ontario, Canada · serving Canada and the US.</p></div>
         <div><h4>Services</h4><ul>{foot_tiers}<li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li></ul></div>
@@ -479,8 +500,8 @@ def page(slug, title, description, main, ld=None, ref="site"):
           <li><a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></li>
           <li><a href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a></li></ul></div>
       </div>
-      <div class="wrap muted small">© {datetime.date.today().year} {LEGAL_NAME} · {BRAND} is a brand of
-        {LEGAL_NAME}, an Ontario corporation.</div>
+      <div class="legal"><div class="wrap muted">© {datetime.date.today().year} {LEGAL_NAME} · {BRAND} is a brand of
+        {LEGAL_NAME}, an Ontario corporation.</div></div>
     </footer>
     <script>
 {TRACKER_JS}
@@ -529,14 +550,43 @@ TRACKER_JS = """      (function () {
       })();"""
 
 
-def hero(h1, lead, ref, eyebrow=None, cta="Book a free discovery session"):
+def headline(text, accent=None):
+    """Wrap the accent phrase (default: everything after ' for ') in a lime highlight."""
+    if accent is None and " for " in text:
+        accent = text.split(" for ", 1)[1]
+    if accent and text.endswith(accent):
+        head = text[: -len(accent)]
+        return f'{e(head)}<span class="hl">{e(accent)}</span>'
+    return e(text)
+
+
+def hero(h1, lead, ref, eyebrow=None, cta="Book a free discovery session", slug="", img=None, alt="",
+         accent=None, tone="paper", second=None):
     eb = f'<p class="eyebrow">{e(eyebrow)}</p>' if eyebrow else ""
-    return (f'<section class="hero"><div class="wrap">{eb}<h1>{e(h1)}</h1>'
-            f'<p class="lead">{e(lead)}</p><div class="actions">{contact(ref, cta)}</div></div></section>')
+    sec = f'<a class="btn btn-ghost" href="{rel(slug, second[0])}">{e(second[1])}</a>' if second else ""
+    visual = f'<div class="frame">{art(slug, img, alt, eager=True)}</div>' if img else ""
+    cls = "hero-split" if img else "hero-solo"
+    return (f'<section class="hero tone-{tone}"><div class="wrap {cls}"><div class="hero-copy">{eb}'
+            f'<h1>{headline(h1, accent)}</h1><p class="lead">{e(lead)}</p>'
+            f'<div class="actions">{contact(ref, cta)}{sec}</div></div>{visual}</div></section>')
+
+
+def section_head(eyebrow, title, intro=None, accent=None):
+    i = f'<p class="intro">{e(intro)}</p>' if intro else ""
+    return f'<div class="sec-head"><p class="eyebrow">{e(eyebrow)}</p><h2>{headline(title, accent)}</h2>{i}</div>'
+
+
+def stats():
+    items = [("5", "ways to work with us, from training to a full team"),
+             ("2–4", "weeks for a discovery sprint, prototype included"),
+             ("1", "point of contact from first call to delivery"),
+             ("CA + US", "clients across Canada and the United States")]
+    cells = "".join(f'<div class="stat"><strong>{e(a)}</strong><span>{e(b)}</span></div>' for a, b in items)
+    return f'<section class="stats"><div class="wrap stats-in">{cells}</div></section>'
 
 
 def cta_band(ref):
-    return (f'<section class="band"><div class="wrap band-in"><div><h2>Not sure where to start?</h2>'
+    return (f'<section class="band"><div class="wrap band-in"><div><h2>Not sure where to <span class="hl">start?</span></h2>'
             f'<p>Book a free discovery session. We\'ll look at your work together and tell you plainly '
             f'where AI would help — and where it wouldn\'t.</p></div>{contact(ref)}</div></section>')
 
@@ -544,6 +594,13 @@ def cta_band(ref):
 def service_ld(slug, name, description):
     return {"@type": "Service", "@id": url(slug) + "#service", "name": name, "description": description,
             "provider": {"@id": ORG_ID}, "areaServed": ["CA", "US"], "url": url(slug)}
+
+
+def rows(slug, items):
+    """Editorial list: big linked rows with an arrow."""
+    li = "".join(f'<a class="row" href="{rel(slug, s)}"><h3>{e(t)}</h3><p>{e(d)}</p><span class="arrow">→</span></a>'
+                 for s, t, d in items)
+    return f'<div class="rows">{li}</div>'
 
 
 # --------------------------------------------------------------------------
@@ -556,29 +613,30 @@ def build_home():
     main = f"""
 {hero("AI that takes work off your team's plate.",
       "We help small and mid-sized businesses put AI agents to work — from teaching your team to build "
-      "their own, to building and running an AI employee for you.", "home", "AI agents & automation")}
-<section class="section"><div class="wrap split">
-  <div><p class="eyebrow">Start here</p><h2>The Discovery Sprint</h2>
-  <p>A short, paid sprint on one of your workflows. In 2–4 weeks you get a working prototype, a costed
+      "their own, to building and running an AI employee for you.", "home", "AI agents & automation",
+      img="hero", alt="Isometric illustration of an AI agent handling documents, email, calendar and reports",
+      accent="off your team's plate.", second=("services/", "See the five services"))}
+{stats()}
+<section class="section tone-lime"><div class="wrap split">
+  <div class="frame frame-paper">{art(slug, "sprint", "Isometric illustration of a laptop prototype, a roadmap and a checklist")}</div>
+  <div><p class="eyebrow">Start here</p><h2>The Discovery <span class="hl">Sprint</span></h2>
+  <p class="big">A short, paid sprint on one of your workflows. In 2–4 weeks you get a working prototype, a costed
   build plan and a clear go/no-go — before you commit to anything bigger.</p>
-  <p><a class="link" href="discovery-sprint/">How the sprint works →</a></p></div>
-  <picture><source srcset="public/computer.webp" type="image/webp" />
-  <img src="public/computer.svg" alt="" width="640" height="540" class="art" fetchpriority="high" /></picture>
-</div></section>
-<section class="section alt"><div class="wrap">
-  <p class="eyebrow">Five ways to work with us</p>
-  <h2>Do it yourself, do it together, or let us do it.</h2>
-  <p class="muted">Start wherever fits. Most clients begin small and move up as they see results.</p>
-  {ladder(slug)}
+  <div class="actions"><a class="btn btn-ink" href="discovery-sprint/">How the sprint works →</a></div></div>
 </div></section>
 <section class="section"><div class="wrap">
-  <p class="eyebrow">Use cases</p><h2>Agents for strategy, growth and finance teams.</h2>
-  {use_case_cards(slug)}
-  <p style="margin-top:20px"><a class="link" href="use-cases/">All use cases →</a></p>
+  {section_head("Five ways to work with us", "Do it yourself, do it together, or let us do it.",
+                "Start wherever fits. Most clients begin small and move up as they see results.", accent="let us do it.")}
+  {ladder(slug)}
 </div></section>
-<section class="section alt"><div class="wrap">
-  <p class="eyebrow">Who we help</p><h2>Built for businesses without an AI team.</h2>
-  <div class="cards cards-3">{''.join(f'<a class="card" href="{p["slug"]}"><h3>{e(p["nav"])}</h3><p>{e(p["lead"])}</p></a>' for p in PLAYS)}</div>
+<section class="section tone-lime"><div class="wrap">
+  {section_head("Use cases", "Agents for strategy, growth and finance teams.", accent="finance teams.")}
+  {use_case_cards(slug)}
+  <p class="more"><a class="link" href="use-cases/">All use cases →</a></p>
+</div></section>
+<section class="section"><div class="wrap">
+  {section_head("Who we help", "Built for businesses without an AI team.", accent="without an AI team.")}
+  {rows(slug, [(p["slug"], p["nav"], p["lead"]) for p in PLAYS])}
 </div></section>
 {cta_band("home-band")}"""
     return page(slug, "AI Agents & Automation for Small Businesses",
@@ -591,7 +649,8 @@ def build_services():
             "a managed AI employee, or an AI engineering team instead of a hire.")
     main = f"""
 {hero("Five ways to work with us", "From teaching your team to building and running it for you. "
-      "Pick the level of help that fits — and change it as you go.", "services")}
+      "Pick the level of help that fits — and change it as you go.", "services", "Services", slug=slug,
+      accent="work with us")}
 <section class="section"><div class="wrap">{ladder(slug)}</div></section>
 {cta_band("services-band")}"""
     return page(slug, "AI Services", desc, main, ref="services")
@@ -605,16 +664,17 @@ def build_tier(i):
     nxt = ""
     if t["next"]:
         n = next(x for x in TIERS if x["slug"] == t["next"])
-        nxt = f'<p><a class="link" href="{rel(slug, n["slug"])}">Need more? See {e(n["nav"])} →</a></p>'
+        nxt = f'<p class="more"><a class="link" href="{rel(slug, n["slug"])}">Need more? See {e(n["nav"])} →</a></p>'
     ref = slug.split("/")[1]
     main = f"""
-{hero(t["title"], t["lead"], ref, f'Service {i + 1} of 5 · {t["tier"]}')}
-<section class="section"><div class="wrap split">
-  <div><h2>Who it's for</h2><p>{e(t["for"])}</p><h2>What you get</h2><ul class="ticks">{get}</ul>{nxt}</div>
-  <div><h2>How it works</h2><ol class="steps">{how}</ol></div>
+{hero(t["title"], t["lead"], ref, f'Service 0{i + 1} · {t["tier"]}', slug=slug, img=t["art"],
+      alt=f'Isometric illustration for {t["nav"]}')}
+<section class="section tone-lime"><div class="wrap split">
+  <div class="panel"><h2>Who it's for</h2><p class="big">{e(t["for"])}</p><h2>What you get</h2><ul class="ticks">{get}</ul>{nxt}</div>
+  <div class="panel"><h2>How it works</h2><ol class="steps">{how}</ol></div>
 </div></section>
-<div class="wrap">{faq_html(t["faq"])}</div>
-<section class="section alt"><div class="wrap"><h2>All five services</h2>{ladder(slug, highlight=slug)}</div></section>
+<section class="section"><div class="wrap">{faq_html(t["faq"])}</div></section>
+<section class="section tone-lime"><div class="wrap">{section_head("All services", "Five ways to work with us", accent="work with us")}{ladder(slug, highlight=slug)}</div></section>
 {cta_band(ref + "-band")}"""
     return page(slug, t["title"], t["description"], main,
                 ld=[service_ld(slug, t["title"], t["description"]), faq_ld(t["faq"])], ref=ref)
@@ -624,10 +684,10 @@ def build_play(p):
     slug = p["slug"]
     body = "".join(f"<p>{e(x)}</p>" for x in p["body"])
     main = f"""
-{hero(p["title"], p["lead"], p["ref"])}
-<section class="section"><div class="wrap narrow">{body}</div></section>
-<section class="section alt"><div class="wrap"><h2>Where clients usually start</h2>{ladder(slug, only=p["tiers"])}
-<p><a class="link" href="{rel(slug, 'services/')}">See all five services →</a></p></div></section>
+{hero(p["title"], p["lead"], p["ref"], "Who we help", slug=slug, img=p["art"], alt=f'Isometric illustration for {p["nav"]}')}
+<section class="section tone-lime"><div class="wrap narrow prose big">{body}</div></section>
+<section class="section"><div class="wrap">{section_head("Where to start", "Where clients usually start", accent="usually start")}{ladder(slug, only=p["tiers"])}
+<p class="more"><a class="link" href="{rel(slug, 'services/')}">See all five services →</a></p></div></section>
 {cta_band(p["ref"] + "-band")}"""
     return page(slug, p["title"], p["description"], main, ref=p["ref"])
 
@@ -635,8 +695,9 @@ def build_play(p):
 def use_case_cards(slug, exclude=None):
     cards = "".join(
         f'<a class="card" href="{rel(slug, u["slug"])}"><span class="tag">Use case</span>'
-        f'<h3>{e(u["nav"])}</h3><p>{e(u["lead"])}</p></a>' for u in USE_CASES if u["slug"] != exclude)
-    return f'<div class="cards cards-3">{cards}</div>'
+        f'<h3>{e(u["nav"])}</h3><p>{e(u["lead"])}</p><span class="arrow">→</span></a>'
+        for u in USE_CASES if u["slug"] != exclude)
+    return f'<div class="cards cards-uc">{cards}</div>'
 
 
 def build_use_cases():
@@ -645,10 +706,11 @@ def build_use_cases():
             "research, planning and OKRs, and financial reporting.")
     main = f"""
 {hero("AI agents for strategy, growth and finance teams", "Agents that do the research, tracking and "
-      "reporting behind good decisions — so your people can spend their time making them.", "use-cases", "Use cases")}
+      "reporting behind good decisions — so your people can spend their time making them.", "use-cases",
+      "Use cases", slug=slug, tone="lime")}
 <section class="section"><div class="wrap">{use_case_cards(slug)}
-<p class="muted" style="margin-top:28px">Every use case can be taught, set up with you, built, or built and run
-for you. <a class="link" href="{rel(slug, 'services/')}">See the five ways to work with us →</a></p></div></section>
+<p class="more">Every use case can be taught, set up with you, built, or built and run for you.
+<a class="link" href="{rel(slug, 'services/')}">See the five ways to work with us →</a></p></div></section>
 {cta_band("use-cases-band")}"""
     return page(slug, "AI Agent Use Cases", desc, main, ref="use-cases")
 
@@ -658,14 +720,14 @@ def build_use_case(u):
     does = "".join(f"<li>{e(x)}</li>" for x in u["does"])
     ref = "uc-" + slug.split("/")[1]
     main = f"""
-{hero(u["title"], u["lead"], ref, "Use case")}
+{hero(u["title"], u["lead"], ref, "Use case", slug=slug, tone="lime")}
 <section class="section"><div class="wrap split">
-  <div><h2>Who it's for</h2><p>{e(u["for"])}</p><h2>What the agent does</h2><ul class="ticks">{does}</ul></div>
-  <div><h2>What stays with your people</h2><p>{e(u["people"])}</p>
-  <h2>How to get it</h2><p class="muted">Pick the level of help that fits.</p>{ladder(slug, only=u["tiers"])}</div>
+  <div><h2>Who it's for</h2><p class="big">{e(u["for"])}</p><h2>What the agent does</h2><ul class="ticks">{does}</ul></div>
+  <div class="panel panel-lime"><h2>What stays with your people</h2><p class="big">{e(u["people"])}</p></div>
 </div></section>
-<div class="wrap">{faq_html(u["faq"])}</div>
-<section class="section alt"><div class="wrap"><h2>More use cases</h2>{use_case_cards(slug, exclude=slug)}</div></section>
+<section class="section tone-lime"><div class="wrap">{section_head("How to get it", "Pick the level of help that fits", accent="that fits")}{ladder(slug, only=u["tiers"])}</div></section>
+<section class="section"><div class="wrap">{faq_html(u["faq"])}</div></section>
+<section class="section tone-lime"><div class="wrap">{section_head("More", "More use cases", accent="use cases")}{use_case_cards(slug, exclude=slug)}</div></section>
 {cta_band(ref + "-band")}"""
     return page(slug, u["title"], u["description"], main,
                 ld=[service_ld(slug, u["title"], u["description"]), faq_ld(u["faq"])], ref=ref)
@@ -683,16 +745,16 @@ def build_sprint():
     how = "".join(f'<li><strong>{e(a)}</strong><span>{e(b)}</span></li>' for a, b in steps)
     main = f"""
 {hero("The Discovery Sprint", "One workflow. Two to four weeks. A working prototype, a costed build plan "
-      "and a clear go/no-go — before you commit to anything bigger.", "sprint", "Start here")}
-<section class="section"><div class="wrap split">
-  <div><h2>What you walk away with</h2><ul class="ticks">
+      "and a clear go/no-go — before you commit to anything bigger.", "sprint", "Start here", slug=slug,
+      img="sprint", alt="Isometric illustration of a laptop prototype, a roadmap and a checklist", accent="Sprint")}
+<section class="section tone-lime"><div class="wrap split">
+  <div class="panel"><h2>What you walk away with</h2><ul class="ticks">
     <li>A working prototype on your own process</li><li>A costed, phased build plan</li>
     <li>A clear go/no-go, with the reasons</li><li>A view of the risks and what would need to be true</li></ul></div>
-  <div><h2>How it works</h2><ol class="steps">{how}</ol></div>
+  <div class="panel"><h2>How it works</h2><ol class="steps">{how}</ol></div>
 </div></section>
-<div class="wrap">{faq_html(FAQ_SPRINT)}</div>
-<section class="section alt"><div class="wrap"><h2>After the sprint</h2>
-<p class="muted">Take the plan and build it yourselves, or pick the level of help that fits.</p>{ladder(slug, only=[0, 2, 3, 4])}</div></section>
+<section class="section"><div class="wrap">{faq_html(FAQ_SPRINT)}</div></section>
+<section class="section tone-lime"><div class="wrap">{section_head("After the sprint", "Build it yourselves, or pick the help that fits", accent="the help that fits")}{ladder(slug, only=[0, 2, 3, 4])}</div></section>
 {cta_band("sprint-band")}"""
     return page(slug, "AI Discovery Sprint", desc, main,
                 ld=[service_ld(slug, "AI Discovery Sprint", desc), faq_ld(FAQ_SPRINT)], ref="sprint")
@@ -702,30 +764,33 @@ def build_about():
     slug = "about/"
     desc = ("VisionzLab is an AI studio that helps small and mid-sized businesses put AI agents to work, "
             "with senior architects and an AI-first way of building.")
+    principles = [("Senior people", "Architects with more than two decades of software and architecture experience, "
+                   "who have shipped production AI systems."),
+                  ("AI-first delivery", "We build with AI ourselves, so small projects stay small and larger ones move fast."),
+                  ("People stay in charge", "Approval steps, audit trails and clear limits on what an agent may do are "
+                   "part of every build."),
+                  ("Honest scoping", "Fixed prices where the scope is clear, and a plain answer when AI isn't the right tool.")]
+    cards = "".join(f'<div class="card card-static"><span class="num">0{i + 1}</span><h3>{e(a)}</h3><p>{e(b)}</p></div>'
+                    for i, (a, b) in enumerate(principles))
     main = f"""
 {hero("About VisionzLab", "We help businesses without an AI team put AI to work — practically, "
-      "safely, and at a size that makes sense for them.", "about")}
-<section class="section"><div class="wrap narrow">
+      "safely, and at a size that makes sense for them.", "about", "About", slug=slug, img="lab",
+      alt="Isometric illustration of a small AI studio workspace", accent="VisionzLab")}
+<section class="section tone-lime"><div class="wrap narrow prose big">
   <h2>What we believe</h2>
   <p>Most businesses don't need an AI strategy. They need specific work taken off their team's plate, by
   something they can trust and understand.</p>
   <p>So we meet clients where they are. Some want to learn to do it themselves. Some want it built.
   Some want it built and looked after. We're comfortable with all three, and we'd rather start small
   and earn the next project than sell something too big.</p>
-  <h2>How we work</h2>
-  <ul class="ticks">
-    <li><strong>Senior people.</strong> Architects with more than two decades of software and architecture
-    experience, who have shipped production AI systems.</li>
-    <li><strong>AI-first delivery.</strong> We build with AI ourselves, so small projects stay small and
-    larger ones move fast.</li>
-    <li><strong>People stay in charge.</strong> Approval steps, audit trails and clear limits on what an
-    agent may do are part of every build.</li>
-    <li><strong>Honest scoping.</strong> Fixed prices where the scope is clear, and a plain answer when AI
-    isn't the right tool.</li>
-  </ul>
-  <h2>Where we work</h2>
-  <p>We're based in Ontario, Canada, and work with clients across Canada and the United States, online or on site.</p>
-  <p><a class="link" href="{rel(slug, ASAL['slug'])}">Meet our VP of Business Development →</a></p>
+</div></section>
+<section class="section"><div class="wrap">{section_head("How we work", "Four things we hold to", accent="hold to")}
+<div class="cards cards-uc">{cards}</div></div></section>
+<section class="section tone-lime"><div class="wrap split">
+  <div><h2>Where we work</h2><p class="big">We're based in Ontario, Canada, and work with clients across Canada and
+  the United States, online or on site.</p></div>
+  <div><h2>Who you'll talk to</h2><p class="big">Every engagement starts with our business development lead.</p>
+  <div class="actions"><a class="btn btn-ink" href="{rel(slug, ASAL['slug'])}">Meet our VP of Business Development →</a></div></div>
 </div></section>
 {cta_band("about-band")}"""
     return page(slug, "About", desc, main, ref="about")
@@ -739,20 +804,20 @@ def build_asal():
               "email": f"mailto:{EMAIL_SALES}",
               "worksFor": {"@id": ORG_ID}, "image": f"{SITE}/public/team/asal.jpg", "url": url(slug)}
     main = f"""
-<section class="section"><div class="wrap person">
-  <picture><source srcset="{rel(slug, 'public/team/asal.webp')}" type="image/webp" />
-  <img src="{rel(slug, 'public/team/asal.jpg')}" alt="{e(name)}, {e(role)} at {BRAND}" width="720" height="900" class="portrait" /></picture>
-  <div>
+<section class="hero tone-paper"><div class="wrap hero-split person">
+  <div class="hero-copy">
     <p class="eyebrow">{e(role)}</p>
     <h1>{e(name)}</h1>
     <p class="lead">Asal leads business development at {BRAND}. She is the first person most clients speak to,
     and stays their point of contact from the first conversation through delivery and beyond.</p>
-    <p>She works with owners and leadership teams to find where AI can take real work off their people —
+    <p class="big">She works with owners and leadership teams to find where AI can take real work off their people —
     and is just as quick to say when it can't. Her job is to make sure every engagement starts at the
     right size, with a clear outcome both sides can measure.</p>
     <div class="actions">{contact('asal', 'Book a conversation with Asal')}
       <a class="btn btn-ghost" href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></div>
   </div>
+  <div class="frame frame-photo"><picture><source srcset="{rel(slug, 'public/team/asal.webp')}" type="image/webp" />
+  <img src="{rel(slug, 'public/team/asal.jpg')}" alt="{e(name)}, {e(role)} at {BRAND}" width="720" height="900" fetchpriority="high" /></picture></div>
 </div></section>
 {cta_band("asal-band")}"""
     return page(slug, f"{name}, {role}", desc, main, ld=[person], ref="asal")
