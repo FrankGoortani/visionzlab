@@ -240,7 +240,70 @@ PLAYS = [
             "Client financial data is handled under clear privacy and security terms in every engagement.",
         ],
         "tiers": [0, 1, 3],
+        "uses": ["use-cases/document-intake/", "use-cases/financial-reporting/", "use-cases/inbox-triage/"],
         "ref": "play-c",
+    },
+    {
+        "slug": "for/distributors-manufacturers/", "art": "build",
+        "nav": "Distributors & Manufacturers",
+        "title": "AI Quote and Order Automation for Distributors and Manufacturers",
+        "description": "AI agents that read incoming RFQs, purchase orders and supplier documents, draft quotes "
+                       "and enter orders for your team to approve — built around your ERP.",
+        "lead": "AI agents that turn emailed RFQs and purchase orders into draft quotes and entered orders, "
+                "for your team to approve.",
+        "body": [
+            "Requests arrive as emails, PDFs and spreadsheets. Someone reads each one, looks up part numbers and "
+            "pricing, re-keys it into the ERP, and chases what's missing. When volume spikes, quotes go out late "
+            "and orders wait.",
+            "We build agents that do the reading and the re-keying: they match items to your catalogue, draft the "
+            "quote or the order, and flag anything unusual. Your inside sales and customer service teams approve "
+            "every quote and every order before it goes anywhere.",
+            "Most engagements start with a discovery sprint on one workflow, usually quotes or order entry, using "
+            "your real documents.",
+        ],
+        "tiers": [1, 2, 3],
+        "uses": ["use-cases/quote-rfq-intake/", "use-cases/order-entry/", "use-cases/document-intake/"],
+        "ref": "play-industrial",
+    },
+    {
+        "slug": "for/insurance-brokers/", "art": "employee",
+        "nav": "Insurance Brokers",
+        "title": "AI Automation for Commercial and P&C Insurance Brokers",
+        "description": "AI agents for commercial and property & casualty brokerages and MGAs: submission intake, "
+                       "certificate requests, renewal preparation and claims intake, with brokers in control.",
+        "lead": "AI agents that take submission, certificate and renewal paperwork off your brokers' desks.",
+        "body": [
+            "A commercial submission means pulling details out of emails, applications and loss runs and re-keying "
+            "them for every market. Certificate requests and renewal prep repeat the same work all year.",
+            "We build agents that extract and organise that information, prepare market-ready submission packages "
+            "and renewal files, draft certificates for review, and sort incoming claims notices so the right person "
+            "sees them first.",
+            "Your licensed brokers stay in charge of advice, placement and every coverage decision. Agents prepare "
+            "the paperwork; they never bind coverage or give advice. We work with commercial and P&C lines.",
+        ],
+        "tiers": [1, 2, 3],
+        "uses": ["use-cases/document-intake/", "use-cases/renewals-follow-up/", "use-cases/inbox-triage/"],
+        "ref": "play-insurance",
+    },
+    {
+        "slug": "for/mortgage-brokers/", "art": "setup",
+        "nav": "Mortgage Brokers",
+        "title": "AI Automation for Mortgage Brokers and Agents",
+        "description": "AI tools for mortgage brokerages and agents: renewal tracking and outreach, document "
+                       "collection, lead follow-up and being found in AI search, in more than one language.",
+        "lead": "Never miss a renewal, chase fewer documents, and follow up with every lead — without more admin.",
+        "body": [
+            "Renewals are the business you already earned, and they are easy to lose when maturity dates live in "
+            "a spreadsheet. Document collection and lead follow-up take the rest of the week.",
+            "We set up tools that track every maturity date and prompt timely outreach, send clients a clear "
+            "checklist of what to gather, follow up with new enquiries, and help your website show up when "
+            "people ask AI assistants for a broker. Client messages can be prepared in the languages your clients speak.",
+            "You stay in charge of every recommendation and every application. The tools organise and remind; "
+            "they don't quote rates or give mortgage advice.",
+        ],
+        "tiers": [0, 1, 3],
+        "uses": ["use-cases/renewals-follow-up/", "use-cases/document-intake/", "use-cases/inbox-triage/"],
+        "ref": "play-mortgage",
     },
     {
         "slug": "instead-of-hiring/", "art": "team",
@@ -262,6 +325,126 @@ PLAYS = [
 ]
 
 USE_CASES = [
+    {
+        "slug": "use-cases/quote-rfq-intake/",
+        "nav": "Quote & RFQ Intake",
+        "title": "AI Quote and RFQ Intake Agent",
+        "description": "An AI agent that reads incoming requests for quote, matches items to your catalogue and "
+                       "pricing, and drafts the quote for your team to approve.",
+        "lead": "An AI agent that reads every RFQ, matches it to your catalogue and drafts the quote, for your team to approve.",
+        "for": "Distributors, manufacturers and brokers whose inside sales team re-keys requests from email, PDF and spreadsheets.",
+        "does": [
+            "Reads requests from email, PDFs, spreadsheets and web forms",
+            "Matches items to your catalogue, including customer part numbers and substitutes",
+            "Applies your pricing rules and flags anything outside them",
+            "Drafts the quote in your system and lists what is missing or unclear",
+        ],
+        "people": "Your team checks and approves every quote before it is sent. The agent prepares; it never "
+                  "commits to a price or a delivery date on its own.",
+        "tiers": [2, 3],
+        "faq": [
+            ("Does it work with our ERP?", "Yes, where the ERP has an API, an import or a usable screen workflow. "
+             "We confirm this in the discovery session."),
+            ("What about unusual requests?", "It flags them for a person instead of guessing. You set the limits."),
+            ("How do we know it's working?", "We measure quote turnaround and accuracy on your real requests "
+             "during the discovery sprint, before you commit to a build."),
+        ],
+    },
+    {
+        "slug": "use-cases/order-entry/",
+        "nav": "Order Entry & Exceptions",
+        "title": "AI Order Entry and Exceptions Agent",
+        "description": "An AI agent that turns emailed and PDF purchase orders into entered orders, checks them "
+                       "against price, stock and terms, and flags exceptions for your team.",
+        "lead": "An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.",
+        "for": "Customer service and order desk teams who re-key purchase orders and chase mismatches every day.",
+        "does": [
+            "Reads purchase orders from email, PDF and customer portals",
+            "Enters them into your ERP or order system",
+            "Checks price, quantity, stock and terms against what was quoted",
+            "Routes exceptions to the right person with the reason attached",
+        ],
+        "people": "Your team handles every exception and approves anything outside the rules. Clean orders can be "
+                  "held for approval or released automatically — your choice.",
+        "tiers": [2, 3],
+        "faq": [
+            ("Can it release orders automatically?", "Only if you want it to, and only within limits you set. "
+             "Many teams start with every order held for a quick approval."),
+            ("What counts as an exception?", "Whatever you decide: price differences, unknown items, credit holds, "
+             "short stock or unusual terms."),
+            ("Who maintains it?", "Your team, after hand-over, or us on a scheduled maintenance plan."),
+        ],
+    },
+    {
+        "slug": "use-cases/document-intake/",
+        "nav": "Document Intake",
+        "title": "AI Document Intake and Data Extraction Agent",
+        "description": "An AI agent that reads invoices, applications, shipping documents and forms, extracts the "
+                       "data your systems need, and checks it before anyone re-keys it.",
+        "lead": "An AI agent that reads the documents your team re-keys, and puts the data where it belongs.",
+        "for": "Any team that copies information out of invoices, applications, forms or shipping documents by hand.",
+        "does": [
+            "Reads PDFs, scans, emails and spreadsheets",
+            "Extracts the fields your systems need and checks them against rules you set",
+            "Files the document and writes the data to your system",
+            "Lists what is missing or doesn't match, for a person to resolve",
+        ],
+        "people": "Your team reviews anything the agent isn't sure about, and owns every decision made on the data.",
+        "tiers": [1, 2, 3],
+        "faq": [
+            ("Which documents can it handle?", "Most business documents with a recognisable structure: invoices, "
+             "purchase orders, applications, bills of lading, statements and forms."),
+            ("What if a scan is poor?", "It flags low-confidence fields for a person instead of guessing."),
+            ("Where does our data go?", "It runs on accounts and storage you control, under clear privacy and "
+             "security terms in every engagement."),
+        ],
+    },
+    {
+        "slug": "use-cases/inbox-triage/",
+        "nav": "Inbox Triage",
+        "title": "AI Shared Inbox Triage and Reply Drafting Agent",
+        "description": "An AI agent that sorts a shared inbox, routes each message to the right person and drafts "
+                       "replies, so nothing waits and nothing is missed.",
+        "lead": "An AI agent that sorts your shared inbox, routes every message and drafts the reply.",
+        "for": "Teams working out of a shared inbox — sales, service, orders, claims or admin — where messages wait or get missed.",
+        "does": [
+            "Reads every incoming message and its attachments",
+            "Sorts by type and urgency, and routes to the right person or queue",
+            "Drafts replies from your templates, policies and past answers",
+            "Flags anything urgent or unusual straight away",
+        ],
+        "people": "Your team reads and sends every reply, or approves which simple ones can go automatically.",
+        "tiers": [0, 1, 3],
+        "faq": [
+            ("Does it send replies on its own?", "Not unless you decide it should, for message types you choose."),
+            ("Which email systems?", "Google Workspace and Microsoft 365, plus most help-desk tools."),
+            ("Can we set it up ourselves?", "Often, yes. We can teach your team or set it up with you."),
+        ],
+    },
+    {
+        "slug": "use-cases/renewals-follow-up/",
+        "nav": "Renewals & Follow-up",
+        "title": "AI Renewal Tracking and Client Follow-up Agent",
+        "description": "An AI agent that tracks renewal and maturity dates, prepares timely outreach and follows "
+                       "up with leads and clients, so no renewal or enquiry slips.",
+        "lead": "An AI agent that tracks every renewal date and follows up with every lead, so nothing slips.",
+        "for": "Brokers, agents and service firms whose revenue depends on renewals and fast follow-up.",
+        "does": [
+            "Tracks renewal and maturity dates from your client records",
+            "Prepares outreach at the right time, with what the client needs to gather",
+            "Follows up with new enquiries and reminds your team when a lead goes quiet",
+            "Prepares messages in the languages your clients speak",
+        ],
+        "people": "You decide who is contacted and what is said. The agent reminds and drafts; advice and "
+                  "recommendations stay with you.",
+        "tiers": [1, 3],
+        "faq": [
+            ("Does it contact clients directly?", "Only with messages you approve, through channels you choose, "
+             "and in line with the consent rules that apply to you."),
+            ("Does it work with our CRM?", "Yes, or with a spreadsheet if that's where your client list lives."),
+            ("What does it cost to run?", "A setup fee, then a monthly fee if we maintain it. We agree both before we start."),
+        ],
+    },
     {
         "slug": "use-cases/market-intelligence/",
         "nav": "Market Intelligence",
@@ -631,8 +814,8 @@ def build_home():
   {ladder(slug)}
 </div></section>
 <section class="section tone-lime"><div class="wrap">
-  {section_head("Use cases", "Agents for strategy, growth and finance teams.", accent="finance teams.")}
-  {use_case_cards(slug)}
+  {section_head("Use cases", "Agents for operations, growth and finance teams.", accent="finance teams.")}
+  {use_case_cards(slug, only=[u["slug"] for u in USE_CASES[:8]])}
   <p class="more"><a class="link" href="use-cases/">All use cases →</a></p>
 </div></section>
 <section class="section"><div class="wrap">
@@ -684,30 +867,37 @@ def build_tier(i):
 def build_play(p):
     slug = p["slug"]
     body = "".join(f"<p>{e(x)}</p>" for x in p["body"])
+    uses = ""
+    if p.get("uses"):
+        assert set(p["uses"]) <= {u["slug"] for u in USE_CASES}, f'unknown use case in {slug}: {p["uses"]}'
+        uses = (f'<section class="section tone-lime"><div class="wrap">'
+                f'{section_head("Use cases", "What we usually build first", accent="build first")}'
+                f'{use_case_cards(slug, only=p["uses"])}</div></section>')
     main = f"""
 {hero(p["title"], p["lead"], p["ref"], "Who we help", slug=slug, img=p["art"], alt=f'Isometric illustration for {p["nav"]}')}
 <section class="section tone-lime"><div class="wrap narrow prose big">{body}</div></section>
 <section class="section"><div class="wrap">{section_head("Where to start", "Where clients usually start", accent="usually start")}{ladder(slug, only=p["tiers"])}
 <p class="more"><a class="link" href="{rel(slug, 'services/')}">See all five services →</a></p></div></section>
+{uses}
 {cta_band(p["ref"] + "-band")}"""
     return page(slug, p["title"], p["description"], main, ref=p["ref"])
 
 
-def use_case_cards(slug, exclude=None):
+def use_case_cards(slug, exclude=None, only=None):
     cards = "".join(
         f'<a class="card" href="{rel(slug, u["slug"])}"><span class="tag">Use case</span>'
         f'<h3>{e(u["nav"])}</h3><p>{e(u["lead"])}</p><span class="arrow">→</span></a>'
-        for u in USE_CASES if u["slug"] != exclude)
+        for u in USE_CASES if u["slug"] != exclude and (only is None or u["slug"] in only))
     return f'<div class="cards cards-uc">{cards}</div>'
 
 
 def build_use_cases():
     slug = "use-cases/"
-    desc = ("AI agents for leadership, business development and finance teams: market intelligence, prospect "
-            "research, planning and OKRs, and financial reporting.")
+    desc = ("AI agents for operations, sales and finance teams: quote and RFQ intake, order entry, document "
+            "intake, inbox triage, renewals, market intelligence, prospect research, planning and financial reporting.")
     main = f"""
-{hero("AI agents for strategy, growth and finance teams", "Agents that do the research, tracking and "
-      "reporting behind good decisions — so your people can spend their time making them.", "use-cases",
+{hero("AI agents for operations, growth and finance teams", "Agents that do the reading, re-keying, tracking "
+      "and reporting — so your people can spend their time on the decisions.", "use-cases",
       "Use cases", slug=slug, tone="lime")}
 <section class="section"><div class="wrap">{use_case_cards(slug)}
 <p class="more">Every use case can be taught, set up with you, built, or built and run for you.
@@ -850,7 +1040,7 @@ def main():
            ("services/", build_services(), "Services", "The five ways to work with us."),
            ("discovery-sprint/", build_sprint(), "Discovery Sprint", "The paid sprint most engagements start with.")]
     out += [(t["slug"], build_tier(i), t["title"], t["description"]) for i, t in enumerate(TIERS)]
-    out += [("use-cases/", build_use_cases(), "AI Agent Use Cases", "Agents for strategy, growth and finance teams.")]
+    out += [("use-cases/", build_use_cases(), "AI Agent Use Cases", "Agents for operations, growth and finance teams.")]
     out += [(u["slug"], build_use_case(u), u["title"], u["description"]) for u in USE_CASES]
     out += [(p["slug"], build_play(p), p["title"], p["description"]) for p in PLAYS]
     out += [("about/", build_about(), "About", "Who we are and how we work."),
