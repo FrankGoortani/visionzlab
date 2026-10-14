@@ -30,11 +30,12 @@
 - [Hiring an AI or Software Engineer? Try This First](https://visionzlab.com/instead-of-hiring/): Before you fill a software, automation or AI role, see whether a senior AI engineering team can build what the role would build — faster, with no hiring cycle.
 - [About](https://visionzlab.com/about/): Who we are and how we work.
 - [Asal Matinsadeghy, VP Business Development](https://visionzlab.com/team/asal-matinsadeghy/): Business development and new clients.
+- [Book a discovery session](https://visionzlab.com/book/): Book a free discovery session.
 
 ## Contact
 
 - New business: asal@visionzlab.com
 - General: frank@visionzlab.com
-- Book a discovery session: https://frankgoortani.typeform.com/to/VaoYV6iJ
+- Book a discovery session: https://visionzlab.com/book/
 
 VisionzLab is a brand of VisionZone One Consulting Inc., an Ontario corporation.

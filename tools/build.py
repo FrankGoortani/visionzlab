@@ -23,6 +23,14 @@ CONTACT_URL = "https://frankgoortani.typeform.com/to/VaoYV6iJ"
 UMAMI_HOST = "https://goortani.synology.me:3100"
 UMAMI_SITE_ID = "571a5a54-c7bd-41d4-969d-3026dae95234"
 
+# HubSpot booking form (VisionzLab account, form "VisionzLab - Book a discovery session"). Once HUBSPOT_FORM_ID
+# is set, every "Book" button goes to the site's own /book/ page instead of CONTACT_URL; the form there creates
+# the contact in HubSpot with the lead source in the hidden `vzl_ref` property. Values are from the form's embed code.
+HUBSPOT_PORTAL_ID = "343785035"
+HUBSPOT_REGION = "na3"
+HUBSPOT_FORM_ID = "b480b50f-caa3-41e0-954c-d94193f284e3"
+BOOK_SLUG = "book/"
+
 LEGAL_NAME = "VisionZone One Consulting Inc."
 
 # Illustrations (generated in the site's isometric line-art style). Missing files fall back to computer.webp.
@@ -586,9 +594,9 @@ def breadcrumbs_ld(slug, title):
 
 
 def contact(ref, label="Book a free discovery session", cls="btn"):
+    external = '' if CONTACT_URL.startswith(SITE) else ' target="_blank" rel="noopener"'
     return (f'<a class="{cls}" href="{CONTACT_URL}#ref={e(ref)}" data-contact data-ref="{e(ref)}" '
-            f'data-umami-event="contact_click" data-umami-event-location="{e(ref)}" '
-            f'target="_blank" rel="noopener">{e(label)}</a>')
+            f'data-umami-event="contact_click" data-umami-event-location="{e(ref)}"{external}>{e(label)}</a>')
 
 
 def faq_html(faq):
@@ -1014,6 +1022,54 @@ def build_asal():
     return page(slug, f"{name}, {role}", desc, main, ld=[person], ref="asal")
 
 
+BOOK_JS = """      (function () {
+        // Lead source: #ref= from a site button, else ?ref= from an email or ad link, else what the
+        // visitor arrived with earlier in the visit. HubSpot fills the hidden vzl_ref field from ?vzl_ref=.
+        var q = new URLSearchParams(location.search);
+        var h = new URLSearchParams(location.hash.slice(1));
+        var stored = null;
+        try { stored = sessionStorage.getItem('vz_ref'); } catch (_) {}
+        var ref = h.get('ref') || q.get('ref') || stored || 'direct';
+        if (q.get('ref') && h.get('ref')) ref = q.get('ref') + '~' + h.get('ref');
+        q.set('vzl_ref', ref);
+        history.replaceState(null, '', location.pathname + '?' + q.toString());
+        var s = document.createElement('script');
+        s.src = 'https://js-__REGION__.hsforms.net/forms/embed/__PORTAL__.js';
+        s.defer = true;
+        s.onerror = function () { document.getElementById('hs-form-fallback').hidden = false; };
+        document.head.appendChild(s);
+      })();"""
+
+
+def build_book():
+    slug = BOOK_SLUG
+    desc = ("Book a free discovery session with VisionzLab. Tell us a little about your business and "
+            "we'll find a time to talk.")
+    js = BOOK_JS.replace("__REGION__", HUBSPOT_REGION).replace("__PORTAL__", HUBSPOT_PORTAL_ID)
+    main = f"""
+<section class="hero tone-paper"><div class="wrap hero-split">
+  <div class="hero-copy">
+    <p class="eyebrow">Free discovery session</p>
+    <h1>{headline("Let's talk about your work.", "your work.")}</h1>
+    <p class="lead">A 60–90 minute conversation about where AI could take work off your team, and where it
+    shouldn't. No preparation needed, and no obligation.</p>
+    <p class="big">Tell us a little about your business and we'll be in touch within one business day.</p>
+  </div>
+  <div class="panel book-form">
+    <div class="hs-form-frame" data-region="{HUBSPOT_REGION}" data-form-id="{HUBSPOT_FORM_ID}"
+      data-portal-id="{HUBSPOT_PORTAL_ID}"></div>
+    <p id="hs-form-fallback" hidden>The form didn't load. Email <a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a>
+    and we'll set up a time.</p>
+    <noscript><p>Email <a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a> and we'll set up a time.</p></noscript>
+    <p class="muted small">We use these details only to reply to you and arrange the call.</p>
+  </div>
+</div></section>
+<script>
+{js}
+</script>"""
+    return page(slug, "Book a discovery session", desc, main, ref="book")
+
+
 def build_llms(pages):
     lines = [f"# {BRAND}", "",
              "> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: "
@@ -1033,7 +1089,9 @@ def build_sitemap(slugs):
 
 
 def main():
-    global TRACKER_JS
+    global TRACKER_JS, CONTACT_URL
+    if HUBSPOT_FORM_ID:
+        CONTACT_URL = url(BOOK_SLUG)
     TRACKER_JS = (TRACKER_JS.replace("__UMAMI_HOST__", UMAMI_HOST)
                   .replace("__UMAMI_ID__", UMAMI_SITE_ID or ""))
     out = [("", build_home(), "Home", ORG["description"]),
@@ -1045,6 +1103,8 @@ def main():
     out += [(p["slug"], build_play(p), p["title"], p["description"]) for p in PLAYS]
     out += [("about/", build_about(), "About", "Who we are and how we work."),
             (ASAL["slug"], build_asal(), f"{ASAL['name']}, {ASAL['role']}", "Business development and new clients.")]
+    if HUBSPOT_FORM_ID:
+        out += [(BOOK_SLUG, build_book(), "Book a discovery session", "Book a free discovery session.")]
     for slug, body, _, _ in out:
         path = ROOT / slug / "index.html"
         path.parent.mkdir(parents=True, exist_ok=True)
