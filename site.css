@@ -225,3 +225,18 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
   .stats-in { grid-template-columns: 1fr; }
   .stat, .stat:nth-child(3) { border-left: 0; padding-left: 0; }
 }
+
+/* 4S check */
+.cards-4 { grid-template-columns: repeat(4, 1fr); }
+.cards-4 .card p strong { color: var(--ink); }
+.cards-4 .link { margin-top: auto; align-self: flex-start; }
+.check label { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 2px solid var(--ink);
+  cursor: pointer; font-size: 1.05rem; }
+.check label:first-child { padding-top: 0; }
+.check label .tag { display: block; margin-bottom: 4px; }
+.check input { width: 24px; height: 24px; margin: 2px 0 0; flex: none; accent-color: var(--ink); }
+.result { margin-top: 32px; scroll-margin-top: 96px; }
+.result h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.skip { font-weight: 600; border-left: 6px solid var(--lime); padding-left: 14px; }
+@media (max-width: 1080px) { .cards-4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .cards-4 { grid-template-columns: 1fr; } }

@@ -551,6 +551,69 @@ FAQ_SPRINT = [
     ("Is there a free option?", "Yes. The first conversation is a free discovery session, with a short memo afterwards."),
 ]
 
+# The 4S check. Mirrors foundation/VISIONZLAB_4S_MATURITY_2026-10-14.md in the asal repo: change a stage or a
+# question there and here in the same week. Each stage has two yes/no checks; the first "no" is the stage.
+MATURITY_SLUG = "ai-maturity/"
+STAGES = [
+    {
+        "code": "S1", "name": "Strategy", "question": "Why AI, and where first?",
+        "here": "People use AI tools on their own, but nobody has picked one piece of work for AI to take on, "
+                "or nobody owns it. There's no number for what better would look like.",
+        "next": "Choose one workflow, one owner and one number. A free discovery session does that with you; "
+                "a discovery sprint then tests it on your own documents.",
+        "link": "discovery-sprint/",
+        "checks": ["There's one piece of work we'd most like AI to take on, and one person who owns it.",
+                   "We know how we'd measure success: hours saved, fewer errors or faster turnaround."],
+    },
+    {
+        "code": "S2", "name": "Solution", "question": "Does it work on our work?",
+        "here": "You've chosen the work and maybe tried a tool, a trial or an automation. It hasn't been tested on "
+                "your real documents, or nobody compared the result with how the work is done today.",
+        "next": "Test it on your real work and measure it against today. That's what the discovery sprint is for: "
+                "a working prototype, measured results and a clear go/no-go.",
+        "link": "discovery-sprint/",
+        "checks": ["We've tried an AI tool or automation on that work, using our real documents, not a demo.",
+                   "We've compared the result with how the work is done today."],
+    },
+    {
+        "code": "S3", "name": "Scale", "question": "Is it part of the day?",
+        "here": "It works and you've measured it, but it's still a side experiment: one keen person uses it, or "
+                "someone copies the results into your systems by hand.",
+        "next": "Connect it to the system where the work ends up, and roll it out to the people who do the work.",
+        "link": "services/ai-development/",
+        "checks": ["The people who do that work use it as part of their normal week.",
+                   "The result goes straight into the system where the work ends up, without anyone copying it across."],
+    },
+    {
+        "code": "S4", "name": "Sustain", "question": "Will it keep working?",
+        "here": "It's in daily use and connected. What's missing is an owner: someone who fixes and updates it when "
+                "things change, checks what it produces, and keeps clear rules on what it may do alone.",
+        "next": "Give it an owner and a schedule: regular checks, fixes and updates, with people approving what matters.",
+        "link": "services/ai-employee/",
+        "checks": ["Someone is responsible for fixing it, updating it and checking what it produces.",
+                   "It's written down what it may do on its own, what needs a person's approval, and what "
+                   "information it may use."],
+    },
+]
+PAST_S4 = {
+    "code": "done", "name": "Past stage four",
+    "here": "That workflow is in good shape: chosen, measured, part of the day, and looked after.",
+    "next": "The useful question now is which workflow comes next (it starts again at Strategy), or whether you "
+            "need more building capacity than your team has.",
+    "link": "services/ai-team/",
+}
+FAQ_MATURITY = [
+    ("Is this an AI maturity assessment?", "It's a quick self-check, not an audit. Eight yes-or-no questions place "
+     "one piece of work at one of four stages, so you know which step comes next."),
+    ("Why one workflow and not the whole company?", "Because businesses are rarely at one stage everywhere. You can "
+     "run invoicing smoothly with AI and still be deciding where to start on everything else. Start with the work "
+     "that matters most."),
+    ("What happens to my answers?", "We don't store them. Our analytics counts which stage people land on, without "
+     "anything that identifies you. If you book a session, we'll go through the same questions together."),
+    ("What if we're past stage four?", "Then that workflow is in good shape, and we'll say so. The useful question "
+     "becomes which workflow is next."),
+]
+
 ASAL = {
     "slug": "team/asal-matinsadeghy/",
     "name": "Asal Matinsadeghy",
@@ -676,7 +739,8 @@ def page(slug, title, description, main, ld=None, ref="site"):
         <div><a class="brand" href="{rel(slug, '')}"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round"><path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/><path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g></svg>{BRAND}</a>
           <p class="muted">AI agents and automation for small and mid-sized businesses.<br />
           Based in Ontario, Canada · serving Canada and the US.</p></div>
-        <div><h4>Services</h4><ul>{foot_tiers}<li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li></ul></div>
+        <div><h4>Services</h4><ul>{foot_tiers}<li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li>
+          <li><a href="{rel(slug, MATURITY_SLUG)}">The 4S check</a></li></ul></div>
         <div><h4>Use cases</h4><ul>{foot_uses}</ul></div>
         <div><h4>Who we help</h4><ul>{foot_plays}</ul></div>
         <div><h4>Company</h4><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
@@ -822,6 +886,13 @@ def build_home():
   {section_head("Who we help", "Built for businesses without an AI team.", accent="without an AI team.")}
   {rows(slug, [(p["slug"], p["nav"], p["lead"]) for p in PLAYS])}
 </div></section>
+<section class="section tone-lime"><div class="wrap">
+  {section_head("The 4S check", "Where is your business with AI?",
+                "Four stages, eight yes-or-no questions, about two minutes. Find the one step that moves you forward.",
+                accent="with AI?")}
+  {stage_cards(slug)}
+  <p class="more"><a class="link" href="{MATURITY_SLUG}#check">Take the 4S check →</a></p>
+</div></section>
 {cta_band("home-band")}"""
     return page(slug, "AI Agents & Automation for Small Businesses",
                 ORG["description"], main, ref="home")
@@ -937,7 +1008,8 @@ def build_sprint():
     main = f"""
 {hero("The Discovery Sprint", "One workflow. Two to four weeks. A working prototype, a costed build plan "
       "and a clear go/no-go — before you commit to anything bigger.", "sprint", "Start here", slug=slug,
-      img="sprint", alt="Isometric illustration of a laptop prototype, a roadmap and a checklist", accent="Sprint")}
+      img="sprint", alt="Isometric illustration of a laptop prototype, a roadmap and a checklist", accent="Sprint",
+      second=(MATURITY_SLUG, "Not sure? Take the 4S check"))}
 <section class="section tone-lime"><div class="wrap split">
   <div class="panel"><h2>What you walk away with</h2><ul class="ticks">
     <li>A working prototype on your own process</li><li>A costed, phased build plan</li>
@@ -949,6 +1021,109 @@ def build_sprint():
 {cta_band("sprint-band")}"""
     return page(slug, "AI Discovery Sprint", desc, main,
                 ld=[service_ld(slug, "AI Discovery Sprint", desc), faq_ld(FAQ_SPRINT)], ref="sprint")
+
+
+def stage_cards(slug):
+    cards = "".join(
+        f'<a class="card" href="{rel(slug, MATURITY_SLUG)}#{s["code"].lower()}"><span class="num">{s["code"]}</span>'
+        f'<span class="tag">{e(s["question"])}</span><h3>{e(s["name"])}</h3><p>{e(s["here"])}</p>'
+        f'<span class="arrow">→</span></a>' for s in STAGES)
+    return f'<div class="cards cards-4">{cards}</div>'
+
+
+MATURITY_JS = """      (function () {
+        // First unticked box decides the stage (two boxes per stage); a tick after it means a skipped stage.
+        var form = document.getElementById('check-form');
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          var boxes = Array.prototype.slice.call(form.querySelectorAll('input[type=checkbox]'));
+          var first = boxes.findIndex(function (b) { return !b.checked; });
+          var stage = first < 0 ? boxes.length / 2 : Math.floor(first / 2);
+          var skipped = first >= 0 && boxes.slice(first).some(function (b) { return b.checked; });
+          document.querySelectorAll('[data-result]').forEach(function (el) {
+            el.hidden = Number(el.getAttribute('data-result')) !== stage;
+          });
+          document.getElementById('check-skip').hidden = !skipped;
+          var out = document.getElementById('check-result');
+          out.hidden = false;
+          out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (window.umami && typeof window.umami.track === 'function') {
+            try { window.umami.track('maturity_result', { stage: String(stage + 1), skipped: skipped }); } catch (_) {}
+          }
+        });
+      })();"""
+
+
+def build_maturity():
+    slug = MATURITY_SLUG
+    desc = ("The 4S check: where is your business with AI? Eight yes-or-no questions place one workflow at "
+            "Strategy, Solution, Scale or Sustain, and show the one step that moves you forward.")
+    tiers = {t["slug"]: t["nav"] for t in TIERS}
+
+    def label(target):
+        if target == "discovery-sprint/":
+            return "How the Discovery Sprint works"
+        return f'See {tiers[target]}'  # KeyError on an unknown target: fail the build, don't mislabel
+
+    def heading(stage):
+        return stage["name"] if stage is PAST_S4 else f'{stage["code"]} {stage["name"]}'
+
+    stages = "".join(
+        f'<div class="card" id="{s["code"].lower()}"><span class="num">{s["code"]}</span>'
+        f'<span class="tag">{e(s["question"])}</span><h3>{e(s["name"])}</h3>'
+        f'<p><strong>You\'re here if:</strong> {e(s["here"])}</p>'
+        f'<p><strong>What helps next:</strong> {e(s["next"])}</p>'
+        f'<a class="link" href="{rel(slug, s["link"])}">{e(label(s["link"]))} →</a></div>' for s in STAGES)
+    questions = [(s, text) for s in STAGES for text in s["checks"]]
+    checks = "".join(
+        f'<label><input type="checkbox" name="q{n}" /><span><span class="tag">{s["code"]} '
+        f'{e(s["name"])}</span>{e(text)}</span></label>' for n, (s, text) in enumerate(questions, 1))
+    results = "".join(
+        f'<div data-result="{i}" hidden><p class="eyebrow">Your stage</p>'
+        f'<h3>{e(heading(s))}</h3><p class="big">{e(s["here"])}</p>'
+        f'<p class="big"><strong>What helps next:</strong> {e(s["next"])}</p>'
+        f'<div class="actions">{contact("maturity-" + s["code"].lower(), "Talk it through with us")}'
+        f'<a class="btn btn-ghost" href="{rel(slug, s["link"])}">{e(label(s["link"]))}</a></div></div>'
+        for i, s in enumerate(STAGES + [PAST_S4]))
+    main = f"""
+{hero("Where is your business with AI?", "The 4S check: four stages, eight yes-or-no questions, about two minutes. "
+      "It shows where you are on one piece of work, and the one step that moves you forward.", "maturity",
+      "The 4S check", slug=slug, img="lab", alt="Isometric illustration of a small AI studio workspace",
+      accent="with AI?", second=(slug + "#check", "Take the check"))}
+<section class="section tone-lime"><div class="wrap">
+  {section_head("Four stages", "Strategy, Solution, Scale, Sustain",
+                "Each stage answers one question, and each depends on the one before.", accent="Sustain")}
+  <div class="cards cards-4">{stages}</div>
+</div></section>
+<section class="section"><div class="wrap narrow prose big">
+  <h2>Why the order <span class="hl">matters</span></h2>
+  <p>A tool bought before anyone chose the work. A pilot nobody measured. An automation that one person set up and
+  nobody looks after. Each is a skipped stage, and a skipped stage is where AI projects stall.</p>
+  <p>So the check looks for the first gap, not the most advanced thing you've tried. Close that gap and the next
+  stage gets much easier.</p>
+</div></section>
+<section class="section tone-lime" id="check"><div class="wrap narrow">
+  {section_head("Take the check", "Pick one piece of work.", "Think of the work you'd most like AI to help with. "
+                "Tick each statement that's true for it today. If it's only partly true, leave it unticked.",
+                accent="one piece of work.")}
+  <form class="panel check" id="check-form">{checks}
+    <div class="actions"><button class="btn btn-ink" type="submit">See where you are</button></div>
+    <noscript><p class="muted">Your stage is the first statement you left unticked: statements 1–2 are Strategy,
+    3–4 Solution, 5–6 Scale and 7–8 Sustain. All ticked means that work is past stage four.</p></noscript>
+  </form>
+  <div class="panel result" id="check-result" hidden>
+    <p class="skip" id="check-skip" hidden>You ticked a later statement but not an earlier one. That usually means
+    a stage was skipped, and it's the first thing to fix.</p>
+    {results}
+  </div>
+</div></section>
+<section class="section"><div class="wrap">{faq_html(FAQ_MATURITY)}</div></section>
+{cta_band("maturity-band")}
+<script>
+{MATURITY_JS}
+</script>"""
+    return page(slug, "The 4S Check: Where Is Your Business With AI?", desc, main, ld=[faq_ld(FAQ_MATURITY)],
+                ref="maturity")
 
 
 def build_about():
@@ -1038,7 +1213,10 @@ def main():
                   .replace("__UMAMI_ID__", UMAMI_SITE_ID or ""))
     out = [("", build_home(), "Home", ORG["description"]),
            ("services/", build_services(), "Services", "The five ways to work with us."),
-           ("discovery-sprint/", build_sprint(), "Discovery Sprint", "The paid sprint most engagements start with.")]
+           ("discovery-sprint/", build_sprint(), "Discovery Sprint", "The paid sprint most engagements start with."),
+           (MATURITY_SLUG, build_maturity(), "The 4S check",
+            "Where is your business with AI? Eight questions place one workflow at Strategy, Solution, Scale or "
+            "Sustain.")]
     out += [(t["slug"], build_tier(i), t["title"], t["description"]) for i, t in enumerate(TIERS)]
     out += [("use-cases/", build_use_cases(), "AI Agent Use Cases", "Agents for operations, growth and finance teams.")]
     out += [(u["slug"], build_use_case(u), u["title"], u["description"]) for u in USE_CASES]

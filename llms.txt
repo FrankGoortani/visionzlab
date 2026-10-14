@@ -7,6 +7,7 @@
 - [Home](https://visionzlab.com/): VisionzLab helps small and mid-sized businesses put AI to work — from teaching teams to build their own agents to building and running AI employees.
 - [Services](https://visionzlab.com/services/): The five ways to work with us.
 - [Discovery Sprint](https://visionzlab.com/discovery-sprint/): The paid sprint most engagements start with.
+- [The 4S check](https://visionzlab.com/ai-maturity/): Where is your business with AI? Eight questions place one workflow at Strategy, Solution, Scale or Sustain.
 - [AI Agent Training for Small Businesses](https://visionzlab.com/services/ai-training/): Hands-on workshops and coaching that teach your team to set up and run their own AI agents and automations with tools you already pay for.
 - [AI Agent Setup Service](https://visionzlab.com/services/ai-agent-setup/): We set up your first AI agent with your team, connect it to your tools, and hand it over with a playbook so you can run it yourselves.
 - [Custom AI Agent Development](https://visionzlab.com/services/ai-development/): Fixed-scope, fixed-price development of production AI agents and automations, built to your requirements and handed over to your team.
