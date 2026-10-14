@@ -8,6 +8,14 @@ the content in that script; shared styles live in `site.css`. Edit content in `t
 and commit the generated output — GitHub Pages serves the files as-is, there is no deploy-time build.
 Contact URL and analytics host are constants at the top of `tools/build.py`.
 
+Booking form (added 2026-10-14): every "Book" button goes to `/book/`, which embeds VisionzLab's HubSpot form
+(portal `343785035`, region `na3`, form `b480b50f-caa3-41e0-954c-d94193f284e3`; constants `HUBSPOT_*` in
+`tools/build.py`). The page passes the lead source to HubSpot as `?vzl_ref=<ref>`, which fills the form's hidden
+`vzl_ref` contact field, and the `ref` names on buttons (`home-nav`, `sprint`, ...) are the values that land in
+HubSpot. Don't rename `vzl_ref`, drop the `data-ref` values, or replace the embed without updating the HubSpot form
+and its record (`foundation/visionzlab/crm/HUBSPOT_ACCOUNT.md` in the VisionzLab business repo). Setting
+`HUBSPOT_FORM_ID = ""` falls back to `CONTACT_URL`.
+
 Positioning rule: the site is brand-led. No individual's name, employer or personal contact details
 appear on it, except the dedicated business-development team page.
 
