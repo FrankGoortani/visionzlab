@@ -59,6 +59,7 @@ ORG = {
     "legalName": "VisionZone One Consulting Inc.",
     "email": "frank@visionzlab.com",
     "areaServed": ["CA", "US"],
+    "founder": {"@id": f"{SITE}/team/frank-goortani/#person"},
     "address": {"@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA"},
     "contactPoint": [
         {"@type": "ContactPoint", "contactType": "sales", "email": "asal@visionzlab.com",
@@ -254,7 +255,7 @@ PLAYS = [
     {
         "slug": "for/distributors-manufacturers/", "art": "build",
         "nav": "Distributors & Manufacturers",
-        "title": "AI Quote and Order Automation for Distributors and Manufacturers",
+        "title": "AI Quote & Order Automation for Distributors",
         "description": "AI agents that read incoming RFQs, purchase orders and supplier documents, draft quotes "
                        "and enter orders for your team to approve — built around your ERP.",
         "lead": "AI agents that turn emailed RFQs and purchase orders into draft quotes and entered orders, "
@@ -276,9 +277,9 @@ PLAYS = [
     {
         "slug": "for/insurance-brokers/", "art": "employee",
         "nav": "Insurance Brokers",
-        "title": "AI Automation for Commercial and P&C Insurance Brokers",
+        "title": "AI Automation for P&C Insurance Brokers",
         "description": "AI agents for commercial and property & casualty brokerages and MGAs: submission intake, "
-                       "certificate requests, renewal preparation and claims intake, with brokers in control.",
+                       "certificates, renewals and claims intake, with brokers in control.",
         "lead": "AI agents that take submission, certificate and renewal paperwork off your brokers' desks.",
         "body": [
             "A commercial submission means pulling details out of emails, applications and loss runs and re-keying "
@@ -298,7 +299,7 @@ PLAYS = [
         "nav": "Mortgage Brokers",
         "title": "AI Automation for Mortgage Brokers and Agents",
         "description": "AI tools for mortgage brokerages and agents: renewal tracking and outreach, document "
-                       "collection, lead follow-up and being found in AI search, in more than one language.",
+                       "collection, lead follow-up and AI search visibility, in several languages.",
         "lead": "Never miss a renewal, chase fewer documents, and follow up with every lead — without more admin.",
         "body": [
             "Renewals are the business you already earned, and they are easy to lose when maturity dates live in "
@@ -530,7 +531,7 @@ USE_CASES = [
         "nav": "Financial Reporting",
         "title": "AI Financial Reporting Agent",
         "description": "An AI agent that pulls numbers from your accounting and business systems, prepares "
-                       "monthly reports and drafts variance commentary for your finance team to review.",
+                       "monthly reports and drafts variance commentary for review.",
         "lead": "An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.",
         "for": "Owners and finance teams who spend days every month assembling the same reports.",
         "does": [
@@ -622,11 +623,45 @@ FAQ_MATURITY = [
      "becomes which workflow is next."),
 ]
 
-ASAL = {
-    "slug": "team/asal-matinsadeghy/",
-    "name": "Asal Matinsadeghy",
-    "role": "VP Business Development",
+# Team pages. Positioning rule: these are the only pages that name a person. Never call Frank "CTO" here and
+# never name his employer; the public record ends VisionzLab in 2023, so the copy stays timeless.
+FRANK = {
+    "slug": "team/frank-goortani/",
+    "name": "Frank Goortani",
+    "first": "Frank",
+    "role": "Founder & Technical Principal",
+    "email": EMAIL_GENERAL,
+    "photo": "frank",
+    "description": "Frank Goortani founded VisionzLab and leads the technical side of every engagement. "
+                   "Two decades as an architect at Uber, TD Bank and Canada Life.",
+    "bio": ["Frank founded VisionzLab and leads the technical side of every engagement: what gets built, how "
+            "it's built, and the agents themselves.",
+            "He has spent more than twenty years designing and building software for startups and large "
+            "enterprises, as a solution architect and technical lead at organisations including Uber, TD Bank, "
+            "Canada Life and CAA. At Uber he led an award-winning AI initiative; at Canada Life he formed and "
+            "scaled an in-house mobile team. He is TOGAF and PMP certified.",
+            "On every project he makes sure the agents are safe to run: approval steps, audit trails and clear "
+            "limits on what they may do."],
 }
+ASAL = {
+    "slug": "team/asal-matin/",
+    "name": "Asal Matin",
+    "first": "Asal",
+    "role": "VP Business Development",
+    "email": EMAIL_SALES,
+    "photo": "asal",
+    "description": "Asal Matin is VP Business Development at VisionzLab, the first point of contact for new clients.",
+    "bio": ["Asal leads business development at VisionzLab. She is the first person most clients speak to, and "
+            "stays their point of contact from the first conversation through delivery and beyond.",
+            "She works with owners and leadership teams to find where AI can take real work off their people — "
+            "and is just as quick to say when it can't. Her job is to make sure every engagement starts at the "
+            "right size, with a clear outcome both sides can measure."],
+}
+TEAM = [FRANK, ASAL]
+
+# Retired URLs. GitHub Pages has no server redirects, so each old path gets a noindex page that points search
+# engines at the new canonical and forwards visitors. Kept out of the sitemap and llms.txt.
+REDIRECTS = {"team/asal-matinsadeghy/": ASAL["slug"]}
 
 # --------------------------------------------------------------------------
 # Rendering
@@ -694,7 +729,7 @@ def ladder(slug, highlight=None, only=None):
     return f'<div class="cards cards-tiers">{"".join(cards)}</div>'
 
 
-def page(slug, title, description, main, ld=None, ref="site"):
+def page(slug, title, description, main, ld=None, ref="site", image="public/og.jpg", og_type="website"):
     canonical = url(slug)
     full_title = f"{title} | {BRAND}" if slug else f"{BRAND} | {title}"
     nav = [("services/", "Services"), ("use-cases/", "Use Cases"), ("discovery-sprint/", "Discovery Sprint"),
@@ -702,6 +737,7 @@ def page(slug, title, description, main, ld=None, ref="site"):
     nav_html = "".join(f'<a href="{rel(slug, s)}">{e(n)}</a>' for s, n in nav)
     foot_tiers = "".join(f'<li><a href="{rel(slug, t["slug"])}">{e(t["nav"])}</a></li>' for t in TIERS)
     foot_plays = "".join(f'<li><a href="{rel(slug, p["slug"])}">{e(p["nav"])}</a></li>' for p in PLAYS)
+    foot_team = "".join(f'<li><a href="{rel(slug, m["slug"])}">{e(m["name"])}</a></li>' for m in TEAM)
     foot_uses = "".join(f'<li><a href="{rel(slug, u["slug"])}">{e(u["nav"])}</a></li>' for u in USE_CASES)
     graph = [ORG] + (ld or []) + ([breadcrumbs_ld(slug, title)] if slug else [])
     css = rel(slug, "site.css")
@@ -714,16 +750,16 @@ def page(slug, title, description, main, ld=None, ref="site"):
     <meta name="description" content="{e(description)}" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{canonical}" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="{og_type}" />
     <meta property="og:site_name" content="{BRAND}" />
     <meta property="og:title" content="{e(full_title)}" />
     <meta property="og:description" content="{e(description)}" />
     <meta property="og:url" content="{canonical}" />
-    <meta property="og:image" content="{SITE}/public/og.jpg" />
+    <meta property="og:image" content="{SITE}/{image}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{e(full_title)}" />
     <meta name="twitter:description" content="{e(description)}" />
-    <meta name="twitter:image" content="{SITE}/public/og.jpg" />
+    <meta name="twitter:image" content="{SITE}/{image}" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cg%20fill%3D%22%23E1FF3F%22%20stroke%3D%22%2316052D%22%20stroke-width%3D%223.5%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M38%2027%20Q49.22%2048.78%2071%2060%20Q49.22%2071.22%2038%2093%20Q26.78%2071.22%205%2060%20Q26.78%2048.78%2038%2027%20Z%22/%3E%3Cpath%20d%3D%22M79%209%20Q84.1%2018.9%2094%2024%20Q84.1%2029.1%2079%2039%20Q73.9%2029.1%2064%2024%20Q73.9%2018.9%2079%209%20Z%22/%3E%3C/g%3E%3C/svg%3E" />
     <link rel="apple-touch-icon" href="{SITE}/public/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -752,7 +788,7 @@ def page(slug, title, description, main, ld=None, ref="site"):
         <div><h4>Use cases</h4><ul>{foot_uses}</ul></div>
         <div><h4>Who we help</h4><ul>{foot_plays}</ul></div>
         <div><h4>Company</h4><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
-          <li><a href="{rel(slug, ASAL['slug'])}">Business Development</a></li>
+          {foot_team}
           <li><a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></li>
           <li><a href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a></li></ul></div>
       </div>
@@ -832,6 +868,22 @@ def section_head(eyebrow, title, intro=None, accent=None):
     return f'<div class="sec-head"><p class="eyebrow">{e(eyebrow)}</p><h2>{headline(title, accent)}</h2>{i}</div>'
 
 
+# Logos are recoloured to ink and cropped to their artwork; h is the display height in px, tuned per mark
+# so wordmarks and square badges read at the same visual weight.
+CLIENTS = [("Uber", "uber", 927, 322, 24), ("TD Bank", "td-bank", 400, 358, 36),
+           ("Canada Life", "canada-life", 834, 288, 30), ("The Home Depot", "the-home-depot", 226, 226, 40),
+           ("CAA", "caa", 295, 203, 32), ("Ontario Ministry of Education", "ontario", 180, 45, 24)]
+
+
+def clients(slug=""):
+    """Scrolling ribbon of organisations the team has delivered for."""
+    li = "".join(f'<li><img src="{rel(slug, f"public/clients/{f}.svg")}" alt="{e(n)}" width="{w}" height="{h}" '
+                 f'style="--h: {px}px" loading="lazy" decoding="async" /></li>' for n, f, w, h, px in CLIENTS)
+    return (f'<section class="clients" aria-label="Organisations our team has delivered for"><div class="clients-in">'
+            f'<p class="clients-label">Our team has delivered for</p><div class="marquee">'
+            f'<ul>{li}</ul><ul aria-hidden="true">{li}</ul></div></div></section>')
+
+
 def stats():
     items = [("5", "ways to work with us, from training to a full team"),
              ("2–4", "weeks for a discovery sprint, prototype included"),
@@ -867,11 +919,14 @@ def rows(slug, items):
 def build_home():
     slug = ""
     main = f"""
+<div class="first-screen">
 {hero("AI that takes work off your team's plate.",
       "We help small and mid-sized businesses put AI agents to work — from teaching your team to build "
       "their own, to building and running an AI employee for you.", "home", "AI agents & automation",
       img="hero", alt="Isometric illustration of an AI agent handling documents, email, calendar and reports",
       accent="off your team's plate.", second=("services/", "See the five services"))}
+{clients()}
+</div>
 {stats()}
 <section class="section tone-lime"><div class="wrap split">
   <div class="frame frame-paper">{art(slug, "sprint", "Isometric illustration of a laptop prototype, a roadmap and a checklist")}</div>
@@ -972,8 +1027,8 @@ def use_case_cards(slug, exclude=None, only=None):
 
 def build_use_cases():
     slug = "use-cases/"
-    desc = ("AI agents for operations, sales and finance teams: quote and RFQ intake, order entry, document "
-            "intake, inbox triage, renewals, market intelligence, prospect research, planning and financial reporting.")
+    desc = ("AI agents for operations, sales and finance teams: RFQ and order intake, document intake, inbox "
+            "triage, renewals, research, planning and financial reporting.")
     main = f"""
 {hero("AI agents for operations, growth and finance teams", "Agents that do the reading, re-keying, tracking "
       "and reporting — so your people can spend their time on the decisions.", "use-cases",
@@ -1065,7 +1120,7 @@ MATURITY_JS = """      (function () {
 def build_maturity():
     slug = MATURITY_SLUG
     desc = ("The 4S check: where is your business with AI? Eight yes-or-no questions place one workflow at "
-            "Strategy, Solution, Scale or Sustain, and show the one step that moves you forward.")
+            "Strategy, Solution, Scale or Sustain, and show the next step.")
     tiers = {t["slug"]: t["nav"] for t in TIERS}
 
     def label(target):
@@ -1163,38 +1218,42 @@ def build_about():
 <section class="section tone-lime"><div class="wrap split">
   <div><h2>Where we work</h2><p class="big">We're based in Ontario, Canada, and work with clients across Canada and
   the United States, online or on site.</p></div>
-  <div><h2>Who you'll talk to</h2><p class="big">Every engagement starts with our business development lead.</p>
-  <div class="actions"><a class="btn btn-ink" href="{rel(slug, ASAL['slug'])}">Meet our VP of Business Development →</a></div></div>
+  <div><h2>Who you'll talk to</h2><p class="big">Every engagement starts with our business development lead, and
+  every build is led by our founder.</p>
+  <div class="actions"><a class="btn btn-ink" href="{rel(slug, ASAL['slug'])}">Meet our VP of Business Development →</a>
+  <a class="btn" href="{rel(slug, FRANK['slug'])}">Meet our founder →</a></div></div>
 </div></section>
 {cta_band("about-band")}"""
     return page(slug, "About", desc, main, ref="about")
 
 
-def build_asal():
-    slug = ASAL["slug"]
-    name, role = ASAL["name"], ASAL["role"]
-    desc = f"{name} is {role} at {BRAND}, the first point of contact for new clients."
-    person = {"@type": "Person", "@id": url(slug) + "#person", "name": name, "jobTitle": role,
-              "email": f"mailto:{EMAIL_SALES}",
-              "worksFor": {"@id": ORG_ID}, "image": f"{SITE}/public/team/asal.jpg", "url": url(slug)}
+def build_person(m):
+    slug, name, role, photo = m["slug"], m["name"], m["role"], m["photo"]
+    canonical = url(slug)
+    person = {"@type": "Person", "@id": canonical + "#person", "name": name, "jobTitle": role,
+              "email": f"mailto:{m['email']}", "worksFor": {"@id": ORG_ID},
+              "image": f"{SITE}/public/team/{photo}.jpg", "url": canonical}
+    profile = {"@type": "ProfilePage", "@id": canonical + "#page", "url": canonical, "name": f"{name}, {role}",
+               "mainEntity": {"@id": person["@id"]}}
+    lead, *rest = m["bio"]
+    body = "".join(f'<p class="big">{e(t)}</p>' for t in rest)
+    ref = photo
     main = f"""
 <section class="hero tone-paper"><div class="wrap hero-split person">
   <div class="hero-copy">
     <p class="eyebrow">{e(role)}</p>
     <h1>{e(name)}</h1>
-    <p class="lead">Asal leads business development at {BRAND}. She is the first person most clients speak to,
-    and stays their point of contact from the first conversation through delivery and beyond.</p>
-    <p class="big">She works with owners and leadership teams to find where AI can take real work off their people —
-    and is just as quick to say when it can't. Her job is to make sure every engagement starts at the
-    right size, with a clear outcome both sides can measure.</p>
-    <div class="actions">{contact('asal', 'Book a conversation with Asal')}
-      <a class="btn btn-ghost" href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></div>
+    <p class="lead">{e(lead)}</p>
+    {body}
+    <div class="actions">{contact(ref, f"Book a conversation with {m['first']}")}
+      <a class="btn btn-ghost" href="mailto:{m['email']}">{m['email']}</a></div>
   </div>
-  <div class="frame frame-photo"><picture><source srcset="{rel(slug, 'public/team/asal.webp')}" type="image/webp" />
-  <img src="{rel(slug, 'public/team/asal.jpg')}" alt="{e(name)}, {e(role)} at {BRAND}" width="720" height="900" fetchpriority="high" /></picture></div>
+  <div class="frame frame-photo"><picture><source srcset="{rel(slug, f'public/team/{photo}.webp')}" type="image/webp" />
+  <img src="{rel(slug, f'public/team/{photo}.jpg')}" alt="{e(name)}, {e(role)} at {BRAND}" width="720" height="900" fetchpriority="high" /></picture></div>
 </div></section>
-{cta_band("asal-band")}"""
-    return page(slug, f"{name}, {role}", desc, main, ld=[person], ref="asal")
+{cta_band(f"{ref}-band")}"""
+    return page(slug, f"{name}, {role}", m["description"], main, ld=[person, profile], ref=ref,
+                image=f"public/team/{photo}.jpg", og_type="profile")
 
 
 BOOK_JS = """      (function () {
@@ -1263,6 +1322,23 @@ def build_sitemap(slugs):
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + "</urlset>\n")
 
 
+def build_redirect(from_slug, to_slug):
+    target, here = url(to_slug), rel(from_slug, to_slug)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Moved | {BRAND}</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="{target}" />
+    <meta http-equiv="refresh" content="0; url={here}" />
+    <script>location.replace({json.dumps(here)} + location.search + location.hash);</script>
+  </head>
+  <body><p>This page has moved to <a href="{here}">{target}</a>.</p></body>
+</html>
+"""
+
+
 def main():
     global TRACKER_JS, CONTACT_URL
     if HUBSPOT_FORM_ID:
@@ -1279,14 +1355,18 @@ def main():
     out += [("use-cases/", build_use_cases(), "AI Agent Use Cases", "Agents for operations, growth and finance teams.")]
     out += [(u["slug"], build_use_case(u), u["title"], u["description"]) for u in USE_CASES]
     out += [(p["slug"], build_play(p), p["title"], p["description"]) for p in PLAYS]
-    out += [("about/", build_about(), "About", "Who we are and how we work."),
-            (ASAL["slug"], build_asal(), f"{ASAL['name']}, {ASAL['role']}", "Business development and new clients.")]
+    out += [("about/", build_about(), "About", "Who we are and how we work.")]
+    out += [(m["slug"], build_person(m), f"{m['name']}, {m['role']}", m["description"]) for m in TEAM]
     if HUBSPOT_FORM_ID:
         out += [(BOOK_SLUG, build_book(), "Book a discovery session", "Book a free discovery session.")]
     for slug, body, _, _ in out:
         path = ROOT / slug / "index.html"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(body)
+    for old, new in REDIRECTS.items():
+        path = ROOT / old / "index.html"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(build_redirect(old, new))
     (ROOT / "sitemap.xml").write_text(build_sitemap([s for s, *_ in out]))
     (ROOT / "llms.txt").write_text(build_llms([(s, t, d) for s, _, t, d in out]))
     print(f"wrote {len(out)} pages, sitemap.xml, llms.txt")

@@ -106,6 +106,43 @@ p { margin: 0 0 1em; }
 @keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @media (prefers-reduced-motion: reduce) { .hero .frame { animation: none; } .btn, .card, .row { transition: none; } }
 
+/* Homepage first screen: the hero fills whatever height the window has left after the sticky header
+   (.top-in min-height + its stroke), so the client ribbon sits on the bottom edge. Taller content just flows. */
+.first-screen { display: flex; flex-direction: column;
+  min-height: calc(100vh - 74.5px); min-height: calc(100svh - 74.5px); }
+.first-screen .hero { flex: 1; display: flex; align-items: center;
+  padding: clamp(48px, 5vw, 72px) 0 clamp(36px, 3.4vw, 48px); }
+.first-screen .hero > .wrap { width: 100%; }
+
+/* Client ribbon */
+.clients { background: var(--paper); border-top: var(--stroke); overflow: hidden; }
+.clients-in { display: flex; align-items: stretch; }
+.clients-label { flex: none; margin: 0; padding: 12px 24px; background: var(--lime); border-right: var(--stroke);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; display: flex;
+  align-items: center; width: 17em; line-height: 1.3; }
+.marquee { display: flex; overflow: hidden; flex: 1;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.marquee ul { display: flex; flex: none; margin: 0; padding: 0; list-style: none;
+  animation: marquee 32s linear infinite; }
+.marquee li { display: flex; align-items: center; padding: 14px 28px; }
+.marquee img { height: var(--h); width: auto; max-width: none; }
+.marquee li::after { content: "\2726"; margin-left: 56px; font-size: 1.2rem;
+  -webkit-text-stroke: 1px var(--ink); color: var(--lime); }
+.clients:hover .marquee ul { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { mask-image: none; flex-wrap: wrap; }
+  .marquee ul { animation: none; flex-wrap: wrap; padding: 14px 0; }
+  .marquee ul[aria-hidden] { display: none; }
+}
+@media (max-width: 640px) {
+  .clients-in { flex-direction: column; }
+  .clients-label { width: auto; border-right: 0; border-bottom: var(--stroke); padding: 12px 20px; }
+  .marquee li { padding: 16px 20px; }
+  .marquee img { height: calc(var(--h) * 0.8); }
+  .marquee li::after { margin-left: 40px; }
+}
+
 /* Stats strip */
 .stats { background: var(--ink); color: var(--paper); border-top: var(--stroke); }
 .stats-in { display: grid; grid-template-columns: repeat(4, 1fr); }

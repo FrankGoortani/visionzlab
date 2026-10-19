@@ -17,7 +17,9 @@ and its record (`foundation/visionzlab/crm/HUBSPOT_ACCOUNT.md` in the VisionzLab
 `HUBSPOT_FORM_ID = ""` falls back to `CONTACT_URL`.
 
 Positioning rule: the site is brand-led. No individual's name, employer or personal contact details
-appear on it, except the dedicated business-development team page.
+appear on it, except the team pages under `/team/` (`TEAM` in `tools/build.py`; linked from the footer and About).
+Frank's page never says "CTO" and never names his current employer. The homepage client ribbon (`CLIENTS`) is the
+one place past clients and employers are named; its logos live in `public/clients/`, recoloured to ink.
 
 
 This repository contains the static VisionzLab marketing website. It is primarily HTML and CSS, with reusable snippets in `components/` and assets in `public/`. Use `CLAUDE.md` for background, but follow this file first for Codex workflow.
@@ -69,4 +71,4 @@ Acid-lime editorial neo-brutalism with isometric technical line-art.
 - Alternate paper and lime sections; ink for the stats strip and CTA band.
 - Illustrations live in `public/art/`: off-white background, ink outlines, lime/white fills, halftone dot shadows, no text.
   New ones are generated with Codex using the existing art as the style reference, then converted to WebP.
-- Never: generic robots, neural-brain imagery, purple/blue AI aesthetics, stock photos, client logos or invented metrics.
+- Never: generic robots, neural-brain imagery, purple/blue AI aesthetics, stock photos or invented metrics. Client logos appear only in the homepage ribbon, in ink.
