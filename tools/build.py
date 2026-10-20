@@ -783,11 +783,11 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
         <div><a class="brand" href="{rel(slug, '')}"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round"><path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/><path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g></svg>{BRAND}</a>
           <p class="muted">AI agents and automation for small and mid-sized businesses.<br />
           Based in Ontario, Canada · serving Canada and the US.</p></div>
-        <div><h4>Services</h4><ul>{foot_tiers}<li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li>
+        <div><h2>Services</h2><ul>{foot_tiers}<li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li>
           <li><a href="{rel(slug, MATURITY_SLUG)}">The 4S check</a></li></ul></div>
-        <div><h4>Use cases</h4><ul>{foot_uses}</ul></div>
-        <div><h4>Who we help</h4><ul>{foot_plays}</ul></div>
-        <div><h4>Company</h4><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
+        <div><h2>Use cases</h2><ul>{foot_uses}</ul></div>
+        <div><h2>Who we help</h2><ul>{foot_plays}</ul></div>
+        <div><h2>Company</h2><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
           {foot_team}
           <li><a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></li>
           <li><a href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a></li></ul></div>
@@ -872,15 +872,15 @@ def section_head(eyebrow, title, intro=None, accent=None):
 # so wordmarks and square badges read at the same visual weight.
 CLIENTS = [("Uber", "uber", 927, 322, 24), ("TD Bank", "td-bank", 400, 358, 36),
            ("Canada Life", "canada-life", 834, 288, 30), ("The Home Depot", "the-home-depot", 226, 226, 40),
-           ("CAA", "caa", 295, 203, 32), ("Ontario Ministry of Education", "ontario", 180, 45, 24)]
+           ("CAA", "caa", 295, 203, 32)]
 
 
 def clients(slug=""):
-    """Scrolling ribbon of organisations the team has delivered for."""
+    """Scrolling ribbon of organisations the team has worked for (past employers, not VisionzLab clients)."""
     li = "".join(f'<li><img src="{rel(slug, f"public/clients/{f}.svg")}" alt="{e(n)}" width="{w}" height="{h}" '
                  f'style="--h: {px}px" loading="lazy" decoding="async" /></li>' for n, f, w, h, px in CLIENTS)
-    return (f'<section class="clients" aria-label="Organisations our team has delivered for"><div class="clients-in">'
-            f'<p class="clients-label">Our team has delivered for</p><div class="marquee">'
+    return (f'<section class="clients" aria-label="Organisations our team has worked for"><div class="clients-in">'
+            f'<p class="clients-label">Our team\'s experience includes</p><div class="marquee">'
             f'<ul>{li}</ul><ul aria-hidden="true">{li}</ul></div></div></section>')
 
 
@@ -888,7 +888,7 @@ def stats():
     items = [("5", "ways to work with us, from training to a full team"),
              ("2–4", "weeks for a discovery sprint, prototype included"),
              ("1", "point of contact from first call to delivery"),
-             ("CA + US", "clients across Canada and the United States")]
+             ("CA + US", "where our team has worked")]
     cells = "".join(f'<div class="stat"><strong>{e(a)}</strong><span>{e(b)}</span></div>' for a, b in items)
     return f'<section class="stats"><div class="wrap stats-in">{cells}</div></section>'
 
@@ -1272,6 +1272,12 @@ BOOK_JS = """      (function () {
         s.defer = true;
         s.onerror = function () { document.getElementById('hs-form-fallback').hidden = false; };
         document.head.appendChild(s);
+        // The embed dispatches this on the form container and it bubbles (checked in its script, 2026-10-20).
+        document.addEventListener('hs-form-event:on-submission:success', function () {
+          if (window.umami && typeof window.umami.track === 'function') {
+            try { window.umami.track('booking_submitted', { ref: ref }); } catch (_) {}
+          }
+        });
       })();"""
 
 
