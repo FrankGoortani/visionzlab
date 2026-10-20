@@ -213,7 +213,7 @@ TIERS = [
             ("Is this staff augmentation?", "Partly. You get senior people, but we also bring the AI tooling "
              "and delivery approach that make a small team go further."),
             ("Can we start small?", "Yes. Many clients start with one defined project and grow from there."),
-            ("Where is the team?", "Based in Canada, working with clients across Canada and the US."),
+            ("Where is the team?", "Based in Ontario, Canada. We work with businesses across Canada and the US."),
         ],
     },
 ]
@@ -1216,7 +1216,7 @@ def build_about():
 <section class="section"><div class="wrap">{section_head("How we work", "Four things we hold to", accent="hold to")}
 <div class="cards cards-uc">{cards}</div></div></section>
 <section class="section tone-lime"><div class="wrap split">
-  <div><h2>Where we work</h2><p class="big">We're based in Ontario, Canada, and work with clients across Canada and
+  <div><h2>Where we work</h2><p class="big">We're based in Ontario, Canada, and work with businesses across Canada and
   the United States, online or on site.</p></div>
   <div><h2>Who you'll talk to</h2><p class="big">Every engagement starts with our business development lead, and
   every build is led by our founder.</p>
