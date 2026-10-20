@@ -282,4 +282,13 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .result h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
 .skip { font-weight: 600; border-left: 6px solid var(--lime); padding-left: 14px; }
 @media (max-width: 1080px) { .cards-4 { grid-template-columns: 1fr 1fr; } }
+
+/* Experience page: two-up cards, each a short work / built / outcome list */
+.cards-2 { grid-template-columns: repeat(2, 1fr); }
+.proof h3 { font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
+.proof dl { margin: 6px 0 0; }
+.proof dt { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  border-top: 2px solid var(--ink); padding-top: 12px; margin-top: 14px; }
+.proof dd { margin: 4px 0 0; font-size: 1rem; }
+@media (max-width: 860px) { .cards-2 { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .cards-4 { grid-template-columns: 1fr; } }

@@ -30,6 +30,7 @@
 - [AI Automation for Mortgage Brokers and Agents](https://visionzlab.com/for/mortgage-brokers/): AI tools for mortgage brokerages and agents: renewal tracking and outreach, document collection, lead follow-up and AI search visibility, in several languages.
 - [Hiring an AI or Software Engineer? Try This First](https://visionzlab.com/instead-of-hiring/): Before you fill a software, automation or AI role, see whether a senior AI engineering team can build what the role would build — faster, with no hiring cycle.
 - [About](https://visionzlab.com/about/): Who we are and how we work.
+- [Our team's experience](https://visionzlab.com/experience/): What our team built before VisionzLab, and how we earn trust before we have case studies of our own.
 - [Frank Goortani, Founder & Technical Principal](https://visionzlab.com/team/frank-goortani/): Frank Goortani founded VisionzLab and leads the technical side of every engagement. Two decades as an architect at Uber, TD Bank and Canada Life.
 - [Asal Matin, VP Business Development](https://visionzlab.com/team/asal-matin/): Asal Matin is VP Business Development at VisionzLab, the first point of contact for new clients.
 - [Book a discovery session](https://visionzlab.com/book/): Book a free discovery session.

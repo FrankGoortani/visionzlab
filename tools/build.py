@@ -659,6 +659,71 @@ ASAL = {
 }
 TEAM = [FRANK, ASAL]
 
+# Experience page (tracker 3.3). VisionzLab has no client work of its own yet, so every card is the team's
+# background from roles held before VisionzLab, at the level of Frank's public record on goortani.com. The
+# positioning rule still applies: no employer or client is named here (they're on the homepage ribbon and the
+# team page), no internal system names, no metrics beyond the public record, nothing in legal or clinics.
+EXPERIENCE_SLUG = "experience/"
+EXPERIENCE = [
+    {
+        "tag": "AI decision engine · Global technology platform",
+        "title": "An AI decision engine for privacy reviews",
+        "work": "Privacy reviews across a global technology platform.",
+        "built": "An AI decision engine that automates privacy reviews. Our founder created it and led the "
+                 "cross-functional engineering team that built it.",
+        "outcome": "Adopted company-wide, and recognised with several internal awards, including the company's "
+                   "Engineering Excellence Award in 2024.",
+    },
+    {
+        "tag": "AI automation · Four industries",
+        "title": "AI automation for growing businesses",
+        "work": "Startups and established businesses in manufacturing, accounting, e-commerce and hospitality, "
+                "each with its own AI automation project.",
+        "built": "As a generative AI lead, our founder worked on the architecture of those projects.",
+        "outcome": "AI automation delivered for clients in all four industries: the same kind of work our "
+                   "services are built around.",
+    },
+    {
+        "tag": "Teams and delivery · Insurance and retail",
+        "title": "Engineering teams that ship",
+        "work": "A major Canadian insurer building its own mobile capability, and a national retailer's "
+                "e-commerce website with a large, distributed development team.",
+        "built": "At the insurer, our founder established and led an in-house mobile development and architecture "
+                 "team, from technical interviews to coaching and DevOps automation. At the retailer, he steered "
+                 "more than sixty onshore and offshore developers.",
+        "outcome": "A shared component library that streamlined front-end development across the insurer's teams.",
+    },
+    {
+        "tag": "Teaching · Colleges and corporate programs",
+        "title": "Teaching technical teams",
+        "work": "Organisations moving to the cloud, and students learning to build software.",
+        "built": "Hands-on cloud migration courses for organisations, data warehousing courses, and college "
+                 "courses in software, mobile, web and business intelligence, often with the curriculum written "
+                 "from scratch.",
+        "outcome": "Courses delivered online and in person across North America. It's why our AI Training is "
+                   "hands-on and built around your own work.",
+    },
+]
+TRUST = [
+    ("People approve what matters", "Approval steps, audit trails and clear limits on what an agent may do are "
+     "part of every build. The agent prepares; people decide."),
+    ("Proof on your own work first", "The Discovery Sprint takes one workflow and two to four weeks, and ends with "
+     "a working prototype, a costed build plan and a clear go/no-go — before you commit to anything bigger."),
+    ("Built on your accounts", "What we build runs on your accounts and tools, with the permissions you set. "
+     "You own it."),
+    ("We use it ourselves", "We run our own business development with the same kind of AI agents we build, "
+     "and a person approves everything that goes out."),
+]
+FAQ_EXPERIENCE = [
+    ("Is this VisionzLab's client work?", "No. It's our team's background, from roles held before VisionzLab. "
+     "VisionzLab's own case studies will be added here as engagements complete."),
+    ("Do you have client references?", "Not yet, and we'd rather say so than borrow someone else's. The Discovery "
+     "Sprint is how you test us: a working prototype on your own work, and a clear go/no-go, before a bigger "
+     "commitment."),
+    ("Who would build our project?", "Every build is led by our founder, and every engagement starts with our "
+     "business development lead, who stays your point of contact."),
+]
+
 # Retired URLs. GitHub Pages has no server redirects, so each old path gets a noindex page that points search
 # engines at the new canonical and forwards visitors. Kept out of the sitemap and llms.txt.
 REDIRECTS = {"team/asal-matinsadeghy/": ASAL["slug"]}
@@ -788,6 +853,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
         <div><h2>Use cases</h2><ul>{foot_uses}</ul></div>
         <div><h2>Who we help</h2><ul>{foot_plays}</ul></div>
         <div><h2>Company</h2><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
+          <li><a href="{rel(slug, EXPERIENCE_SLUG)}">Our experience</a></li>
           {foot_team}
           <li><a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></li>
           <li><a href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a></li></ul></div>
@@ -1214,7 +1280,8 @@ def build_about():
   and earn the next project than sell something too big.</p>
 </div></section>
 <section class="section"><div class="wrap">{section_head("How we work", "Four things we hold to", accent="hold to")}
-<div class="cards cards-uc">{cards}</div></div></section>
+<div class="cards cards-uc">{cards}</div>
+<p class="more"><a class="link" href="{rel(slug, EXPERIENCE_SLUG)}">See what our team has built →</a></p></div></section>
 <section class="section tone-lime"><div class="wrap split">
   <div><h2>Where we work</h2><p class="big">We're based in Ontario, Canada, and work with businesses across Canada and
   the United States, online or on site.</p></div>
@@ -1225,6 +1292,47 @@ def build_about():
 </div></section>
 {cta_band("about-band")}"""
     return page(slug, "About", desc, main, ref="about")
+
+
+def build_experience():
+    slug = EXPERIENCE_SLUG
+    desc = ("The experience behind VisionzLab: AI systems and software our team built before VisionzLab, "
+            "and how we earn trust before we have case studies of our own.")
+    labels = [("work", "The work"), ("built", "What was built"), ("outcome", "The outcome")]
+    cards = "".join(
+        f'<article class="card card-static proof"><span class="tag">{e(x["tag"])}</span><h3>{e(x["title"])}</h3>'
+        f'<dl>{"".join(f"<dt>{e(n)}</dt><dd>{e(x[k])}</dd>" for k, n in labels)}</dl></article>'
+        for x in EXPERIENCE)
+    trust = "".join(f'<div class="card card-static"><span class="num">0{i + 1}</span><h3>{e(a)}</h3><p>{e(b)}</p></div>'
+                    for i, (a, b) in enumerate(TRUST))
+    main = f"""
+{hero("What our team has built", "VisionzLab is a new practice, so this page is about the people. Before "
+      "VisionzLab, our team spent more than twenty years building production software for large enterprises and "
+      "startups, the last four of them building production AI systems.", "experience", "Our experience",
+      slug=slug, img="build", alt="Isometric illustration of an AI system being assembled", accent="has built",
+      second=(FRANK["slug"], "Meet our founder"))}
+<section class="section tone-lime"><div class="wrap">
+  {section_head("Before VisionzLab", "Experience you can check", "Four examples from roles our founder held before "
+                "VisionzLab. Most of the organisations appear on our homepage and on his page.",
+                accent="you can check")}
+  <div class="cards cards-2">{cards}</div>
+</div></section>
+<section class="section"><div class="wrap split">
+  <div><h2>Our own case studies are <span class="hl">coming</span></h2>
+  <p class="big">VisionzLab doesn't have client case studies of its own yet, and we won't borrow anyone else's.
+  As our engagements complete, we'll add them here, with each client's permission and with results measured on
+  their own work.</p></div>
+  <div class="panel panel-lime"><h2>Until then</h2><p class="big">Test us on your own work. A Discovery Sprint gives
+  you a working prototype and a clear go/no-go in two to four weeks.</p>
+  <div class="actions"><a class="btn btn-ink" href="{rel(slug, 'discovery-sprint/')}">How the sprint works →</a></div></div>
+</div></section>
+<section class="section tone-lime"><div class="wrap">
+  {section_head("How we work", "What you can hold us to", accent="hold us to")}
+  <div class="cards cards-4">{trust}</div>
+</div></section>
+<section class="section"><div class="wrap">{faq_html(FAQ_EXPERIENCE)}</div></section>
+{cta_band("experience-band")}"""
+    return page(slug, "Our Team's Experience", desc, main, ld=[faq_ld(FAQ_EXPERIENCE)], ref="experience")
 
 
 def build_person(m):
@@ -1362,6 +1470,8 @@ def main():
     out += [(u["slug"], build_use_case(u), u["title"], u["description"]) for u in USE_CASES]
     out += [(p["slug"], build_play(p), p["title"], p["description"]) for p in PLAYS]
     out += [("about/", build_about(), "About", "Who we are and how we work.")]
+    out += [(EXPERIENCE_SLUG, build_experience(), "Our team's experience",
+             "What our team built before VisionzLab, and how we earn trust before we have case studies of our own.")]
     out += [(m["slug"], build_person(m), f"{m['name']}, {m['role']}", m["description"]) for m in TEAM]
     if HUBSPOT_FORM_ID:
         out += [(BOOK_SLUG, build_book(), "Book a discovery session", "Book a free discovery session.")]
