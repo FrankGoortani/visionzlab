@@ -11,6 +11,8 @@ import datetime
 import html
 import json
 import pathlib
+import re
+import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://visionzlab.com"
@@ -1430,8 +1432,22 @@ def build_llms(pages):
     return "\n".join(lines)
 
 
-def build_sitemap(slugs):
-    rows = "".join(f"  <url>\n    <loc>{url(s)}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>\n" for s in slugs)
+def committed(path):
+    """The file's text at HEAD, or None if git has no committed version of it."""
+    res = subprocess.run(["git", "show", f"HEAD:{path}"], cwd=ROOT, capture_output=True, text=True)
+    return res.stdout if res.returncode == 0 else None
+
+
+def lastmods(pages):
+    """Each page's lastmod: the committed sitemap's date if its HTML matches HEAD, otherwise today."""
+    prev = dict(re.findall(r"<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>", committed("sitemap.xml") or ""))
+    return {slug: prev.get(url(slug), TODAY) if body == committed(f"{slug}index.html") else TODAY
+            for slug, body in pages}
+
+
+def build_sitemap(dates):
+    rows = "".join(f"  <url>\n    <loc>{url(s)}</loc>\n    <lastmod>{d}</lastmod>\n  </url>\n"
+                   for s, d in dates.items())
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + "</urlset>\n")
 
@@ -1483,7 +1499,7 @@ def main():
         path = ROOT / old / "index.html"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(build_redirect(old, new))
-    (ROOT / "sitemap.xml").write_text(build_sitemap([s for s, *_ in out]))
+    (ROOT / "sitemap.xml").write_text(build_sitemap(lastmods([(s, b) for s, b, *_ in out])))
     (ROOT / "llms.txt").write_text(build_llms([(s, t, d) for s, _, t, d in out]))
     print(f"wrote {len(out)} pages, sitemap.xml, llms.txt")
 
