@@ -1167,7 +1167,9 @@ def build_sprint():
       second=(MATURITY_SLUG, "Not sure? Take the 4S check"))}
 <section class="section tone-lime"><div class="wrap split">
   <div class="panel"><h2>What you walk away with</h2><ul class="ticks">
-    <li>A working prototype on your own process</li><li>A costed, phased build plan</li>
+    <li>A working prototype on your own process</li>
+    <li>A success measure we agree at kickoff and check on your own documents</li>
+    <li>A costed, phased build plan, including what your team would need to run it</li>
     <li>A clear go/no-go, with the reasons</li><li>A view of the risks and what would need to be true</li></ul></div>
   <div class="panel"><h2>How it works</h2><ol class="steps">{how}</ol></div>
 </div></section>
