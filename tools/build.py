@@ -713,8 +713,8 @@ TRUST = [
      "a working prototype, a costed build plan and a clear go/no-go — before you commit to anything bigger."),
     ("Built on your accounts", "What we build runs on your accounts and tools, with the permissions you set. "
      "You own it."),
-    ("We use it ourselves", "We run our own business development with the same kind of AI agents we build, "
-     "and a person approves everything that goes out."),
+    ("We use it ourselves", "We run AI assistants in our own day-to-day work, and a person approves everything "
+     "that goes out."),
 ]
 FAQ_EXPERIENCE = [
     ("Is this VisionzLab's client work?", "No. It's our team's background, from roles held before VisionzLab. "
