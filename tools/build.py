@@ -223,39 +223,6 @@ TIERS = [
 
 PLAYS = [
     {
-        "slug": "for/small-business/", "art": "teach",
-        "nav": "Small Business",
-        "title": "AI for Small Business",
-        "description": "Practical AI for owner-run businesses: learn to build your own agents, get one set up "
-                       "with you, or have us build and run one.",
-        "lead": "Practical AI for owner-run businesses — start small, keep control, grow from there.",
-        "body": [
-            "You don't need an AI strategy deck. You need the repetitive work off your team's plate.",
-            "Most small businesses start by learning to set up a few agents themselves. When something "
-            "needs more than off-the-shelf tools, we build it. If you'd rather not look after it, we run it for you.",
-        ],
-        "tiers": [0, 1, 3],
-        "ref": "play-a",
-    },
-    {
-        "slug": "for/accountants-bookkeepers/", "art": "employee",
-        "nav": "Accountants & Bookkeepers",
-        "title": "AI Bookkeeping Automation for Accounting Firms",
-        "description": "An AI employee that handles routine bookkeeping tasks for accounting and bookkeeping "
-                       "practices — or training so your team can build it themselves.",
-        "lead": "An AI employee for the routine bookkeeping work — so your team spends its time on clients.",
-        "body": [
-            "Categorising transactions, chasing missing receipts, reconciling, preparing month-end packages: "
-            "rules-based work that eats hours every week.",
-            "We can teach your team to automate it, set it up with you, or build and maintain an AI employee "
-            "that does it for a monthly fee. Your accountants stay in charge of every judgment and every sign-off.",
-            "Client financial data is handled under clear privacy and security terms in every engagement.",
-        ],
-        "tiers": [0, 1, 3],
-        "uses": ["use-cases/document-intake/", "use-cases/financial-reporting/", "use-cases/inbox-triage/"],
-        "ref": "play-c",
-    },
-    {
         "slug": "for/distributors-manufacturers/", "art": "build",
         "nav": "Distributors & Manufacturers",
         "title": "AI Quote & Order Automation for Distributors",
@@ -296,6 +263,39 @@ PLAYS = [
         "tiers": [1, 2, 3],
         "uses": ["use-cases/document-intake/", "use-cases/renewals-follow-up/", "use-cases/inbox-triage/"],
         "ref": "play-insurance",
+    },
+    {
+        "slug": "for/accountants-bookkeepers/", "art": "employee",
+        "nav": "Accountants & Bookkeepers",
+        "title": "AI Bookkeeping Automation for Accounting Firms",
+        "description": "An AI employee that handles routine bookkeeping tasks for accounting and bookkeeping "
+                       "practices — or training so your team can build it themselves.",
+        "lead": "An AI employee for the routine bookkeeping work — so your team spends its time on clients.",
+        "body": [
+            "Categorising transactions, chasing missing receipts, reconciling, preparing month-end packages: "
+            "rules-based work that eats hours every week.",
+            "We can teach your team to automate it, set it up with you, or build and maintain an AI employee "
+            "that does it for a monthly fee. Your accountants stay in charge of every judgment and every sign-off.",
+            "Client financial data is handled under clear privacy and security terms in every engagement.",
+        ],
+        "tiers": [0, 1, 3],
+        "uses": ["use-cases/document-intake/", "use-cases/financial-reporting/", "use-cases/inbox-triage/"],
+        "ref": "play-c",
+    },
+    {
+        "slug": "for/small-business/", "art": "teach",
+        "nav": "Small Business",
+        "title": "AI for Small Business",
+        "description": "Practical AI for owner-run businesses: learn to build your own agents, get one set up "
+                       "with you, or have us build and run one.",
+        "lead": "Practical AI for owner-run businesses — start small, keep control, grow from there.",
+        "body": [
+            "You don't need an AI strategy deck. You need the repetitive work off your team's plate.",
+            "Most small businesses start by learning to set up a few agents themselves. When something "
+            "needs more than off-the-shelf tools, we build it. If you'd rather not look after it, we run it for you.",
+        ],
+        "tiers": [0, 1, 3],
+        "ref": "play-a",
     },
     {
         "slug": "for/mortgage-brokers/", "art": "setup",
