@@ -64,6 +64,7 @@ p { margin: 0 0 1em; }
 .tone-lime { background: var(--lime); }
 .tone-paper { background: var(--paper); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.moments { margin-top: clamp(32px, 5vw, 56px); align-items: stretch; }
 .sec-head { max-width: 760px; margin-bottom: 48px; }
 .intro { font-size: 1.18rem; color: var(--muted); margin-top: -0.2em; }
 .prose p { max-width: 62ch; }

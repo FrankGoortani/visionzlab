@@ -319,19 +319,36 @@ PLAYS = [
     },
     {
         "slug": "instead-of-hiring/", "art": "team",
-        "nav": "Instead of Hiring",
-        "title": "Hiring an AI or Software Engineer? Try This First",
-        "description": "Before you fill a software, automation or AI role, see whether a senior AI engineering "
-                       "team can build what the role would build — faster, with no hiring cycle.",
-        "lead": "Before you fill that software or AI role, see whether we can build what it would build.",
+        "nav": "Before You Hire",
+        "title": "Hiring for Order Entry, AR or an Engineer? Try This",
+        "description": "Hiring for order entry, AR, data entry or an engineer? See which parts of the role an AI "
+                       "agent can take on, and which really need a person, before you hire.",
+        "lead": "Before you fill an operations or engineering role, find out which parts AI can take on, and "
+                "which really need a person.",
         "body": [
-            "Hiring takes months, and the first quarter of any new role is ramp-up. Much of what a new software "
-            "or AI hire is asked to build — integrations, internal tools, automations, AI agents — we can deliver "
-            "as a defined project or as ongoing capacity.",
+            "Hiring takes months, and every new role starts with ramp-up. Before you post the job, or while you "
+            "interview, it's worth knowing which parts of it need a person.",
             "Send us the job description. We'll tell you plainly which parts we can take on, how long it would "
             "take, and what it would cost — and which parts really do need a permanent hire.",
         ],
-        "tiers": [2, 4],
+        "moments": [
+            ("You've posted an order-entry, AR or data-entry role", [
+                "Much of the job is the same steps every day: reading purchase orders, invoices and remittances, "
+                "keying them into the ERP or accounting system, matching payments and chasing what's missing. "
+                "Underwriting-assistant and inside-sales roles have their own version: submissions to assemble, "
+                "quotes to prepare, follow-ups to send.",
+                "An AI agent can take that repetitive part. It reads the documents, enters the data and flags "
+                "anything unusual. Your team, or the person you hire, checks its work and spends the day on "
+                "customers, exceptions and the calls that need a person.",
+            ]),
+            ("You're hiring a software or AI engineer", [
+                "Much of what a new software or AI hire is asked to build — integrations, internal tools, "
+                "automations, AI agents — we can deliver as a defined project or as ongoing capacity, without "
+                "the hiring cycle or the ramp-up.",
+            ]),
+        ],
+        "tiers": [2, 3, 4],
+        "uses": ["use-cases/order-entry/", "use-cases/document-intake/", "use-cases/quote-rfq-intake/"],
         "ref": "play-b",
     },
 ]
@@ -1073,6 +1090,9 @@ def build_tier(i):
 def build_play(p):
     slug = p["slug"]
     body = "".join(f"<p>{e(x)}</p>" for x in p["body"])
+    moments = "".join(f'<div class="panel"><h2>{e(h)}</h2>{"".join(f"<p>{e(x)}</p>" for x in ps)}</div>'
+                      for h, ps in p.get("moments", []))
+    moments = f'<div class="wrap split moments">{moments}</div>' if moments else ""
     uses = ""
     if p.get("uses"):
         assert set(p["uses"]) <= {u["slug"] for u in USE_CASES}, f'unknown use case in {slug}: {p["uses"]}'
@@ -1081,7 +1101,7 @@ def build_play(p):
                 f'{use_case_cards(slug, only=p["uses"])}</div></section>')
     main = f"""
 {hero(p["title"], p["lead"], p["ref"], "Who we help", slug=slug, img=p["art"], alt=f'Isometric illustration for {p["nav"]}')}
-<section class="section tone-lime"><div class="wrap narrow prose big">{body}</div></section>
+<section class="section tone-lime"><div class="wrap narrow prose big">{body}</div>{moments}</section>
 <section class="section"><div class="wrap">{section_head("Where to start", "Where clients usually start", accent="usually start")}{ladder(slug, only=p["tiers"])}
 <p class="more"><a class="link" href="{rel(slug, 'services/')}">See all five services →</a></p></div></section>
 {uses}

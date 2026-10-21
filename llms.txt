@@ -28,7 +28,7 @@
 - [AI Bookkeeping Automation for Accounting Firms](https://visionzlab.com/for/accountants-bookkeepers/): An AI employee that handles routine bookkeeping tasks for accounting and bookkeeping practices — or training so your team can build it themselves.
 - [AI for Small Business](https://visionzlab.com/for/small-business/): Practical AI for owner-run businesses: learn to build your own agents, get one set up with you, or have us build and run one.
 - [AI Automation for Mortgage Brokers and Agents](https://visionzlab.com/for/mortgage-brokers/): AI tools for mortgage brokerages and agents: renewal tracking and outreach, document collection, lead follow-up and AI search visibility, in several languages.
-- [Hiring an AI or Software Engineer? Try This First](https://visionzlab.com/instead-of-hiring/): Before you fill a software, automation or AI role, see whether a senior AI engineering team can build what the role would build — faster, with no hiring cycle.
+- [Hiring for Order Entry, AR or an Engineer? Try This](https://visionzlab.com/instead-of-hiring/): Hiring for order entry, AR, data entry or an engineer? See which parts of the role an AI agent can take on, and which really need a person, before you hire.
 - [About](https://visionzlab.com/about/): Who we are and how we work.
 - [Our team's experience](https://visionzlab.com/experience/): What our team built before VisionzLab, and how we earn trust before we have case studies of our own.
 - [Frank Goortani, Founder & Technical Principal](https://visionzlab.com/team/frank-goortani/): Frank Goortani founded VisionzLab and leads the technical side of every engagement. Two decades as an architect at Uber, TD Bank and Canada Life.
