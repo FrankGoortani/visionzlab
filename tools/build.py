@@ -36,8 +36,9 @@ BOOK_SLUG = "book/"
 LEGAL_NAME = "VisionZone One Consulting Inc."
 
 # Illustrations (generated in the site's isometric line-art style). Missing files fall back to computer.webp.
+# An optional fourth item is a smaller copy for phones, (path, width), offered through srcset.
 ART = {
-    "hero": ("public/art/hero-agents.webp", 1200, 800),
+    "hero": ("public/art/hero-agents.webp", 1200, 800, ("public/art/hero-agents-800.webp", 800)),
     "sprint": ("public/art/sprint.webp", 900, 900),
     "lab": ("public/art/lab.webp", 900, 900),
     "teach": ("public/art/tier-teach.webp", 900, 900),
@@ -775,11 +776,14 @@ def faq_ld(faq):
 
 
 def art(slug, key, alt="", eager=False):
-    path, w, h = ART[key]
+    path, w, h, *small = ART[key]
     if not (ROOT / path).exists():
-        path, w, h = "public/computer.webp", 640, 540
+        path, w, h, small = "public/computer.webp", 640, 540, []
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
-    return f'<img src="{rel(slug, path)}" alt="{e(alt)}" width="{w}" height="{h}" {load} decoding="async" />'
+    srcset = (f' srcset="{rel(slug, small[0][0])} {small[0][1]}w, {rel(slug, path)} {w}w"'
+              ' sizes="(max-width: 860px) 100vw, 50vw"' if small else "")
+    return (f'<img src="{rel(slug, path)}"{srcset} alt="{e(alt)}" width="{w}" height="{h}" {load} '
+            'decoding="async" />')
 
 
 def ladder(slug, highlight=None, only=None):
