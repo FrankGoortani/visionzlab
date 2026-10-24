@@ -11,13 +11,13 @@
 - [AI Agent Training for Small Businesses](https://visionzlab.com/services/ai-training/): Hands-on workshops and coaching that teach your team to set up and run their own AI agents and automations with tools you already pay for.
 - [AI Agent Setup Service](https://visionzlab.com/services/ai-agent-setup/): We set up your first AI agent with your team, connect it to your tools, and hand it over with a playbook so you can run it yourselves.
 - [Custom AI Agent Development](https://visionzlab.com/services/ai-development/): Fixed-scope, fixed-price development of production AI agents and automations, built to your requirements and handed over to your team.
-- [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee. Cheaper than a hire.
+- [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee. Scoped around the work you need.
 - [An AI Engineering Team Instead of a New Hire](https://visionzlab.com/services/ai-team/): Before you hire a software or AI engineer, consider senior AI engineering capacity on retainer, building what the role would build with an AI-first stack.
 - [AI Agent Use Cases](https://visionzlab.com/use-cases/): Agents for operations, growth and finance teams.
 - [AI Quote and RFQ Intake Agent](https://visionzlab.com/use-cases/quote-rfq-intake/): An AI agent that reads incoming requests for quote, matches items to your catalogue and pricing, and drafts the quote for your team to approve.
 - [AI Order Entry and Exceptions Agent](https://visionzlab.com/use-cases/order-entry/): An AI agent that turns emailed and PDF purchase orders into entered orders, checks them against price, stock and terms, and flags exceptions for your team.
 - [AI Document Intake and Data Extraction Agent](https://visionzlab.com/use-cases/document-intake/): An AI agent that reads invoices, applications, shipping documents and forms, extracts the data your systems need, and checks it before anyone re-keys it.
-- [AI Shared Inbox Triage and Reply Drafting Agent](https://visionzlab.com/use-cases/inbox-triage/): An AI agent that sorts a shared inbox, routes each message to the right person and drafts replies, so nothing waits and nothing is missed.
+- [AI Shared Inbox Triage and Reply Drafting Agent](https://visionzlab.com/use-cases/inbox-triage/): An AI agent that sorts a shared inbox, routes each message to the right person and drafts replies for review, with routing rules agreed with your team.
 - [AI Renewal Tracking and Client Follow-up Agent](https://visionzlab.com/use-cases/renewals-follow-up/): An AI agent that tracks renewal and maturity dates, prepares timely outreach and follows up with leads and clients, so no renewal or enquiry slips.
 - [AI Market Intelligence Agent](https://visionzlab.com/use-cases/market-intelligence/): An AI agent that tracks competitors, pricing, news and market signals and delivers a weekly brief your leadership team can act on.
 - [AI Prospect Research and Account Planning Agent](https://visionzlab.com/use-cases/prospect-research/): An AI agent that researches target accounts, maps buying teams and drafts account plans, so your business development team spends its time selling.
@@ -33,12 +33,12 @@
 - [Our team's experience](https://visionzlab.com/experience/): What our team built before VisionzLab, and how we earn trust before we have case studies of our own.
 - [Frank Goortani, Founder & Technical Principal](https://visionzlab.com/team/frank-goortani/): Frank Goortani founded VisionzLab and leads the technical side of every engagement. Two decades as an architect at Uber, TD Bank and Canada Life.
 - [Asal Matin, VP Business Development](https://visionzlab.com/team/asal-matin/): Asal Matin is VP Business Development at VisionzLab, the first point of contact for new clients.
-- [Book a discovery session](https://visionzlab.com/book/): Book a free discovery session.
+- [Request a discovery session](https://visionzlab.com/book/): Request a free discovery session.
 
 ## Contact
 
 - New business: asal@visionzlab.com
 - General: frank@visionzlab.com
-- Book a discovery session: https://visionzlab.com/book/
+- Request a discovery session: https://visionzlab.com/book/
 
 VisionzLab is a brand of VisionZone One Consulting Inc., an Ontario corporation.

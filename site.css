@@ -13,7 +13,12 @@
 @font-face { font-family: "Inter Fallback"; src: local("Arial"); size-adjust: 107.12%;
   ascent-override: 90.44%; descent-override: 22.52%; line-gap-override: 0%; }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+.skip-link { position: fixed; top: 8px; left: 16px; z-index: 30; transform: translateY(-150%);
+  padding: 12px 20px; background: var(--ink); color: var(--paper); font-weight: 600; }
+.skip-link:focus { transform: none; }
+main:focus { outline: none; }
 body {
   margin: 0;
   font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -90,6 +95,9 @@ p { margin: 0 0 1em; }
   letter-spacing: -0.01em; text-decoration: none; }
 .mark { width: 36px; height: 36px; flex: none; }
 .nav { display: flex; align-items: center; gap: 26px; }
+.mobile-menu { display: none; }
+.brand, .nav .btn { white-space: nowrap; }
+.call-heading { font-size: 1.3rem; margin-top: 32px; }
 .nav > a:not(.btn) { text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 4px 0;
   border-bottom: 2.5px solid transparent; }
 .nav > a:not(.btn):hover { border-color: var(--lime); }
@@ -106,9 +114,7 @@ p { margin: 0 0 1em; }
 .frame img { border: var(--stroke); background: var(--paper); width: 100%; }
 .frame-paper { background: var(--paper); }
 .frame-photo { max-width: 460px; justify-self: end; }
-.hero .frame { animation: drift 7s ease-in-out infinite; }
-@keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@media (prefers-reduced-motion: reduce) { .hero .frame { animation: none; } .btn, .card, .row { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .btn, .card, .row { transition: none; } }
 
 /* Homepage first screen: the hero fills whatever height the window has left after the sticky header
    (.top-in min-height + its stroke), so the client ribbon sits on the bottom edge. Taller content just flows. */
@@ -118,43 +124,13 @@ p { margin: 0 0 1em; }
   padding: clamp(48px, 5vw, 72px) 0 clamp(36px, 3.4vw, 48px); }
 .first-screen .hero > .wrap { width: 100%; }
 
-/* Client ribbon */
-.clients { background: var(--paper); border-top: var(--stroke); overflow: hidden; }
-.clients-in { display: flex; align-items: stretch; }
-.clients-label { flex: none; margin: 0; padding: 12px 24px; background: var(--lime); border-right: var(--stroke);
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; display: flex;
-  align-items: center; width: 17em; line-height: 1.3; }
-.marquee { display: flex; overflow: hidden; flex: 1;
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.marquee ul { display: flex; flex: none; margin: 0; padding: 0; list-style: none;
-  animation: marquee 32s linear infinite; }
-.marquee li { display: flex; align-items: center; padding: 14px 28px; }
-.marquee img { height: var(--h); width: auto; max-width: none; }
-.marquee li::after { content: "\2726"; margin-left: 56px; font-size: 1.2rem;
-  -webkit-text-stroke: 1px var(--ink); color: var(--lime); }
-.clients:hover .marquee ul { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(-100%); } }
-@media (prefers-reduced-motion: reduce) {
-  .marquee { mask-image: none; flex-wrap: wrap; }
-  .marquee ul { animation: none; flex-wrap: wrap; padding: 14px 0; }
-  .marquee ul[aria-hidden] { display: none; }
-}
-@media (max-width: 640px) {
-  .clients-in { flex-direction: column; }
-  .clients-label { width: auto; border-right: 0; border-bottom: var(--stroke); padding: 12px 20px; }
-  .marquee li { padding: 16px 20px; }
-  .marquee img { height: calc(var(--h) * 0.8); }
-  .marquee li::after { margin-left: 40px; }
-}
-
-/* Stats strip */
-.stats { background: var(--ink); color: var(--paper); border-top: var(--stroke); }
-.stats-in { display: grid; grid-template-columns: repeat(4, 1fr); }
-.stat { padding: 36px 24px; border-left: 1.5px solid rgba(250, 250, 247, 0.22); }
-.stat:first-child { border-left: 0; padding-left: 0; }
-.stat strong { display: block; font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 600; letter-spacing: -0.03em;
-  color: var(--lime); line-height: 1; margin-bottom: 10px; }
-.stat span { font-size: 0.95rem; color: rgba(250, 250, 247, 0.78); }
+/* Static, clearly attributed team experience. */
+.clients { background: var(--paper); border-top: var(--stroke); padding: 24px 0; }
+.clients-heading { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.9rem; }
+.clients-heading p { margin: 0; }
+.client-logos { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  gap: 24px 36px; list-style: none; margin: 28px 0 8px; padding: 0; }
+.client-logos img { height: var(--h); width: auto; }
 
 /* Cards */
 .cards { display: grid; gap: 20px; }
@@ -186,11 +162,11 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 /* Editorial rows */
 .rows { border-top: var(--stroke); }
 .row { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 24px; align-items: center; text-decoration: none;
-  padding: 28px 0; border-bottom: var(--stroke); transition: background 0.15s ease, padding 0.15s ease; }
+  padding: 28px 0; border-bottom: var(--stroke); transition: background 0.15s ease; }
 .row h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); margin: 0; }
 .row p { margin: 0; color: var(--muted); }
 .row .arrow { font-size: 1.8rem; font-weight: 500; }
-.row:hover { background: var(--lime); padding-left: 16px; padding-right: 16px; }
+.row:hover { background: var(--lime); }
 
 /* Lists */
 .ticks { list-style: none; padding: 0; margin: 0 0 1em; }
@@ -248,9 +224,6 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 @media (max-width: 860px) {
   .split, .hero-split { grid-template-columns: 1fr; }
   .frame-photo { justify-self: start; }
-  .stats-in { grid-template-columns: 1fr 1fr; }
-  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
-  .stat { border-top: 1.5px solid rgba(250, 250, 247, 0.22); }
   .cards-tiers { grid-template-columns: 1fr 1fr; }
   .row { grid-template-columns: 1fr auto; }
   .row p { grid-column: 1 / -1; grid-row: 2; }
@@ -258,16 +231,11 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
   .foot-in > div:first-child { grid-column: 1 / -1; }
 }
 @media (max-width: 640px) {
-  .nav { gap: 14px; }
-  .nav > a:not(.btn):not(:first-child) { display: none; }
   .brand { font-size: 1.1rem; }
   .cards-tiers { grid-template-columns: 1fr; }
-  .stat { padding: 24px 12px 24px 0; }
 }
 @media (max-width: 480px) {
   .foot-in { grid-template-columns: 1fr; }
-  .stats-in { grid-template-columns: 1fr; }
-  .stat, .stat:nth-child(3) { border-left: 0; padding-left: 0; }
 }
 
 /* 4S check */
@@ -293,3 +261,25 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .proof dd { margin: 4px 0 0; font-size: 1rem; }
 @media (max-width: 860px) { .cards-2 { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .cards-4 { grid-template-columns: 1fr; } }
+
+@media (max-width: 1080px) {
+  .top-in { position: relative; }
+  .nav { display: none; }
+  .mobile-menu { display: block; }
+  .mobile-menu summary { cursor: pointer; padding: 10px 14px; border: var(--stroke);
+    border-radius: 999px; background: var(--lime); font-weight: 600; }
+  .mobile-menu nav { position: absolute; top: calc(100% + 2.5px); left: 20px; right: 20px;
+    display: flex; flex-direction: column; align-items: stretch; gap: 4px; padding: 16px;
+    background: var(--paper); border: var(--stroke); max-height: calc(100svh - 100px); overflow-y: auto; }
+  .mobile-menu nav > a { padding: 12px; font-weight: 600; text-decoration: none; }
+  .mobile-menu nav .btn { justify-content: center; margin-top: 8px; }
+}
+@media (max-width: 640px) {
+  .clients-heading { font-size: 0.85rem; }
+  .client-logos { justify-content: flex-start; gap: 24px; }
+  .client-logos img { height: calc(var(--h) * 0.8); }
+  .first-screen { min-height: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

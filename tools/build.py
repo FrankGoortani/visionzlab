@@ -168,7 +168,7 @@ TIERS = [
         "nav": "AI Employee",
         "title": "Managed AI Employee for Your Business",
         "description": "We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — "
-                       "and keep it working for a monthly fee. Cheaper than a hire.",
+                       "and keep it working for a monthly fee. Scoped around the work you need.",
         "lead": "We build an AI employee for a defined role in your business and keep it working for a monthly fee.",
         "for": "Businesses that want the result without having to maintain the technology.",
         "get": [
@@ -184,8 +184,8 @@ TIERS = [
         ],
         "next": "services/ai-team/",
         "faq": [
-            ("Is this cheaper than hiring?", "For routine, rules-based work it usually is — a setup fee and a "
-             "predictable monthly fee instead of a salary."),
+            ("Is this cheaper than hiring?", "It depends on the scope, usage and human review needed. We agree a setup fee and a "
+             "monthly fee so you can compare the total cost with your alternatives."),
             ("What does maintenance include?", "Scheduled care: updates, fixes within business days, and "
              "improvements. It is not a 24/7 on-call service."),
             ("Who checks its work?", "Your team approves anything sensitive. The AI employee prepares; people decide."),
@@ -204,7 +204,7 @@ TIERS = [
             "Senior architects and engineers working as an extension of your team",
             "An AI-first delivery stack, so small teams ship what larger ones used to",
             "Flexible monthly capacity you can scale up or down",
-            "No recruiting cycle, no ramp-up, no long-term headcount commitment",
+            "Agreed scope, onboarding and monthly capacity without adding permanent headcount",
         ],
         "how": [
             ("Share the role", "Send us the job description. We tell you which parts we can take on."),
@@ -215,7 +215,7 @@ TIERS = [
         "faq": [
             ("Is this staff augmentation?", "Partly. You get senior people, but we also bring the AI tooling "
              "and delivery approach that make a small team go further."),
-            ("Can we start small?", "Yes. Many clients start with one defined project and grow from there."),
+            ("Can we start small?", "Yes. We recommend starting with one defined project and reviewing the results before expanding."),
             ("Where is the team?", "Based in Ontario, Canada. We work with businesses across Canada and the US."),
         ],
     },
@@ -303,11 +303,11 @@ PLAYS = [
         "title": "AI Automation for Mortgage Brokers and Agents",
         "description": "AI tools for mortgage brokerages and agents: renewal tracking and outreach, document "
                        "collection, lead follow-up and AI search visibility, in several languages.",
-        "lead": "Never miss a renewal, chase fewer documents, and follow up with every lead — without more admin.",
+        "lead": "Track renewals, organise document requests and prepare follow-ups for your team to review.",
         "body": [
             "Renewals are the business you already earned, and they are easy to lose when maturity dates live in "
             "a spreadsheet. Document collection and lead follow-up take the rest of the week.",
-            "We set up tools that track every maturity date and prompt timely outreach, send clients a clear "
+            "We set up tools that track the maturity dates in your records and prompt timely outreach, send clients a clear "
             "checklist of what to gather, follow up with new enquiries, and help your website show up when "
             "people ask AI assistants for a broker. Client messages can be prepared in the languages your clients speak.",
             "You stay in charge of every recommendation and every application. The tools organise and remind; "
@@ -360,7 +360,7 @@ USE_CASES = [
         "title": "AI Quote and RFQ Intake Agent",
         "description": "An AI agent that reads incoming requests for quote, matches items to your catalogue and "
                        "pricing, and drafts the quote for your team to approve.",
-        "lead": "An AI agent that reads every RFQ, matches it to your catalogue and drafts the quote, for your team to approve.",
+        "lead": "An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.",
         "for": "Distributors, manufacturers and brokers whose inside sales team re-keys requests from email, PDF and spreadsheets.",
         "does": [
             "Reads requests from email, PDFs, spreadsheets and web forms",
@@ -433,11 +433,11 @@ USE_CASES = [
         "nav": "Inbox Triage",
         "title": "AI Shared Inbox Triage and Reply Drafting Agent",
         "description": "An AI agent that sorts a shared inbox, routes each message to the right person and drafts "
-                       "replies, so nothing waits and nothing is missed.",
-        "lead": "An AI agent that sorts your shared inbox, routes every message and drafts the reply.",
+                       "replies for review, with routing rules agreed with your team.",
+        "lead": "An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.",
         "for": "Teams working out of a shared inbox — sales, service, orders, claims or admin — where messages wait or get missed.",
         "does": [
-            "Reads every incoming message and its attachments",
+            "Reads messages and supported attachments from the inboxes you connect",
             "Sorts by type and urgency, and routes to the right person or queue",
             "Drafts replies from your templates, policies and past answers",
             "Flags anything urgent or unusual straight away",
@@ -456,7 +456,7 @@ USE_CASES = [
         "title": "AI Renewal Tracking and Client Follow-up Agent",
         "description": "An AI agent that tracks renewal and maturity dates, prepares timely outreach and follows "
                        "up with leads and clients, so no renewal or enquiry slips.",
-        "lead": "An AI agent that tracks every renewal date and follows up with every lead, so nothing slips.",
+        "lead": "An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.",
         "for": "Brokers, agents and service firms whose revenue depends on renewals and fast follow-up.",
         "does": [
             "Tracks renewal and maturity dates from your client records",
@@ -776,7 +776,7 @@ def breadcrumbs_ld(slug, title):
         {"@type": "ListItem", "position": i + 1, "name": n, "item": url(s)} for i, (s, n) in enumerate(crumbs)]}
 
 
-def contact(ref, label="Book a free discovery session", cls="btn"):
+def contact(ref, label="Request a free discovery session", cls="btn"):
     external = '' if CONTACT_URL.startswith(SITE) else ' target="_blank" rel="noopener"'
     return (f'<a class="{cls}" href="{CONTACT_URL}#ref={e(ref)}" data-contact data-ref="{e(ref)}" '
             f'data-umami-event="contact_click" data-umami-event-location="{e(ref)}"{external}>{e(label)}</a>')
@@ -821,7 +821,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     canonical = url(slug)
     full_title = f"{title} | {BRAND}" if slug else f"{BRAND} | {title}"
     nav = [("services/", "Services"), ("use-cases/", "Use Cases"), ("discovery-sprint/", "Discovery Sprint"),
-           ("about/", "About")]
+           ("experience/", "Experience"), ("about/", "About")]
     nav_html = "".join(f'<a href="{rel(slug, s)}">{e(n)}</a>' for s, n in nav)
     foot_tiers = "".join(f'<li><a href="{rel(slug, t["slug"])}">{e(t["nav"])}</a></li>' for t in TIERS)
     foot_plays = "".join(f'<li><a href="{rel(slug, p["slug"])}">{e(p["nav"])}</a></li>' for p in PLAYS)
@@ -857,13 +857,17 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=None)}</script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="top">
       <div class="wrap top-in">
         <a class="brand" href="{rel(slug, '')}"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round"><path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/><path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g></svg>{BRAND}</a>
-        <nav class="nav">{nav_html}{contact(ref + '-nav', 'Book a call', 'btn btn-sm')}</nav>
+        <nav class="nav" aria-label="Main navigation">{nav_html}{contact(ref + '-nav', 'Request a call', 'btn btn-sm')}</nav>
+        <details class="mobile-menu"><summary>Menu</summary>
+          <nav aria-label="Mobile navigation">{nav_html}{contact(ref + '-nav', 'Request a call', 'btn btn-sm')}</nav>
+        </details>
       </div>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
 {main}
     </main>
     <footer class="foot">
@@ -941,7 +945,7 @@ def headline(text, accent=None):
     return e(text)
 
 
-def hero(h1, lead, ref, eyebrow=None, cta="Book a free discovery session", slug="", img=None, alt="",
+def hero(h1, lead, ref, eyebrow=None, cta="Request a free discovery session", slug="", img=None, alt="",
          accent=None, tone="paper", second=None):
     eb = f'<p class="eyebrow">{e(eyebrow)}</p>' if eyebrow else ""
     sec = f'<a class="btn btn-ghost" href="{rel(slug, second[0])}">{e(second[1])}</a>' if second else ""
@@ -965,26 +969,18 @@ CLIENTS = [("Uber", "uber", 927, 322, 24), ("TD Bank", "td-bank", 400, 358, 36),
 
 
 def clients(slug=""):
-    """Scrolling ribbon of organisations the team has worked for (past employers, not VisionzLab clients)."""
+    """Past team experience, explicitly distinguished from VisionzLab client work."""
     li = "".join(f'<li><img src="{rel(slug, f"public/clients/{f}.svg")}" alt="{e(n)}" width="{w}" height="{h}" '
                  f'style="--h: {px}px" loading="lazy" decoding="async" /></li>' for n, f, w, h, px in CLIENTS)
-    return (f'<section class="clients" aria-label="Organisations our team has worked for"><div class="clients-in">'
-            f'<p class="clients-label">Our team\'s experience includes</p><div class="marquee">'
-            f'<ul>{li}</ul><ul aria-hidden="true">{li}</ul></div></div></section>')
-
-
-def stats():
-    items = [("5", "ways to work with us, from training to a full team"),
-             ("2–4", "weeks for a discovery sprint, prototype included"),
-             ("1", "point of contact from first call to delivery"),
-             ("CA + US", "where our team has worked")]
-    cells = "".join(f'<div class="stat"><strong>{e(a)}</strong><span>{e(b)}</span></div>' for a, b in items)
-    return f'<section class="stats"><div class="wrap stats-in">{cells}</div></section>'
+    return (f'<section class="clients" aria-label="Organisations our team has worked for"><div class="wrap">'
+            f'<div class="clients-heading"><p>Our team’s experience before VisionzLab</p>'
+            f'<a class="link" href="{rel(slug, EXPERIENCE_SLUG)}">Explore that experience →</a></div>'
+            f'<ul class="client-logos">{li}</ul></div></section>')
 
 
 def cta_band(ref):
     return (f'<section class="band"><div class="wrap band-in"><div><h2>Not sure where to <span class="hl">start?</span></h2>'
-            f'<p>Book a free discovery session. We\'ll look at your work together and tell you plainly '
+            f'<p>Request a free discovery session. We\'ll look at your work together and tell you plainly '
             f'where AI would help — and where it wouldn\'t.</p></div>{contact(ref)}</div></section>')
 
 
@@ -1010,13 +1006,13 @@ def build_home():
     main = f"""
 <div class="first-screen">
 {hero("AI that takes work off your team's plate.",
-      "We help small and mid-sized businesses put AI agents to work — from teaching your team to build "
-      "their own, to building and running an AI employee for you.", "home", "AI agents & automation",
+      "We build AI-assisted workflows for documents, quotes, orders and follow-up — with your team "
+      "approving the decisions that matter.", "home", "AI agents & automation",
       img="hero", alt="Isometric illustration of an AI agent handling documents, email, calendar and reports",
-      accent="off your team's plate.", second=("services/", "See the five services"))}
+      accent="off your team's plate.", second=("experience/", "Explore our experience"))}
 {clients()}
 </div>
-{stats()}
+
 <section class="section tone-lime"><div class="wrap split">
   <div class="frame frame-paper">{art(slug, "sprint", "Isometric illustration of a laptop prototype, a roadmap and a checklist")}</div>
   <div><p class="eyebrow">Start here</p><h2>The Discovery <span class="hl">Sprint</span></h2>
@@ -1024,26 +1020,22 @@ def build_home():
   build plan and a clear go/no-go — before you commit to anything bigger.</p>
   <div class="actions"><a class="btn btn-ink" href="discovery-sprint/">How the sprint works →</a></div></div>
 </div></section>
-<section class="section"><div class="wrap">
-  {section_head("Five ways to work with us", "Do it yourself, do it together, or let us do it.",
-                "Start wherever fits. Most clients begin small and move up as they see results.", accent="let us do it.")}
-  {ladder(slug)}
-</div></section>
-<section class="section tone-lime"><div class="wrap">
-  {section_head("Use cases", "Agents for operations, growth and finance teams.", accent="finance teams.")}
-  {use_case_cards(slug, only=[u["slug"] for u in USE_CASES[:8]])}
+<section class="section tone-paper"><div class="wrap">
+  {section_head("Use cases", "Start with one practical workflow.", accent="practical workflow.")}
+  {use_case_cards(slug, only=["use-cases/quote-rfq-intake/", "use-cases/order-entry/", "use-cases/document-intake/"])}
   <p class="more"><a class="link" href="use-cases/">All use cases →</a></p>
 </div></section>
-<section class="section"><div class="wrap">
+<section class="section tone-lime"><div class="wrap">
   {section_head("Who we help", "Built for businesses without an AI team.", accent="without an AI team.")}
   {rows(slug, [(p["slug"], p["nav"], p["lead"]) for p in PLAYS])}
 </div></section>
-<section class="section tone-lime"><div class="wrap">
-  {section_head("The 4S check", "Where is your business with AI?",
-                "Four stages, eight yes-or-no questions, about two minutes. Find the one step that moves you forward.",
-                accent="with AI?")}
-  {stage_cards(slug)}
-  <p class="more"><a class="link" href="{MATURITY_SLUG}#check">Take the 4S check →</a></p>
+<section class="section tone-paper"><div class="wrap split">
+  <div><h2>Choose the help that fits</h2><p class="big">Learn with us, build alongside us, or have us build and
+  maintain your workflow. Start with one defined task and review the results before expanding.</p>
+  <a class="link" href="services/">Compare the five services →</a></div>
+  <div><h2>Not sure where to begin?</h2><p class="big">The 4S check is a short self-assessment to help you reflect
+  on your next step with AI. Eight questions, about two minutes.</p>
+  <a class="link" href="{MATURITY_SLUG}#check">Take the 4S check →</a></div>
 </div></section>
 {cta_band("home-band")}"""
     return page(slug, "AI Agents & Automation for Small Businesses",
@@ -1102,7 +1094,7 @@ def build_play(p):
     main = f"""
 {hero(p["title"], p["lead"], p["ref"], "Who we help", slug=slug, img=p["art"], alt=f'Isometric illustration for {p["nav"]}')}
 <section class="section tone-lime"><div class="wrap narrow prose big">{body}</div>{moments}</section>
-<section class="section"><div class="wrap">{section_head("Where to start", "Where clients usually start", accent="usually start")}{ladder(slug, only=p["tiers"])}
+<section class="section"><div class="wrap">{section_head("Where to start", "A recommended starting point", accent="starting point")}{ladder(slug, only=p["tiers"])}
 <p class="more"><a class="link" href="{rel(slug, 'services/')}">See all five services →</a></p></div></section>
 {uses}
 {cta_band(p["ref"] + "-band")}"""
@@ -1340,9 +1332,9 @@ def build_experience():
       slug=slug, img="build", alt="Isometric illustration of an AI system being assembled", accent="has built",
       second=(FRANK["slug"], "Meet our founder"))}
 <section class="section tone-lime"><div class="wrap">
-  {section_head("Before VisionzLab", "Experience you can check", "Four examples from roles our founder held before "
+  {section_head("Before VisionzLab", "Experience behind the work", "Four examples from roles our founder held before "
                 "VisionzLab. Most of the organisations appear on our homepage and on his page.",
-                accent="you can check")}
+                accent="the work")}
   <div class="cards cards-2">{cards}</div>
 </div></section>
 <section class="section"><div class="wrap split">
@@ -1381,7 +1373,7 @@ def build_person(m):
     <h1>{e(name)}</h1>
     <p class="lead">{e(lead)}</p>
     {body}
-    <div class="actions">{contact(ref, f"Book a conversation with {m['first']}")}
+    <div class="actions">{contact(ref, f"Request a conversation with {m['first']}")}
       <a class="btn btn-ghost" href="mailto:{m['email']}">{m['email']}</a></div>
   </div>
   <div class="frame frame-photo"><picture><source srcset="{rel(slug, f'public/team/{photo}.webp')}" type="image/webp" />
@@ -1419,7 +1411,7 @@ BOOK_JS = """      (function () {
 
 def build_book():
     slug = BOOK_SLUG
-    desc = ("Book a free discovery session with VisionzLab. Tell us a little about your business and "
+    desc = ("Request a free discovery session with VisionzLab. Tell us a little about your business and "
             "we'll find a time to talk.")
     js = BOOK_JS.replace("__REGION__", HUBSPOT_REGION).replace("__PORTAL__", HUBSPOT_PORTAL_ID)
     main = f"""
@@ -1429,7 +1421,13 @@ def build_book():
     <h1>{headline("Let's talk about your work.", "your work.")}</h1>
     <p class="lead">A 60–90 minute conversation about where AI could take work off your team, and where it
     shouldn't. No preparation needed, and no obligation.</p>
-    <p class="big">Tell us a little about your business and we'll be in touch within one business day.</p>
+    <p class="big">Send a request and we'll reply within one business day to arrange a time.
+    This form does not reserve an appointment.</p>
+    <h2 class="call-heading">What we'll cover</h2>
+    <ul class="ticks"><li>The workflow taking up your team's time</li>
+      <li>Where AI could help and where people should stay in control</li>
+      <li>Whether a Discovery Sprint is a useful next step</li></ul>
+    <p>Prefer email? <a class="link" href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></p>
   </div>
   <div class="panel book-form">
     <div class="hs-form-frame" data-region="{HUBSPOT_REGION}" data-form-id="{HUBSPOT_FORM_ID}"
@@ -1443,7 +1441,7 @@ def build_book():
 <script>
 {js}
 </script>"""
-    return page(slug, "Book a discovery session", desc, main, ref="book")
+    return page(slug, "Request a discovery session", desc, main, ref="book")
 
 
 def build_llms(pages):
@@ -1453,7 +1451,7 @@ def build_llms(pages):
              "capacity instead of a new hire.", "", "## Pages", ""]
     lines += [f"- [{t}]({url(s)}): {d}" for s, t, d in pages]
     lines += ["", "## Contact", "", f"- New business: {EMAIL_SALES}", f"- General: {EMAIL_GENERAL}",
-              f"- Book a discovery session: {CONTACT_URL}", "",
+              f"- Request a discovery session: {CONTACT_URL}", "",
               f"{BRAND} is a brand of {LEGAL_NAME}, an Ontario corporation.", ""]
     return "\n".join(lines)
 
@@ -1516,7 +1514,7 @@ def main():
              "What our team built before VisionzLab, and how we earn trust before we have case studies of our own.")]
     out += [(m["slug"], build_person(m), f"{m['name']}, {m['role']}", m["description"]) for m in TEAM]
     if HUBSPOT_FORM_ID:
-        out += [(BOOK_SLUG, build_book(), "Book a discovery session", "Book a free discovery session.")]
+        out += [(BOOK_SLUG, build_book(), "Request a discovery session", "Request a free discovery session.")]
     for slug, body, _, _ in out:
         path = ROOT / slug / "index.html"
         path.parent.mkdir(parents=True, exist_ok=True)
