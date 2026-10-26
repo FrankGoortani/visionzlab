@@ -850,9 +850,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     <meta name="twitter:image" content="{SITE}/{image}" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cg%20fill%3D%22%23E1FF3F%22%20stroke%3D%22%2316052D%22%20stroke-width%3D%223.5%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M38%2027%20Q49.22%2048.78%2071%2060%20Q49.22%2071.22%2038%2093%20Q26.78%2071.22%205%2060%20Q26.78%2048.78%2038%2027%20Z%22/%3E%3Cpath%20d%3D%22M79%209%20Q84.1%2018.9%2094%2024%20Q84.1%2029.1%2079%2039%20Q73.9%2029.1%2064%2024%20Q73.9%2018.9%2079%209%20Z%22/%3E%3C/g%3E%3C/svg%3E" />
     <link rel="apple-touch-icon" href="{SITE}/public/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="preload" href="{rel(slug, "public/fonts/inter-latin.woff2")}" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="{css}" />
     <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=None)}</script>
   </head>
@@ -1052,7 +1050,7 @@ def build_services():
       accent="work with us")}
 <section class="section"><div class="wrap">{ladder(slug)}</div></section>
 {cta_band("services-band")}"""
-    return page(slug, "AI Services", desc, main, ref="services")
+    return page(slug, "AI Agent & Automation Services", desc, main, ref="services")
 
 
 def build_tier(i):

@@ -9,6 +9,10 @@
   --stroke: 2.5px solid var(--ink);
   --max: 1240px;
 }
+/* Inter, self-hosted (latin subset, variable 400–700; OFL in public/fonts/inter-ofl.txt). Google Fonts was a
+   cross-origin, render-blocking stylesheet chain on every page. */
+@font-face { font-family: "Inter"; src: url("public/fonts/inter-latin.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap; }
 /* Arial scaled to Inter's metrics, so text doesn't reflow (and shift the hero) when Inter swaps in */
 @font-face { font-family: "Inter Fallback"; src: local("Arial"); size-adjust: 107.12%;
   ascent-override: 90.44%; descent-override: 22.52%; line-gap-override: 0%; }
