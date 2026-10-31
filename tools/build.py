@@ -55,7 +55,7 @@ EMAIL_SALES = "asal@visionzlab.com"
 ALT_NAMES = ["Visionz Lab", "VisionZ Lab", "VisionzLab AI", "visionzlab.com"]
 # Official profiles of the company itself (not of people). Add each one here once it is confirmed to be ours:
 # the LinkedIn company page, then @visionzlabs on YouTube/Instagram/TikTok/Facebook when they exist.
-SAME_AS = []
+SAME_AS = ["https://www.linkedin.com/company/visionzlab-ai/"]  # confirmed ours 2026-10-31 (Asal listed, website field set)
 
 ORG_ID = f"{SITE}/#organization"
 WEBSITE_ID = f"{SITE}/#website"
@@ -1078,6 +1078,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
         <div><h2>Company</h2><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
           <li><a href="{rel(slug, EXPERIENCE_SLUG)}">Our experience</a></li>
           {foot_team}
+          <li><a href="{SAME_AS[0]}" rel="noopener">LinkedIn</a></li>
           <li><a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></li>
           <li><a href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a></li></ul></div>
       </div>
