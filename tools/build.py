@@ -50,13 +50,27 @@ ART = {
 EMAIL_GENERAL = "frank@visionzlab.com"
 EMAIL_SALES = "asal@visionzlab.com"
 
+# Brand search: "visionzlab" is one word that Google readily "corrects" to "vision lab". These spellings tell it
+# (WebSite + Organization alternateName) that the variants all mean this site, so a brand query resolves here.
+ALT_NAMES = ["Visionz Lab", "VisionZ Lab", "VisionzLab AI", "visionzlab.com"]
+# Official profiles of the company itself (not of people). Add each one here once it is confirmed to be ours:
+# the LinkedIn company page, then @visionzlabs on YouTube/Instagram/TikTok/Facebook when they exist.
+SAME_AS = []
+
 ORG_ID = f"{SITE}/#organization"
+WEBSITE_ID = f"{SITE}/#website"
 ORG = {
     "@type": "ProfessionalService",
     "@id": ORG_ID,
     "name": BRAND,
+    "alternateName": ALT_NAMES,
+    "slogan": "AI that takes work off your team's plate.",
     "url": f"{SITE}/",
-    "logo": f"{SITE}/public/logo.png",
+    "logo": {"@type": "ImageObject", "url": f"{SITE}/public/logo.png"},
+    "image": f"{SITE}/public/og.jpg",
+    "knowsAbout": ["AI agents", "Business process automation", "AI training for small businesses",
+                   "Document intake automation", "Order entry automation", "AI workflow design"],
+    **({"sameAs": SAME_AS} if SAME_AS else {}),
     "description": "VisionzLab helps small and mid-sized businesses put AI to work — "
                    "from teaching teams to build their own agents to building and running AI employees.",
     "legalName": "VisionZone One Consulting Inc.",
@@ -71,6 +85,8 @@ ORG = {
          "areaServed": ["CA", "US"], "availableLanguage": ["en"]},
     ],
 }
+WEBSITE = {"@type": "WebSite", "@id": WEBSITE_ID, "name": BRAND, "alternateName": ALT_NAMES, "url": f"{SITE}/",
+           "inLanguage": "en", "publisher": {"@id": ORG_ID}}
 
 e = html.escape
 
@@ -749,6 +765,184 @@ FAQ_EXPERIENCE = [
 REDIRECTS = {"team/asal-matinsadeghy/": ASAL["slug"]}
 
 # --------------------------------------------------------------------------
+# Resources: guides, free tools, privacy (added 2026-10-31)
+# --------------------------------------------------------------------------
+
+GUIDES_SLUG = "guides/"
+TOOLS_SLUG = "free-tools/"
+CALC_SLUG = "free-tools/hours-back-calculator/"
+PRIVACY_SLUG = "privacy/"
+GUIDES_PUBLISHED = "2026-10-31"
+
+# Evergreen answers to questions owners search for. Each section is (heading, paragraphs, bullets).
+GUIDES = [
+    {
+        "slug": "guides/choose-an-ai-automation-partner/",
+        "nav": "Choosing an AI partner",
+        "title": "How to Choose an AI Automation Partner",
+        "h1": "How to choose an AI automation partner",
+        "accent": "AI automation partner",
+        "description": "Eight questions to ask before you hire an AI automation company or consultant, the red "
+                       "flags to watch for, and how to make the first project small enough to judge.",
+        "lead": "Most small businesses only buy AI help once or twice, so it's hard to tell a good partner from a "
+                "good pitch. These are the questions that separate them.",
+        "sections": [
+            ("Start with one workflow, not a strategy", [
+                "The best first project is one piece of work your team does every week: reading supplier quotes, "
+                "keying orders, sorting a shared inbox, chasing renewals. It has inputs you can show a partner, a "
+                "result you can check, and a person who knows when the output is wrong.",
+                "A partner who wants to start with a company-wide AI strategy before touching any real work is "
+                "asking you to pay for a document. Ask them to pick the workflow with you instead.",
+            ], []),
+            ("Eight questions to ask", [], [
+                "Will you show it working on our own documents before we commit to a full build?",
+                "Who approves what the AI produces, and where does that step sit in the workflow?",
+                "Which accounts and permissions does it need, and can we turn them off ourselves?",
+                "Who owns the prompts, code, configuration and accounts when the project ends?",
+                "What does it cost to run each month after it's built: software, AI usage and support?",
+                "How will we measure whether it worked, and who measures it?",
+                "What happens when it meets something it hasn't seen before?",
+                "If we stop working together, how do we keep it running or switch it off cleanly?",
+            ]),
+            ("Red flags", [], [
+                "A demo on the vendor's sample data, but no offer to test on yours.",
+                "Accuracy or savings figures quoted before anyone has seen your work.",
+                "No named person on your side who approves the AI's output.",
+                "Accounts, keys or code held by the vendor with no handover plan.",
+                "A large up-front build with no smaller first step you can judge.",
+            ]),
+            ("Make the first step small enough to judge", [
+                "Ask for a short, paid first step with a defined deliverable: a prototype on a sample of your real "
+                "inputs, a measure of success you agree up front, and a costed plan for what comes next. If it "
+                "doesn't work, you've spent a little and learned a lot. If it does, you have evidence for the "
+                "bigger decision.",
+                "That is how our own Discovery Sprint works, and it's a fair test to apply to any partner, including us.",
+            ], []),
+        ],
+        "faq": [
+            ("Which AI automation company is best for a small business?",
+             "The one that will test on your own work before you commit, names who approves the output, hands over "
+             "ownership of what it builds, and can tell you the monthly running cost. Use the eight questions above "
+             "to compare any shortlist."),
+            ("How much should an AI automation project cost?",
+             "It depends on the workflow and how much help you want, from training your team to having a partner "
+             "build and run it. Ask for a fixed price for a defined first step, and for the monthly running cost, "
+             "before you sign anything larger."),
+            ("Do we need a technical person on staff?",
+             "Not to start. You need someone who knows the work well enough to judge the output. A good partner "
+             "sets up the technical side and leaves you a playbook, or runs it for you."),
+            ("Should we just use ChatGPT or Copilot ourselves?",
+             "Often, yes, for individual tasks. A partner earns their fee when the work runs across systems, needs "
+             "approval steps, or has to run reliably every day without someone prompting it."),
+        ],
+    },
+    {
+        "slug": "guides/ai-agent-vs-automation-vs-hire/",
+        "nav": "Agent, automation or hire?",
+        "title": "AI Agent, Automation or a New Hire? How to Decide",
+        "h1": "AI agent, automation tool or a new hire?",
+        "accent": "or a new hire?",
+        "description": "A plain decision guide for small businesses: when rules-based automation is enough, when "
+                       "an AI agent with human approval fits, and when the work needs a person.",
+        "lead": "Three different tools for three different kinds of work. Picking the wrong one is the most common "
+                "reason automation projects disappoint.",
+        "sections": [
+            ("Rules-based automation: fixed inputs, fixed rules", [
+                "If the information arrives in the same shape every time and the steps never change, a rules-based "
+                "tool is cheaper and more predictable than AI. Moving form submissions into a spreadsheet, sending "
+                "a reminder three days before a due date, or copying a new customer into your CRM are rules-based "
+                "jobs. Tools such as Zapier, Make, Power Automate or your own software's built-in rules do this well.",
+            ], []),
+            ("An AI agent: messy inputs, judgement within limits", [
+                "If the work starts with reading something written for people (emails, PDFs, scanned forms, "
+                "supplier quotes) and needs judgement inside clear limits, that is where an AI agent helps. It can "
+                "read the request, match it to your catalogue or records, draft the reply or the entry, and flag "
+                "what it isn't sure about.",
+                "The safe pattern is that the agent prepares and a person approves. Your team stops re-keying and "
+                "starts checking, which is faster and keeps the decisions with them.",
+            ], []),
+            ("A person: relationships, accountability, rare cases", [
+                "Negotiating with a key customer, deciding on an exception that sets a precedent, or owning the "
+                "result when something goes wrong is work for a person. So is any task that happens a few times a "
+                "year: it isn't worth automating.",
+            ], []),
+            ("Signs a workflow is ready for an agent", [], [
+                "It happens every week, often enough that the time adds up.",
+                "Someone re-keys or copies information from documents or email into a system.",
+                "You can show twenty real examples of the input and the correct result.",
+                "A person on the team can tell quickly whether the output is right.",
+                "The systems involved have an API, an import, or a usable screen workflow.",
+            ]),
+            ("Most real workflows use all three", [
+                "A typical result: rules move the files, an agent reads them and drafts the entry, and a person "
+                "approves the exceptions. Deciding which step belongs to which is most of the design work.",
+            ], []),
+        ],
+        "faq": [
+            ("Is an AI agent cheaper than hiring?",
+             "Sometimes, for the reading and re-keying part of a role, but not for the judgement and relationships. "
+             "Compare the agent's build and monthly running cost with the hours it takes back, measured on your "
+             "own work. Our hours-back calculator is a quick first estimate."),
+            ("What is the difference between an AI agent and automation?",
+             "Automation follows fixed rules on structured data. An AI agent can read unstructured input such as "
+             "email and documents, and decide within limits you set. Many workflows combine both."),
+            ("Can an AI agent make mistakes?",
+             "Yes. That's why the agent should flag uncertain cases and a person should approve anything that "
+             "matters before it is sent or saved."),
+        ],
+    },
+]
+
+# Workflow finder (homepage and /tools/): words a visitor might type, mapped to the page that answers them.
+FINDER = {
+    "use-cases/quote-rfq-intake/": ["quote", "rfq", "estimate", "pricing", "price list", "tender", "bid"],
+    "use-cases/order-entry/": ["order", "purchase order", "po", "erp", "re-key", "rekey", "data entry", "sales order"],
+    "use-cases/document-intake/": ["invoice", "pdf", "document", "paperwork", "scan", "form", "application",
+                                   "receipt", "bill", "shipping"],
+    "use-cases/inbox-triage/": ["email", "inbox", "mailbox", "e-mail", "customer service", "support", "enquir",
+                                "inquir"],
+    "use-cases/renewals-follow-up/": ["renewal", "follow up", "follow-up", "remind", "chas", "overdue",
+                                      "collection", "expir"],
+    "use-cases/market-intelligence/": ["competitor", "market", "news", "monitor", "industry"],
+    "use-cases/prospect-research/": ["lead", "prospect", "outreach", "research", "crm", "sales list"],
+    "use-cases/planning-okrs/": ["okr", "planning", "goal", "meeting", "strategy", "priorit"],
+    "use-cases/financial-reporting/": ["report", "month-end", "month end", "reconcil", "bookkeep", "financial",
+                                       "spreadsheet", "excel", "budget"],
+    "services/ai-training/": ["learn", "train", "teach", "workshop", "chatgpt", "copilot", "staff", "course"],
+    "instead-of-hiring/": ["hire", "hiring", "developer", "engineer", "build an app", "software", "headcount"],
+}
+FINDER_EXAMPLES = ["Typing supplier quotes into our system", "Answering the shared inbox",
+                   "Chasing renewals and overdue invoices", "Month-end reports in Excel"]
+
+FAQ_HOME = [
+    ("What is VisionzLab?",
+     "VisionzLab (visionzlab.com, sometimes written Visionz Lab) is an AI studio based in Ontario, Canada. We help "
+     "small and mid-sized businesses in Canada and the US put AI agents to work on everyday workflows such as "
+     "documents, quotes, orders, email and follow-up, with people approving the decisions that matter."),
+    ("Do we need technical staff to work with you?",
+     "No. You need someone who knows the work and can check the output. We set up the technical side with your "
+     "team and hand over a playbook, or build and run it for you."),
+    ("How much does it cost?",
+     "It depends on the workflow and how much help you want. We don't publish rates. After a free discovery "
+     "session we quote a defined first step, usually the Discovery Sprint, before you commit to anything bigger."),
+    ("How do you keep our data and decisions under control?",
+     "Agents get only the accounts and permissions you give them, and approval steps, audit trails and limits on "
+     "what an agent may do are part of every build. We agree what data is used, and who can see it, before work starts."),
+    ("What if AI isn't the right answer for our problem?",
+     "Then we'll say so. Some work is better handled by a simple rules-based automation or by a person, and the "
+     "discovery session is where we tell you which."),
+]
+
+FAQ_TOOLS = [
+    ("Do these tools send what I type anywhere?",
+     "No. The workflow finder and the calculator run in your browser. We record only that a tool was used, not "
+     "what you entered."),
+    ("Are the calculator's results a quote or a promise?",
+     "No. They're your own numbers multiplied out. The Discovery Sprint measures the real effect on a sample of "
+     "your work."),
+]
+
+# --------------------------------------------------------------------------
 # Rendering
 # --------------------------------------------------------------------------
 
@@ -763,7 +957,7 @@ def rel(from_slug, to_slug):
     return "../" * depth + to_slug if to_slug else ("../" * depth or "./")
 
 
-SECTION_NAMES = {"services/": "Services", "use-cases/": "Use Cases"}
+SECTION_NAMES = {"services/": "Services", "use-cases/": "Use Cases", "guides/": "Guides", "free-tools/": "Free tools"}
 
 
 def breadcrumbs_ld(slug, title):
@@ -826,8 +1020,9 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     foot_tiers = "".join(f'<li><a href="{rel(slug, t["slug"])}">{e(t["nav"])}</a></li>' for t in TIERS)
     foot_plays = "".join(f'<li><a href="{rel(slug, p["slug"])}">{e(p["nav"])}</a></li>' for p in PLAYS)
     foot_team = "".join(f'<li><a href="{rel(slug, m["slug"])}">{e(m["name"])}</a></li>' for m in TEAM)
+    foot_guides = "".join(f'<li><a href="{rel(slug, g["slug"])}">{e(g["nav"])}</a></li>' for g in GUIDES)
     foot_uses = "".join(f'<li><a href="{rel(slug, u["slug"])}">{e(u["nav"])}</a></li>' for u in USE_CASES)
-    graph = [ORG] + (ld or []) + ([breadcrumbs_ld(slug, title)] if slug else [])
+    graph = [ORG] + ([WEBSITE] if not slug else []) + (ld or []) + ([breadcrumbs_ld(slug, title)] if slug else [])
     css = rel(slug, "site.css")
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -877,6 +1072,9 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
           <li><a href="{rel(slug, MATURITY_SLUG)}">The 4S check</a></li></ul></div>
         <div><h2>Use cases</h2><ul>{foot_uses}</ul></div>
         <div><h2>Who we help</h2><ul>{foot_plays}</ul></div>
+        <div><h2>Resources</h2><ul><li><a href="{rel(slug, GUIDES_SLUG)}">Guides</a></li>
+          {foot_guides}<li><a href="{rel(slug, TOOLS_SLUG)}">Free tools</a></li>
+          <li><a href="{rel(slug, CALC_SLUG)}">Hours-back calculator</a></li></ul></div>
         <div><h2>Company</h2><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
           <li><a href="{rel(slug, EXPERIENCE_SLUG)}">Our experience</a></li>
           {foot_team}
@@ -884,7 +1082,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
           <li><a href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a></li></ul></div>
       </div>
       <div class="legal"><div class="wrap muted">© {datetime.date.today().year} {LEGAL_NAME} · {BRAND} is a brand of
-        {LEGAL_NAME}, an Ontario corporation.</div></div>
+        {LEGAL_NAME}, an Ontario corporation. · <a href="{rel(slug, PRIVACY_SLUG)}">Privacy</a></div></div>
     </footer>
     <script>
 {TRACKER_JS}
@@ -1010,6 +1208,7 @@ def build_home():
       accent="off your team's plate.", second=("experience/", "Explore our experience"))}
 {clients()}
 </div>
+{finder(slug)}
 
 <section class="section tone-lime"><div class="wrap split">
   <div class="frame frame-paper">{art(slug, "sprint", "Isometric illustration of a laptop prototype, a roadmap and a checklist")}</div>
@@ -1035,9 +1234,18 @@ def build_home():
   on your next step with AI. Eight questions, about two minutes.</p>
   <a class="link" href="{MATURITY_SLUG}#check">Take the 4S check →</a></div>
 </div></section>
+<section class="section tone-lime"><div class="wrap split">
+  <div><p class="eyebrow">About {BRAND}</p><h2>An AI studio for businesses <span class="hl">without an AI team</span></h2></div>
+  <div><p class="big">{BRAND} is an AI studio based in Ontario, Canada, working with small and mid-sized businesses
+  across Canada and the US. We teach teams to run their own agents, build agents with them, or build and run them
+  for you, always with your people approving the decisions that matter.</p>
+  <div class="actions"><a class="btn btn-ink" href="about/">About {BRAND} →</a>
+  <a class="btn btn-ghost" href="{GUIDES_SLUG}">Read our guides</a></div></div>
+</div></section>
+<section class="section"><div class="wrap">{faq_html(FAQ_HOME)}</div></section>
 {cta_band("home-band")}"""
     return page(slug, "AI Agents & Automation for Small Businesses",
-                ORG["description"], main, ref="home")
+                ORG["description"], main, ld=[faq_ld(FAQ_HOME)], ref="home")
 
 
 def build_services():
@@ -1442,11 +1650,289 @@ def build_book():
     return page(slug, "Request a discovery session", desc, main, ref="book")
 
 
+def page_title(slug):
+    """Short name and lead for any finder target, from the content that owns it."""
+    for u in USE_CASES:
+        if u["slug"] == slug:
+            return u["nav"], u["lead"]
+    for t in TIERS:
+        if t["slug"] == slug:
+            return t["nav"], t["lead"]
+    for p in PLAYS:
+        if p["slug"] == slug:
+            return p["nav"], p["lead"]
+    raise KeyError(slug)  # a finder target with no page: fail the build
+
+
+FINDER_JS = """      (function () {
+        // Matches what the visitor typed against keyword lists, in the browser. The text is never sent anywhere;
+        // analytics records only which page matched.
+        var root = document.getElementById('finder');
+        var data = JSON.parse(document.getElementById('finder-data').textContent);
+        var input = root.querySelector('input');
+        var out = root.querySelector('.finder-out');
+        var cta = root.querySelector('[data-finder-cta]');
+        var base = cta.href.split('#')[0];
+        function show(ev) {
+          if (ev) ev.preventDefault();
+          // Keywords match at the start of a word ("reconcil" finds "reconciling"; "chase" doesn't match
+          // "purchase"); keywords of three letters or fewer ("po", "erp") must be the whole word.
+          var text = ' ' + input.value.toLowerCase().replace(/[^a-z0-9-]+/g, ' ') + ' ';
+          var hits = data.map(function (d) {
+            var score = d.k.filter(function (k) {
+              return text.indexOf(' ' + k + (k.length <= 3 ? ' ' : '')) >= 0;
+            }).length;
+            return { d: d, score: score };
+          }).filter(function (h) { return h.score > 0; })
+            .sort(function (a, b) { return b.score - a.score; }).slice(0, 3);
+          var list = out.querySelector('.finder-hits');
+          list.innerHTML = '';
+          hits.forEach(function (h) {
+            var a = document.createElement('a');
+            a.className = 'card'; a.href = h.d.u;
+            a.innerHTML = '<span class="tag">Start here</span><h3></h3><p></p><span class="arrow">→</span>';
+            a.querySelector('h3').textContent = h.d.n; a.querySelector('p').textContent = h.d.l;
+            list.appendChild(a);
+          });
+          out.querySelector('[data-none]').hidden = hits.length > 0;
+          out.hidden = false;
+          var match = hits.length ? h0(hits) : 'none';
+          var stored = null;
+          try { stored = sessionStorage.getItem('vz_ref'); } catch (_) {}
+          var ref = 'finder-' + match;
+          cta.href = base + '#ref=' + encodeURIComponent(stored ? stored + '~' + ref : ref);
+          if (window.umami && typeof window.umami.track === 'function') {
+            try { window.umami.track('finder_used', { match: match }); } catch (_) {}
+          }
+        }
+        function h0(hits) { return hits[0].d.u.split('/').filter(Boolean).pop(); }
+        root.querySelector('form').addEventListener('submit', show);
+        root.querySelectorAll('[data-example]').forEach(function (b) {
+          b.addEventListener('click', function () { input.value = b.textContent; show(); });
+        });
+      })();"""
+
+
+def finder(slug, tone="paper"):
+    data = [{"u": rel(slug, s), "n": page_title(s)[0], "l": page_title(s)[1], "k": k} for s, k in FINDER.items()]
+    blob = json.dumps(data).replace("</", "<\\/")
+    chips = "".join(f'<button type="button" class="chip" data-example>{e(x)}</button>' for x in FINDER_EXAMPLES)
+    return f"""<section class="section tone-{tone}" id="finder"><div class="wrap narrow">
+  {section_head("Workflow finder", "What's taking your team's time?",
+                "Describe the task in a few words. We'll point you to the closest thing we build. Nothing you type "
+                "leaves your browser.", accent="your team's time?")}
+  <form class="panel finder" role="search" aria-label="Workflow finder">
+    <label for="finder-q-{slug.count('/')}" class="tag">The work you'd like off your plate</label>
+    <div class="finder-row"><input id="finder-q-{slug.count('/')}" type="text" maxlength="200" autocomplete="off"
+      placeholder="e.g. typing purchase orders from email into our ERP" />
+      <button class="btn btn-ink" type="submit">Find it</button></div>
+    <div class="chips"><span class="muted small">Try:</span>{chips}</div>
+  </form>
+  <div class="finder-out" hidden><div class="cards cards-uc finder-hits"></div>
+    <p class="big" data-none hidden>We don't have a page for that yet, which doesn't mean we can't help.
+    Tell us about it.</p>
+    <div class="actions">{contact("finder", "Request a call about this").replace("<a ", "<a data-finder-cta ", 1)}
+    <a class="btn btn-ghost" href="{rel(slug, CALC_SLUG)}">Estimate the hours it takes</a></div></div>
+  <script type="application/json" id="finder-data">{blob}</script>
+</div></section>
+<script>
+{FINDER_JS}
+</script>"""
+
+
+CALC_JS = """      (function () {
+        var form = document.getElementById('calc');
+        function num(name) { var v = parseFloat(form.elements[name].value); return isFinite(v) && v > 0 ? v : 0; }
+        function fmt(n) { return Math.round(n).toLocaleString(); }
+        var tracked = false;
+        function run(ev) {
+          if (ev) ev.preventDefault();
+          var weekly = num('items') * num('minutes') / 60;
+          var yearly = weekly * num('weeks');
+          var back = yearly * num('share') / 100;
+          var rate = num('rate');
+          document.getElementById('share-out').textContent = num('share') + '%';
+          document.getElementById('r-weekly').textContent = fmt(weekly);
+          document.getElementById('r-yearly').textContent = fmt(yearly);
+          document.getElementById('r-back').textContent = fmt(back);
+          document.getElementById('r-weeks').textContent = (back / 37.5).toFixed(1);
+          var money = document.getElementById('r-money-row');
+          money.hidden = !rate;
+          document.getElementById('r-money').textContent = fmt(back * rate);
+          if (ev && ev.type === 'submit' && !tracked && window.umami && typeof window.umami.track === 'function') {
+            tracked = true;
+            try { window.umami.track('calculator_used', { bucket: back < 100 ? '<100' : back < 500 ? '100-500' : '500+' }); } catch (_) {}
+          }
+        }
+        form.addEventListener('input', run);
+        form.addEventListener('submit', run);
+        run();
+      })();"""
+
+
+def build_calculator():
+    slug = CALC_SLUG
+    desc = ("Free calculator: estimate the hours a year one repetitive workflow takes your team, and how many an "
+            "AI agent with human review could give back.")
+    fields = [("items", "How many times does it happen a week?", "e.g. orders, quotes, documents or emails", 60, 1),
+              ("minutes", "Minutes of handling each time", "reading, re-keying, checking, filing", 6, 1),
+              ("weeks", "Working weeks a year", "", 48, 1),
+              ("rate", "Loaded hourly cost of the person doing it (optional)", "wage plus overhead, any currency", "", 1)]
+    inputs = "".join(
+        f'<label class="field"><span><strong>{e(lab)}</strong>{f"<span class=muted> {e(hint)}</span>" if hint else ""}'
+        f'</span><input type="number" name="{n}" min="0" step="{st}" inputmode="decimal" value="{v}" /></label>'
+        for n, lab, hint, v, st in fields)
+    faq = [("How is this calculated?",
+            "Times per week × minutes each ÷ 60 gives weekly hours; × working weeks gives yearly hours; × the share "
+            "you expect back gives the hours an agent could return. A 37.5-hour week converts hours to working weeks."),
+           ("What share should I use?",
+            "Start low. The agent prepares and a person still reviews, so the time that comes back is the reading "
+            "and re-keying, not the checking. 30% is a cautious first guess; the Discovery Sprint measures the "
+            "real figure on your own work.")] + FAQ_TOOLS
+    main = f"""
+{hero("How many hours could come back?", "A two-minute estimate of what one repetitive workflow costs your team "
+      "each year, and how much of it an AI agent with human review could give back.", "calc", "Hours-back calculator",
+      slug=slug, accent="come back?", second=(slug + "#calc", "Use the calculator"))}
+<section class="section tone-lime" id="calc-wrap"><div class="wrap split calc-split">
+  <form class="panel calc" id="calc">{inputs}
+    <label class="field"><span><strong>Share of that time an agent could give back</strong>
+      <span class="muted"> after your team reviews its work</span></span>
+      <span class="range"><input type="range" name="share" min="0" max="90" step="5" value="30" />
+      <output id="share-out">30%</output></span></label>
+    <div class="actions"><button class="btn btn-ink" type="submit">Work it out</button></div>
+    <noscript><p class="muted">Times per week × minutes ÷ 60 × working weeks × share = hours back a year.</p></noscript>
+  </form>
+  <div class="panel result calc-out" aria-live="polite">
+    <p class="eyebrow">Your estimate</p>
+    <dl class="stats">
+      <div><dt>Hours a week on this today</dt><dd id="r-weekly">0</dd></div>
+      <div><dt>Hours a year</dt><dd id="r-yearly">0</dd></div>
+      <div><dt>Hours that could come back each year</dt><dd id="r-back">0</dd></div>
+      <div><dt>That's about this many working weeks</dt><dd id="r-weeks">0</dd></div>
+      <div id="r-money-row" hidden><dt>Worth, at your hourly cost</dt><dd id="r-money">0</dd></div>
+    </dl>
+    <p class="muted small">Your own numbers multiplied out: an estimate, not a quote or a promise.</p>
+    <div class="actions">{contact("calc", "Check it on your real work")}
+      <a class="btn btn-ghost" href="{rel(slug, 'discovery-sprint/')}">How the sprint measures it</a></div>
+  </div>
+</div></section>
+<section class="section"><div class="wrap">{faq_html(faq)}</div></section>
+{cta_band("calc-band")}
+<script>
+{CALC_JS}
+</script>"""
+    app = {"@type": "WebApplication", "@id": url(slug) + "#app", "name": "Hours-back calculator",
+           "url": url(slug), "applicationCategory": "BusinessApplication", "operatingSystem": "Any",
+           "isAccessibleForFree": True, "description": desc, "publisher": {"@id": ORG_ID},
+           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD"}}
+    return page(slug, "Hours-Back Calculator for AI Automation", desc, main,
+                ld=[app, faq_ld(faq)], ref="calc")
+
+
+def build_tools():
+    slug = TOOLS_SLUG
+    desc = ("Free tools from VisionzLab for small businesses weighing AI: a workflow finder, an hours-back "
+            "calculator and the 4S check. They run in your browser; no sign-up.")
+    cards = [(CALC_SLUG, "Calculator", "Hours-back calculator",
+              "Estimate what one repetitive workflow costs a year, and how much an agent could give back."),
+             (MATURITY_SLUG, "Self-check", "The 4S check",
+              "Eight yes-or-no questions place one workflow at Strategy, Solution, Scale or Sustain."),
+             ("#finder", "Finder", "Workflow finder", "Describe a task in a few words and see the closest thing we build.")]
+    html_cards = "".join(
+        f'<a class="card" href="{h if h.startswith("#") else rel(slug, h)}"><span class="tag">{e(t)}</span>'
+        f'<h3>{e(n)}</h3><p>{e(d)}</p><span class="arrow">→</span></a>' for h, t, n, d in cards)
+    main = f"""
+{hero("Free tools for deciding where AI fits", "No sign-up and nothing to install. Each one takes a couple of "
+      "minutes and runs in your browser.", "tools", "Free tools", slug=slug, accent="where AI fits", tone="lime")}
+<section class="section"><div class="wrap"><div class="cards cards-uc">{html_cards}</div></div></section>
+{finder(slug, tone="lime")}
+<section class="section"><div class="wrap">{faq_html(FAQ_TOOLS)}</div></section>
+{cta_band("tools-band")}"""
+    return page(slug, "Free AI Tools for Small Businesses", desc, main, ld=[faq_ld(FAQ_TOOLS)], ref="tools")
+
+
+def article_ld(g):
+    return {"@type": "Article", "@id": url(g["slug"]) + "#article", "headline": g["title"],
+            "description": g["description"], "url": url(g["slug"]), "mainEntityOfPage": url(g["slug"]),
+            "datePublished": GUIDES_PUBLISHED, "dateModified": GUIDES_PUBLISHED, "inLanguage": "en",
+            "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}, "image": f"{SITE}/public/og.jpg"}
+
+
+def build_guide(g):
+    slug = g["slug"]
+    ref = "guide-" + slug.split("/")[1]
+    body = []
+    for head, paras, bullets in g["sections"]:
+        ps = "".join(f"<p>{e(p)}</p>" for p in paras)
+        ul = f'<ul class="ticks">{"".join(f"<li>{e(b)}</li>" for b in bullets)}</ul>' if bullets else ""
+        body.append(f"<h2>{e(head)}</h2>{ps}{ul}")
+    others = [x for x in GUIDES if x["slug"] != slug]
+    more = rows(slug, [(x["slug"], x["nav"], x["description"]) for x in others] +
+                [(CALC_SLUG, "Hours-back calculator", "Estimate what one workflow costs a year, and what could come back.")])
+    main = f"""
+{hero(g["h1"], g["lead"], ref, "Guide", slug=slug, accent=g["accent"], tone="lime")}
+<section class="section"><div class="wrap narrow prose big guide">
+  <p class="muted small">Published {GUIDES_PUBLISHED} by {BRAND}</p>
+  {"".join(body)}
+</div></section>
+<section class="section tone-paper"><div class="wrap">{faq_html(g["faq"])}</div></section>
+<section class="section tone-lime"><div class="wrap">{section_head("Keep reading", "More guides and tools", accent="and tools")}{more}</div></section>
+{cta_band(ref + "-band")}"""
+    return page(slug, g["title"], g["description"], main, ld=[article_ld(g), faq_ld(g["faq"])], ref=ref,
+                og_type="article")
+
+
+def build_guides():
+    slug = GUIDES_SLUG
+    desc = ("Plain-English guides from VisionzLab for small and mid-sized businesses deciding where AI agents and "
+            "automation fit, and how to buy them well.")
+    items = [(g["slug"], g["nav"], g["description"]) for g in GUIDES]
+    items += [(MATURITY_SLUG, "The 4S check", "Where is your business with AI? Eight questions, about two minutes."),
+              ("instead-of-hiring/", "AI capacity instead of a hire", "When an AI engineering team beats adding headcount.")]
+    main = f"""
+{hero("Guides for putting AI to work", "Short answers to the questions owners ask us most, written so you can "
+      "use them with or without us.", "guides", "Guides", slug=slug, accent="to work", tone="lime")}
+<section class="section"><div class="wrap">{rows(slug, items)}</div></section>
+{cta_band("guides-band")}"""
+    return page(slug, "AI Automation Guides for Small Businesses", desc, main, ref="guides")
+
+
+def build_privacy():
+    slug = PRIVACY_SLUG
+    desc = f"How the {BRAND} website handles the information you share with it: the enquiry form, analytics and email."
+    main = f"""
+{hero("Privacy", "What this website collects, why, and how to reach us about it.", "privacy", "Privacy notice",
+      slug=slug, cta="Request a call")}
+<section class="section"><div class="wrap narrow prose big">
+  <p>{BRAND} is a brand of {LEGAL_NAME}, an Ontario corporation. This notice covers visionzlab.com. Work we do for
+  a client is covered by the agreement for that engagement.</p>
+  <h2>The enquiry form</h2>
+  <p>When you request a call, the form collects the details you type in, plus the page or link you came from, so
+  we know which part of the site was useful. The form is provided by HubSpot, which stores your submission for us
+  and may set its own cookies; see <a class="link" href="https://legal.hubspot.com/privacy-policy" rel="noopener">HubSpot's
+  privacy policy</a>. We use these details to reply to you and arrange the call, and we don't sell them.</p>
+  <h2>Analytics</h2>
+  <p>We count page views and button clicks with Umami, a privacy-focused analytics tool we host ourselves. It does
+  not use cookies. The free tools on this site record only that they were used, never what you type into them.</p>
+  <h2>Email</h2>
+  <p>If you email us, we keep the conversation so we can reply and follow up.</p>
+  <h2>Hosting</h2>
+  <p>The site is served by GitHub Pages, which may log technical data such as IP addresses to run and protect the
+  service. Fonts and images are served from this site, not from third parties.</p>
+  <h2>Your choices</h2>
+  <p>To see, correct or delete what we hold about you, email <a class="link" href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a>.</p>
+  <p class="muted small">Last updated {GUIDES_PUBLISHED}.</p>
+</div></section>"""
+    return page(slug, "Privacy", desc, main, ref="privacy")
+
+
 def build_llms(pages):
     lines = [f"# {BRAND}", "",
              "> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: "
              "training, guided agent setup, custom AI development, managed AI employees, and AI engineering "
-             "capacity instead of a new hire.", "", "## Pages", ""]
+             "capacity instead of a new hire.", "",
+             f"{BRAND} (also written {', '.join(ALT_NAMES[:2])}) is based in Ontario, Canada, and serves "
+             "Canada and the United States.", "", "## Pages", ""]
     lines += [f"- [{t}]({url(s)}): {d}" for s, t, d in pages]
     lines += ["", "## Contact", "", f"- New business: {EMAIL_SALES}", f"- General: {EMAIL_GENERAL}",
               f"- Request a discovery session: {CONTACT_URL}", "",
@@ -1511,6 +1997,12 @@ def main():
     out += [(EXPERIENCE_SLUG, build_experience(), "Our team's experience",
              "What our team built before VisionzLab, and how we earn trust before we have case studies of our own.")]
     out += [(m["slug"], build_person(m), f"{m['name']}, {m['role']}", m["description"]) for m in TEAM]
+    out += [(GUIDES_SLUG, build_guides(), "Guides", "Plain-English guides on where AI agents and automation fit.")]
+    out += [(g["slug"], build_guide(g), g["title"], g["description"]) for g in GUIDES]
+    out += [(TOOLS_SLUG, build_tools(), "Free tools", "Workflow finder, hours-back calculator and the 4S check.")]
+    out += [(CALC_SLUG, build_calculator(), "Hours-back calculator",
+             "Estimate how many hours a year one workflow takes, and how many an AI agent could give back.")]
+    out += [(PRIVACY_SLUG, build_privacy(), "Privacy", "What this website collects and why.")]
     if HUBSPOT_FORM_ID:
         out += [(BOOK_SLUG, build_book(), "Request a discovery session", "Request a free discovery session.")]
     for slug, body, _, _ in out:

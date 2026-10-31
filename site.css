@@ -81,8 +81,8 @@ p { margin: 0 0 1em; }
 /* Buttons */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--lime); color: var(--ink); text-decoration: none; font-weight: 700;
-  padding: 15px 24px; border: var(--stroke); border-radius: 999px;
+  font: inherit; background: var(--lime); color: var(--ink); text-decoration: none; font-weight: 700;
+  cursor: pointer; padding: 15px 24px; border: var(--stroke); border-radius: 999px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .btn:hover { transform: translate(-3px, -3px); box-shadow: 3px 3px 0 var(--ink); }
@@ -208,7 +208,7 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 
 /* Footer */
 .foot { background: var(--paper); border-top: var(--stroke); padding-top: 64px; }
-.foot-in { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.2fr; gap: 28px; padding-bottom: 40px; }
+.foot-in { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.2fr; gap: 28px; padding-bottom: 40px; }
 .foot h2 { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
 /* Reserve the HubSpot form's rendered height (measured 2026-10-20) so it doesn't push the footer as it loads */
 .book-form .hs-form-frame { min-height: 633px; }
@@ -287,3 +287,30 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Workflow finder, hours-back calculator and guides (2026-10-31) */
+.finder .tag { display: block; margin-bottom: 10px; }
+.finder-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.finder-row input, .field input[type=number] { flex: 1 1 240px; min-width: 0; font: inherit; font-size: 1.05rem;
+  padding: 12px 14px; border: var(--stroke); background: var(--white); color: var(--ink); border-radius: 0; }
+.finder-row input:focus-visible, .field input:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 16px; }
+.chip { font: inherit; font-size: 0.9rem; padding: 6px 12px; border: 2px solid var(--ink); border-radius: 999px;
+  background: var(--paper); color: var(--ink); cursor: pointer; }
+.chip:hover { background: var(--lime); }
+.finder-out { margin-top: 28px; }
+.finder-out .actions { margin-top: 20px; }
+.calc-split { align-items: start; }
+.field { display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-bottom: 2px solid var(--ink); }
+.field:first-child { padding-top: 0; }
+.field input[type=number] { flex: none; max-width: 220px; }
+.range { display: flex; gap: 14px; align-items: center; }
+.range input { flex: 1; accent-color: var(--ink); }
+.range output { font-weight: 700; min-width: 3.5ch; }
+.stats { margin: 0; display: grid; gap: 14px; }
+.stats div { border-top: 2px solid var(--ink); padding-top: 10px; }
+.stats dt { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.stats dd { margin: 4px 0 0; font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 600; letter-spacing: -0.02em; }
+.guide h2 { margin-top: 1.6em; }
+.legal a { color: inherit; }
+.calc-out { margin-top: 0; }

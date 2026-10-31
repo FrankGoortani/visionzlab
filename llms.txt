@@ -2,6 +2,8 @@
 
 > AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: training, guided agent setup, custom AI development, managed AI employees, and AI engineering capacity instead of a new hire.
 
+VisionzLab (also written Visionz Lab, VisionZ Lab) is based in Ontario, Canada, and serves Canada and the United States.
+
 ## Pages
 
 - [Home](https://visionzlab.com/): VisionzLab helps small and mid-sized businesses put AI to work — from teaching teams to build their own agents to building and running AI employees.
@@ -33,6 +35,12 @@
 - [Our team's experience](https://visionzlab.com/experience/): What our team built before VisionzLab, and how we earn trust before we have case studies of our own.
 - [Frank Goortani, Founder & Technical Principal](https://visionzlab.com/team/frank-goortani/): Frank Goortani founded VisionzLab and leads the technical side of every engagement. Two decades as an architect at Uber, TD Bank and Canada Life.
 - [Asal Matin, VP Business Development](https://visionzlab.com/team/asal-matin/): Asal Matin is VP Business Development at VisionzLab, the first point of contact for new clients.
+- [Guides](https://visionzlab.com/guides/): Plain-English guides on where AI agents and automation fit.
+- [How to Choose an AI Automation Partner](https://visionzlab.com/guides/choose-an-ai-automation-partner/): Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to make the first project small enough to judge.
+- [AI Agent, Automation or a New Hire? How to Decide](https://visionzlab.com/guides/ai-agent-vs-automation-vs-hire/): A plain decision guide for small businesses: when rules-based automation is enough, when an AI agent with human approval fits, and when the work needs a person.
+- [Free tools](https://visionzlab.com/free-tools/): Workflow finder, hours-back calculator and the 4S check.
+- [Hours-back calculator](https://visionzlab.com/free-tools/hours-back-calculator/): Estimate how many hours a year one workflow takes, and how many an AI agent could give back.
+- [Privacy](https://visionzlab.com/privacy/): What this website collects and why.
 - [Request a discovery session](https://visionzlab.com/book/): Request a free discovery session.
 
 ## Contact
