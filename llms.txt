@@ -4,6 +4,10 @@
 
 VisionzLab (also written Visionz Lab, VisionZ Lab) is based in Ontario, Canada, and serves Canada and the United States.
 
+Who we serve: Businesses from owner-run firms up to about 1,000 people, usually without an in-house AI team, across Canada and the United States. We're based in Ontario and work online or on site.
+
+Pricing: The first discovery session is free. The Discovery Sprint is a fixed fee agreed before it starts. Builds are fixed-price for a fixed scope; managed AI employees and AI teams are monthly. We don't publish rates: we quote a defined first step after the discovery session.
+
 ## Pages
 
 - [Home](https://visionzlab.com/): VisionzLab helps small and mid-sized businesses put AI to work — from teaching teams to build their own agents to building and running AI employees.

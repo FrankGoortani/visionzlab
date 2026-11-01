@@ -57,6 +57,12 @@ ALT_NAMES = ["Visionz Lab", "VisionZ Lab", "VisionzLab AI", "visionzlab.com"]
 # the LinkedIn company page, then @visionzlabs on YouTube/Instagram/TikTok/Facebook when they exist.
 SAME_AS = ["https://www.linkedin.com/company/visionzlab-ai/"]  # confirmed ours 2026-10-31 (Asal listed, website field set)
 
+# Who we serve, stated the same way everywhere. AI engines recommend vendors whose pages say who they serve and
+# where (GEO study 2026-11-01). Size mirrors asal references/ICP.md: normally 75-1,000 staff, a heuristic, not a
+# cutoff. Pricing is described by model only; rates are never published.
+WHO_WE_SERVE = ("Businesses from owner-run firms up to about 1,000 people, usually without an in-house AI team, "
+                "across Canada and the United States. We're based in Ontario and work online or on site.")
+
 ORG_ID = f"{SITE}/#organization"
 WEBSITE_ID = f"{SITE}/#website"
 ORG = {
@@ -94,9 +100,13 @@ e = html.escape
 # Content
 # --------------------------------------------------------------------------
 
+PRICING_SUMMARY = ("The first discovery session is free. The Discovery Sprint is a fixed fee agreed before it starts. "
+                   "Builds are fixed-price for a fixed scope; managed AI employees and AI teams are monthly. "
+                   "We don't publish rates: we quote a defined first step after the discovery session.")
+
 TIERS = [
     {
-        "slug": "services/ai-training/", "art": "teach",
+        "slug": "services/ai-training/", "priced": "Quoted for the agreed sessions before work starts.", "art": "teach",
         "tier": "Teach",
         "nav": "AI Training",
         "title": "AI Agent Training for Small Businesses",
@@ -125,7 +135,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-agent-setup/", "art": "setup",
+        "slug": "services/ai-agent-setup/", "priced": "Quoted for the agreed scope before work starts.", "art": "setup",
         "tier": "Guided setup",
         "nav": "Agent Setup",
         "title": "AI Agent Setup Service",
@@ -152,7 +162,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-development/", "art": "build",
+        "slug": "services/ai-development/", "priced": "A fixed price for a fixed scope, agreed before work starts.", "art": "build",
         "tier": "Build",
         "nav": "AI Development",
         "title": "Custom AI Agent Development",
@@ -179,7 +189,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-employee/", "art": "employee",
+        "slug": "services/ai-employee/", "priced": "A setup fee plus a monthly fee, agreed before work starts.", "art": "employee",
         "tier": "Build & maintain",
         "nav": "AI Employee",
         "title": "Managed AI Employee for Your Business",
@@ -208,7 +218,7 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-team/", "art": "team",
+        "slug": "services/ai-team/", "priced": "A monthly retainer sized to the work.", "art": "team",
         "tier": "Embedded capacity",
         "nav": "AI Team",
         "title": "An AI Engineering Team Instead of a New Hire",
@@ -239,7 +249,9 @@ TIERS = [
 
 PLAYS = [
     {
-        "slug": "for/distributors-manufacturers/", "art": "build",
+        "slug": "for/distributors-manufacturers/",
+        "question": ('How are distributors and manufacturers using AI agents for quotes and orders?',
+                     'Mostly for the reading and re-keying. Agents read emailed RFQs and purchase orders, match items to the catalogue, draft the quote or enter the order in the ERP, and flag anything unusual. Inside sales and customer service approve each one before it goes out.'), "art": "build",
         "nav": "Distributors & Manufacturers",
         "title": "AI Quote & Order Automation for Distributors",
         "description": "AI agents that read incoming RFQs, purchase orders and supplier documents, draft quotes "
@@ -261,7 +273,9 @@ PLAYS = [
         "ref": "play-industrial",
     },
     {
-        "slug": "for/insurance-brokers/", "art": "employee",
+        "slug": "for/insurance-brokers/",
+        "question": ('How can an insurance brokerage use AI agents without losing the personal touch?',
+                     'Give the agents the paperwork, not the relationships: reading submissions and certificates, tracking renewal dates, preparing follow-ups and sorting the inbox. Brokers review and send every client message.'), "art": "employee",
         "nav": "Insurance Brokers",
         "title": "AI Automation for P&C Insurance Brokers",
         "description": "AI agents for commercial and property & casualty brokerages and MGAs: submission intake, "
@@ -281,7 +295,9 @@ PLAYS = [
         "ref": "play-insurance",
     },
     {
-        "slug": "for/accountants-bookkeepers/", "art": "employee",
+        "slug": "for/accountants-bookkeepers/",
+        "question": ('What can AI automate for a small accounting or bookkeeping firm?',
+                     'The routine, rules-based work: reading receipts, invoices and statements, entering and matching the data, preparing monthly reports with draft commentary, and sorting client email. Your accountants review the output and keep the client relationships.'), "art": "employee",
         "nav": "Accountants & Bookkeepers",
         "title": "AI Bookkeeping Automation for Accounting Firms",
         "description": "An AI employee that handles routine bookkeeping tasks for accounting and bookkeeping "
@@ -299,7 +315,9 @@ PLAYS = [
         "ref": "play-c",
     },
     {
-        "slug": "for/small-business/", "art": "teach",
+        "slug": "for/small-business/",
+        "question": ('Where should a small business start with AI?',
+                     'With one repetitive workflow that takes hours every week, such as answering the same emails or re-keying documents. Try it with tools you already pay for, keep a person approving the output, and measure the hours saved before doing more.'), "art": "teach",
         "nav": "Small Business",
         "title": "AI for Small Business",
         "description": "Practical AI for owner-run businesses: learn to build your own agents, get one set up "
@@ -314,7 +332,9 @@ PLAYS = [
         "ref": "play-a",
     },
     {
-        "slug": "for/mortgage-brokers/", "art": "setup",
+        "slug": "for/mortgage-brokers/",
+        "question": ('How can mortgage brokers use AI to track renewals and document requests?',
+                     'An agent tracks renewal and maturity dates, organises document requests and prepares follow-ups for your team to review, so clients hear from you at the right time and nothing is sent without your approval.'), "art": "setup",
         "nav": "Mortgage Brokers",
         "title": "AI Automation for Mortgage Brokers and Agents",
         "description": "AI tools for mortgage brokerages and agents: renewal tracking and outreach, document "
@@ -334,7 +354,9 @@ PLAYS = [
         "ref": "play-mortgage",
     },
     {
-        "slug": "instead-of-hiring/", "art": "team",
+        "slug": "instead-of-hiring/",
+        "question": ('Should we hire an operations assistant or set up an AI agent instead?',
+                     'Split the role first. Reading, re-keying and chasing are often agent work; relationships, judgement and exceptions need a person. If most of the hours sit in the first group, test an agent with a person approving its work before you hire.'), "art": "team",
         "nav": "Before You Hire",
         "title": "Hiring for Order Entry, AR or an Engineer? Try This",
         "description": "Hiring for order entry, AR, data entry or an engineer? See which parts of the role an AI "
@@ -372,6 +394,8 @@ PLAYS = [
 USE_CASES = [
     {
         "slug": "use-cases/quote-rfq-intake/",
+        "question": ('Can AI read RFQs and supplier quotes and draft the quote for our sales team?',
+                     'Yes. An intake agent reads requests from email, PDFs and spreadsheets, matches the items to your catalogue, applies your pricing rules and drafts the quote. A salesperson reviews and sends it.'),
         "nav": "Quote & RFQ Intake",
         "title": "AI Quote and RFQ Intake Agent",
         "description": "An AI agent that reads incoming requests for quote, matches items to your catalogue and "
@@ -388,9 +412,6 @@ USE_CASES = [
                   "commits to a price or a delivery date on its own.",
         "tiers": [2, 3],
         "faq": [
-            ("Can AI read RFQs and supplier quotes for our sales team?",
-             "Yes. An intake agent reads requests from email, PDFs and spreadsheets, matches the items to your "
-             "catalogue, applies your pricing rules and drafts the quote. A salesperson reviews and sends it."),
             ("Does it work with our ERP?", "Yes, where the ERP has an API, an import or a usable screen workflow. "
              "We confirm this in the discovery session."),
             ("What about unusual requests?", "It flags them for a person instead of guessing. You set the limits."),
@@ -400,6 +421,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/order-entry/",
+        "question": ('How can a distributor stop retyping customer orders from email into the ERP?',
+                     "An order-entry agent reads each emailed or PDF purchase order, enters it in the ERP as a draft, checks it against the quote, price list and stock, and sends anything that doesn't match to a person. Your team approves instead of re-keying."),
         "nav": "Order Entry & Exceptions",
         "title": "AI Order Entry and Exceptions Agent",
         "description": "An AI agent that turns emailed and PDF purchase orders into entered orders, checks them "
@@ -416,10 +439,6 @@ USE_CASES = [
                   "held for approval or released automatically — your choice.",
         "tiers": [2, 3],
         "faq": [
-            ("How can a distributor stop retyping customer orders from email into the ERP?",
-             "An order-entry agent reads each emailed or PDF purchase order, enters it in the ERP as a draft, "
-             "checks it against the quote, price list and stock, and sends anything that doesn't match to a "
-             "person. Your team approves instead of re-keying."),
             ("Can it release orders automatically?", "Only if you want it to, and only within limits you set. "
              "Many teams start with every order held for a quick approval."),
             ("What counts as an exception?", "Whatever you decide: price differences, unknown items, credit holds, "
@@ -429,6 +448,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/document-intake/",
+        "question": ('Can AI pull data out of invoices, forms and PDFs and enter it into our system?',
+                     'Yes. A document-intake agent reads PDFs, scans, emails and spreadsheets, extracts the fields your system needs, checks them against rules you set and writes them in. Anything missing or mismatched goes to a person to resolve.'),
         "nav": "Document Intake",
         "title": "AI Document Intake and Data Extraction Agent",
         "description": "An AI agent that reads invoices, applications, shipping documents and forms, extracts the "
@@ -453,6 +474,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/inbox-triage/",
+        "question": ('Can AI sort a shared inbox and draft replies for my team?',
+                     "Yes. An inbox agent reads incoming messages, sorts them by type and urgency, routes each one to the right person and drafts a reply from your templates and past answers. Urgent messages are flagged straight away, and your team reviews replies before they're sent."),
         "nav": "Inbox Triage",
         "title": "AI Shared Inbox Triage and Reply Drafting Agent",
         "description": "An AI agent that sorts a shared inbox, routes each message to the right person and drafts "
@@ -475,6 +498,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/renewals-follow-up/",
+        "question": ('How can AI help us stay on top of renewals and client follow-ups?',
+                     'A renewals agent tracks renewal and maturity dates in your client records, prepares outreach at the right time with what the client needs to gather, and reminds your team when a lead goes quiet. Your team approves every message.'),
         "nav": "Renewals & Follow-up",
         "title": "AI Renewal Tracking and Client Follow-up Agent",
         "description": "An AI agent that tracks renewal and maturity dates, prepares timely outreach and follows "
@@ -499,6 +524,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/market-intelligence/",
+        "question": ('Can an AI agent monitor our competitors and send us a weekly market brief?',
+                     'Yes. It tracks competitor websites, pricing pages, releases, job postings and news, plus the publications you point it at, and delivers a weekly brief on what changed and why it may matter, with a source linked for every point.'),
         "nav": "Market Intelligence",
         "title": "AI Market Intelligence Agent",
         "description": "An AI agent that tracks competitors, pricing, news and market signals and delivers a "
@@ -524,6 +551,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/prospect-research/",
+        "question": ('Can AI research target accounts and prepare account plans for our sales team?',
+                     'Yes. A research agent profiles each target account from public sources, finds recent events worth a conversation, maps the roles that matter and drafts an account plan with first-call questions for your team to edit.'),
         "nav": "Prospect Research",
         "title": "AI Prospect Research and Account Planning Agent",
         "description": "An AI agent that researches target accounts, maps buying teams and drafts account plans, "
@@ -547,6 +576,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/planning-okrs/",
+        "question": ('Can AI help us set OKRs and track progress without buying new software?',
+                     'Yes. An assistant helps turn goals into objectives, key results and owners, collects progress from the tools your team already uses, flags what is behind or blocked before the review, and drafts the monthly update for leadership.'),
         "nav": "Planning & OKRs",
         "title": "AI Planning and OKR Assistant",
         "description": "An AI assistant that turns leadership goals into tracked objectives and key results, "
@@ -571,6 +602,8 @@ USE_CASES = [
     },
     {
         "slug": "use-cases/financial-reporting/",
+        "question": ('Can AI prepare our monthly management reports and variance commentary?',
+                     'Yes. A reporting agent pulls figures from your accounting and business systems, prepares the monthly reports and drafts the variance commentary: what moved, by how much and the likely drivers. Your finance team reviews and signs off.'),
         "nav": "Financial Reporting",
         "title": "AI Financial Reporting Agent",
         "description": "An AI agent that pulls numbers from your accounting and business systems, prepares "
@@ -999,6 +1032,7 @@ FAQ_HOME = [
      "VisionzLab (visionzlab.com, sometimes written Visionz Lab) is an AI studio based in Ontario, Canada. We help "
      "small and mid-sized businesses in Canada and the US put AI agents to work on everyday workflows such as "
      "documents, quotes, orders, email and follow-up, with people approving the decisions that matter."),
+    ("Who do you work with?", WHO_WE_SERVE),
     ("Do we need technical staff to work with you?",
      "No. You need someone who knows the work and can check the output. We set up the technical side with your "
      "team and hand over a playbook, or build and run it for you."),
@@ -1341,6 +1375,13 @@ def build_services():
     "AI Training teaches your team; AI Agent Setup configures agents with you; AI Development builds a custom "
     "agent you own; an AI Employee is built and run for you for a monthly fee; an AI Team gives you engineering "
     "capacity instead of a hire. The usual first step is a Discovery Sprint."), accent="services")}{ladder(slug)}</div></section>
+<section class="section tone-lime"><div class="wrap split">
+  <div>{section_head("Pricing", "How pricing works", intro=PRICING_SUMMARY, accent="pricing")}</div>
+  <div class="panel"><ul class="ticks"><li><strong>Discovery session:</strong> free, with a short memo afterwards</li>
+  <li><strong>Discovery Sprint:</strong> a fixed fee agreed before it starts</li>{"".join(
+      f'<li><strong>{e(t["nav"])}:</strong> {e(t["priced"][0].lower() + t["priced"][1:].rstrip("."))}</li>' for t in TIERS)}</ul></div>
+</div></section>
+<section class="section"><div class="wrap narrow prose big"><h2>Who we work with</h2><p>{e(WHO_WE_SERVE)}</p></div></section>
 {cta_band("services-band")}"""
     return page(slug, "AI Agent & Automation Services", desc, main, ref="services")
 
@@ -1359,7 +1400,7 @@ def build_tier(i):
 {hero(t["title"], t["lead"], ref, f'Service 0{i + 1} · {t["tier"]}', slug=slug, img=t["art"],
       alt=f'Isometric illustration for {t["nav"]}')}
 <section class="section tone-lime"><div class="wrap split">
-  <div class="panel"><h2>Who it's for</h2><p class="big">{e(t["for"])}</p><h2>What you get</h2><ul class="ticks">{get}</ul>{nxt}</div>
+  <div class="panel"><h2>Who it's for</h2><p class="big">{e(t["for"])}</p><h2>What you get</h2><ul class="ticks">{get}</ul><h2>How it's priced</h2><p class="big">{e(t["priced"])}</p>{nxt}</div>
   <div class="panel"><h2>How it works</h2><ol class="steps">{how}</ol></div>
 </div></section>
 <section class="section"><div class="wrap">{faq_html(t["faq"])}</div></section>
@@ -1367,6 +1408,14 @@ def build_tier(i):
 {cta_band(ref + "-band")}"""
     return page(slug, t["title"], t["description"], main,
                 ld=[service_ld(slug, t["title"], t["description"]), faq_ld(t["faq"])], ref=ref)
+
+
+def check_questions():
+    """Every use case and industry page leads with the question a buyer would type into an AI engine.
+    _analytics/scripts/prompts-from-site.py reads it back from FAQPage to keep the answer-share probe in sync."""
+    for x in USE_CASES + PLAYS:
+        q, a = x.get("question") or (None, None)
+        assert q and q.endswith("?") and len(q) > 25 and a, f'{x["slug"]}: add "question": (buyer question, answer)'
 
 
 def build_play(p):
@@ -1387,8 +1436,10 @@ def build_play(p):
 <section class="section"><div class="wrap">{section_head("Where to start", "A recommended starting point", accent="starting point")}{ladder(slug, only=p["tiers"])}
 <p class="more"><a class="link" href="{rel(slug, 'services/')}">See all five services →</a></p></div></section>
 {uses}
+<section class="section"><div class="wrap">{faq_html([p["question"]] + p.get("faq", []))}</div></section>
 {cta_band(p["ref"] + "-band")}"""
-    return page(slug, p["title"], p["description"], main, ref=p["ref"])
+    return page(slug, p["title"], p["description"], main, ld=[faq_ld([p["question"]] + p.get("faq", []))],
+                ref=p["ref"])
 
 
 def use_case_cards(slug, exclude=None, only=None):
@@ -1427,11 +1478,11 @@ def build_use_case(u):
   <div class="panel panel-lime"><h2>What stays with your people</h2><p class="big">{e(u["people"])}</p></div>
 </div></section>
 <section class="section tone-lime"><div class="wrap">{section_head("How to get it", "Pick the level of help that fits", accent="that fits")}{ladder(slug, only=u["tiers"])}</div></section>
-<section class="section"><div class="wrap">{faq_html(u["faq"])}</div></section>
+<section class="section"><div class="wrap">{faq_html([u["question"]] + u["faq"])}</div></section>
 <section class="section tone-lime"><div class="wrap">{section_head("More", "More use cases", accent="use cases")}{use_case_cards(slug, exclude=slug)}</div></section>
 {cta_band(ref + "-band")}"""
     return page(slug, u["title"], u["description"], main,
-                ld=[service_ld(slug, u["title"], u["description"]), faq_ld(u["faq"])], ref=ref)
+                ld=[service_ld(slug, u["title"], u["description"]), faq_ld([u["question"]] + u["faq"])], ref=ref)
 
 
 def build_sprint():
@@ -2024,7 +2075,8 @@ def build_llms(pages):
              "training, guided agent setup, custom AI development, managed AI employees, and AI engineering "
              "capacity instead of a new hire.", "",
              f"{BRAND} (also written {', '.join(ALT_NAMES[:2])}) is based in Ontario, Canada, and serves "
-             "Canada and the United States.", "", "## Pages", ""]
+             "Canada and the United States.", "",
+             f"Who we serve: {WHO_WE_SERVE}", "", f"Pricing: {PRICING_SUMMARY}", "", "## Pages", ""]
     lines += [f"- [{t}]({url(s)}): {d}" for s, t, d in pages]
     lines += ["", "## Contact", "", f"- New business: {EMAIL_SALES}", f"- General: {EMAIL_GENERAL}",
               f"- Request a discovery session: {CONTACT_URL}", "",
@@ -2071,6 +2123,7 @@ def build_redirect(from_slug, to_slug):
 
 def main():
     global TRACKER_JS, CONTACT_URL
+    check_questions()
     if HUBSPOT_FORM_ID:
         CONTACT_URL = url(BOOK_SLUG)
     TRACKER_JS = (TRACKER_JS.replace("__UMAMI_HOST__", UMAMI_HOST)
