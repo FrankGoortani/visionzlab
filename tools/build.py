@@ -47,7 +47,8 @@ ART = {
     "employee": ("public/art/tier-employee.webp", 900, 900),
     "team": ("public/art/tier-team.webp", 900, 900),
 }
-EMAIL_GENERAL = "frank@visionzlab.com"
+EMAIL_GENERAL = "hello@visionzlab.com"  # alias on frank@ (Workspace, 2026-11-01): no extra mailbox
+EMAIL_FRANK = "frank@visionzlab.com"
 EMAIL_SALES = "asal@visionzlab.com"
 
 # Brand search: "visionzlab" is one word that Google readily "corrects" to "vision lab". These spellings tell it
@@ -80,14 +81,14 @@ ORG = {
     "description": "VisionzLab helps small and mid-sized businesses put AI to work — "
                    "from teaching teams to build their own agents to building and running AI employees.",
     "legalName": "VisionZone One Consulting Inc.",
-    "email": "frank@visionzlab.com",
+    "email": EMAIL_GENERAL,
     "areaServed": ["CA", "US"],
     "founder": {"@id": f"{SITE}/team/frank-goortani/#person"},
     "address": {"@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA"},
     "contactPoint": [
         {"@type": "ContactPoint", "contactType": "sales", "email": "asal@visionzlab.com",
          "areaServed": ["CA", "US"], "availableLanguage": ["en"]},
-        {"@type": "ContactPoint", "contactType": "customer support", "email": "frank@visionzlab.com",
+        {"@type": "ContactPoint", "contactType": "customer support", "email": EMAIL_GENERAL,
          "areaServed": ["CA", "US"], "availableLanguage": ["en"]},
     ],
 }
@@ -710,7 +711,7 @@ FRANK = {
     "name": "Frank Goortani",
     "first": "Frank",
     "role": "Founder & Technical Principal",
-    "email": EMAIL_GENERAL,
+    "email": EMAIL_FRANK,
     "photo": "frank",
     "description": "Frank Goortani founded VisionzLab and leads the technical side of every engagement. "
                    "Two decades as an architect at Uber, TD Bank and Canada Life.",
