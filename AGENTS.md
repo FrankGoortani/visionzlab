@@ -24,6 +24,23 @@ one place past clients and employers are named; its logos live in `public/client
 
 This repository contains the static VisionzLab marketing website. It is primarily HTML and CSS, with reusable snippets in `components/` and assets in `public/`. Use `CLAUDE.md` for background, but follow this file first for Codex workflow.
 
+## Adding a use case or industry page (added 2026-11-01)
+
+Use cases (`USE_CASES`) and industry pages (`PLAYS`) are added continuously. Each new entry needs:
+
+1. **`"question": (question, answer)`**: the question an owner would type into ChatGPT or Google, in their words
+   ("How can a distributor stop retyping orders from email into the ERP?"), answered directly in 1–3 sentences.
+   It becomes the page's first FAQ and FAQPage entry. `check_questions()` fails the build without it.
+2. The usual fields (`title` ≤ 52 chars so the full title stays ≤ 65, `description` 120–155 chars, `lead`, `for`,
+   `does`, `people`, `tiers`, `faq`). Name what stays with people; describe practice, never client history.
+3. A `FINDER` entry with the words a visitor might type, and the page in the relevant `PLAYS[...]["uses"]`.
+4. Run `python3 tools/build.py`, then the GEO audit, and after the deploy regenerate the probe set:
+   `python3 -I ../_analytics/scripts/prompts-from-site.py https://visionzlab.com > ../_analytics/prompts/visionzlab-pages.tsv`
+   (see the career workspace skill `ai-visibility`).
+
+Who we serve (`WHO_WE_SERVE`) and the pricing model (`PRICING_SUMMARY`, per-tier `priced`) are stated once and reused.
+Never publish rates.
+
 ## Project Map
 
 - `index.html` - main single-page site.
