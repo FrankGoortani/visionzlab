@@ -184,7 +184,7 @@ TIERS = [
         "nav": "AI Employee",
         "title": "Managed AI Employee for Your Business",
         "description": "We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — "
-                       "and keep it working for a monthly fee. Scoped around the work you need.",
+                       "and keep it working for a monthly fee.",
         "lead": "We build an AI employee for a defined role in your business and keep it working for a monthly fee.",
         "for": "Businesses that want the result without having to maintain the technology.",
         "get": [
@@ -388,6 +388,9 @@ USE_CASES = [
                   "commits to a price or a delivery date on its own.",
         "tiers": [2, 3],
         "faq": [
+            ("Can AI read RFQs and supplier quotes for our sales team?",
+             "Yes. An intake agent reads requests from email, PDFs and spreadsheets, matches the items to your "
+             "catalogue, applies your pricing rules and drafts the quote. A salesperson reviews and sends it."),
             ("Does it work with our ERP?", "Yes, where the ERP has an API, an import or a usable screen workflow. "
              "We confirm this in the discovery session."),
             ("What about unusual requests?", "It flags them for a person instead of guessing. You set the limits."),
@@ -413,6 +416,10 @@ USE_CASES = [
                   "held for approval or released automatically — your choice.",
         "tiers": [2, 3],
         "faq": [
+            ("How can a distributor stop retyping customer orders from email into the ERP?",
+             "An order-entry agent reads each emailed or PDF purchase order, enters it in the ERP as a draft, "
+             "checks it against the quote, price list and stock, and sends anything that doesn't match to a "
+             "person. Your team approves instead of re-keying."),
             ("Can it release orders automatically?", "Only if you want it to, and only within limits you set. "
              "Many teams start with every order held for a quick approval."),
             ("What counts as an exception?", "Whatever you decide: price differences, unknown items, credit holds, "
@@ -591,6 +598,10 @@ USE_CASES = [
 ]
 
 FAQ_SPRINT = [
+    ("What does an AI discovery sprint include, and what should it deliver?",
+     "One workflow, tested on your own documents over two to four weeks. It should deliver a working prototype, "
+     "a success measure checked on real examples, a costed build plan including what your team needs to run it, "
+     "and a go/no-go recommendation with the reasons."),
     ("What does the sprint cost?", "It's a fixed fee agreed before we start, based on the size of the workflow."),
     ("What if the answer is no-go?", "Then you've spent a few weeks, not a budget, finding out — and you keep the findings."),
     ("Is there a free option?", "Yes. The first conversation is a free discovery session, with a short memo afterwards."),
@@ -782,8 +793,8 @@ GUIDES = [
         "title": "How to Choose an AI Automation Partner",
         "h1": "How to choose an AI automation partner",
         "accent": "AI automation partner",
-        "description": "Eight questions to ask before you hire an AI automation company or consultant, the red "
-                       "flags to watch for, and how to make the first project small enough to judge.",
+        "description": "Eight questions to ask before you hire an AI automation company or consultant, the "
+                       "red flags to watch for, and how to keep the first project small.",
         "lead": "Most small businesses only buy AI help once or twice, so it's hard to tell a good partner from a "
                 "good pitch. These are the questions that separate them.",
         "sections": [
@@ -889,6 +900,75 @@ GUIDES = [
             ("Can an AI agent make mistakes?",
              "Yes. That's why the agent should flag uncertain cases and a person should approve anything that "
              "matters before it is sent or saved."),
+        ],
+    },
+    {
+        "slug": "guides/human-approval-for-ai-agents/",
+        "nav": "Keeping a person in the loop",
+        "title": "Human Approval for AI-Drafted Quotes and Emails",
+        "h1": "Keeping a person in the loop when an AI agent drafts",
+        "accent": "in the loop",
+        "published": "2026-11-01",
+        "description": "Let the agent draft and a person send. Where to put the approval step, what the reviewer "
+                       "needs to see, and when it's safe to loosen it.",
+        "lead": "Let the agent prepare and a person send. The agent puts its draft quote or email in a review "
+                "queue, and nothing reaches a customer until someone with authority approves it.",
+        "sections": [
+            ("The rule: the agent drafts, a person sends", [
+                "The simplest safe design gives the agent permission to create drafts and nothing more. It can read "
+                "the request, look up your catalogue, prices and history, and write the quote or reply. Sending, "
+                "committing a price, promising a date or changing a customer record stays with your team.",
+                "Enforce this with permissions as well as instructions. If the agent's account can only save "
+                "drafts, a bad prompt or an odd email can't make it send anything.",
+            ], []),
+            ("Where to put the approval step", [
+                "Approve everything at first. As your team learns where the agent is reliable, keep the approval "
+                "step on the work where a mistake is expensive or hard to undo:",
+            ], [
+                "Anything that commits a price, a discount, a delivery date or credit terms.",
+                "First contact with a new customer or supplier.",
+                "Anything outside your rules: unknown items, substitutes, unusual quantities or terms.",
+                "Complaints, cancellations and anything with legal or safety wording.",
+            ]),
+            ("What the reviewer needs to see", [
+                "An approval is only useful if the reviewer can check the draft quickly. Show these next to it:",
+            ], [
+                "The original request, so the draft can be compared with what the customer asked for.",
+                "What the agent matched and where it came from: the item, the price list, the past order.",
+                "What it wasn't sure about, flagged at the top rather than buried in the draft.",
+                "Anything that differs from your standard terms.",
+                "Approve, edit or reject in one step, with a short reason when they reject.",
+            ]),
+            ("Building it with the tools you already have", [
+                "You rarely need new software for the review step. Drafts can sit in a shared mailbox's drafts "
+                "folder, quotes can be saved in your ERP or CRM with a draft status, and a short message in Teams "
+                "or Slack can point the reviewer to each one. What matters is that every draft, approval, edit and "
+                "rejection is recorded.",
+            ], []),
+            ("When it's safe to loosen it", [
+                "Use the approval record to decide. For each type of work, track how often drafts are approved "
+                "without edits. Where that stays high and the cost of a mistake is small, such as a repeat order "
+                "of standard items at list price, you can let the agent release within limits you set. Keep "
+                "checking a sample of what it releases.",
+            ], []),
+            ("Red flags", [], [
+                "The agent sends from a mailbox with full send rights \"just for now\".",
+                "Reviewers approve without seeing the original request.",
+                "Nothing records who approved what.",
+                "Nobody can say which work the agent is allowed to release on its own.",
+            ]),
+        ],
+        "faq": [
+            ("Doesn't approving every draft cancel out the time saved?",
+             "Checking a prepared draft against the original request is quicker than reading the request, looking "
+             "everything up and typing the reply from scratch. The agent does the reading and matching; the "
+             "decision stays with your team."),
+            ("Can an AI agent ever send emails or quotes on its own?",
+             "Only if you decide it should, within limits you set, for low-risk work where its approval record "
+             "shows it is reliable. Keeping a person on every customer-facing message is also a sound permanent choice."),
+            ("What should be logged?",
+             "The incoming request, the agent's draft, who approved or changed it, what they changed, and when it "
+             "was sent. That record is how you find problems and decide when to loosen the rules."),
         ],
     },
 ]
@@ -1257,7 +1337,10 @@ def build_services():
 {hero("Five ways to work with us", "From teaching your team to building and running it for you. "
       "Pick the level of help that fits — and change it as you go.", "services", "Services", slug=slug,
       accent="work with us")}
-<section class="section"><div class="wrap">{ladder(slug)}</div></section>
+<section class="section"><div class="wrap">{section_head("At a glance", "The five services", intro=(
+    "AI Training teaches your team; AI Agent Setup configures agents with you; AI Development builds a custom "
+    "agent you own; an AI Employee is built and run for you for a monthly fee; an AI Team gives you engineering "
+    "capacity instead of a hire. The usual first step is a Discovery Sprint."), accent="services")}{ladder(slug)}</div></section>
 {cta_band("services-band")}"""
     return page(slug, "AI Agent & Automation Services", desc, main, ref="services")
 
@@ -1324,7 +1407,9 @@ def build_use_cases():
 {hero("AI agents for operations, growth and finance teams", "Agents that do the reading, re-keying, tracking "
       "and reporting — so your people can spend their time on the decisions.", "use-cases",
       "Use cases", slug=slug, tone="lime")}
-<section class="section"><div class="wrap">{use_case_cards(slug)}
+<section class="section"><div class="wrap">{section_head("Use cases", f"{len(USE_CASES)} workflows we build agents for", intro=(
+    "Each one is a repetitive workflow where an agent reads, drafts or reconciles, and a person approves "
+    "anything that reaches a customer, a supplier or the books."), accent="build agents for")}{use_case_cards(slug)}
 <p class="more">Every use case can be taught, set up with you, built, or built and run for you.
 <a class="link" href="{rel(slug, 'services/')}">See the five ways to work with us →</a></p></div></section>
 {cta_band("use-cases-band")}"""
@@ -1845,7 +1930,9 @@ def build_tools():
     main = f"""
 {hero("Free tools for deciding where AI fits", "No sign-up and nothing to install. Each one takes a couple of "
       "minutes and runs in your browser.", "tools", "Free tools", slug=slug, accent="where AI fits", tone="lime")}
-<section class="section"><div class="wrap"><div class="cards cards-uc">{html_cards}</div></div></section>
+<section class="section"><div class="wrap">{section_head("Tools", "Three free tools", intro=(
+    "A workflow finder, an hours-back calculator and the 4S check. Each runs in your browser, with no sign-up "
+    "and nothing to install."), accent="free tools")}<div class="cards cards-uc">{html_cards}</div></div></section>
 {finder(slug, tone="lime")}
 <section class="section"><div class="wrap">{faq_html(FAQ_TOOLS)}</div></section>
 {cta_band("tools-band")}"""
@@ -1855,7 +1942,8 @@ def build_tools():
 def article_ld(g):
     return {"@type": "Article", "@id": url(g["slug"]) + "#article", "headline": g["title"],
             "description": g["description"], "url": url(g["slug"]), "mainEntityOfPage": url(g["slug"]),
-            "datePublished": GUIDES_PUBLISHED, "dateModified": GUIDES_PUBLISHED, "inLanguage": "en",
+            "datePublished": g.get("published", GUIDES_PUBLISHED),
+            "dateModified": g.get("updated", g.get("published", GUIDES_PUBLISHED)), "inLanguage": "en",
             "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}, "image": f"{SITE}/public/og.jpg"}
 
 
@@ -1873,7 +1961,8 @@ def build_guide(g):
     main = f"""
 {hero(g["h1"], g["lead"], ref, "Guide", slug=slug, accent=g["accent"], tone="lime")}
 <section class="section"><div class="wrap narrow prose big guide">
-  <p class="muted small">Published {GUIDES_PUBLISHED} by {BRAND}</p>
+  <p class="muted small">Published {g.get("published", GUIDES_PUBLISHED)} by {BRAND}{
+      f' · Updated {g["updated"]}' if g.get("updated") else ""}</p>
   {"".join(body)}
 </div></section>
 <section class="section tone-paper"><div class="wrap">{faq_html(g["faq"])}</div></section>
@@ -1893,7 +1982,9 @@ def build_guides():
     main = f"""
 {hero("Guides for putting AI to work", "Short answers to the questions owners ask us most, written so you can "
       "use them with or without us.", "guides", "Guides", slug=slug, accent="to work", tone="lime")}
-<section class="section"><div class="wrap">{rows(slug, items)}</div></section>
+<section class="section"><div class="wrap">{section_head("Library", "All guides", intro=(
+    "Each guide answers one buying question in plain English: what to ask, what it involves, and the red "
+    "flags. No sign-up."), accent="guides")}{rows(slug, items)}</div></section>
 {cta_band("guides-band")}"""
     return page(slug, "AI Automation Guides for Small Businesses", desc, main, ref="guides")
 

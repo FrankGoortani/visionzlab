@@ -13,7 +13,7 @@ VisionzLab (also written Visionz Lab, VisionZ Lab) is based in Ontario, Canada, 
 - [AI Agent Training for Small Businesses](https://visionzlab.com/services/ai-training/): Hands-on workshops and coaching that teach your team to set up and run their own AI agents and automations with tools you already pay for.
 - [AI Agent Setup Service](https://visionzlab.com/services/ai-agent-setup/): We set up your first AI agent with your team, connect it to your tools, and hand it over with a playbook so you can run it yourselves.
 - [Custom AI Agent Development](https://visionzlab.com/services/ai-development/): Fixed-scope, fixed-price development of production AI agents and automations, built to your requirements and handed over to your team.
-- [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee. Scoped around the work you need.
+- [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee.
 - [An AI Engineering Team Instead of a New Hire](https://visionzlab.com/services/ai-team/): Before you hire a software or AI engineer, consider senior AI engineering capacity on retainer, building what the role would build with an AI-first stack.
 - [AI Agent Use Cases](https://visionzlab.com/use-cases/): Agents for operations, growth and finance teams.
 - [AI Quote and RFQ Intake Agent](https://visionzlab.com/use-cases/quote-rfq-intake/): An AI agent that reads incoming requests for quote, matches items to your catalogue and pricing, and drafts the quote for your team to approve.
@@ -36,8 +36,9 @@ VisionzLab (also written Visionz Lab, VisionZ Lab) is based in Ontario, Canada, 
 - [Frank Goortani, Founder & Technical Principal](https://visionzlab.com/team/frank-goortani/): Frank Goortani founded VisionzLab and leads the technical side of every engagement. Two decades as an architect at Uber, TD Bank and Canada Life.
 - [Asal Matin, VP Business Development](https://visionzlab.com/team/asal-matin/): Asal Matin is VP Business Development at VisionzLab, the first point of contact for new clients.
 - [Guides](https://visionzlab.com/guides/): Plain-English guides on where AI agents and automation fit.
-- [How to Choose an AI Automation Partner](https://visionzlab.com/guides/choose-an-ai-automation-partner/): Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to make the first project small enough to judge.
+- [How to Choose an AI Automation Partner](https://visionzlab.com/guides/choose-an-ai-automation-partner/): Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to keep the first project small.
 - [AI Agent, Automation or a New Hire? How to Decide](https://visionzlab.com/guides/ai-agent-vs-automation-vs-hire/): A plain decision guide for small businesses: when rules-based automation is enough, when an AI agent with human approval fits, and when the work needs a person.
+- [Human Approval for AI-Drafted Quotes and Emails](https://visionzlab.com/guides/human-approval-for-ai-agents/): Let the agent draft and a person send. Where to put the approval step, what the reviewer needs to see, and when it's safe to loosen it.
 - [Free tools](https://visionzlab.com/free-tools/): Workflow finder, hours-back calculator and the 4S check.
 - [Hours-back calculator](https://visionzlab.com/free-tools/hours-back-calculator/): Estimate how many hours a year one workflow takes, and how many an AI agent could give back.
 - [Privacy](https://visionzlab.com/privacy/): What this website collects and why.
