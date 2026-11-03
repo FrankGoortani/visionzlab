@@ -32,6 +32,11 @@ HUBSPOT_PORTAL_ID = "343785035"
 HUBSPOT_REGION = "na3"
 HUBSPOT_FORM_ID = "b480b50f-caa3-41e0-954c-d94193f284e3"
 BOOK_SLUG = "book/"
+# Frank's Google Calendar appointment schedule "AI Consultation" (60 min, Google Meet), the same booking page the
+# outreach emails link to (calendar.app.google/yr17btY8j1g5b4BR8). /book/ shows it right after the HubSpot form is
+# submitted, so a visitor requests and books in one visit. `?gv=true` is Google's embeddable view. "" turns it off.
+BOOKING_CALENDAR_URL = ("https://calendar.google.com/calendar/appointments/schedules/"
+                        "AcZssZ2_bzCYAv1rz3IjgukgLGWdTnOVV1FZv3tWqkG6UfWNOCVAJ-DWqKypeErih1wy5DE7hlsbq85K?gv=true")
 
 LEGAL_NAME = "VisionZone One Consulting Inc."
 
@@ -1746,8 +1751,22 @@ BOOK_JS = """      (function () {
         document.head.appendChild(s);
         // The embed dispatches this on the form container and it bubbles (checked in its script, 2026-10-20).
         document.addEventListener('hs-form-event:on-submission:success', function () {
+          var shown = false;
+          // After the request goes in, show the appointment calendar so the visitor can book a time at once.
+          // The iframe only loads now, so visitors who never submit don't load Google Calendar.
+          var box = document.getElementById('pick-a-time');
+          if (box && box.hidden) {
+            var frame = box.querySelector('iframe');
+            frame.src = frame.getAttribute('data-src');
+            box.hidden = false;
+            shown = true;
+            setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+          }
           if (window.umami && typeof window.umami.track === 'function') {
-            try { window.umami.track('booking_submitted', { ref: ref }); } catch (_) {}
+            try {
+              window.umami.track('booking_submitted', { ref: ref });
+              if (shown) window.umami.track('booking_calendar_shown', { ref: ref });
+            } catch (_) {}
           }
         });
       })();"""
@@ -1758,6 +1777,23 @@ def build_book():
     desc = ("Request a free discovery session with VisionzLab. Tell us a little about your business and "
             "we'll find a time to talk.")
     js = BOOK_JS.replace("__REGION__", HUBSPOT_REGION).replace("__PORTAL__", HUBSPOT_PORTAL_ID)
+    if BOOKING_CALENDAR_URL:
+        book_next = ("Send the form, then pick a time from the calendar that appears, and the session is booked. "
+                     "If none of the times suit you, we'll reply within one business day to find one.")
+        calendar = f"""
+<section class="tone-paper book-time" id="pick-a-time" hidden><div class="wrap">
+  <h2>Thanks. Now pick a time.</h2>
+  <p class="lead">Choose a slot and the session is booked: the invitation and video link arrive by email.
+  If none of these times suit you, skip this step and we'll reply within one business day.</p>
+  <iframe class="book-calendar" title="Pick a time for your discovery session" data-src="{BOOKING_CALENDAR_URL}"
+    loading="lazy"></iframe>
+  <p class="muted small">Calendar not showing? <a class="link" href="{BOOKING_CALENDAR_URL.split('?')[0]}"
+    target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+</div></section>"""
+    else:
+        book_next = ("Send a request and we'll reply within one business day to arrange a time. "
+                     "This form does not reserve an appointment.")
+        calendar = ""
     main = f"""
 <section class="hero tone-paper"><div class="wrap hero-split">
   <div class="hero-copy">
@@ -1765,8 +1801,7 @@ def build_book():
     <h1>{headline("Let's talk about your work.", "your work.")}</h1>
     <p class="lead">A 60–90 minute conversation about where AI could take work off your team, and where it
     shouldn't. No preparation needed, and no obligation.</p>
-    <p class="big">Send a request and we'll reply within one business day to arrange a time.
-    This form does not reserve an appointment.</p>
+    <p class="big">{book_next}</p>
     <h2 class="call-heading">What we'll cover</h2>
     <ul class="ticks"><li>The workflow taking up your team's time</li>
       <li>Where AI could help and where people should stay in control</li>
@@ -1781,7 +1816,7 @@ def build_book():
     <noscript><p>Email <a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a> and we'll set up a time.</p></noscript>
     <p class="muted small">We use these details only to reply to you and arrange the call.</p>
   </div>
-</div></section>
+</div></section>{calendar}
 <script>
 {js}
 </script>"""
