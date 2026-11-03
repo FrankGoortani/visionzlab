@@ -1,6 +1,6 @@
 # VisionzLab
 
-> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: training, guided agent setup, custom AI development, managed AI employees, and AI engineering capacity instead of a new hire.
+> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: training, guided agent setup, custom AI development, managed AI employees, and AI engineering capacity instead of a new hire. Also an AI-assisted security review for small businesses.
 
 VisionzLab (also written Visionz Lab, VisionZ Lab) is based in Ontario, Canada, and serves Canada and the United States.
 
@@ -19,6 +19,7 @@ Pricing: The first discovery session is free. The Discovery Sprint is a fixed fe
 - [Custom AI Agent Development](https://visionzlab.com/services/ai-development/): Fixed-scope, fixed-price development of production AI agents and automations, built to your requirements and handed over to your team.
 - [Managed AI Employee for Your Business](https://visionzlab.com/services/ai-employee/): We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — and keep it working for a monthly fee.
 - [An AI Engineering Team Instead of a New Hire](https://visionzlab.com/services/ai-team/): Before you hire a software or AI engineer, consider senior AI engineering capacity on retainer, building what the role would build with an AI-first stack.
+- [AI-Assisted Security Review for Small Businesses](https://visionzlab.com/services/security-review/): A fixed-scope security review for small businesses: AI-assisted scans and settings checks, a plain-English fix list, and help closing the gaps that matter.
 - [AI Agent Use Cases](https://visionzlab.com/use-cases/): Agents for operations, growth and finance teams.
 - [AI Quote and RFQ Intake Agent](https://visionzlab.com/use-cases/quote-rfq-intake/): An AI agent that reads incoming requests for quote, matches items to your catalogue and pricing, and drafts the quote for your team to approve.
 - [AI Order Entry and Exceptions Agent](https://visionzlab.com/use-cases/order-entry/): An AI agent that turns emailed and PDF purchase orders into entered orders, checks them against price, stock and terms, and flags exceptions for your team.

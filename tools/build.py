@@ -55,6 +55,7 @@ ART = {
     "build": ("public/art/tier-build.webp", 900, 900),
     "employee": ("public/art/tier-employee.webp", 900, 900),
     "team": ("public/art/tier-team.webp", 900, 900),
+    "security": ("public/art/security.webp", 900, 900),
 }
 EMAIL_GENERAL = "hello@visionzlab.com"  # alias on frank@ (Workspace, 2026-11-01): no extra mailbox
 EMAIL_FRANK = "frank@visionzlab.com"
@@ -85,7 +86,9 @@ ORG = {
     "logo": {"@type": "ImageObject", "url": f"{SITE}/public/logo.png"},
     "image": f"{SITE}/public/og.jpg",
     "knowsAbout": ["AI agents", "Business process automation", "AI training for small businesses",
-                   "Document intake automation", "Order entry automation", "AI workflow design"],
+                   "Document intake automation", "Order entry automation", "AI workflow design",
+                   "Cybersecurity reviews for small businesses", "Vulnerability remediation",
+                   "AI tool security and data access"],
     **({"sameAs": SAME_AS} if SAME_AS else {}),
     "description": "VisionzLab helps small and mid-sized businesses put AI to work — "
                    "from teaching teams to build their own agents to building and running AI employees.",
@@ -257,6 +260,79 @@ TIERS = [
     },
 ]
 
+# Security Review (added 2026-11-03). A separate service, not a sixth rung on the AI ladder: it sells to the same
+# businesses for a different reason. Research and claim limits: asal repo
+# foundation/visionzlab/SECURITY_REVIEW_OFFER_2026-11-03.md. Claim rules: never "penetration test", never "certified",
+# never a guarantee, never an insurer's decision; nothing runs on a client system without written authorisation.
+SECURITY = {
+    "slug": "services/security-review/", "art": "security",
+    "alt": "Isometric illustration of a magnifying glass checking a laptop beside a server, "
+           "with padlock and email icons",
+    "tier": "Security",
+    "nav": "Security Review",
+    "title": "AI-Assisted Security Review for Small Businesses",
+    "description": "A fixed-scope security review for small businesses: AI-assisted scans and settings checks, "
+                   "a plain-English fix list, and help closing the gaps that matter.",
+    "lead": "We find the gaps attackers try first, explain them in plain English and help you close them, with a "
+            "senior engineer checking every finding.",
+    "for": "Businesses without a security team, especially those facing a cyber insurance application, a customer "
+           "security questionnaire or a supplier certification.",
+    "question": ("How can a small business check its security now that AI is finding software flaws faster?",
+                 "Start with the gaps attackers try first: internet-facing systems that are behind on patches, "
+                 "email accounts without multi-factor sign-in, admin accounts, untested backups and files shared "
+                 "too widely. A security review checks those against a recognised baseline and gives you a short, "
+                 "ordered fix list."),
+    "checks": [
+        ("Internet-facing systems", "Firewalls, VPN and remote access, websites and exposed services, checked for "
+         "known exploited flaws and out-of-date software."),
+        ("Email and sign-in", "Multi-factor sign-in, admin accounts, password reuse risk, and the SPF, DKIM and "
+         "DMARC records that stop others sending email as you."),
+        ("Microsoft 365 or Google Workspace", "Your settings compared with published secure baselines, read-only."),
+        ("Devices, patches and backups", "Patch status from the tools you already use, and whether backups are "
+         "kept apart from your network and have actually been restored."),
+        ("AI tools and agents", "Which AI tools your team uses, what data goes into them, and what files and "
+         "inboxes an AI assistant or agent can reach."),
+    ],
+    "get": [
+        "A review of your internet-facing systems, email and cloud settings, under a written authorisation you sign",
+        "A check of the AI tools your team already uses: what data goes into them and who can see what",
+        "A plain-English fix list in priority order, mapped to recognised baselines for small organisations",
+        "Help patching and hardening the top items, alongside your IT person or provider",
+        "Dated records of what was checked and fixed, for your insurer or a customer questionnaire",
+    ],
+    "how": [
+        ("Agree scope in writing", "We agree which systems we may check and how. Nothing runs until you've signed "
+         "a written authorisation."),
+        ("Review", "AI tools scan and compare your settings with security baselines. A senior engineer checks every "
+         "finding and removes the false alarms."),
+        ("Fix", "We work through the top items with your team or IT provider and record each change."),
+        ("Keep watch", "Optional: a monthly check for new flaws in the software you run, with a short report."),
+    ],
+    "priced": "A fixed fee for the review, agreed before work starts. Fixes are quoted from the findings; "
+              "monthly monitoring is optional.",
+    "faq": [
+        ("Why does AI change our security risk?", "AI makes it faster and cheaper to find and exploit known software "
+         "flaws, and to write convincing phishing emails. Most small-business breaches still start with the basics: "
+         "an unpatched system, a reused password, an email account without multi-factor sign-in. We check those "
+         "first."),
+        ("Is this a penetration test?", "No. It's a review of the ways small businesses most often get breached. If "
+         "your insurer, a customer or a certification asks for a formal penetration test, we'll say so and help "
+         "you scope one."),
+        ("Do you need access to our systems?", "Read-only access for the review, under a written authorisation that "
+         "names what we may check. We don't keep copies of your business data, and every change is made with your "
+         "team and recorded."),
+        ("Can this help with our cyber insurance application?", "Yes. The fix list covers the controls insurers "
+         "usually ask about, such as multi-factor sign-in, endpoint protection and tested backups, and you keep "
+         "dated records of each. The insurer's decision is still theirs."),
+        ("Is it safe to connect AI assistants to our email and files?", "It can be, once permissions are right. An "
+         "AI assistant sees whatever the signed-in person can see, so files shared too widely become easy to "
+         "find. We check sharing and permissions before you switch it on."),
+        ("Will this make us unhackable?", "No one can honestly promise that. The review closes the gaps attackers "
+         "try first and gives you a plan for the rest."),
+    ],
+    "ref": "security",
+}
+
 PLAYS = [
     {
         "slug": "for/distributors-manufacturers/",
@@ -280,6 +356,10 @@ PLAYS = [
         ],
         "tiers": [1, 2, 3],
         "uses": ["use-cases/quote-rfq-intake/", "use-cases/order-entry/", "use-cases/document-intake/"],
+        "faq": [("A customer sent us a cyber security questionnaire. Can you help?", "Yes. Our Security Review "
+                 "checks the controls these questionnaires and supplier certifications usually ask about, such as "
+                 "multi-factor sign-in, patching and backups, fixes the gaps with your team, and leaves you dated "
+                 "records to answer from.")],
         "ref": "play-industrial",
     },
     {
@@ -300,6 +380,10 @@ PLAYS = [
             "Your licensed brokers stay in charge of advice, placement and every coverage decision. Agents prepare "
             "the paperwork; they never bind coverage or give advice. We work with commercial and P&C lines.",
         ],
+        "faq": [("Can you help clients who struggle with cyber insurance applications?", "We work with the "
+                 "business directly: our Security Review checks the controls insurers usually ask about and helps "
+                 "close the gaps, with dated records of what changed. The application and the coverage advice "
+                 "stay with the broker.")],
         "tiers": [1, 2, 3],
         "uses": ["use-cases/document-intake/", "use-cases/renewals-follow-up/", "use-cases/inbox-triage/"],
         "ref": "play-insurance",
@@ -322,6 +406,10 @@ PLAYS = [
         ],
         "tiers": [0, 1, 3],
         "uses": ["use-cases/document-intake/", "use-cases/financial-reporting/", "use-cases/inbox-triage/"],
+        "faq": [("Can you check our firm's security too?", "Yes. Accounting firms hold exactly the data attackers "
+                 "want. Our Security Review checks email and sign-in, cloud settings, client portals and backups, "
+                 "and gives you a plain-English fix list. In the US it also helps you prepare the written "
+                 "information security plan tax preparers are expected to keep.")],
         "ref": "play-c",
     },
     {
@@ -730,6 +818,9 @@ FRANK = {
             "enterprises, as a solution architect and technical lead at organisations including Uber, TD Bank, "
             "Canada Life and CAA. At Uber he led an award-winning AI initiative; at Canada Life he formed and "
             "scaled an in-house mobile team. He is TOGAF and PMP certified.",
+            "Much of his work has been for security and privacy teams: data-request automation, enterprise "
+            "sign-in built to OpenID and OAuth 2.0 guidelines, and handling of sensitive data to PCI standards. "
+            "He leads VisionzLab's Security Review.",
             "On every project he makes sure the agents are safe to run: approval steps, audit trails and clear "
             "limits on what they may do."],
 }
@@ -763,6 +854,17 @@ EXPERIENCE = [
                  "cross-functional engineering team that built it.",
         "outcome": "Adopted company-wide, and recognised with several internal awards, including the company's "
                    "Engineering Excellence Award in 2024.",
+    },
+    {
+        "tag": "Security and privacy engineering · Technology, insurance, finance",
+        "title": "Security and privacy built into production systems",
+        "work": "Security and privacy teams at a global technology platform, a major Canadian insurer, and the "
+                "finance systems of a large Canadian membership organisation.",
+        "built": "Our founder led the development of data-request (DSAR) automation for the platform's security and "
+                 "privacy teams, built enterprise sign-in to OpenID and OAuth 2.0 security guidelines at the "
+                 "insurer, and designed a tokenised portal for sensitive information to PCI standards.",
+        "outcome": "Security and privacy treated as part of the build, not an afterthought. It's the background "
+                   "behind our Security Review.",
     },
     {
         "tag": "AI automation · Four industries",
@@ -1032,6 +1134,8 @@ FINDER = {
     "use-cases/financial-reporting/": ["report", "month-end", "month end", "reconcil", "bookkeep", "financial",
                                        "spreadsheet", "excel", "budget"],
     "services/ai-training/": ["learn", "train", "teach", "workshop", "chatgpt", "copilot", "staff", "course"],
+    "services/security-review/": ["security", "secure", "cyber", "hack", "breach", "phishing", "ransomware",
+                                  "vulnerab", "patch", "mfa", "password", "insurance questionnaire", "firewall"],
     "instead-of-hiring/": ["hire", "hiring", "developer", "engineer", "build an app", "software", "headcount"],
 }
 FINDER_EXAMPLES = ["Typing supplier quotes into our system", "Answering the shared inbox",
@@ -1052,6 +1156,10 @@ FAQ_HOME = [
     ("How do you keep our data and decisions under control?",
      "Agents get only the accounts and permissions you give them, and approval steps, audit trails and limits on "
      "what an agent may do are part of every build. We agree what data is used, and who can see it, before work starts."),
+    ("Can you check our security, not just build AI?",
+     "Yes. Our Security Review checks the gaps attackers try first, including internet-facing systems, email and "
+     "sign-in, cloud settings and the AI tools your team uses, and gives you a plain-English fix list. We then help "
+     "you close the top items with your IT person or provider."),
     ("What if AI isn't the right answer for our problem?",
      "Then we'll say so. Some work is better handled by a simple rules-based automation or by a person, and the "
      "discovery session is where we tell you which."),
@@ -1192,7 +1300,8 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
         <div><a class="brand" href="{rel(slug, '')}"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round"><path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/><path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g></svg>{BRAND}</a>
           <p class="muted">AI agents and automation for small and mid-sized businesses.<br />
           Based in Ontario, Canada · serving Canada and the US.</p></div>
-        <div><h2>Services</h2><ul>{foot_tiers}<li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li>
+        <div><h2>Services</h2><ul>{foot_tiers}<li><a href="{rel(slug, SECURITY["slug"])}">{SECURITY["nav"]}</a></li>
+          <li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li>
           <li><a href="{rel(slug, MATURITY_SLUG)}">The 4S check</a></li></ul></div>
         <div><h2>Use cases</h2><ul>{foot_uses}</ul></div>
         <div><h2>Who we help</h2><ul>{foot_plays}</ul></div>
@@ -1352,6 +1461,13 @@ def build_home():
   {rows(slug, [(p["slug"], p["nav"], p["lead"]) for p in PLAYS])}
 </div></section>
 <section class="section tone-paper"><div class="wrap split">
+  <div><p class="eyebrow">Security Review</p><h2>Worried about <span class="hl">AI-powered attacks?</span></h2>
+  <p class="big">{e(SECURITY["lead"])} A fixed-scope review of your internet-facing systems, email, cloud
+  settings and the AI tools your team already uses.</p>
+  <div class="actions"><a class="btn btn-ink" href="{SECURITY["slug"]}">How the security review works →</a></div></div>
+  <div class="frame">{art(slug, SECURITY["art"], SECURITY["alt"])}</div>
+</div></section>
+<section class="section tone-lime"><div class="wrap split">
   <div><h2>Choose the help that fits</h2><p class="big">Learn with us, build alongside us, or have us build and
   maintain your workflow. Start with one defined task and review the results before expanding.</p>
   <a class="link" href="services/">Compare the five services →</a></div>
@@ -1359,7 +1475,7 @@ def build_home():
   on your next step with AI. Eight questions, about two minutes.</p>
   <a class="link" href="{MATURITY_SLUG}#check">Take the 4S check →</a></div>
 </div></section>
-<section class="section tone-lime"><div class="wrap split">
+<section class="section tone-paper"><div class="wrap split">
   <div><p class="eyebrow">About {BRAND}</p><h2>An AI studio for businesses <span class="hl">without an AI team</span></h2></div>
   <div><p class="big">{BRAND} is an AI studio based in Ontario, Canada, working with small and mid-sized businesses
   across Canada and the US. We teach teams to run their own agents, build agents with them, or build and run them
@@ -1385,11 +1501,16 @@ def build_services():
     "AI Training teaches your team; AI Agent Setup configures agents with you; AI Development builds a custom "
     "agent you own; an AI Employee is built and run for you for a monthly fee; an AI Team gives you engineering "
     "capacity instead of a hire. The usual first step is a Discovery Sprint."), accent="services")}{ladder(slug)}</div></section>
+<section class="section tone-paper"><div class="wrap split">
+  <div><p class="eyebrow">Also</p><h2>{e(SECURITY["nav"])}</h2><p class="big">{e(SECURITY["lead"])}</p>
+  <a class="link" href="{rel(slug, SECURITY["slug"])}">How the security review works →</a></div>
+  <div class="frame">{art(slug, SECURITY["art"], SECURITY["alt"])}</div>
+</div></section>
 <section class="section tone-lime"><div class="wrap split">
   <div>{section_head("Pricing", "How pricing works", intro=PRICING_SUMMARY, accent="pricing")}</div>
   <div class="panel"><ul class="ticks"><li><strong>Discovery session:</strong> free, with a short memo afterwards</li>
   <li><strong>Discovery Sprint:</strong> a fixed fee agreed before it starts</li>{"".join(
-      f'<li><strong>{e(t["nav"])}:</strong> {e(t["priced"][0].lower() + t["priced"][1:].rstrip("."))}</li>' for t in TIERS)}</ul></div>
+      f'<li><strong>{e(t["nav"])}:</strong> {e(t["priced"][0].lower() + t["priced"][1:].rstrip("."))}</li>' for t in TIERS + [SECURITY])}</ul></div>
 </div></section>
 <section class="section"><div class="wrap narrow prose big"><h2>Who we work with</h2><p>{e(WHO_WE_SERVE)}</p></div></section>
 {cta_band("services-band")}"""
@@ -1418,6 +1539,45 @@ def build_tier(i):
 {cta_band(ref + "-band")}"""
     return page(slug, t["title"], t["description"], main,
                 ld=[service_ld(slug, t["title"], t["description"]), faq_ld(t["faq"])], ref=ref)
+
+
+def build_security():
+    s = SECURITY
+    slug = s["slug"]
+    faq = [s["question"]] + s["faq"]
+    checks = "".join(f'<li><strong>{e(a)}</strong><span>{e(b)}</span></li>' for a, b in s["checks"])
+    get = "".join(f"<li>{e(x)}</li>" for x in s["get"])
+    how = "".join(f'<li><strong>{e(a)}</strong><span>{e(b)}</span></li>' for a, b in s["how"])
+    main = f"""
+{hero(s["title"], s["lead"], s["ref"], f'Service · {s["tier"]}', slug=slug, img=s["art"], alt=s["alt"])}
+<section class="section tone-lime"><div class="wrap narrow prose big">
+  <h2>Why now</h2>
+  <p>AI has made it cheaper to find software flaws and quicker to exploit them, and phishing emails now read like
+  they came from a colleague. Large companies have security teams to keep up. Most small businesses have an IT
+  person, a provider, or nobody.</p>
+  <p>The good news is that most breaches still start with a short list of basics. A review that checks those
+  properly, and a plan to fix them in order, removes most of the easy ways in.</p>
+</div></section>
+<section class="section"><div class="wrap split">
+  <div class="panel"><h2>What we check</h2><ol class="steps">{checks}</ol></div>
+  <div class="panel"><h2>Who it's for</h2><p class="big">{e(s["for"])}</p><h2>What you get</h2><ul class="ticks">{get}</ul>
+  <h2>How it's priced</h2><p class="big">{e(s["priced"])}</p></div>
+</div></section>
+<section class="section tone-lime"><div class="wrap split">
+  <div class="panel"><h2>How it works</h2><ol class="steps">{how}</ol></div>
+  <div class="panel"><h2>What stays with people</h2><ul class="ticks">
+  <li>A senior engineer reviews every finding before you see it</li>
+  <li>Nothing changes on your systems without your approval</li>
+  <li>Your team or IT provider stays in charge of your systems; we work alongside them</li>
+  <li>We tell you plainly when you need a specialist we're not, such as a formal penetration test or an
+  incident response firm</li></ul>
+  <p class="more"><a class="link" href="{rel(slug, EXPERIENCE_SLUG)}">Our security and privacy background →</a></p></div>
+</div></section>
+<section class="section"><div class="wrap">{faq_html(faq)}</div></section>
+<section class="section tone-lime"><div class="wrap">{section_head("AI services", "Five ways to put AI to work", accent="put AI to work")}{ladder(slug)}</div></section>
+{cta_band(s["ref"] + "-band")}"""
+    return page(slug, s["title"], s["description"], main,
+                ld=[service_ld(slug, s["title"], s["description"]), faq_ld(faq)], ref=s["ref"])
 
 
 def check_questions():
@@ -1864,7 +2024,7 @@ def page_title(slug):
     for u in USE_CASES:
         if u["slug"] == slug:
             return u["nav"], u["lead"]
-    for t in TIERS:
+    for t in TIERS + [SECURITY]:
         if t["slug"] == slug:
             return t["nav"], t["lead"]
     for p in PLAYS:
@@ -2145,7 +2305,7 @@ def build_llms(pages):
     lines = [f"# {BRAND}", "",
              "> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: "
              "training, guided agent setup, custom AI development, managed AI employees, and AI engineering "
-             "capacity instead of a new hire.", "",
+             "capacity instead of a new hire. Also an AI-assisted security review for small businesses.", "",
              f"{BRAND} (also written {', '.join(ALT_NAMES[:2])}) is based in Ontario, Canada, and serves "
              "Canada and the United States.", "",
              f"Who we serve: {WHO_WE_SERVE}", "", f"Pricing: {PRICING_SUMMARY}", "", "## Pages", ""]
@@ -2207,6 +2367,7 @@ def main():
             "Where is your business with AI? Eight questions place one workflow at Strategy, Solution, Scale or "
             "Sustain.")]
     out += [(t["slug"], build_tier(i), t["title"], t["description"]) for i, t in enumerate(TIERS)]
+    out += [(SECURITY["slug"], build_security(), SECURITY["title"], SECURITY["description"])]
     out += [("use-cases/", build_use_cases(), "AI Agent Use Cases", "Agents for operations, growth and finance teams.")]
     out += [(u["slug"], build_use_case(u), u["title"], u["description"]) for u in USE_CASES]
     out += [(p["slug"], build_play(p), p["title"], p["description"]) for p in PLAYS]
