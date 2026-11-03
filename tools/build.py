@@ -1822,7 +1822,7 @@ def build_book():
         calendar = f"""
 <section class="tone-paper book-time" id="pick-a-time" hidden><div class="wrap">
   <h2>Thanks. Now pick a time.</h2>
-  <p class="lead">Choose a slot and the session is booked: the calendar invitation arrives by email.
+  <p class="lead">Choose a slot and the session is booked: the invitation and Google Meet link arrive by email.
   If none of these times suit you, skip this step and we'll reply within one business day.</p>
   {picker}
 </div></section>"""
