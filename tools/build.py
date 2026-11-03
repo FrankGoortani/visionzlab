@@ -40,7 +40,7 @@ BOOKING_CALENDAR_URL = ("https://calendar.google.com/calendar/appointments/sched
 # HubSpot Meetings scheduling page (Sales > Meetings in the VisionzLab portal), synced to the same Google Calendar.
 # When set it replaces BOOKING_CALENDAR_URL: the booking is logged as a meeting on the HubSpot contact and still
 # lands in Google Calendar. The page prefills name and email from the form just submitted.
-HUBSPOT_MEETINGS_URL = ""
+HUBSPOT_MEETINGS_URL = "https://meetings-na3.hubspot.com/frank-goortani"
 
 LEGAL_NAME = "VisionZone One Consulting Inc."
 
@@ -1822,7 +1822,7 @@ def build_book():
         calendar = f"""
 <section class="tone-paper book-time" id="pick-a-time" hidden><div class="wrap">
   <h2>Thanks. Now pick a time.</h2>
-  <p class="lead">Choose a slot and the session is booked: the invitation and video link arrive by email.
+  <p class="lead">Choose a slot and the session is booked: the calendar invitation arrives by email.
   If none of these times suit you, skip this step and we'll reply within one business day.</p>
   {picker}
 </div></section>"""

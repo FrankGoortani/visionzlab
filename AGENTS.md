@@ -15,10 +15,11 @@ Booking form (added 2026-10-14): every "Book" button goes to `/book/`, which emb
 HubSpot. Don't rename `vzl_ref`, drop the `data-ref` values, or replace the embed without updating the HubSpot form
 and its record (`foundation/visionzlab/crm/HUBSPOT_ACCOUNT.md` in the VisionzLab business repo). Setting
 `HUBSPOT_FORM_ID = ""` falls back to `CONTACT_URL`.
-After a successful submission (`hs-form-event:on-submission:success`), `/book/` reveals Frank's Google Calendar
-appointment schedule ("AI Consultation", 60 min, Meet) in an iframe below the form, so the visitor books a time in
-the same visit (added 2026-11-02; constant `BOOKING_CALENDAR_URL`, `""` turns it off). Bookings land on Frank's
-calendar, not in HubSpot; umami logs `booking_calendar_shown`.
+After a successful submission (`hs-form-event:on-submission:success`), `/book/` reveals a scheduler below the form so
+the visitor books a time in the same visit (added 2026-11-02). `HUBSPOT_MEETINGS_URL` (HubSpot Meetings, Frank's
+`frank-goortani` link, 60 min, synced to his Google Calendar) wins: the booking is logged on the HubSpot contact,
+and name/email are prefilled from the form. `BOOKING_CALENDAR_URL` (Google appointment page) is the fallback;
+`""` on both turns it off. umami logs `booking_calendar_shown`.
 
 Positioning rule: the site is brand-led. No individual's name, employer or personal contact details
 appear on it, except the team pages under `/team/` (`TEAM` in `tools/build.py`; linked from the footer and About).
