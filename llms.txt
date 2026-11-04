@@ -46,6 +46,7 @@ Pricing: The first discovery session is free. The Discovery Sprint is a fixed fe
 - [Human Approval for AI-Drafted Quotes and Emails](https://visionzlab.com/guides/human-approval-for-ai-agents/): Let the agent draft and a person send. Where to put the approval step, what the reviewer needs to see, and when it's safe to loosen it.
 - [Free tools](https://visionzlab.com/free-tools/): Workflow finder, hours-back calculator and the 4S check.
 - [Hours-back calculator](https://visionzlab.com/free-tools/hours-back-calculator/): Estimate how many hours a year one workflow takes, and how many an AI agent could give back.
+- [Security and privacy](https://visionzlab.com/security-and-privacy/): How we protect client data in the AI systems we build: approved models, no training, people approve.
 - [Privacy](https://visionzlab.com/privacy/): What this website collects and why.
 - [Request a discovery session](https://visionzlab.com/book/): Request a free discovery session.
 

@@ -928,6 +928,97 @@ GUIDES_SLUG = "guides/"
 TOOLS_SLUG = "free-tools/"
 CALC_SLUG = "free-tools/hours-back-calculator/"
 PRIVACY_SLUG = "privacy/"
+
+# Security and privacy in the AI systems we build (added 2026-11-04). Source text, kept in step with this:
+# foundation/visionzlab/SECURITY_AND_PRIVACY.md in the VisionzLab business repo. Wording rules: frameworks are
+# "practices we follow", never certifications we hold; data is "never public", not "never touches the internet".
+DATA_TRUST_SLUG = "security-and-privacy/"
+DATA_TRUST = {
+    "title": "How We Protect Your Data in AI Systems",
+    "h1": "How we protect your data",
+    "description": ("Approved AI models only, your data never used for training, nothing public, a person approves "
+                    "every step. How VisionzLab keeps client data safe."),
+    "lead": ("When you let an AI system work on your documents, the first question is the right one: where does my "
+             "data go, and who can see it? Here is our answer for every system we build."),
+    "sections": [
+        ("Only approved AI models",
+         "We use AI models from an approved list, never whatever tool is handy. A model is approved only if it "
+         "meets all of these:",
+         [("Business-grade terms", "We use the enterprise or API service, not the consumer app. Under those terms "
+           "the provider does not use your data to train its models."),
+          ("Known retention", "We know how long the provider keeps a request, if at all, and we pick the shortest "
+           "setting available."),
+          ("Independent audits at the provider", "The provider's own infrastructure is independently audited, for "
+           "example with SOC 2 Type II or ISO 27001 reports, and we can share those reports with you."),
+          ("A choice of region", "Where you need it, data is processed in a region you choose, such as Canada or "
+           "the US."),
+          ("You approve the models", "You approve which models touch your data before we start. To keep everything "
+           "inside your own environment, we can run an open-weight model privately in your cloud account or on "
+           "your own server. Free and consumer AI tools are never used with client data.")]),
+        ("Your data is never used for training",
+         "Your documents are used for one thing: doing your work.",
+         [("No training", "They are not used to train or improve any AI model, ours or a provider's."),
+          ("No shared datasets", "We don't build datasets from client material, and nothing from one client is "
+           "ever used for another.")]),
+        ("Your data stays private", None,
+         [("Never public", "Client data is never published, shared, or reachable from the open internet. It isn't "
+           "pasted into public chat tools or kept on personal devices."),
+          ("Encrypted in transit and at rest", "Data moves only over encrypted connections between your systems "
+           "and the approved model service, and it is encrypted wherever it's stored."),
+          ("Your accounts where possible", "We prefer to build inside accounts you own and control: your Microsoft "
+           "365, Google Workspace or cloud tenant. You keep the keys and can switch our access off at any time."),
+          ("Least access", "The system and our team get only the access the work needs, read-only wherever that's "
+           "enough, and access is removed when the work ends."),
+          ("Kept only as long as needed", "Working copies are deleted or returned when the engagement ends, as "
+           "agreed with you in writing.")]),
+        ("People stay in charge", None,
+         [("A person approves every action that matters", "Nothing is filed, sent, deleted or changed without "
+           "someone saying yes."),
+          ("When unsure, it asks", "Anything the system isn't confident about is set aside for a person. It is "
+           "never guessed."),
+          ("Every step is logged", "What came in, what the system proposed, who approved or changed it, and when. "
+           "You can review it at any time."),
+          ("Stop at any time", "Every system can be paused or switched off, and your work carries on the way it "
+           "did before.")]),
+        ("Guardrails built in", None,
+         [("Defined boundaries", "Each system can reach only the folders, mailboxes and tools named in its scope."),
+          ("Protection against manipulation", "Text inside a document is treated as content, never as an "
+           "instruction, so a document can't tell the system to do something it shouldn't."),
+          ("Sensitive details handled with care", "Personal identifiers can be masked or left out wherever the "
+           "work doesn't need them."),
+          ("Tested before it goes live", "We test each system on agreed samples, with results you can check, "
+           "before it handles real work.")]),
+    ],
+    "standards": ("We design and run our work using the practices behind recognised security and privacy "
+                  "frameworks, including SOC 2 (security, availability and confidentiality controls), GDPR (data "
+                  "minimisation, purpose limitation, the rights of the people the data is about) and HIPAA "
+                  "(safeguards for sensitive personal information), along with Canada's PIPEDA and the "
+                  "confidentiality rules of your profession. These are practices we follow, not certifications we "
+                  "claim. Where you need a certified party, the certification belongs to the model and cloud "
+                  "providers we use, and we'll show you their reports."),
+    "incident": ("If we ever find a problem that affects your data, we tell you promptly, explain what happened and "
+                 "what we know, stop the affected system if needed, and work with you on the fix. Your contract "
+                 "sets out the details."),
+    "faq": [
+        ("Is our data used to train AI models?",
+         "No. We use only business-grade AI services whose terms exclude training on customer data, or open-weight "
+         "models run privately in your own environment. Your documents are used only to do your work."),
+        ("Which AI models do you use?",
+         "Models from an approved list: enterprise services from major providers with no-training terms, known "
+         "retention and independent audits, or a private open-weight model. You approve which ones touch your data "
+         "before we start."),
+        ("Is VisionzLab SOC 2 or HIPAA certified?",
+         "No. We follow the practices behind SOC 2, GDPR, HIPAA and PIPEDA in how we design and run systems, but "
+         "we don't claim those certifications. The model and cloud providers we use hold their own, and we can "
+         "share their reports."),
+        ("Can the AI act on its own?",
+         "Not on anything that matters. It proposes, a person approves, and every step is logged. Anything it "
+         "isn't sure about goes to a person."),
+        ("Can we keep everything in Canada?",
+         "Where you need it, we choose services that process data in Canada, or run the system inside your own "
+         "cloud account in a Canadian region."),
+    ],
+}
 GUIDES_PUBLISHED = "2026-10-31"
 
 # Evergreen answers to questions owners search for. Each section is (heading, paragraphs, bullets).
@@ -1310,6 +1401,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
           <li><a href="{rel(slug, CALC_SLUG)}">Hours-back calculator</a></li></ul></div>
         <div><h2>Company</h2><ul><li><a href="{rel(slug, 'about/')}">About</a></li>
           <li><a href="{rel(slug, EXPERIENCE_SLUG)}">Our experience</a></li>
+          <li><a href="{rel(slug, DATA_TRUST_SLUG)}">Security and privacy</a></li>
           {foot_team}
           <li><a href="{SAME_AS[0]}" rel="noopener">LinkedIn</a></li>
           <li><a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></li>
@@ -2301,6 +2393,32 @@ def build_privacy():
     return page(slug, "Privacy", desc, main, ref="privacy")
 
 
+def build_data_trust():
+    t, slug = DATA_TRUST, DATA_TRUST_SLUG
+    blocks = []
+    for i, (head, intro, items) in enumerate(t["sections"]):
+        lis = "".join(f"<li><strong>{e(a)}.</strong> {e(b)}</li>" for a, b in items)
+        p = f'<p class="big">{e(intro)}</p>' if intro else ""
+        tone = " tone-lime" if i % 2 == 0 else ""
+        blocks.append(f'<section class="section{tone}"><div class="wrap narrow prose big"><h2>{e(head)}</h2>{p}'
+                      f'<ul class="ticks">{lis}</ul></div></section>')
+    main = f"""
+{hero(t["h1"], t["lead"], "trust", "Security and privacy", slug=slug, accent="your data")}
+{"".join(blocks)}
+<section class="section"><div class="wrap narrow prose big">
+  <h2>The standards we follow</h2><p>{e(t["standards"])}</p>
+  <h2>If something goes wrong</h2><p>{e(t["incident"])}</p>
+  <h2>Ask us anything</h2><p>On request, we'll give you the list of providers that would handle your data, their
+  audit reports, and a written description of how your system is set up. Email
+  <a class="link" href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a>.</p>
+  <p class="muted small">This page covers the AI systems we build for clients. For this website itself, see our
+  <a class="link" href="{rel(slug, PRIVACY_SLUG)}">privacy notice</a>. Last updated 2026-11-04.</p>
+</div></section>
+<section class="section"><div class="wrap">{faq_html(t["faq"])}</div></section>
+{cta_band("trust-band")}"""
+    return page(slug, t["title"], t["description"], main, ld=[faq_ld(t["faq"])], ref="trust")
+
+
 def build_llms(pages):
     lines = [f"# {BRAND}", "",
              "> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: "
@@ -2380,6 +2498,8 @@ def main():
     out += [(TOOLS_SLUG, build_tools(), "Free tools", "Workflow finder, hours-back calculator and the 4S check.")]
     out += [(CALC_SLUG, build_calculator(), "Hours-back calculator",
              "Estimate how many hours a year one workflow takes, and how many an AI agent could give back.")]
+    out += [(DATA_TRUST_SLUG, build_data_trust(), "Security and privacy",
+             "How we protect client data in the AI systems we build: approved models, no training, people approve.")]
     out += [(PRIVACY_SLUG, build_privacy(), "Privacy", "What this website collects and why.")]
     if HUBSPOT_FORM_ID:
         out += [(BOOK_SLUG, build_book(), "Request a discovery session", "Request a free discovery session.")]
