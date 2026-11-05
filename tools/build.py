@@ -363,6 +363,49 @@ PLAYS = [
         "ref": "play-industrial",
     },
     {
+        "slug": "for/machine-shops/",
+        "question": ("How can a machine shop use AI to quote jobs faster from drawings and 3D models?",
+                     "An AI quoting assistant reads the RFQ email, drawings, sketches and STEP files, lists what the "
+                     "buyer left out, and drafts a cost from the shop's own rates, machines and past jobs. The "
+                     "estimator checks it, sets the price and sends the quote."),
+        "art": "lab",
+        "nav": "Machine Shops & Fabricators",
+        "title": "AI Quoting for Machine Shops and Fabricators",
+        "description": "AI that reads RFQs, drawings, sketches and 3D models, asks the buyer what's missing and "
+                       "drafts the quote for your estimator to approve.",
+        "lead": "An AI first pass on every RFQ: it reads the drawings and models, lists the missing details and "
+                "drafts the quote, and your estimator approves it.",
+        "body": [
+            "In most job shops, one or two busy people quote everything. Each RFQ arrives as an email with a "
+            "PDF print, a STEP file, or sometimes a phone photo of a sketch. Someone works out the material, "
+            "stock size, setups and outside processes, writes back for the missing tolerance or quantity, and "
+            "prices it. Most of those quotes don't win, and buyers compare every reply with an instant-quote "
+            "website.",
+            "We build quoting assistants that do the first pass. They read the request and its files, measure "
+            "the model, list the questions the buyer still needs to answer, and draft a cost from your own rates, "
+            "machines and past jobs. Your estimator reviews it, sets the price and the date, and sends it.",
+            "If an off-the-shelf quoting tool already fits your parts, we'll tell you, and help you set it up. "
+            "Most engagements start with a discovery sprint on twenty of your recent, non-controlled RFQs, "
+            "measured against what you actually quoted.",
+        ],
+        "guide": "guides/ai-quoting-for-machine-shops/",
+        "tiers": [1, 2, 3],
+        "uses": ["use-cases/quote-rfq-intake/", "use-cases/document-intake/", "use-cases/inbox-triage/"],
+        "faq": [
+            ("We already use a quoting tool. Do we need you?",
+             "Maybe not. If your tool handles your parts and your team trusts its numbers, keep it. We help where "
+             "requests are messy (sketches, PDFs with no model), where you want the draft calibrated on your own "
+             "past jobs, or where quoting has to fit your inbox, your ERP and your quote template."),
+            ("Can we keep customer drawings in Canada?",
+             "Yes. We can host in Canada, delete files on a schedule you set, and keep your drawings out of model "
+             "training. Drawings under the Controlled Goods Program or ITAR stay out of the system entirely."),
+            ("Does it set our prices?",
+             "No. It drafts a cost from the rates and rules you give it and shows its working. Your estimator "
+             "sets the price, the delivery date and whether to quote at all."),
+        ],
+        "ref": "play-machine-shops",
+    },
+    {
         "slug": "for/insurance-brokers/",
         "question": ('How can an insurance brokerage use AI agents without losing the personal touch?',
                      'Give the agents the paperwork, not the relationships: reading submissions and certificates, tracking renewal dates, preparing follow-ups and sorting the inbox. Brokers review and send every client message.'), "art": "employee",
@@ -1207,11 +1250,136 @@ GUIDES = [
              "was sent. That record is how you find problems and decide when to loosen the rules."),
         ],
     },
+    {
+        "slug": "guides/ai-quoting-for-machine-shops/",
+        "nav": "AI quoting for machine shops",
+        "eyebrow": "White paper",
+        "title": "AI Quoting for Machine Shops: A 2026 Field Guide",
+        "h1": "AI quoting for machine shops",
+        "accent": "machine shops",
+        "published": "2026-11-03",
+        "description": "What AI quoting tools for CNC and fabrication shops do today, what they cost, where they "
+                       "fall short on messy RFQs, and how to test one on your own work.",
+        "lead": "Quoting takes up estimator hours in most job shops, and in 2026 AI quoting tools arrived in "
+                "force. This paper covers what they do, what they cost, where they still fall short, and how a "
+                "shop or a shop network can test one on its own requests.",
+        "sections": [
+            ("Why quoting is the bottleneck", [
+                "In a typical job shop, a few people quote everything, usually the same people who run the floor. "
+                "Every RFQ has to be read, the print checked against the model, the material and stock size "
+                "worked out, setups and outside processes estimated, and the missing details chased. Most quotes "
+                "don't win, so most of that time goes to work the shop never makes.",
+                "Buyers have also changed. An engineer who needs a bracket tomorrow can upload a model to an "
+                "instant-quote website and see a price in seconds. A local shop that takes three days to answer, "
+                "or replies with a list of questions, loses that job before anyone compares quality.",
+                "Not every shop feels this. An owner who quotes a handful of jobs a week, mostly for repeat "
+                "customers, may spend very little time on it. The pain sits with shops that quote often: dozens "
+                "of parts a week, many of them from new buyers.",
+            ], []),
+            ("What's on the market (October 2026)", [
+                "There are two different markets, and it's easy to mix them up.",
+                "Shop-side estimating tools work for the shop's estimator. They read the model and the print, "
+                "estimate cycle time and cost, and build the quote. Examples: CloudNC Quote Agent, which launched "
+                "in October 2026 (forward the RFQ or upload drawings and models, and it drafts a manufacturing "
+                "plan, routing times and costs, and asks about anything missing), Paperless Parts, Machine "
+                "Research, Toolpath, up2parts, Spanflug and DigiFabster (instant quoting on a shop's own website).",
+                "Buyer-side instant-quote platforms work for the buyer. SendCutSend, Xometry and Protolabs Network "
+                "give an instant price on upload, then make the part themselves or send it to their own suppliers. "
+                "For a local shop, they are competitors, not tools.",
+                "Published prices for shop-side tools, as listed by the vendors in October 2026:",
+            ], [
+                "Free for manual quoting, and US$2.50 a part for an AI agent (CloudNC).",
+                "About US$75–125 a month for small-shop quoting tools.",
+                "US$2,000–50,000 a year for white-label or enterprise quoting.",
+                "Many vendors don't publish prices and quote after a demo.",
+            ]),
+            ("If a tool already fits, use it", [
+                "If your requests arrive as clean STEP files and your parts are mostly milled or turned, trial one "
+                "of the shop-side tools before you build anything. They are good and cheap, and they improve "
+                "quickly. We'd tell a shop that, and help it set one up.",
+            ], []),
+            ("Where off-the-shelf tools fall short", [
+                "The gaps we see are less about the estimating maths and more about everything around it:",
+            ], [
+                "Messy input. Real requests include a phone photo of a sketch, a PDF with no model, or an email "
+                "with three attachments and a revision in the body. Most tools are built around clean CAD.",
+                "Questions asked too late. The missing tolerance, finish or quantity is usually found by the "
+                "estimator, days in. The questions should go to the buyer first, before anyone prices the job.",
+                "Your own history. A draft is only as good as the rates, machines and past jobs behind it. Without "
+                "your won and lost quotes and your actual hours, any tool is guessing.",
+                "Where files live. Several tools host in the United States only. Shops under Canada's Controlled "
+                "Goods Program, or with customers who ask, may need Canadian hosting and clear deletion rules.",
+                "How it fits the day. Quotes have to come out of your inbox, into your quote template and your "
+                "ERP (JobBOSS², ProShop, E2 or a spreadsheet), not into another login nobody opens.",
+                "Shop networks. No tool we found sits between one buyer and many local shops, cleaning up the "
+                "request and routing it to the shops that fit.",
+            ]),
+            ("How an AI quoting assistant works", [
+                "The design we build is a first pass that prepares the quote, with a person approving it:",
+            ], [
+                "Reads the request wherever it arrives: email, web form, PDF print, sketch photo or STEP file.",
+                "Pulls out the spec: material, quantity, tolerances, finish, outside processes and due date.",
+                "Measures the model with an open-source CAD kernel: bounding box, stock size, volume, material "
+                "removed and basic features.",
+                "Lists what is missing or unclear, worded as questions the buyer can answer in one reply.",
+                "Drafts a cost from your machines, rates, materials and markups, and finds similar past jobs.",
+                "Puts the draft, its working and its doubts in front of your estimator to approve, edit or reject.",
+            ]),
+            ("What stays with the estimator", [
+                "The assistant prepares; it never quotes on its own. The price, the delivery date, the decision "
+                "not to quote, and anything it flags as uncertain stay with your people. Its account can save "
+                "drafts and nothing more, so an odd request can't make it send anything.",
+            ], []),
+            ("For shop networks and associations", [
+                "A regional network of shops can put the same first pass at its front door. A buyer uploads a "
+                "sketch, PDF or model once. The assistant asks the buyer for what's missing, produces a clean "
+                "request package and suggests the member shops that fit. Each shop still sets its own price. That "
+                "makes the local route almost as easy as an instant-quote website, without a markup.",
+                "A network can also fund the build the way many associations launch member services: members "
+                "pledge a founding rate, and nothing is charged unless enough shops sign up by a set date.",
+            ], []),
+            ("How to test it on your own requests", [
+                "Don't judge any quoting tool, ours included, on a vendor's sample part. Run a small test on your "
+                "own work:",
+            ], [
+                "Pick twenty recent RFQs where you know what you quoted, whether you won, and the actual hours.",
+                "Leave out anything under the Controlled Goods Program, ITAR or a customer NDA that forbids it.",
+                "Measure the time to a first draft, the share of missing details it caught, and how close its "
+                "cost came to your own quote.",
+                "Decide from the numbers: buy a tool, build around your workflow, or keep quoting by hand.",
+            ]),
+            ("Red flags", [], [
+                "Accuracy or savings figures before anyone has run your parts.",
+                "No clear answer on where drawings are stored, who can see them and when they're deleted.",
+                "Your drawings used to train the vendor's model by default.",
+                "Quotes sent to customers without a person approving them.",
+                "No way to use your own rates, machines and past jobs.",
+            ]),
+        ],
+        "faq": [
+            ("Can AI quote a CNC part from a sketch or a 3D model?",
+             "It can draft one. From a STEP model it can measure stock size, volume and features and estimate "
+             "cycle time; from a sketch or PDF it pulls out what it can and lists the questions for the buyer. An "
+             "estimator should approve every price."),
+            ("How much does AI quoting software cost for a machine shop?",
+             "Published prices in October 2026 ran from free for manual quoting and US$2.50 a part for an AI agent, "
+             "to about US$75–125 a month for small-shop tools and US$2,000–50,000 a year for white-label or "
+             "enterprise quoting. A custom build is priced on scope."),
+            ("Is it safe to upload customer drawings to an AI tool?",
+             "Ask where files are stored, who can see them, whether they train the vendor's model and when they're "
+             "deleted. Keep Controlled Goods Program and ITAR drawings out of any tool that isn't approved for them."),
+            ("Will AI replace our estimator?",
+             "No. It takes over the reading, measuring and chasing so your estimator spends their time on the "
+             "judgement: the price, the risk and whether the job is worth taking."),
+        ],
+    },
 ]
 
 # Workflow finder (homepage and /tools/): words a visitor might type, mapped to the page that answers them.
 FINDER = {
     "use-cases/quote-rfq-intake/": ["quote", "rfq", "estimate", "pricing", "price list", "tender", "bid"],
+    "for/machine-shops/": ["machin", "cnc", "job shop", "fabricat", "sheet metal", "sketch", "drawing", "step file",
+                           "3d model", "cad", "cycle time", "estimator"],
     "use-cases/order-entry/": ["order", "purchase order", "po", "erp", "re-key", "rekey", "data entry", "sales order"],
     "use-cases/document-intake/": ["invoice", "pdf", "document", "paperwork", "scan", "form", "application",
                                    "receipt", "bill", "shipping"],
@@ -1683,6 +1851,10 @@ def check_questions():
 def build_play(p):
     slug = p["slug"]
     body = "".join(f"<p>{e(x)}</p>" for x in p["body"])
+    if p.get("guide"):
+        g = next(x for x in GUIDES if x["slug"] == p["guide"])
+        body += (f'<p><a class="link" href="{rel(slug, g["slug"])}">Read the {e(g.get("eyebrow", "guide").lower())}: '
+                 f'{e(g["title"])} →</a></p>')
     moments = "".join(f'<div class="panel"><h2>{e(h)}</h2>{"".join(f"<p>{e(x)}</p>" for x in ps)}</div>'
                       for h, ps in p.get("moments", []))
     moments = f'<div class="wrap split moments">{moments}</div>' if moments else ""
@@ -2334,7 +2506,7 @@ def build_guide(g):
     more = rows(slug, [(x["slug"], x["nav"], x["description"]) for x in others] +
                 [(CALC_SLUG, "Hours-back calculator", "Estimate what one workflow costs a year, and what could come back.")])
     main = f"""
-{hero(g["h1"], g["lead"], ref, "Guide", slug=slug, accent=g["accent"], tone="lime")}
+{hero(g["h1"], g["lead"], ref, g.get("eyebrow", "Guide"), slug=slug, accent=g["accent"], tone="lime")}
 <section class="section"><div class="wrap narrow prose big guide">
   <p class="muted small">Published {g.get("published", GUIDES_PUBLISHED)} by {BRAND}{
       f' · Updated {g["updated"]}' if g.get("updated") else ""}</p>
