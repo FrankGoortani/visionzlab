@@ -205,24 +205,38 @@ TIERS = [
         "slug": "services/ai-employee/", "priced": "A setup fee plus a monthly fee, agreed before work starts.", "art": "employee",
         "tier": "Build & maintain",
         "nav": "AI Employee",
-        "title": "Managed AI Employee for Your Business",
-        "description": "We build an AI employee for a defined role — bookkeeping, intake, reporting, follow-ups — "
-                       "and keep it working for a monthly fee.",
-        "lead": "We build an AI employee for a defined role in your business and keep it working for a monthly fee.",
-        "for": "Businesses that want the result without having to maintain the technology.",
+        "title": "Always-On AI Employee for Your Business",
+        "description": "An always-on AI employee for one defined role, working from a company brain you own. "
+                       "We build it and keep it working for a monthly fee.",
+        "lead": "We organize how your company runs into a company brain you own, then put an always-on AI employee "
+                "to work on one defined role and keep it working for a monthly fee.",
+        "for": "Owner-led businesses that want the result without having to maintain the technology.",
         "get": [
-            "An AI employee set up for one defined role, such as routine bookkeeping or intake",
+            "A company brain: your offers, customers, suppliers, who decides what and how you do things, in one "
+            "place you own, with a source and owner on each entry",
+            "An always-on AI employee for one defined role, such as a daily operations brief, document intake, "
+            "inbox triage, follow-ups, a first pass on quotes, or order entry",
+            "Research skills written for your industry",
             "Regular maintenance: updates, fixes and improvements on a schedule",
             "A monthly report on what it did and where a person had to step in",
             "People stay in charge of anything that needs judgment or sign-off",
         ],
         "how": [
             ("Define the role", "We map the tasks, the rules, and where a person must approve."),
+            ("Build the brain", "We connect your tools, write down how you work, and set who can see what."),
             ("Build and launch", "We build it, run it alongside your team, then hand it the work."),
             ("Maintain", "We look after it month to month so it keeps doing the job well."),
         ],
         "next": "services/ai-team/",
         "faq": [
+            ("Does it really work around the clock?", "Yes. It keeps working when nobody is at a computer, and "
+             "anything that matters waits for a person to approve it. Our own support is scheduled, within business days."),
+            ("How is this different from ChatGPT or Copilot?", "Those tools only know what someone gives them. We organize "
+             "what your company knows, keep it current and put it to work on a defined job."),
+            ("Who owns the company brain?", "You do. It lives in accounts you control wherever possible, and it stays with "
+             "you if you change AI provider or stop working with us."),
+            ("Which AI does it use?", "You choose from our approved list of business plans whose terms exclude training "
+             "on your data."),
             ("Is this cheaper than hiring?", "It depends on the scope, usage and human review needed. We agree a setup fee and a "
              "monthly fee so you can compare the total cost with your alternatives."),
             ("What does maintenance include?", "Scheduled care: updates, fixes within business days, and "
