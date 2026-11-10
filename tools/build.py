@@ -22,7 +22,7 @@ TODAY = datetime.date.today().isoformat()
 # Contact and analytics endpoints. Both are personal-account hostnames for now;
 # swap them here once brand-neutral replacements exist.
 CONTACT_URL = "https://frankgoortani.typeform.com/to/VaoYV6iJ"
-UMAMI_HOST = "https://goortani.synology.me:3100"
+UMAMI_HOST = "https://nas.tailb423d6.ts.net"
 UMAMI_SITE_ID = "571a5a54-c7bd-41d4-969d-3026dae95234"
 
 # HubSpot booking form (VisionzLab account, form "VisionzLab - Book a discovery session"). Once HUBSPOT_FORM_ID
