@@ -1475,10 +1475,12 @@ def breadcrumbs_ld(slug, title):
         {"@type": "ListItem", "position": i + 1, "name": n, "item": url(s)} for i, (s, n) in enumerate(crumbs)]}
 
 
-def contact(ref, label="Request a free discovery session", cls="btn"):
+def contact(ref, label="Request a free discovery session", cls="btn", inner=None):
+    """inner: pre-built HTML for the link body (the label is escaped otherwise)."""
     external = '' if CONTACT_URL.startswith(SITE) else ' target="_blank" rel="noopener"'
     return (f'<a class="{cls}" href="{CONTACT_URL}#ref={e(ref)}" data-contact data-ref="{e(ref)}" '
-            f'data-umami-event="contact_click" data-umami-event-location="{e(ref)}"{external}>{e(label)}</a>')
+            f'data-umami-event="contact_click" data-umami-event-location="{e(ref)}"{external}>'
+            f'{inner if inner is not None else e(label)}</a>')
 
 
 def faq_html(faq):
@@ -1650,19 +1652,81 @@ def headline(text, accent=None):
 
 
 def hero(h1, lead, ref, eyebrow=None, cta="Request a free discovery session", slug="", img=None, alt="",
-         accent=None, tone="paper", second=None):
+         accent=None, tone="paper", second=None, stats=None):
     eb = f'<p class="eyebrow">{e(eyebrow)}</p>' if eyebrow else ""
     sec = f'<a class="btn btn-ghost" href="{rel(slug, second[0])}">{e(second[1])}</a>' if second else ""
     visual = f'<div class="frame">{art(slug, img, alt, eager=True)}</div>' if img else ""
     cls = "hero-split" if img else "hero-solo"
+    side = visual
+    if stats:
+        # Plain text, not animated counters: crawlers and AI answer engines read the number as written.
+        items = "".join(f'<li><strong>{e(v)}</strong><span>{e(t)}</span></li>' for v, t in stats)
+        side = f'<div class="hero-side">{visual}<ul class="hero-stats">{items}</ul></div>'
     return (f'<section class="hero tone-{tone}"><div class="wrap {cls}"><div class="hero-copy">{eb}'
             f'<h1>{headline(h1, accent)}</h1><p class="lead">{e(lead)}</p>'
-            f'<div class="actions">{contact(ref, cta)}{sec}</div></div>{visual}</div></section>')
+            f'<div class="actions">{contact(ref, cta)}{sec}</div></div>{side}</div></section>')
 
 
 def section_head(eyebrow, title, intro=None, accent=None):
     i = f'<p class="intro">{e(intro)}</p>' if intro else ""
     return f'<div class="sec-head"><p class="eyebrow">{e(eyebrow)}</p><h2>{headline(title, accent)}</h2>{i}</div>'
+
+
+def sec_head_split(eyebrow, title, side, accent=None):
+    """Section opener: the statement on the left, the short explanation on the right."""
+    return (f'<div class="sec-split"><div><p class="eyebrow">{e(eyebrow)}</p><h2>{headline(title, accent)}</h2></div>'
+            f'<p class="side">{e(side)}</p></div>')
+
+
+def sec_foot(i, total, label, href=None, ref=None, slug="", second=None):
+    """Section closing row: where you are on the page on the left, this section's own next step on the right.
+    href links within the site; ref makes it a tracked contact link instead."""
+    ticks = "".join('<i class="on"></i>' if n == i else "<i></i>" for n in range(1, total + 1))
+    body = f'<span>{e(label)}</span><b class="go-box" aria-hidden="true">→</b>'
+    go = contact(ref, cls="go", inner=body) if ref else f'<a class="go" href="{rel(slug, href)}">{body}</a>'
+    sec = f'<a class="link" href="{rel(slug, second[0])}">{e(second[1])}</a>' if second else ""
+    return (f'<div class="sec-foot"><div class="sec-pos"><span class="ticks-bar" aria-hidden="true">{ticks}</span>'
+            f'<span class="sec-num">{i:02d} / {total:02d}</span></div><div class="sec-go">{sec}{go}</div></div>')
+
+
+# Homepage proof grid: screens from the concept mocks in the asal repo (foundation/visionzlab/demos), run once and
+# cropped to the review panel. Invented names and numbers only, and a person approves each step: never swap in a
+# screen from a real client or employer system.
+PROOF = [
+    ("use-cases/quote-rfq-intake/", "quote-rfq-intake", "big",
+     "Concept demo: an RFQ's three lines matched to the catalogue, one flagged for a person to check, and a draft reply"),
+    ("use-cases/order-entry/", "order-entry", "small",
+     "Concept demo: a purchase order checked against price, terms and ship-to, waiting for a person to release it"),
+    ("use-cases/document-intake/", "document-intake", "big",
+     "Concept demo: invoice fields extracted with their source, and a smudged PO reference left for a person"),
+]
+
+
+def proof_bento(slug):
+    by_slug = {u["slug"]: u for u in USE_CASES}
+    tiles = []
+    for s, shot, size, alt in PROOF:
+        u = by_slug[s]
+        tiles.append(
+            f'<a class="tile tile-{size}" href="{rel(slug, s)}"><div class="tile-copy"><span class="tag">Use case</span>'
+            f'<h3>{e(u["nav"])}</h3><p>{e(u["lead"])}</p></div>'
+            f'<div class="tile-shot"><img src="{rel(slug, f"public/proof/{shot}.webp")}" alt="{e(alt)}" width="1200" '
+            f'height="750" loading="lazy" decoding="async" /><span class="tile-cap">Concept demo · invented data</span>'
+            f'</div></a>')
+    fast = (f'<a class="tile tile-small tile-fast" href="{rel(slug, "discovery-sprint/")}"><span class="tag">We move fast'
+            '</span><p class="fast-num">2–4<small> weeks</small></p><p>From the start of a Discovery Sprint to a '
+            'working prototype on your own documents, with a costed build plan and a clear go/no‑go.</p>'
+            '<span class="arrow">→</span></a>')
+    # Row 1: big, small. Row 2: small, big — so the grid alternates like a page spread.
+    return f'<div class="bento">{tiles[0]}{tiles[1]}{fast}{tiles[2]}</div>'
+
+
+def approach_4s(slug):
+    cards = "".join(
+        f'<a class="card pillar" href="{rel(slug, s["link"])}"><span class="pillar-num">0{n}</span>'
+        f'<span class="tag">{e(s["code"])} · {e(s["name"])}</span><h3>{e(s["question"])}</h3>'
+        f'<p>{e(s["next"])}</p><span class="arrow">→</span></a>' for n, s in enumerate(STAGES, 1))
+    return f'<div class="cards cards-4">{cards}</div>'
 
 
 # Logos are recoloured to ink and cropped to their artwork; h is the display height in px, tuned per mark
@@ -1713,49 +1777,61 @@ def build_home():
       "We build AI-assisted workflows for documents, quotes, orders and follow-up — with your team "
       "approving the decisions that matter.", "home", "AI agents & automation",
       img="hero", alt="Isometric illustration of an AI agent handling documents, email, calendar and reports",
-      accent="off your team's plate.", second=("experience/", "Explore our experience"))}
+      accent="off your team's plate.", second=("experience/", "Explore our experience"),
+      stats=[("2–4 weeks", "to a working prototype"), ("1 workflow", "to start with"),
+             ("Free", "first discovery session")])}
 {clients()}
 </div>
 {finder(slug)}
 
-<section class="section tone-lime"><div class="wrap split">
+<section class="section tone-paper" id="proof"><div class="wrap">
+  {sec_head_split("Concept demos", "Start with one practical workflow.",
+                  "Three workflows we build often, shown as concept demos with invented data. In each one the "
+                  "assistant prepares the work and a person approves it.", accent="practical workflow.")}
+  {proof_bento(slug)}
+  {sec_foot(1, 6, "See all use cases", href="use-cases/")}
+</div></section>
+<section class="section tone-lime"><div class="wrap">
+  <div class="split">
   <div class="frame frame-paper">{art(slug, "sprint", "Isometric illustration of a laptop prototype, a roadmap and a checklist")}</div>
   <div><p class="eyebrow">Start here</p><h2>The Discovery <span class="hl">Sprint</span></h2>
   <p class="big">A short, paid sprint on one of your workflows. In 2–4 weeks you get a working prototype, a costed
-  build plan and a clear go/no-go — before you commit to anything bigger.</p>
-  <div class="actions"><a class="btn btn-ink" href="discovery-sprint/">How the sprint works →</a></div></div>
+  build plan and a clear go/no-go — before you commit to anything bigger.</p></div>
+  </div>
+  {sec_foot(2, 6, "How the sprint works", href="discovery-sprint/")}
 </div></section>
 <section class="section tone-paper"><div class="wrap">
-  {section_head("Use cases", "Start with one practical workflow.", accent="practical workflow.")}
-  {use_case_cards(slug, only=["use-cases/quote-rfq-intake/", "use-cases/order-entry/", "use-cases/document-intake/"])}
-  <p class="more"><a class="link" href="use-cases/">All use cases →</a></p>
-</div></section>
-<section class="section tone-lime"><div class="wrap">
-  {section_head("Who we help", "Built for businesses without an AI team.", accent="without an AI team.")}
+  {sec_head_split("Who we help", "Built for businesses without an AI team.",
+                  "Businesses where the same paperwork lands every day: quotes, orders, renewals and month-end. "
+                  "Pick yours to see the workflows we'd start with.", accent="without an AI team.")}
   {rows(slug, [(p["slug"], p["nav"], p["lead"]) for p in PLAYS])}
+  {sec_foot(3, 6, "Talk to us about your business", ref="home-who")}
 </div></section>
-<section class="section tone-paper"><div class="wrap split">
+<section class="section tone-lime" id="approach"><div class="wrap">
+  {sec_head_split("Our approach · the 4S", "Four stages, one workflow at a time.",
+                  "We place each workflow at one of four stages, then pick the step that moves it to the next. "
+                  "The 4S check tells you where yours is: eight questions, about two minutes.",
+                  accent="one workflow at a time.")}
+  {approach_4s(slug)}
+  {sec_foot(4, 6, "Take the 4S check", href=MATURITY_SLUG + "#check", second=("services/", "Compare the five services →"))}
+</div></section>
+<section class="section tone-paper"><div class="wrap">
+  <div class="split">
   <div><p class="eyebrow">Security Review</p><h2>Worried about <span class="hl">AI-powered attacks?</span></h2>
   <p class="big">{e(SECURITY["lead"])} A fixed-scope review of your internet-facing systems, email, cloud
-  settings and the AI tools your team already uses.</p>
-  <div class="actions"><a class="btn btn-ink" href="{SECURITY["slug"]}">How the security review works →</a></div></div>
+  settings and the AI tools your team already uses.</p></div>
   <div class="frame">{art(slug, SECURITY["art"], SECURITY["alt"])}</div>
+  </div>
+  {sec_foot(5, 6, "How the security review works", href=SECURITY["slug"])}
 </div></section>
-<section class="section tone-lime"><div class="wrap split">
-  <div><h2>Choose the help that fits</h2><p class="big">Learn with us, build alongside us, or have us build and
-  maintain your workflow. Start with one defined task and review the results before expanding.</p>
-  <a class="link" href="services/">Compare the five services →</a></div>
-  <div><h2>Not sure where to begin?</h2><p class="big">The 4S check is a short self-assessment to help you reflect
-  on your next step with AI. Eight questions, about two minutes.</p>
-  <a class="link" href="{MATURITY_SLUG}#check">Take the 4S check →</a></div>
-</div></section>
-<section class="section tone-paper"><div class="wrap split">
+<section class="section tone-lime"><div class="wrap">
+  <div class="split">
   <div><p class="eyebrow">About {BRAND}</p><h2>An AI studio for businesses <span class="hl">without an AI team</span></h2></div>
   <div><p class="big">{BRAND} is an AI studio based in Ontario, Canada, working with small and mid-sized businesses
   across Canada and the US. We teach teams to run their own agents, build agents with them, or build and run them
-  for you, always with your people approving the decisions that matter.</p>
-  <div class="actions"><a class="btn btn-ink" href="about/">About {BRAND} →</a>
-  <a class="btn btn-ghost" href="{GUIDES_SLUG}">Read our guides</a></div></div>
+  for you, always with your people approving the decisions that matter.</p></div>
+  </div>
+  {sec_foot(6, 6, "About " + BRAND, href="about/", second=(GUIDES_SLUG, "Read our guides →"))}
 </div></section>
 <section class="section"><div class="wrap">{faq_html(FAQ_HOME)}</div></section>
 {cta_band("home-band")}"""
