@@ -2371,7 +2371,7 @@ def build_book():
     main = f"""
 <section class="hero tone-paper"><div class="wrap hero-split">
   <div class="hero-copy">
-    <p class="eyebrow">Free discovery session</p>
+    <p class="eyebrow">Free discovery call</p>
     <h1>{headline("Let's talk about your work.", "your work.")}</h1>
     <p class="lead">A 60–90 minute conversation about where AI could take work off your team, and where it
     shouldn't. No preparation needed, and no obligation.</p>
