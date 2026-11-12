@@ -402,3 +402,9 @@ a.tile:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .btn-sub { font-weight: 500; opacity: 0.8; }
 /* FAQ block sits inside a section; no extra section padding */
 .faq-block > h2 { margin-top: 0; }
+
+/* Tool and index pages: compact hero so the page's own content shows above the fold (D11) */
+.hero.hero-compact { padding: clamp(36px, 4.5vw, 60px) 0; }
+.hero.hero-compact h1 { font-size: clamp(2.2rem, 4.4vw, 3.6rem); }
+.hero.hero-compact .frame { max-width: 380px; justify-self: end; }
+.hero.hero-compact + .section { padding-top: clamp(40px, 4.5vw, 64px); }

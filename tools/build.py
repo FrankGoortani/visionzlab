@@ -1666,9 +1666,19 @@ def headline(text, accent=None):
 
 
 def hero(h1, lead, ref, eyebrow=None, cta="Book a free discovery call", slug="", img=None, alt="",
-         accent=None, tone="paper", second=None, stats=None):
+         accent=None, tone="paper", second=None, stats=None, task=None):
+    """task=(href, label): tool and index pages lead with their own action (D11). The task link becomes the
+    filled primary, the discovery call drops to a ghost button, and the hero is compact so content shows."""
     eb = f'<p class="eyebrow">{e(eyebrow)}</p>' if eyebrow else ""
     sec = f'<a class="btn btn-ghost" href="{rel(slug, second[0])}">{e(second[1])}</a>' if second else ""
+    if task:
+        href = task[0] if task[0].startswith("#") else rel(slug, task[0])
+        primary = "btn btn-ink" if tone == "lime" else "btn"
+        actions = (f'<a class="{primary}" href="{href}" data-umami-event="page_task" data-umami-event-location="{e(ref)}">'
+                   f'{e(task[1])}</a>{contact(ref, cta, "btn btn-ghost")}')
+    else:
+        actions = f"{contact(ref, cta)}{sec}"
+    tone = f"{tone} hero-compact" if task else tone
     visual = f'<div class="frame">{art(slug, img, alt, eager=True)}</div>' if img else ""
     cls = "hero-split" if img else "hero-solo"
     side = visual
@@ -1678,7 +1688,7 @@ def hero(h1, lead, ref, eyebrow=None, cta="Book a free discovery call", slug="",
         side = f'<div class="hero-side">{visual}<ul class="hero-stats">{items}</ul></div>'
     return (f'<section class="hero tone-{tone}"><div class="wrap {cls}"><div class="hero-copy">{eb}'
             f'<h1>{headline(h1, accent)}</h1><p class="lead">{e(lead)}</p>'
-            f'<div class="actions">{contact(ref, cta)}{sec}</div></div>{side}</div></section>')
+            f'<div class="actions">{actions}</div></div>{side}</div></section>')
 
 
 def section_head(eyebrow, title, intro=None, accent=None):
@@ -1995,8 +2005,8 @@ def build_use_cases():
     main = f"""
 {hero("AI agents for operations, growth and finance teams", "Agents that do the reading, re-keying, tracking "
       "and reporting — so your people can spend their time on the decisions.", "use-cases",
-      "Use cases", slug=slug, tone="lime")}
-<section class="section"><div class="wrap">{section_head("Use cases", f"{len(USE_CASES)} workflows we build agents for", intro=(
+      "Use cases", slug=slug, tone="lime", task=("#list", "Browse the use cases"))}
+<section class="section" id="list"><div class="wrap">{section_head("Use cases", f"{len(USE_CASES)} workflows we build agents for", intro=(
     "Each one is a repetitive workflow where an agent reads, drafts or reconciles, and a person approves "
     "anything that reaches a customer, a supplier or the books."), accent="build agents for")}{use_case_cards(slug)}
 <p class="more">Every use case can be taught, set up with you, built, or built and run for you.
@@ -2119,7 +2129,7 @@ def build_maturity():
 {hero("Where is your business with AI?", "The 4S check: four stages, eight yes-or-no questions, about two minutes. "
       "It shows where you are on one piece of work, and the one step that moves you forward.", "maturity",
       "The 4S check", slug=slug, img="lab", alt="Isometric illustration of a small AI studio workspace",
-      accent="with AI?", second=(slug + "#check", "Take the check"))}
+      accent="with AI?", task=("#check", "Take the check"))}
 <section class="section tone-lime"><div class="wrap">
   {section_head("Four stages", "Strategy, Solution, Scale, Sustain",
                 "Each stage answers one question, and each depends on the one before.", accent="Sustain")}
@@ -2529,7 +2539,7 @@ def build_calculator():
     main = f"""
 {hero("How many hours could come back?", "A two-minute estimate of what one repetitive workflow costs your team "
       "each year, and how much of it an AI agent with human review could give back.", "calc", "Hours-back calculator",
-      slug=slug, accent="come back?", second=(slug + "#calc", "Use the calculator"))}
+      slug=slug, accent="come back?", task=("#calc", "Use the calculator"))}
 <section class="section tone-lime" id="calc-wrap"><div class="wrap split calc-split">
   <form class="panel calc" id="calc">{inputs}
     <label class="field"><span><strong>Share of that time an agent could give back</strong>
@@ -2549,7 +2559,7 @@ def build_calculator():
       <div id="r-money-row" hidden><dt>Worth, at your hourly cost</dt><dd id="r-money">0</dd></div>
     </dl>
     <p class="muted small">Your own numbers multiplied out: an estimate, not a quote or a promise.</p>
-    <div class="actions">{contact("calc", "Check it on your real work")}
+    <div class="actions">{contact("calc")}
       <a class="btn btn-ghost" href="{rel(slug, 'discovery-sprint/')}">How the sprint measures it</a></div>
   </div>
 </div></section>
@@ -2580,8 +2590,9 @@ def build_tools():
         f'<h3>{e(n)}</h3><p>{e(d)}</p><span class="arrow">→</span></a>' for h, t, n, d in cards)
     main = f"""
 {hero("Free tools for deciding where AI fits", "No sign-up and nothing to install. Each one takes a couple of "
-      "minutes and runs in your browser.", "tools", "Free tools", slug=slug, accent="where AI fits", tone="lime")}
-<section class="section"><div class="wrap">{section_head("Tools", "Three free tools", intro=(
+      "minutes and runs in your browser.", "tools", "Free tools", slug=slug, accent="where AI fits", tone="lime",
+      task=("#tools", "Pick a tool"))}
+<section class="section" id="tools"><div class="wrap">{section_head("Tools", "Three free tools", intro=(
     "A workflow finder, an hours-back calculator and the 4S check. Each runs in your browser, with no sign-up "
     "and nothing to install."), accent="free tools")}<div class="cards cards-uc">{html_cards}</div></div></section>
 {finder(slug, tone="lime")}
@@ -2633,8 +2644,9 @@ def build_guides():
               ("instead-of-hiring/", "AI capacity instead of a hire", "When an AI engineering team beats adding headcount.")]
     main = f"""
 {hero("Guides for putting AI to work", "Short answers to the questions owners ask us most, written so you can "
-      "use them with or without us.", "guides", "Guides", slug=slug, accent="to work", tone="lime")}
-<section class="section"><div class="wrap">{section_head("Library", "All guides", intro=(
+      "use them with or without us.", "guides", "Guides", slug=slug, accent="to work", tone="lime",
+      task=("#library", "Browse the guides"))}
+<section class="section" id="library"><div class="wrap">{section_head("Library", "All guides", intro=(
     "Each guide answers one buying question in plain English: what to ask, what it involves, and the red "
     "flags. No sign-up."), accent="guides")}{rows(slug, items)}</div></section>
 {cta_band("guides-band")}"""
