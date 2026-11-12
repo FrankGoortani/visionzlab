@@ -64,9 +64,17 @@ EMAIL_SALES = "asal@visionzlab.com"
 # Brand search: "visionzlab" is one word that Google readily "corrects" to "vision lab". These spellings tell it
 # (WebSite + Organization alternateName) that the variants all mean this site, so a brand query resolves here.
 ALT_NAMES = ["Visionz Lab", "VisionZ Lab", "VisionzLab AI", "visionzlab.com"]
-# Official profiles of the company itself (not of people). Add each one here once it is confirmed to be ours:
-# the LinkedIn company page, then @visionzlabs on YouTube/Instagram/TikTok/Facebook when they exist.
-SAME_AS = ["https://www.linkedin.com/company/visionzlab-ai/"]  # confirmed ours 2026-10-31 (Asal listed, website field set)
+# Official profiles of the company itself (not of people). Add each one here once it is confirmed to be ours.
+# Instagram is "visionzlabs" because @visionzlab is held by another agency; the others are "visionzlab".
+# The footer lists them under Company in this order; the URLs alone become the Organization's sameAs.
+SOCIAL_PROFILES = [
+    ("LinkedIn", "https://www.linkedin.com/company/visionzlab-ai/"),  # confirmed ours 2026-10-31 (Asal listed, website field set)
+    ("YouTube", "https://www.youtube.com/@visionzlab"),               # set up 2026-11-08
+    ("Instagram", "https://www.instagram.com/visionzlabs/"),          # set up 2026-11-08, connected to the Facebook Page 11-12
+    ("Facebook", "https://www.facebook.com/visionzlab"),              # Page, set up 2026-11-08
+    ("TikTok", "https://www.tiktok.com/@visionzlab"),                 # set up 2026-11-09
+]
+SAME_AS = [url for _, url in SOCIAL_PROFILES]
 
 # Who we serve, stated the same way everywhere. AI engines recommend vendors whose pages say who they serve and
 # where (GEO study 2026-11-01). Size mirrors asal references/ICP.md: normally 75-1,000 staff, a heuristic, not a
@@ -1533,6 +1541,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     foot_plays = "".join(f'<li><a href="{rel(slug, p["slug"])}">{e(p["nav"])}</a></li>' for p in PLAYS)
     foot_team = "".join(f'<li><a href="{rel(slug, m["slug"])}">{e(m["name"])}</a></li>' for m in TEAM)
     foot_guides = "".join(f'<li><a href="{rel(slug, g["slug"])}">{e(g["nav"])}</a></li>' for g in GUIDES)
+    foot_social = "".join(f'<li><a href="{url}" rel="noopener">{label}</a></li>' for label, url in SOCIAL_PROFILES)
     foot_uses = "".join(f'<li><a href="{rel(slug, u["slug"])}">{e(u["nav"])}</a></li>' for u in USE_CASES)
     graph = [ORG] + ([WEBSITE] if not slug else []) + (ld or []) + ([breadcrumbs_ld(slug, title)] if slug else [])
     css = rel(slug, "site.css")
@@ -1592,7 +1601,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
           <li><a href="{rel(slug, EXPERIENCE_SLUG)}">Our experience</a></li>
           <li><a href="{rel(slug, DATA_TRUST_SLUG)}">Security and privacy</a></li>
           {foot_team}
-          <li><a href="{SAME_AS[0]}" rel="noopener">LinkedIn</a></li>
+          {foot_social}
           <li><a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></li>
           <li><a href="mailto:{EMAIL_GENERAL}">{EMAIL_GENERAL}</a></li></ul></div>
       </div>
