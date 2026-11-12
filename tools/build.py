@@ -1530,7 +1530,21 @@ def ladder(slug, highlight=None, only=None):
     return f'<div class="cards cards-tiers">{"".join(cards)}</div>'
 
 
-def page(slug, title, description, main, ld=None, ref="site", image="public/og.jpg", og_type="website"):
+OG_CARDS = {}  # card file name -> (eyebrow, title); filled by page(), rendered by render_og_cards()
+
+
+def og_card_name(slug):
+    return (slug.strip("/").replace("/", "--") or "home") + ".png"
+
+
+def page(slug, title, description, main, ld=None, ref="site", image=None, og_type="website"):
+    if image is None:
+        section = slug.split("/")[0] + "/"
+        eyebrow = SECTION_NAMES.get(section, "Guides" if slug.startswith("guides/") else "") if slug else ""
+        if slug.startswith("for/"):
+            eyebrow = "Who we help"
+        OG_CARDS[og_card_name(slug)] = (eyebrow or BRAND, title)
+        image = f"public/og/{og_card_name(slug)}"
     canonical = url(slug)
     full_title = f"{title} | {BRAND}" if slug else f"{BRAND} | {title}"
     nav = [("services/", "Services"), ("use-cases/", "Use Cases"), ("discovery-sprint/", "Discovery Sprint"),
@@ -2828,6 +2842,69 @@ def build_guides_feed():
             f"    <lastBuildDate>{newest}</lastBuildDate>\n{rows}  </channel>\n</rss>\n")
 
 
+OG_TEMPLATE = """<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face {{ font-family: Inter; src: url("{font}") format("woff2"); font-weight: 100 900; }}
+* {{ box-sizing: border-box; margin: 0; }}
+html, body {{ width: 1200px; height: 630px; overflow: hidden; }}
+body {{ background: #fafaf7; color: #16052d; font-family: Inter, sans-serif; display: grid;
+  grid-template-columns: 1fr 300px; gap: 56px; align-items: center; padding: 72px 80px;
+  border-bottom: 16px solid #e1ff3f; }}
+.eyebrow {{ display: inline-block; border: 3px solid #16052d; border-radius: 999px; padding: 8px 20px;
+  font-size: 22px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 34px; }}
+h1 {{ font-size: {size}px; line-height: 1.08; font-weight: 650; letter-spacing: -.025em; }}
+.hl {{ background: #e1ff3f; padding: 0 .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }}
+.brand {{ margin-top: 40px; font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 12px; }}
+.frame {{ width: 300px; height: 300px; background: #16052d; display: grid; place-items: center; }}
+.frame g {{ stroke: #e1ff3f; }}
+.frame svg {{ width: 190px; height: 190px; }}
+</style></head><body>
+<div><p class="eyebrow">{eyebrow}</p><h1>{title}</h1>
+<p class="brand"><svg width="34" height="34" viewBox="0 0 100 100">{mark}</svg>visionzlab.com</p></div>
+<div class="frame"><svg viewBox="0 0 100 100">{mark}</svg></div>
+</body></html>"""
+OG_MARK = ('<g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round">'
+           '<path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/>'
+           '<path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g>')
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+
+def render_og_cards():
+    """Render a 1200x630 PNG per page with headless Chrome, only for cards whose HTML changed.
+    public/og/manifest.json maps each card to the hash of the HTML it was rendered from."""
+    import hashlib
+    import tempfile
+    out_dir = ROOT / "public" / "og"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    font = (ROOT / "public" / "fonts" / "inter-latin.woff2").as_uri()
+    rendered = 0
+    for name, (eyebrow, title) in sorted(OG_CARDS.items()):
+        size = 76 if len(title) <= 40 else 64 if len(title) <= 62 else 54
+        accent = title.split(" for ", 1)[1] if " for " in title else None
+        shown = headline(title, accent) if accent and len(accent) <= 24 else e(title)
+        doc = OG_TEMPLATE.format(font=font, eyebrow=e(eyebrow), title=shown, mark=OG_MARK, size=size)
+        digest = hashlib.sha256(doc.encode()).hexdigest()[:16]
+        target = out_dir / name
+        if manifest.get(name) == digest and target.exists():
+            continue
+        if not pathlib.Path(CHROME).exists():
+            raise SystemExit(f"OG card {name} needs rendering but Chrome is not at {CHROME}")
+        with tempfile.TemporaryDirectory() as tmp:
+            src = pathlib.Path(tmp) / "card.html"
+            src.write_text(doc)
+            subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1",
+                            "--window-size=1200,630", f"--screenshot={target}", src.as_uri()],
+                           check=True, capture_output=True, timeout=60)
+        manifest[name] = digest
+        rendered += 1
+    for stale in set(manifest) - set(OG_CARDS):
+        (out_dir / stale).unlink(missing_ok=True)
+        del manifest[stale]
+    manifest_path.write_text(json.dumps(manifest, indent=1, sort_keys=True) + "\n")
+    return rendered
+
+
 def committed(path):
     """The file's text at HEAD, or None if git has no committed version of it."""
     res = subprocess.run(["git", "show", f"HEAD:{path}"], cwd=ROOT, capture_output=True, text=True)
@@ -2908,8 +2985,10 @@ def main():
     (ROOT / "sitemap.xml").write_text(build_sitemap(lastmods([(s, b) for s, b, *_ in out])))
     (ROOT / "llms.txt").write_text(build_llms([(s, t, d) for s, _, t, d in out]))
     (ROOT / "llms-full.txt").write_text(build_llms_full(out))
+    cards = render_og_cards()
     (ROOT / GUIDES_SLUG / "feed.xml").write_text(build_guides_feed())
-    print(f"wrote {len(out)} pages, sitemap.xml, llms.txt, llms-full.txt, {GUIDES_SLUG}feed.xml")
+    print(f"wrote {len(out)} pages, sitemap.xml, llms.txt, llms-full.txt, {GUIDES_SLUG}feed.xml; "
+          f"{len(OG_CARDS)} social cards ({cards} re-rendered)")
 
 
 if __name__ == "__main__":
