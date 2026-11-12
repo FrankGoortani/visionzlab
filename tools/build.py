@@ -2037,7 +2037,7 @@ def build_sprint():
     slug = "discovery-sprint/"
     desc = ("A short, paid AI discovery sprint on one workflow: a working prototype, a costed build plan "
             "and a clear go/no-go in 2–4 weeks.")
-    steps = [("Free discovery session", "A 60–90 minute conversation about your work, followed by a short memo "
+    steps = [("Free discovery call", "A 60–90 minute conversation about your work, followed by a short memo "
               "with what we'd look at first."),
              ("Sprint kickoff", "We agree one workflow, the success measure, and access to what we need."),
              ("Prototype", "We build a working prototype on your real process."),
