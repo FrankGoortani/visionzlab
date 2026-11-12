@@ -52,6 +52,11 @@ Pricing: The first discovery session is free. The Discovery Sprint is a fixed fe
 - [Privacy](https://visionzlab.com/privacy/): What this website collects and why.
 - [Book a free discovery call](https://visionzlab.com/book/): Book a free discovery call.
 
+## Full text and feeds
+
+- [Full text of every page](https://visionzlab.com/llms-full.txt)
+- [Guides RSS feed](https://visionzlab.com/guides/feed.xml)
+
 ## Contact
 
 - New business: asal@visionzlab.com

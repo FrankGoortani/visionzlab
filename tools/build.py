@@ -9,6 +9,7 @@ and structured data across pages. Python 3 standard library only.
 """
 import datetime
 import html
+import html.parser
 import json
 import pathlib
 import re
@@ -1554,6 +1555,7 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     <meta name="description" content="{e(description)}" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{canonical}" />
+    <link rel="alternate" type="application/rss+xml" title="{BRAND} guides" href="{SITE}/{GUIDES_SLUG}feed.xml" />
     <meta property="og:type" content="{og_type}" />
     <meta property="og:site_name" content="{BRAND}" />
     <meta property="og:title" content="{e(full_title)}" />
@@ -2717,10 +2719,113 @@ def build_llms(pages):
              "Canada and the United States.", "",
              f"Who we serve: {WHO_WE_SERVE}", "", f"Pricing: {PRICING_SUMMARY}", "", "## Pages", ""]
     lines += [f"- [{t}]({url(s)}): {d}" for s, t, d in pages]
+    lines += ["", "## Full text and feeds", "", f"- [Full text of every page]({SITE}/llms-full.txt)",
+              f"- [Guides RSS feed]({url(GUIDES_SLUG)}feed.xml)"]
     lines += ["", "## Contact", "", f"- New business: {EMAIL_SALES}", f"- General: {EMAIL_GENERAL}",
               f"- Book a free discovery call: {CONTACT_URL}", "",
               f"{BRAND} is a brand of {LEGAL_NAME}, an Ontario corporation.", ""]
     return "\n".join(lines)
+
+
+class _Text(html.parser.HTMLParser):
+    """The readable text of a page's <main>, as light Markdown, for llms-full.txt."""
+    SKIP = {"script", "style", "svg", "noscript", "template", "button", "select"}
+    VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+    PREFIX = {"h1": "# ", "h2": "## ", "h3": "### ", "h4": "#### ", "li": "- ", "summary": "Q: "}
+    BLOCK = {"p", "li", "h1", "h2", "h3", "h4", "dt", "dd", "summary", "tr", "blockquote", "figcaption",
+             "div", "label", "section", "article", "ul", "ol", "dl", "form", "header", "footer", "nav"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.out, self.buf, self.prefix = [], [], ""
+        self.stack, self.skip_at = [], None  # open tags inside <main>; depth where a skipped subtree began
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "main":
+            self.stack = ["main"]
+            return
+        if not self.stack or tag in self.VOID:
+            return
+        self.stack.append(tag)
+        a = dict(attrs)
+        # aria-live regions are calculator outputs: placeholder zeros until someone uses the tool
+        if self.skip_at is None and (tag in self.SKIP or a.get("aria-hidden") == "true" or "hidden" in a
+                                     or "aria-live" in a):
+            self.skip_at = len(self.stack)
+        if self.skip_at is None and tag in self.BLOCK:
+            self.flush()
+            self.prefix = self.PREFIX.get(tag, "")
+
+    def handle_endtag(self, tag):
+        if not self.stack or tag not in self.stack:
+            return
+        while self.stack:  # pop to the matching tag (tolerates unclosed children)
+            top = self.stack.pop()
+            if self.skip_at is not None and len(self.stack) < self.skip_at:
+                self.skip_at = None
+            if top == tag:
+                break
+        if tag in self.BLOCK or tag == "main":
+            self.flush()
+
+    def handle_data(self, data):
+        if self.stack and self.skip_at is None:
+            self.buf.append(data)
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+
+    def updatepos(self, i, j):  # a tag boundary separates words ("calculator" + "Book"), never joins them
+        if self.stack and self.skip_at is None and self.buf and not self.buf[-1].endswith(" "):
+            self.buf.append(" ")
+        return super().updatepos(i, j)
+
+    def flush(self):
+        text = re.sub(r" ([.,;:!?)])", r"\1", " ".join("".join(self.buf).split()))
+        if text:
+            self.out.append(self.prefix + text)
+        self.buf, self.prefix = [], ""
+
+
+def page_text(body):
+    t = _Text()
+    t.feed(body)
+    t.flush()
+    lines, prev = [], None
+    for line in t.out:
+        if line != prev:  # drop repeats such as a heading echoed by a visual label
+            lines.append(line)
+        prev = line
+    return "\n\n".join(lines)
+
+
+def build_llms_full(pages):
+    """Every indexed page's readable text in one file, for answer engines that read llms-full.txt."""
+    head = build_llms([]).split("## Pages")[0].rstrip()
+    parts = [head, "", f"This file holds the full text of every page on {SITE}. The index is {SITE}/llms.txt.", ""]
+    for slug, body, title, _ in pages:
+        parts += [f"---\n\n# {title}\n\nURL: {url(slug)}", "", page_text(body), ""]
+    return "\n".join(parts) + "\n"
+
+
+def build_guides_feed():
+    """RSS 2.0 feed of the guides, newest first."""
+    def rfc822(d):
+        return datetime.datetime.strptime(d, "%Y-%m-%d").strftime("%a, %d %b %Y 12:00:00 +0000")
+    items = sorted(GUIDES, key=lambda g: g.get("published", GUIDES_PUBLISHED), reverse=True)
+    rows = "".join(
+        f"    <item>\n      <title>{e(g['title'])}</title>\n      <link>{url(g['slug'])}</link>\n"
+        f"      <guid isPermaLink=\"true\">{url(g['slug'])}</guid>\n"
+        f"      <pubDate>{rfc822(g.get('published', GUIDES_PUBLISHED))}</pubDate>\n"
+        f"      <description>{e(g['description'])}</description>\n    </item>\n" for g in items)
+    newest = rfc822(max(g.get("updated", g.get("published", GUIDES_PUBLISHED)) for g in GUIDES))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n'
+            f"    <title>{BRAND} guides</title>\n    <link>{url(GUIDES_SLUG)}</link>\n"
+            f'    <atom:link href="{url(GUIDES_SLUG)}feed.xml" rel="self" type="application/rss+xml" />\n'
+            "    <description>Plain-English guides on where AI agents and automation fit in a small or "
+            "mid-sized business.</description>\n    <language>en-ca</language>\n"
+            f"    <lastBuildDate>{newest}</lastBuildDate>\n{rows}  </channel>\n</rss>\n")
 
 
 def committed(path):
@@ -2802,7 +2907,9 @@ def main():
         path.write_text(build_redirect(old, new))
     (ROOT / "sitemap.xml").write_text(build_sitemap(lastmods([(s, b) for s, b, *_ in out])))
     (ROOT / "llms.txt").write_text(build_llms([(s, t, d) for s, _, t, d in out]))
-    print(f"wrote {len(out)} pages, sitemap.xml, llms.txt")
+    (ROOT / "llms-full.txt").write_text(build_llms_full(out))
+    (ROOT / GUIDES_SLUG / "feed.xml").write_text(build_guides_feed())
+    print(f"wrote {len(out)} pages, sitemap.xml, llms.txt, llms-full.txt, {GUIDES_SLUG}feed.xml")
 
 
 if __name__ == "__main__":

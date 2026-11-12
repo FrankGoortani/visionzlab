@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VisionzLab guides</title>
+    <link>https://visionzlab.com/guides/</link>
+    <atom:link href="https://visionzlab.com/guides/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Plain-English guides on where AI agents and automation fit in a small or mid-sized business.</description>
+    <language>en-ca</language>
+    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0000</lastBuildDate>
+    <item>
+      <title>AI Quoting for Machine Shops: A 2026 Field Guide</title>
+      <link>https://visionzlab.com/guides/ai-quoting-for-machine-shops/</link>
+      <guid isPermaLink="true">https://visionzlab.com/guides/ai-quoting-for-machine-shops/</guid>
+      <pubDate>Tue, 03 Nov 2026 12:00:00 +0000</pubDate>
+      <description>What AI quoting tools for CNC and fabrication shops do today, what they cost, where they fall short on messy RFQs, and how to test one on your own work.</description>
+    </item>
+    <item>
+      <title>Human Approval for AI-Drafted Quotes and Emails</title>
+      <link>https://visionzlab.com/guides/human-approval-for-ai-agents/</link>
+      <guid isPermaLink="true">https://visionzlab.com/guides/human-approval-for-ai-agents/</guid>
+      <pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+      <description>Let the agent draft and a person send. Where to put the approval step, what the reviewer needs to see, and when it&#x27;s safe to loosen it.</description>
+    </item>
+    <item>
+      <title>How to Choose an AI Automation Partner</title>
+      <link>https://visionzlab.com/guides/choose-an-ai-automation-partner/</link>
+      <guid isPermaLink="true">https://visionzlab.com/guides/choose-an-ai-automation-partner/</guid>
+      <pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
+      <description>Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to keep the first project small.</description>
+    </item>
+    <item>
+      <title>AI Agent, Automation or a New Hire? How to Decide</title>
+      <link>https://visionzlab.com/guides/ai-agent-vs-automation-vs-hire/</link>
+      <guid isPermaLink="true">https://visionzlab.com/guides/ai-agent-vs-automation-vs-hire/</guid>
+      <pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
+      <description>A plain decision guide for small businesses: when rules-based automation is enough, when an AI agent with human approval fits, and when the work needs a person.</description>
+    </item>
+  </channel>
+</rss>

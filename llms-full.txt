@@ -1,0 +1,4150 @@
+# VisionzLab
+
+> AI studio helping small and mid-sized businesses in Canada and the US put AI agents to work: training, guided agent setup, custom AI development, managed AI employees, and AI engineering capacity instead of a new hire. Also an AI-assisted security review for small businesses.
+
+VisionzLab (also written Visionz Lab, VisionZ Lab) is based in Ontario, Canada, and serves Canada and the United States.
+
+Who we serve: Businesses from owner-run firms up to about 1,000 people, usually without an in-house AI team, across Canada and the United States. We're based in Ontario and work online or on site.
+
+Pricing: The first discovery session is free. The Discovery Sprint is a fixed fee agreed before it starts. Builds are fixed-price for a fixed scope; managed AI employees and AI teams are monthly. We don't publish rates: we quote a defined first step after the discovery session.
+
+This file holds the full text of every page on https://visionzlab.com. The index is https://visionzlab.com/llms.txt.
+
+---
+
+# Home
+
+URL: https://visionzlab.com/
+
+AI agents & automation
+
+# AI that takes work off your team's plate.
+
+We build AI-assisted workflows for documents, quotes, orders and follow-up — with your team approving the decisions that matter.
+
+Book a free discovery call Explore our experience
+
+- 2–4 weeks to a working prototype
+
+- 1 workflow to start with
+
+- Free first discovery session
+
+Our team’s experience before VisionzLab
+
+Explore that experience →
+
+Workflow finder
+
+## What's taking your team's time?
+
+Describe the task in a few words. We'll point you to the closest thing we build. Nothing you type leaves your browser.
+
+The work you'd like off your plate
+
+Try:
+
+Concept demos
+
+## Start with one practical workflow.
+
+Three workflows we build often, shown as concept demos with invented data. In each one the assistant prepares the work and a person approves it.
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+Concept demo · invented data
+
+Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+Concept demo · invented data
+
+We move fast
+
+2–4 weeks
+
+From the start of a Discovery Sprint to a working prototype on your own documents, with a costed build plan and a clear go/no‑go.
+
+→
+
+Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+Concept demo · invented data
+
+01 / 06
+
+See all use cases
+
+Start here
+
+## The Discovery Sprint
+
+A short, paid sprint on one of your workflows. In 2–4 weeks you get a working prototype, a costed build plan and a clear go/no-go — before you commit to anything bigger.
+
+02 / 06
+
+How the sprint works
+
+Who we help
+
+## Built for businesses without an AI team.
+
+Businesses where the same paperwork lands every day: quotes, orders, renewals and month-end. Pick yours to see the workflows we'd start with.
+
+### Distributors & Manufacturers
+
+AI agents that turn emailed RFQs and purchase orders into draft quotes and entered orders, for your team to approve.
+
+→
+
+### Machine Shops & Fabricators
+
+An AI first pass on every RFQ: it reads the drawings and models, lists the missing details and drafts the quote, and your estimator approves it.
+
+→
+
+### Insurance Brokers
+
+AI agents that take submission, certificate and renewal paperwork off your brokers' desks.
+
+→
+
+### Accountants & Bookkeepers
+
+An AI employee for the routine bookkeeping work — so your team spends its time on clients.
+
+→
+
+### Small Business
+
+Practical AI for owner-run businesses — start small, keep control, grow from there.
+
+→
+
+### Mortgage Brokers
+
+Track renewals, organise document requests and prepare follow-ups for your team to review.
+
+→
+
+### Before You Hire
+
+Before you fill an operations or engineering role, find out which parts AI can take on, and which really need a person.
+
+→
+
+03 / 06
+
+Talk to us about your business
+
+Our approach · the 4S
+
+## Four stages, one workflow at a time.
+
+We place each workflow at one of four stages, then pick the step that moves it to the next. The 4S check tells you where yours is: eight questions, about two minutes.
+
+01 S1 · Strategy
+
+### Why AI, and where first?
+
+Choose one workflow, one owner and one number. A free discovery session does that with you; a discovery sprint then tests it on your own documents.
+
+→ 02 S2 · Solution
+
+### Does it work on our work?
+
+Test it on your real work and measure it against today. That's what the discovery sprint is for: a working prototype, measured results and a clear go/no-go.
+
+→ 03 S3 · Scale
+
+### Is it part of the day?
+
+Connect it to the system where the work ends up, and roll it out to the people who do the work.
+
+→ 04 S4 · Sustain
+
+### Will it keep working?
+
+Give it an owner and a schedule: regular checks, fixes and updates, with people approving what matters.
+
+→
+
+04 / 06
+
+Compare the five services → Take the 4S check
+
+Security Review
+
+## Worried about AI-powered attacks?
+
+We find the gaps attackers try first, explain them in plain English and help you close them, with a senior engineer checking every finding. A fixed-scope review of your internet-facing systems, email, cloud settings and the AI tools your team already uses.
+
+05 / 06
+
+How the security review works
+
+About VisionzLab
+
+## An AI studio for businesses without an AI team
+
+VisionzLab is an AI studio based in Ontario, Canada, working with small and mid-sized businesses across Canada and the US. We teach teams to run their own agents, build agents with them, or build and run them for you, always with your people approving the decisions that matter.
+
+06 / 06
+
+Read our guides → About VisionzLab
+
+## Questions
+
+Q: What is VisionzLab?
+
+VisionzLab (visionzlab.com, sometimes written Visionz Lab) is an AI studio based in Ontario, Canada. We help small and mid-sized businesses in Canada and the US put AI agents to work on everyday workflows such as documents, quotes, orders, email and follow-up, with people approving the decisions that matter.
+
+Q: Who do you work with?
+
+Businesses from owner-run firms up to about 1,000 people, usually without an in-house AI team, across Canada and the United States. We're based in Ontario and work online or on site.
+
+Q: Do we need technical staff to work with you?
+
+No. You need someone who knows the work and can check the output. We set up the technical side with your team and hand over a playbook, or build and run it for you.
+
+Q: How much does it cost?
+
+It depends on the workflow and how much help you want. We don't publish rates. After a free discovery session we quote a defined first step, usually the Discovery Sprint, before you commit to anything bigger.
+
+Q: How do you keep our data and decisions under control?
+
+Agents get only the accounts and permissions you give them, and approval steps, audit trails and limits on what an agent may do are part of every build. We agree what data is used, and who can see it, before work starts.
+
+Q: Can you check our security, not just build AI?
+
+Yes. Our Security Review checks the gaps attackers try first, including internet-facing systems, email and sign-in, cloud settings and the AI tools your team uses, and gives you a plain-English fix list. We then help you close the top items with your IT person or provider.
+
+Q: What if AI isn't the right answer for our problem?
+
+Then we'll say so. Some work is better handled by a simple rules-based automation or by a person, and the discovery session is where we tell you which.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Services
+
+URL: https://visionzlab.com/services/
+
+Services
+
+# Five ways to work with us
+
+From teaching your team to building and running it for you. Pick the level of help that fits — and change it as you go.
+
+Book a free discovery call
+
+At a glance
+
+## The five services
+
+AI Training teaches your team; AI Agent Setup configures agents with you; AI Development builds a custom agent you own; an AI Employee is built and run for you for a monthly fee; an AI Team gives you engineering capacity instead of a hire. The usual first step is a Discovery Sprint.
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 04 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 05 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+Also
+
+## Security Review
+
+We find the gaps attackers try first, explain them in plain English and help you close them, with a senior engineer checking every finding.
+
+How the security review works →
+
+Pricing
+
+## How pricing works
+
+The first discovery session is free. The Discovery Sprint is a fixed fee agreed before it starts. Builds are fixed-price for a fixed scope; managed AI employees and AI teams are monthly. We don't publish rates: we quote a defined first step after the discovery session.
+
+- Discovery session: free, with a short memo afterwards
+
+- Discovery Sprint: a fixed fee agreed before it starts
+
+- AI Training: quoted for the agreed sessions before work starts
+
+- Agent Setup: quoted for the agreed scope before work starts
+
+- AI Development: a fixed price for a fixed scope, agreed before work starts
+
+- AI Employee: a setup fee plus a monthly fee, agreed before work starts
+
+- AI Team: a monthly retainer sized to the work
+
+- Security Review: a fixed fee for the review, agreed before work starts. Fixes are quoted from the findings; monthly monitoring is optional
+
+## Who we work with
+
+Businesses from owner-run firms up to about 1,000 people, usually without an in-house AI team, across Canada and the United States. We're based in Ontario and work online or on site.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Discovery Sprint
+
+URL: https://visionzlab.com/discovery-sprint/
+
+Start here
+
+# The Discovery Sprint
+
+One workflow. Two to four weeks. A working prototype, a costed build plan and a clear go/no-go — before you commit to anything bigger.
+
+Book a free discovery call Not sure? Take the 4S check
+
+## What you walk away with
+
+- A working prototype on your own process
+
+- A success measure we agree at kickoff and check on your own documents
+
+- A costed, phased build plan, including what your team would need to run it
+
+- A clear go/no-go, with the reasons
+
+- A view of the risks and what would need to be true
+
+## How it works
+
+- Free discovery call A 60–90 minute conversation about your work, followed by a short memo with what we'd look at first.
+
+- Sprint kickoff We agree one workflow, the success measure, and access to what we need.
+
+- Prototype We build a working prototype on your real process.
+
+- Plan and decision You get a costed build plan and our honest go/no-go recommendation.
+
+## Questions
+
+Q: What does an AI discovery sprint include, and what should it deliver?
+
+One workflow, tested on your own documents over two to four weeks. It should deliver a working prototype, a success measure checked on real examples, a costed build plan including what your team needs to run it, and a go/no-go recommendation with the reasons.
+
+Q: What does the sprint cost?
+
+It's a fixed fee agreed before we start, based on the size of the workflow.
+
+Q: What if the answer is no-go?
+
+Then you've spent a few weeks, not a budget, finding out — and you keep the findings.
+
+Q: Is there a free option?
+
+Yes. The first conversation is a free discovery session, with a short memo afterwards.
+
+After the sprint
+
+## Build it yourselves, or pick the help that fits
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 04 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# The 4S check
+
+URL: https://visionzlab.com/ai-maturity/
+
+The 4S check
+
+# Where is your business with AI?
+
+The 4S check: four stages, eight yes-or-no questions, about two minutes. It shows where you are on one piece of work, and the one step that moves you forward.
+
+Take the check Book a free discovery call
+
+Four stages
+
+## Strategy, Solution, Scale, Sustain
+
+Each stage answers one question, and each depends on the one before.
+
+S1 Why AI, and where first?
+
+### Strategy
+
+You're here if: People use AI tools on their own, but nobody has picked one piece of work for AI to take on, or nobody owns it. There's no number for what better would look like.
+
+What helps next: Choose one workflow, one owner and one number. A free discovery session does that with you; a discovery sprint then tests it on your own documents.
+
+How the Discovery Sprint works →
+
+S2 Does it work on our work?
+
+### Solution
+
+You're here if: You've chosen the work and maybe tried a tool, a trial or an automation. It hasn't been tested on your real documents, or nobody compared the result with how the work is done today.
+
+What helps next: Test it on your real work and measure it against today. That's what the discovery sprint is for: a working prototype, measured results and a clear go/no-go.
+
+How the Discovery Sprint works →
+
+S3 Is it part of the day?
+
+### Scale
+
+You're here if: It works and you've measured it, but it's still a side experiment: one keen person uses it, or someone copies the results into your systems by hand.
+
+What helps next: Connect it to the system where the work ends up, and roll it out to the people who do the work.
+
+See AI Development →
+
+S4 Will it keep working?
+
+### Sustain
+
+You're here if: It's in daily use and connected. What's missing is an owner: someone who fixes and updates it when things change, checks what it produces, and keeps clear rules on what it may do alone.
+
+What helps next: Give it an owner and a schedule: regular checks, fixes and updates, with people approving what matters.
+
+See AI Employee →
+
+## Why the order matters
+
+A tool bought before anyone chose the work. A pilot nobody measured. An automation that one person set up and nobody looks after. Each is a skipped stage, and a skipped stage is where AI projects stall.
+
+So the check looks for the first gap, not the most advanced thing you've tried. Close that gap and the next stage gets much easier.
+
+Take the check
+
+## Pick one piece of work.
+
+Think of the work you'd most like AI to help with. Tick each statement that's true for it today. If it's only partly true, leave it unticked.
+
+S1 Strategy There's one piece of work we'd most like AI to take on, and one person who owns it.
+
+S1 Strategy We know how we'd measure success: hours saved, fewer errors or faster turnaround.
+
+S2 Solution We've tried an AI tool or automation on that work, using our real documents, not a demo.
+
+S2 Solution We've compared the result with how the work is done today.
+
+S3 Scale The people who do that work use it as part of their normal week.
+
+S3 Scale The result goes straight into the system where the work ends up, without anyone copying it across.
+
+S4 Sustain Someone is responsible for fixing it, updating it and checking what it produces.
+
+S4 Sustain It's written down what it may do on its own, what needs a person's approval, and what information it may use.
+
+## Questions
+
+Q: Is this an AI maturity assessment?
+
+It's a quick self-check, not an audit. Eight yes-or-no questions place one piece of work at one of four stages, so you know which step comes next.
+
+Q: Why one workflow and not the whole company?
+
+Because businesses are rarely at one stage everywhere. You can run invoicing smoothly with AI and still be deciding where to start on everything else. Start with the work that matters most.
+
+Q: What happens to my answers?
+
+We don't store them. Our analytics counts which stage people land on, without anything that identifies you. If you book a session, we'll go through the same questions together.
+
+Q: What if we're past stage four?
+
+Then that workflow is in good shape, and we'll say so. The useful question becomes which workflow is next.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agent Training for Small Businesses
+
+URL: https://visionzlab.com/services/ai-training/
+
+Service 01 · Teach
+
+# AI Agent Training for Small Businesses
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+Book a free discovery call
+
+## Who it's for
+
+Owners and teams who want to do it themselves and need someone to show them how.
+
+## What you get
+
+- A hands-on workshop built around your own day-to-day work, not generic demos
+
+- Your team sets up its first working agents during the session
+
+- A written playbook: which tools, which tasks, which guardrails
+
+- Follow-up coaching sessions as your team takes on more
+
+## How it's priced
+
+Quoted for the agreed sessions before work starts.
+
+Need more? See Agent Setup →
+
+## How it works
+
+- Pick the work We spend a short call finding the repetitive tasks worth automating first.
+
+- Workshop A half-day or full-day session where your team builds, with us beside them.
+
+- Coach Short check-ins while your team rolls agents out to real work.
+
+## Questions
+
+Q: Do we need technical staff?
+
+No. The workshops are designed for business teams. If you have technical people, we go deeper with them.
+
+Q: Which tools do you teach?
+
+The ones that fit your business — usually the AI assistants and automation tools you already have access to. We don't sell software licences.
+
+Q: Can you do it remotely?
+
+Yes. Workshops run online or on site.
+
+All services
+
+## Five ways to work with us
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 04 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 05 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agent Setup Service
+
+URL: https://visionzlab.com/services/ai-agent-setup/
+
+Service 02 · Guided setup
+
+# AI Agent Setup Service
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+Book a free discovery call
+
+## Who it's for
+
+Businesses that want a working agent quickly, and want to own it afterwards.
+
+## What you get
+
+- One agent configured for a real task in your business
+
+- Connected to the tools and data it needs, with sensible permissions
+
+- Your team trained on running, adjusting and checking it
+
+- A handover playbook and a short support window after go-live
+
+## How it's priced
+
+Quoted for the agreed scope before work starts.
+
+Need more? See AI Development →
+
+## How it works
+
+- Scope We agree one task, what good looks like, and what the agent may and may not do.
+
+- Set up together We configure it with your team in the room, so nothing is a black box.
+
+- Hand over You run it. We stay on call for a short window to tune it.
+
+## Questions
+
+Q: How long does setup take?
+
+Usually days, not months, for a single well-defined task.
+
+Q: Who owns the agent?
+
+You do. It runs on your accounts and tools.
+
+Q: What if it needs more than off-the-shelf tools?
+
+Then it's a build — see AI Agent Development.
+
+All services
+
+## Five ways to work with us
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 04 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 05 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Custom AI Agent Development
+
+URL: https://visionzlab.com/services/ai-development/
+
+Service 03 · Build
+
+# Custom AI Agent Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+Book a free discovery call
+
+## Who it's for
+
+Businesses with a clear use case that off-the-shelf tools can't handle.
+
+## What you get
+
+- A production-grade AI agent or automation, integrated with your systems
+
+- Human approval steps, audit logs and guardrails where they matter
+
+- Fixed scope and fixed price agreed before work starts
+
+- Documentation and a handover so your team can own it
+
+## How it's priced
+
+A fixed price for a fixed scope, agreed before work starts.
+
+Need more? See AI Employee →
+
+## How it works
+
+- Discovery A short paid sprint that ends in a working prototype and a costed plan.
+
+- Build Milestone-based delivery with demos along the way.
+
+- Hand over Production release, documentation and training for your team.
+
+## Questions
+
+Q: How long does a build take?
+
+Most first builds take 4–12 weeks depending on scope and integrations.
+
+Q: Do you work with our existing systems?
+
+Yes. Integration with what you already run is the point.
+
+Q: What happens after handover?
+
+You own it. If you'd rather we keep it running, see AI Employee.
+
+All services
+
+## Five ways to work with us
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 04 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 05 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Always-On AI Employee for Your Business
+
+URL: https://visionzlab.com/services/ai-employee/
+
+Service 04 · Build & maintain
+
+# Always-On AI Employee for Your Business
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+Book a free discovery call
+
+## Who it's for
+
+Owner-led businesses that want the result without having to maintain the technology.
+
+## What you get
+
+- A company brain: your offers, customers, suppliers, who decides what and how you do things, in one place you own, with a source and owner on each entry
+
+- An always-on AI employee for one defined role, such as a daily operations brief, document intake, inbox triage, follow-ups, a first pass on quotes, or order entry
+
+- Research skills written for your industry
+
+- Regular maintenance: updates, fixes and improvements on a schedule
+
+- A monthly report on what it did and where a person had to step in
+
+- People stay in charge of anything that needs judgment or sign-off
+
+## How it's priced
+
+A setup fee plus a monthly fee, agreed before work starts.
+
+Need more? See AI Team →
+
+## How it works
+
+- Define the role We map the tasks, the rules, and where a person must approve.
+
+- Build the brain We connect your tools, write down how you work, and set who can see what.
+
+- Build and launch We build it, run it alongside your team, then hand it the work.
+
+- Maintain We look after it month to month so it keeps doing the job well.
+
+## Questions
+
+Q: Does it really work around the clock?
+
+Yes. It keeps working when nobody is at a computer, and anything that matters waits for a person to approve it. Our own support is scheduled, within business days.
+
+Q: How is this different from ChatGPT or Copilot?
+
+Those tools only know what someone gives them. We organize what your company knows, keep it current and put it to work on a defined job.
+
+Q: Who owns the company brain?
+
+You do. It lives in accounts you control wherever possible, and it stays with you if you change AI provider or stop working with us.
+
+Q: Which AI does it use?
+
+You choose from our approved list of business plans whose terms exclude training on your data.
+
+Q: Is this cheaper than hiring?
+
+It depends on the scope, usage and human review needed. We agree a setup fee and a monthly fee so you can compare the total cost with your alternatives.
+
+Q: What does maintenance include?
+
+Scheduled care: updates, fixes within business days, and improvements. It is not a 24/7 on-call service.
+
+Q: Who checks its work?
+
+Your team approves anything sensitive. The AI employee prepares; people decide.
+
+All services
+
+## Five ways to work with us
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 04 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 05 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# An AI Engineering Team Instead of a New Hire
+
+URL: https://visionzlab.com/services/ai-team/
+
+Service 05 · Embedded capacity
+
+# An AI Engineering Team Instead of a New Hire
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+Book a free discovery call
+
+## Who it's for
+
+Companies about to hire for software, automation or AI work.
+
+## What you get
+
+- Senior architects and engineers working as an extension of your team
+
+- An AI-first delivery stack, so small teams ship what larger ones used to
+
+- Flexible monthly capacity you can scale up or down
+
+- Agreed scope, onboarding and monthly capacity without adding permanent headcount
+
+## How it's priced
+
+A monthly retainer sized to the work.
+
+## How it works
+
+- Share the role Send us the job description. We tell you which parts we can take on.
+
+- Agree capacity A monthly retainer or flexible capacity, agreed together and sized to the work.
+
+- Ship We work in your tools and rhythm, with regular demos and reviews.
+
+## Questions
+
+Q: Is this staff augmentation?
+
+Partly. You get senior people, but we also bring the AI tooling and delivery approach that make a small team go further.
+
+Q: Can we start small?
+
+Yes. We recommend starting with one defined project and reviewing the results before expanding.
+
+Q: Where is the team?
+
+Based in Ontario, Canada. We work with businesses across Canada and the US.
+
+All services
+
+## Five ways to work with us
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 04 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 05 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI-Assisted Security Review for Small Businesses
+
+URL: https://visionzlab.com/services/security-review/
+
+Service · Security
+
+# AI-Assisted Security Review for Small Businesses
+
+We find the gaps attackers try first, explain them in plain English and help you close them, with a senior engineer checking every finding.
+
+Book a free discovery call
+
+## Why now
+
+AI has made it cheaper to find software flaws and quicker to exploit them, and phishing emails now read like they came from a colleague. Large companies have security teams to keep up. Most small businesses have an IT person, a provider, or nobody.
+
+The good news is that most breaches still start with a short list of basics. A review that checks those properly, and a plan to fix them in order, removes most of the easy ways in.
+
+## What we check
+
+- Internet-facing systems Firewalls, VPN and remote access, websites and exposed services, checked for known exploited flaws and out-of-date software.
+
+- Email and sign-in Multi-factor sign-in, admin accounts, password reuse risk, and the SPF, DKIM and DMARC records that stop others sending email as you.
+
+- Microsoft 365 or Google Workspace Your settings compared with published secure baselines, read-only.
+
+- Devices, patches and backups Patch status from the tools you already use, and whether backups are kept apart from your network and have actually been restored.
+
+- AI tools and agents Which AI tools your team uses, what data goes into them, and what files and inboxes an AI assistant or agent can reach.
+
+## Who it's for
+
+Businesses without a security team, especially those facing a cyber insurance application, a customer security questionnaire or a supplier certification.
+
+## What you get
+
+- A review of your internet-facing systems, email and cloud settings, under a written authorisation you sign
+
+- A check of the AI tools your team already uses: what data goes into them and who can see what
+
+- A plain-English fix list in priority order, mapped to recognised baselines for small organisations
+
+- Help patching and hardening the top items, alongside your IT person or provider
+
+- Dated records of what was checked and fixed, for your insurer or a customer questionnaire
+
+## How it's priced
+
+A fixed fee for the review, agreed before work starts. Fixes are quoted from the findings; monthly monitoring is optional.
+
+## How it works
+
+- Agree scope in writing We agree which systems we may check and how. Nothing runs until you've signed a written authorisation.
+
+- Review AI tools scan and compare your settings with security baselines. A senior engineer checks every finding and removes the false alarms.
+
+- Fix We work through the top items with your team or IT provider and record each change.
+
+- Keep watch Optional: a monthly check for new flaws in the software you run, with a short report.
+
+## What stays with people
+
+- A senior engineer reviews every finding before you see it
+
+- Nothing changes on your systems without your approval
+
+- Your team or IT provider stays in charge of your systems; we work alongside them
+
+- We tell you plainly when you need a specialist we're not, such as a formal penetration test or an incident response firm
+
+Our security and privacy background →
+
+## Questions
+
+Q: How can a small business check its security now that AI is finding software flaws faster?
+
+Start with the gaps attackers try first: internet-facing systems that are behind on patches, email accounts without multi-factor sign-in, admin accounts, untested backups and files shared too widely. A security review checks those against a recognised baseline and gives you a short, ordered fix list.
+
+Q: Why does AI change our security risk?
+
+AI makes it faster and cheaper to find and exploit known software flaws, and to write convincing phishing emails. Most small-business breaches still start with the basics: an unpatched system, a reused password, an email account without multi-factor sign-in. We check those first.
+
+Q: Is this a penetration test?
+
+No. It's a review of the ways small businesses most often get breached. If your insurer, a customer or a certification asks for a formal penetration test, we'll say so and help you scope one.
+
+Q: Do you need access to our systems?
+
+Read-only access for the review, under a written authorisation that names what we may check. We don't keep copies of your business data, and every change is made with your team and recorded.
+
+Q: Can this help with our cyber insurance application?
+
+Yes. The fix list covers the controls insurers usually ask about, such as multi-factor sign-in, endpoint protection and tested backups, and you keep dated records of each. The insurer's decision is still theirs.
+
+Q: Is it safe to connect AI assistants to our email and files?
+
+It can be, once permissions are right. An AI assistant sees whatever the signed-in person can see, so files shared too widely become easy to find. We check sharing and permissions before you switch it on.
+
+Q: Will this make us unhackable?
+
+No one can honestly promise that. The review closes the gaps attackers try first and gives you a plan for the rest.
+
+AI services
+
+## Five ways to put AI to work
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 04 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 05 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agent Use Cases
+
+URL: https://visionzlab.com/use-cases/
+
+Use cases
+
+# AI agents for operations, growth and finance teams
+
+Agents that do the reading, re-keying, tracking and reporting — so your people can spend their time on the decisions.
+
+Browse the use cases Book a free discovery call
+
+Use cases
+
+## 9 workflows we build agents for
+
+Each one is a repetitive workflow where an agent reads, drafts or reconciles, and a person approves anything that reaches a customer, a supplier or the books.
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+Every use case can be taught, set up with you, built, or built and run for you. See the five ways to work with us →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Quote and RFQ Intake Agent
+
+URL: https://visionzlab.com/use-cases/quote-rfq-intake/
+
+Use case
+
+# AI Quote and RFQ Intake Agent
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+Book a free discovery call
+
+## Who it's for
+
+Distributors, manufacturers and brokers whose inside sales team re-keys requests from email, PDF and spreadsheets.
+
+## What the agent does
+
+- Reads requests from email, PDFs, spreadsheets and web forms
+
+- Matches items to your catalogue, including customer part numbers and substitutes
+
+- Applies your pricing rules and flags anything outside them
+
+- Drafts the quote in your system and lists what is missing or unclear
+
+## What stays with your people
+
+Your team checks and approves every quote before it is sent. The agent prepares; it never commits to a price or a delivery date on its own.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 02 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: Can AI read RFQs and supplier quotes and draft the quote for our sales team?
+
+Yes. An intake agent reads requests from email, PDFs and spreadsheets, matches the items to your catalogue, applies your pricing rules and drafts the quote. A salesperson reviews and sends it.
+
+Q: Does it work with our ERP?
+
+Yes, where the ERP has an API, an import or a usable screen workflow. We confirm this in the discovery session.
+
+Q: What about unusual requests?
+
+It flags them for a person instead of guessing. You set the limits.
+
+Q: How do we know it's working?
+
+We measure quote turnaround and accuracy on your real requests during the discovery sprint, before you commit to a build.
+
+More
+
+## More use cases
+
+Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Order Entry and Exceptions Agent
+
+URL: https://visionzlab.com/use-cases/order-entry/
+
+Use case
+
+# AI Order Entry and Exceptions Agent
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+Book a free discovery call
+
+## Who it's for
+
+Customer service and order desk teams who re-key purchase orders and chase mismatches every day.
+
+## What the agent does
+
+- Reads purchase orders from email, PDF and customer portals
+
+- Enters them into your ERP or order system
+
+- Checks price, quantity, stock and terms against what was quoted
+
+- Routes exceptions to the right person with the reason attached
+
+## What stays with your people
+
+Your team handles every exception and approves anything outside the rules. Clean orders can be held for approval or released automatically — your choice.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 02 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: How can a distributor stop retyping customer orders from email into the ERP?
+
+An order-entry agent reads each emailed or PDF purchase order, enters it in the ERP as a draft, checks it against the quote, price list and stock, and sends anything that doesn't match to a person. Your team approves instead of re-keying.
+
+Q: Can it release orders automatically?
+
+Only if you want it to, and only within limits you set. Many teams start with every order held for a quick approval.
+
+Q: What counts as an exception?
+
+Whatever you decide: price differences, unknown items, credit holds, short stock or unusual terms.
+
+Q: Who maintains it?
+
+Your team, after hand-over, or us on a scheduled maintenance plan.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Document Intake and Data Extraction Agent
+
+URL: https://visionzlab.com/use-cases/document-intake/
+
+Use case
+
+# AI Document Intake and Data Extraction Agent
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+Book a free discovery call
+
+## Who it's for
+
+Any team that copies information out of invoices, applications, forms or shipping documents by hand.
+
+## What the agent does
+
+- Reads PDFs, scans, emails and spreadsheets
+
+- Extracts the fields your systems need and checks them against rules you set
+
+- Files the document and writes the data to your system
+
+- Lists what is missing or doesn't match, for a person to resolve
+
+## What stays with your people
+
+Your team reviews anything the agent isn't sure about, and owns every decision made on the data.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: Can AI pull data out of invoices, forms and PDFs and enter it into our system?
+
+Yes. A document-intake agent reads PDFs, scans, emails and spreadsheets, extracts the fields your system needs, checks them against rules you set and writes them in. Anything missing or mismatched goes to a person to resolve.
+
+Q: Which documents can it handle?
+
+Most business documents with a recognisable structure: invoices, purchase orders, applications, bills of lading, statements and forms.
+
+Q: What if a scan is poor?
+
+It flags low-confidence fields for a person instead of guessing.
+
+Q: Where does our data go?
+
+It runs on accounts and storage you control, under clear privacy and security terms in every engagement.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Shared Inbox Triage and Reply Drafting Agent
+
+URL: https://visionzlab.com/use-cases/inbox-triage/
+
+Use case
+
+# AI Shared Inbox Triage and Reply Drafting Agent
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+Book a free discovery call
+
+## Who it's for
+
+Teams working out of a shared inbox — sales, service, orders, claims or admin — where messages wait or get missed.
+
+## What the agent does
+
+- Reads messages and supported attachments from the inboxes you connect
+
+- Sorts by type and urgency, and routes to the right person or queue
+
+- Drafts replies from your templates, policies and past answers
+
+- Flags anything urgent or unusual straight away
+
+## What stays with your people
+
+Your team reads and sends every reply, or approves which simple ones can go automatically.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: Can AI sort a shared inbox and draft replies for my team?
+
+Yes. An inbox agent reads incoming messages, sorts them by type and urgency, routes each one to the right person and drafts a reply from your templates and past answers. Urgent messages are flagged straight away, and your team reviews replies before they're sent.
+
+Q: Does it send replies on its own?
+
+Not unless you decide it should, for message types you choose.
+
+Q: Which email systems?
+
+Google Workspace and Microsoft 365, plus most help-desk tools.
+
+Q: Can we set it up ourselves?
+
+Often, yes. We can teach your team or set it up with you.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Renewal Tracking and Client Follow-up Agent
+
+URL: https://visionzlab.com/use-cases/renewals-follow-up/
+
+Use case
+
+# AI Renewal Tracking and Client Follow-up Agent
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+Book a free discovery call
+
+## Who it's for
+
+Brokers, agents and service firms whose revenue depends on renewals and fast follow-up.
+
+## What the agent does
+
+- Tracks renewal and maturity dates from your client records
+
+- Prepares outreach at the right time, with what the client needs to gather
+
+- Follows up with new enquiries and reminds your team when a lead goes quiet
+
+- Prepares messages in the languages your clients speak
+
+## What stays with your people
+
+You decide who is contacted and what is said. The agent reminds and drafts; advice and recommendations stay with you.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: How can AI help us stay on top of renewals and client follow-ups?
+
+A renewals agent tracks renewal and maturity dates in your client records, prepares outreach at the right time with what the client needs to gather, and reminds your team when a lead goes quiet. Your team approves every message.
+
+Q: Does it contact clients directly?
+
+Only with messages you approve, through channels you choose, and in line with the consent rules that apply to you.
+
+Q: Does it work with our CRM?
+
+Yes, or with a spreadsheet if that's where your client list lives.
+
+Q: What does it cost to run?
+
+A setup fee, then a monthly fee if we maintain it. We agree both before we start.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Market Intelligence Agent
+
+URL: https://visionzlab.com/use-cases/market-intelligence/
+
+Use case
+
+# AI Market Intelligence Agent
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+Book a free discovery call
+
+## Who it's for
+
+Leadership, strategy and product teams that need to know what competitors and the market are doing.
+
+## What the agent does
+
+- Tracks competitor websites, pricing pages, product releases, job postings and news
+
+- Reads public filings, industry publications and reports you point it at
+
+- Flags what changed, why it may matter, and what to watch next
+
+- Delivers a weekly brief, with sources linked for every point
+
+## What stays with your people
+
+Your team decides what it means and what to do about it. The agent gathers, summarises and cites; it doesn't set strategy.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: Can an AI agent monitor our competitors and send us a weekly market brief?
+
+Yes. It tracks competitor websites, pricing pages, releases, job postings and news, plus the publications you point it at, and delivers a weekly brief on what changed and why it may matter, with a source linked for every point.
+
+Q: Which sources can it use?
+
+Public sources plus any subscriptions and internal documents you give it access to. Every point in a brief links back to its source.
+
+Q: How is this different from a news alert?
+
+It reads, compares and summarises across sources, and tells you what changed since last week instead of sending every mention.
+
+Q: Can we start small?
+
+Yes. Most teams start with a handful of competitors and one weekly brief.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Prospect Research and Account Planning Agent
+
+URL: https://visionzlab.com/use-cases/prospect-research/
+
+Use case
+
+# AI Prospect Research and Account Planning Agent
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+Book a free discovery call
+
+## Who it's for
+
+Business development and sales teams who lose hours to research before every conversation.
+
+## What the agent does
+
+- Builds a profile of each target account from public sources
+
+- Finds recent events worth starting a conversation about
+
+- Maps likely decision-makers and the roles that matter
+
+- Drafts an account plan and first-call questions for your team to edit
+
+## What stays with your people
+
+Your team chooses the accounts, checks the research and owns every conversation. The agent prepares; it never contacts anyone on its own.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: Can AI research target accounts and prepare account plans for our sales team?
+
+Yes. A research agent profiles each target account from public sources, finds recent events worth a conversation, maps the roles that matter and drafts an account plan with first-call questions for your team to edit.
+
+Q: Does it send emails or messages?
+
+No. It researches and drafts. Your team reviews, decides and sends.
+
+Q: Does it work with our CRM?
+
+Yes. It can read from and write research back to the CRM you use.
+
+Q: How accurate is it?
+
+Every fact links to its source, so your team can check before using it.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Planning and OKR Assistant
+
+URL: https://visionzlab.com/use-cases/planning-okrs/
+
+Use case
+
+# AI Planning and OKR Assistant
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+Book a free discovery call
+
+## Who it's for
+
+Leadership teams who set goals well and then lose track of them between planning sessions.
+
+## What the agent does
+
+- Helps turn goals into clear objectives, key results and owners
+
+- Collects progress from the tools your team already uses
+
+- Flags what is behind, blocked or at risk, before the review meeting
+
+- Drafts the monthly progress update for leadership to review
+
+## What stays with your people
+
+Leadership sets the goals and makes the calls. The assistant keeps the plan current and the reporting done.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→
+
+## Questions
+
+Q: Can AI help us set OKRs and track progress without buying new software?
+
+Yes. An assistant helps turn goals into objectives, key results and owners, collects progress from the tools your team already uses, flags what is behind or blocked before the review, and drafts the monthly update for leadership.
+
+Q: Do we need OKR software?
+
+No. It can work from spreadsheets, documents and project tools you already have.
+
+Q: Can you facilitate the planning session?
+
+We help your team set it up so the assistant has a clear plan to track. Your leadership team owns the goals.
+
+Q: Who sees the data?
+
+Only the people you choose. It runs on your accounts and permissions.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Financial Reporting Agent
+
+URL: https://visionzlab.com/use-cases/financial-reporting/
+
+Use case
+
+# AI Financial Reporting Agent
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+Book a free discovery call
+
+## Who it's for
+
+Owners and finance teams who spend days every month assembling the same reports.
+
+## What the agent does
+
+- Pulls figures from your accounting and business systems
+
+- Prepares monthly management reports and dashboards
+
+- Drafts variance commentary: what moved, by how much, and the likely drivers
+
+- Prepares the inputs for forecasts and budget reviews
+
+## What stays with your people
+
+Your finance team reviews every report and owns every number and decision. The agent prepares; it does not give financial advice or sign off.
+
+How to get it
+
+## Pick the level of help that fits
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+## Questions
+
+Q: Can AI prepare our monthly management reports and variance commentary?
+
+Yes. A reporting agent pulls figures from your accounting and business systems, prepares the monthly reports and drafts the variance commentary: what moved, by how much and the likely drivers. Your finance team reviews and signs off.
+
+Q: Which systems does it work with?
+
+Common accounting and spreadsheet tools, plus other business systems with an export or an API. We confirm this in the discovery session.
+
+Q: Is our financial data safe?
+
+It runs on your accounts with the permissions you set, under clear privacy and security terms in every engagement.
+
+Q: Does it replace our accountant?
+
+No. It takes the assembly work off your team so they can focus on judgment and advice.
+
+More
+
+## More use cases
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→ Use case
+
+### Market Intelligence
+
+An AI agent that watches your market and competitors, and turns it into a brief your team reads every week.
+
+→ Use case
+
+### Prospect Research
+
+An AI agent that researches target accounts and drafts account plans, so your team spends its time selling.
+
+→ Use case
+
+### Planning & OKRs
+
+An AI assistant that turns your goals into tracked objectives, and keeps everyone current on progress.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Quote & Order Automation for Distributors
+
+URL: https://visionzlab.com/for/distributors-manufacturers/
+
+Who we help
+
+# AI Quote & Order Automation for Distributors
+
+AI agents that turn emailed RFQs and purchase orders into draft quotes and entered orders, for your team to approve.
+
+Book a free discovery call
+
+Requests arrive as emails, PDFs and spreadsheets. Someone reads each one, looks up part numbers and pricing, re-keys it into the ERP, and chases what's missing. When volume spikes, quotes go out late and orders wait.
+
+We build agents that do the reading and the re-keying: they match items to your catalogue, draft the quote or the order, and flag anything unusual. Your inside sales and customer service teams approve every quote and every order before it goes anywhere.
+
+Most engagements start with a discovery sprint on one workflow, usually quotes or order entry, using your real documents.
+
+Where to start
+
+## A recommended starting point
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+See all five services →
+
+Use cases
+
+## What we usually build first
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→
+
+## Questions
+
+Q: How are distributors and manufacturers using AI agents for quotes and orders?
+
+Mostly for the reading and re-keying. Agents read emailed RFQs and purchase orders, match items to the catalogue, draft the quote or enter the order in the ERP, and flag anything unusual. Inside sales and customer service approve each one before it goes out.
+
+Q: A customer sent us a cyber security questionnaire. Can you help?
+
+Yes. Our Security Review checks the controls these questionnaires and supplier certifications usually ask about, such as multi-factor sign-in, patching and backups, fixes the gaps with your team, and leaves you dated records to answer from.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Quoting for Machine Shops and Fabricators
+
+URL: https://visionzlab.com/for/machine-shops/
+
+Who we help
+
+# AI Quoting for Machine Shops and Fabricators
+
+An AI first pass on every RFQ: it reads the drawings and models, lists the missing details and drafts the quote, and your estimator approves it.
+
+Book a free discovery call
+
+In most job shops, one or two busy people quote everything. Each RFQ arrives as an email with a PDF print, a STEP file, or sometimes a phone photo of a sketch. Someone works out the material, stock size, setups and outside processes, writes back for the missing tolerance or quantity, and prices it. Most of those quotes don't win, and buyers compare every reply with an instant-quote website.
+
+We build quoting assistants that do the first pass. They read the request and its files, measure the model, list the questions the buyer still needs to answer, and draft a cost from your own rates, machines and past jobs. Your estimator reviews it, sets the price and the date, and sends it.
+
+If an off-the-shelf quoting tool already fits your parts, we'll tell you, and help you set it up. Most engagements start with a discovery sprint on twenty of your recent, non-controlled RFQs, measured against what you actually quoted.
+
+Read the white paper: AI Quoting for Machine Shops: A 2026 Field Guide →
+
+Where to start
+
+## A recommended starting point
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+See all five services →
+
+Use cases
+
+## What we usually build first
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→
+
+## Questions
+
+Q: How can a machine shop use AI to quote jobs faster from drawings and 3D models?
+
+An AI quoting assistant reads the RFQ email, drawings, sketches and STEP files, lists what the buyer left out, and drafts a cost from the shop's own rates, machines and past jobs. The estimator checks it, sets the price and sends the quote.
+
+Q: We already use a quoting tool. Do we need you?
+
+Maybe not. If your tool handles your parts and your team trusts its numbers, keep it. We help where requests are messy (sketches, PDFs with no model), where you want the draft calibrated on your own past jobs, or where quoting has to fit your inbox, your ERP and your quote template.
+
+Q: Can we keep customer drawings in Canada?
+
+Yes. We can host in Canada, delete files on a schedule you set, and keep your drawings out of model training. Drawings under the Controlled Goods Program or ITAR stay out of the system entirely.
+
+Q: Does it set our prices?
+
+No. It drafts a cost from the rates and rules you give it and shows its working. Your estimator sets the price, the delivery date and whether to quote at all.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Automation for P&C Insurance Brokers
+
+URL: https://visionzlab.com/for/insurance-brokers/
+
+Who we help
+
+# AI Automation for P&C Insurance Brokers
+
+AI agents that take submission, certificate and renewal paperwork off your brokers' desks.
+
+Book a free discovery call
+
+A commercial submission means pulling details out of emails, applications and loss runs and re-keying them for every market. Certificate requests and renewal prep repeat the same work all year.
+
+We build agents that extract and organise that information, prepare market-ready submission packages and renewal files, draft certificates for review, and sort incoming claims notices so the right person sees them first.
+
+Your licensed brokers stay in charge of advice, placement and every coverage decision. Agents prepare the paperwork; they never bind coverage or give advice. We work with commercial and P&C lines.
+
+Where to start
+
+## A recommended starting point
+
+01 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 02 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+See all five services →
+
+Use cases
+
+## What we usually build first
+
+Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→
+
+## Questions
+
+Q: How can an insurance brokerage use AI agents without losing the personal touch?
+
+Give the agents the paperwork, not the relationships: reading submissions and certificates, tracking renewal dates, preparing follow-ups and sorting the inbox. Brokers review and send every client message.
+
+Q: Can you help clients who struggle with cyber insurance applications?
+
+We work with the business directly: our Security Review checks the controls insurers usually ask about and helps close the gaps, with dated records of what changed. The application and the coverage advice stay with the broker.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Bookkeeping Automation for Accounting Firms
+
+URL: https://visionzlab.com/for/accountants-bookkeepers/
+
+Who we help
+
+# AI Bookkeeping Automation for Accounting Firms
+
+An AI employee for the routine bookkeeping work — so your team spends its time on clients.
+
+Book a free discovery call
+
+Categorising transactions, chasing missing receipts, reconciling, preparing month-end packages: rules-based work that eats hours every week.
+
+We can teach your team to automate it, set it up with you, or build and maintain an AI employee that does it for a monthly fee. Your accountants stay in charge of every judgment and every sign-off.
+
+Client financial data is handled under clear privacy and security terms in every engagement.
+
+Where to start
+
+## A recommended starting point
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+See all five services →
+
+Use cases
+
+## What we usually build first
+
+Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Financial Reporting
+
+An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+## Questions
+
+Q: What can AI automate for a small accounting or bookkeeping firm?
+
+The routine, rules-based work: reading receipts, invoices and statements, entering and matching the data, preparing monthly reports with draft commentary, and sorting client email. Your accountants review the output and keep the client relationships.
+
+Q: Can you check our firm's security too?
+
+Yes. Accounting firms hold exactly the data attackers want. Our Security Review checks email and sign-in, cloud settings, client portals and backups, and gives you a plain-English fix list. In the US it also helps you prepare the written information security plan tax preparers are expected to keep.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI for Small Business
+
+URL: https://visionzlab.com/for/small-business/
+
+Who we help
+
+# AI for Small Business
+
+Practical AI for owner-run businesses — start small, keep control, grow from there.
+
+Book a free discovery call
+
+You don't need an AI strategy deck. You need the repetitive work off your team's plate.
+
+Most small businesses start by learning to set up a few agents themselves. When something needs more than off-the-shelf tools, we build it. If you'd rather not look after it, we run it for you.
+
+Where to start
+
+## A recommended starting point
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+See all five services →
+
+## Questions
+
+Q: Where should a small business start with AI?
+
+With one repetitive workflow that takes hours every week, such as answering the same emails or re-keying documents. Try it with tools you already pay for, keep a person approving the output, and measure the hours saved before doing more.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Automation for Mortgage Brokers and Agents
+
+URL: https://visionzlab.com/for/mortgage-brokers/
+
+Who we help
+
+# AI Automation for Mortgage Brokers and Agents
+
+Track renewals, organise document requests and prepare follow-ups for your team to review.
+
+Book a free discovery call
+
+Renewals are the business you already earned, and they are easy to lose when maturity dates live in a spreadsheet. Document collection and lead follow-up take the rest of the week.
+
+We set up tools that track the maturity dates in your records and prompt timely outreach, send clients a clear checklist of what to gather, follow up with new enquiries, and help your website show up when people ask AI assistants for a broker. Client messages can be prepared in the languages your clients speak.
+
+You stay in charge of every recommendation and every application. The tools organise and remind; they don't quote rates or give mortgage advice.
+
+Where to start
+
+## A recommended starting point
+
+01 Teach
+
+### AI Training
+
+We teach your team to build and run their own AI agents — so the know-how stays in-house.
+
+→ 02 Guided setup
+
+### Agent Setup
+
+We set up your first AI agent alongside your team, then hand it over with everything you need to run it.
+
+→ 03 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→
+
+See all five services →
+
+Use cases
+
+## What we usually build first
+
+Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→ Use case
+
+### Inbox Triage
+
+An AI agent that sorts incoming messages, routes them using agreed rules and drafts replies for review.
+
+→ Use case
+
+### Renewals & Follow-up
+
+An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→
+
+## Questions
+
+Q: How can mortgage brokers use AI to track renewals and document requests?
+
+An agent tracks renewal and maturity dates, organises document requests and prepares follow-ups for your team to review, so clients hear from you at the right time and nothing is sent without your approval.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Hiring for Order Entry, AR or an Engineer? Try This
+
+URL: https://visionzlab.com/instead-of-hiring/
+
+Who we help
+
+# Hiring for Order Entry, AR or an Engineer? Try This
+
+Before you fill an operations or engineering role, find out which parts AI can take on, and which really need a person.
+
+Book a free discovery call
+
+Hiring takes months, and every new role starts with ramp-up. Before you post the job, or while you interview, it's worth knowing which parts of it need a person.
+
+Send us the job description. We'll tell you plainly which parts we can take on, how long it would take, and what it would cost — and which parts really do need a permanent hire.
+
+## You've posted an order-entry, AR or data-entry role
+
+Much of the job is the same steps every day: reading purchase orders, invoices and remittances, keying them into the ERP or accounting system, matching payments and chasing what's missing. Underwriting-assistant and inside-sales roles have their own version: submissions to assemble, quotes to prepare, follow-ups to send.
+
+An AI agent can take that repetitive part. It reads the documents, enters the data and flags anything unusual. Your team, or the person you hire, checks its work and spends the day on customers, exceptions and the calls that need a person.
+
+## You're hiring a software or AI engineer
+
+Much of what a new software or AI hire is asked to build — integrations, internal tools, automations, AI agents — we can deliver as a defined project or as ongoing capacity, without the hiring cycle or the ramp-up.
+
+Where to start
+
+## A recommended starting point
+
+01 Build
+
+### AI Development
+
+We design and build a production AI agent or automation to your requirements, at a fixed price, and hand it over.
+
+→ 02 Build & maintain
+
+### AI Employee
+
+We organize how your company runs into a company brain you own, then put an always-on AI employee to work on one defined role and keep it working for a monthly fee.
+
+→ 03 Embedded capacity
+
+### AI Team
+
+Senior AI engineering capacity on retainer — building what a new hire would build, without the hire.
+
+→
+
+See all five services →
+
+Use cases
+
+## What we usually build first
+
+Use case
+
+### Quote & RFQ Intake
+
+An AI agent that reads incoming RFQs, matches items to your catalogue and drafts quotes for your team to review.
+
+→ Use case
+
+### Order Entry & Exceptions
+
+An AI agent that enters purchase orders from email and PDF, and flags the ones that need a person.
+
+→ Use case
+
+### Document Intake
+
+An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
+
+→
+
+## Questions
+
+Q: Should we hire an operations assistant or set up an AI agent instead?
+
+Split the role first. Reading, re-keying and chasing are often agent work; relationships, judgement and exceptions need a person. If most of the hours sit in the first group, test an agent with a person approving its work before you hire.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# About
+
+URL: https://visionzlab.com/about/
+
+About
+
+# About VisionzLab
+
+We help businesses without an AI team put AI to work — practically, safely, and at a size that makes sense for them.
+
+Book a free discovery call
+
+## What we believe
+
+Most businesses don't need an AI strategy. They need specific work taken off their team's plate, by something they can trust and understand.
+
+So we meet clients where they are. Some want to learn to do it themselves. Some want it built. Some want it built and looked after. We're comfortable with all three, and we'd rather start small and earn the next project than sell something too big.
+
+How we work
+
+## Four things we hold to
+
+01
+
+### Senior people
+
+Architects with more than two decades of software and architecture experience, who have shipped production AI systems.
+
+02
+
+### AI-first delivery
+
+We build with AI ourselves, so small projects stay small and larger ones move fast.
+
+03
+
+### People stay in charge
+
+Approval steps, audit trails and clear limits on what an agent may do are part of every build.
+
+04
+
+### Honest scoping
+
+Fixed prices where the scope is clear, and a plain answer when AI isn't the right tool.
+
+See what our team has built →
+
+## Where we work
+
+We're based in Ontario, Canada, and work with businesses across Canada and the United States, online or on site.
+
+## Who you'll talk to
+
+Every engagement starts with our business development lead, and every build is led by our founder.
+
+Meet our VP of Business Development → Meet our founder →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Our team's experience
+
+URL: https://visionzlab.com/experience/
+
+Our experience
+
+# What our team has built
+
+VisionzLab is a new practice, so this page is about the people. Before VisionzLab, our team spent more than twenty years building production software for large enterprises and startups, the last four of them building production AI systems.
+
+Book a free discovery call Meet our founder
+
+Before VisionzLab
+
+## Experience behind the work
+
+Five examples from roles our founder held before VisionzLab. Most of the organisations appear on our homepage and on his page.
+
+AI decision engine · Global technology platform
+
+### An AI decision engine for privacy reviews
+
+The work
+
+Privacy reviews across a global technology platform.
+
+What was built
+
+An AI decision engine that automates privacy reviews. Our founder created it and led the cross-functional engineering team that built it.
+
+The outcome
+
+Adopted company-wide, and recognised with several internal awards, including the company's Engineering Excellence Award in 2024.
+
+Security and privacy engineering · Technology, insurance, finance
+
+### Security and privacy built into production systems
+
+The work
+
+Security and privacy teams at a global technology platform, a major Canadian insurer, and the finance systems of a large Canadian membership organisation.
+
+What was built
+
+Our founder led the development of data-request (DSAR) automation for the platform's security and privacy teams, built enterprise sign-in to OpenID and OAuth 2.0 security guidelines at the insurer, and designed a tokenised portal for sensitive information to PCI standards.
+
+The outcome
+
+Security and privacy treated as part of the build, not an afterthought. It's the background behind our Security Review.
+
+AI automation · Four industries
+
+### AI automation for growing businesses
+
+The work
+
+Startups and established businesses in manufacturing, accounting, e-commerce and hospitality, each with its own AI automation project.
+
+What was built
+
+As a generative AI lead, our founder worked on the architecture of those projects.
+
+The outcome
+
+AI automation delivered for clients in all four industries: the same kind of work our services are built around.
+
+Teams and delivery · Insurance and retail
+
+### Engineering teams that ship
+
+The work
+
+A major Canadian insurer building its own mobile capability, and a national retailer's e-commerce website with a large, distributed development team.
+
+What was built
+
+At the insurer, our founder established and led an in-house mobile development and architecture team, from technical interviews to coaching and DevOps automation. At the retailer, he steered more than sixty onshore and offshore developers.
+
+The outcome
+
+A shared component library that streamlined front-end development across the insurer's teams.
+
+Teaching · Colleges and corporate programs
+
+### Teaching technical teams
+
+The work
+
+Organisations moving to the cloud, and students learning to build software.
+
+What was built
+
+Hands-on cloud migration courses for organisations, data warehousing courses, and college courses in software, mobile, web and business intelligence, often with the curriculum written from scratch.
+
+The outcome
+
+Courses delivered online and in person across North America. It's why our AI Training is hands-on and built around your own work.
+
+## Our own case studies are coming
+
+VisionzLab doesn't have client case studies of its own yet, and we won't borrow anyone else's. As our engagements complete, we'll add them here, with each client's permission and with results measured on their own work.
+
+## Until then
+
+Test us on your own work. A Discovery Sprint gives you a working prototype and a clear go/no-go in two to four weeks.
+
+How the sprint works →
+
+How we work
+
+## What you can hold us to
+
+01
+
+### People approve what matters
+
+Approval steps, audit trails and clear limits on what an agent may do are part of every build. The agent prepares; people decide.
+
+02
+
+### Proof on your own work first
+
+The Discovery Sprint takes one workflow and two to four weeks, and ends with a working prototype, a costed build plan and a clear go/no-go — before you commit to anything bigger.
+
+03
+
+### Built on your accounts
+
+What we build runs on your accounts and tools, with the permissions you set. You own it.
+
+04
+
+### We use it ourselves
+
+We run AI assistants in our own day-to-day work, and a person approves everything that goes out.
+
+## Questions
+
+Q: Is this VisionzLab's client work?
+
+No. It's our team's background, from roles held before VisionzLab. VisionzLab's own case studies will be added here as engagements complete.
+
+Q: Do you have client references?
+
+Not yet, and we'd rather say so than borrow someone else's. The Discovery Sprint is how you test us: a working prototype on your own work, and a clear go/no-go, before a bigger commitment.
+
+Q: Who would build our project?
+
+Every build is led by our founder, and every engagement starts with our business development lead, who stays your point of contact.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Frank Goortani, Founder & Technical Principal
+
+URL: https://visionzlab.com/team/frank-goortani/
+
+Founder & Technical Principal
+
+# Frank Goortani
+
+Frank founded VisionzLab and leads the technical side of every engagement: what gets built, how it's built, and the agents themselves.
+
+He has spent more than twenty years designing and building software for startups and large enterprises, as a solution architect and technical lead at organisations including Uber, TD Bank, Canada Life and CAA. At Uber he led an award-winning AI initiative; at Canada Life he formed and scaled an in-house mobile team. He is TOGAF and PMP certified.
+
+Much of his work has been for security and privacy teams: data-request automation, enterprise sign-in built to OpenID and OAuth 2.0 guidelines, and handling of sensitive data to PCI standards. He leads VisionzLab's Security Review.
+
+On every project he makes sure the agents are safe to run: approval steps, audit trails and clear limits on what they may do.
+
+Book a free discovery call with Frank frank@visionzlab.com
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Asal Matin, VP Business Development
+
+URL: https://visionzlab.com/team/asal-matin/
+
+VP Business Development
+
+# Asal Matin
+
+Asal leads business development at VisionzLab. She is the first person most clients speak to, and stays their point of contact from the first conversation through delivery and beyond.
+
+She works with owners and leadership teams to find where AI can take real work off their people — and is just as quick to say when it can't. Her job is to make sure every engagement starts at the right size, with a clear outcome both sides can measure.
+
+Book a free discovery call with Asal asal@visionzlab.com
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Guides
+
+URL: https://visionzlab.com/guides/
+
+Guides
+
+# Guides for putting AI to work
+
+Short answers to the questions owners ask us most, written so you can use them with or without us.
+
+Browse the guides Book a free discovery call
+
+Library
+
+## All guides
+
+Each guide answers one buying question in plain English: what to ask, what it involves, and the red flags. No sign-up.
+
+### Choosing an AI partner
+
+Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to keep the first project small.
+
+→
+
+### Agent, automation or hire?
+
+A plain decision guide for small businesses: when rules-based automation is enough, when an AI agent with human approval fits, and when the work needs a person.
+
+→
+
+### Keeping a person in the loop
+
+Let the agent draft and a person send. Where to put the approval step, what the reviewer needs to see, and when it's safe to loosen it.
+
+→
+
+### AI quoting for machine shops
+
+What AI quoting tools for CNC and fabrication shops do today, what they cost, where they fall short on messy RFQs, and how to test one on your own work.
+
+→
+
+### The 4S check
+
+Where is your business with AI? Eight questions, about two minutes.
+
+→
+
+### AI capacity instead of a hire
+
+When an AI engineering team beats adding headcount.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# How to Choose an AI Automation Partner
+
+URL: https://visionzlab.com/guides/choose-an-ai-automation-partner/
+
+Guide
+
+# How to choose an AI automation partner
+
+Most small businesses only buy AI help once or twice, so it's hard to tell a good partner from a good pitch. These are the questions that separate them.
+
+Book a free discovery call
+
+Published 2026-10-31 by VisionzLab
+
+## Start with one workflow, not a strategy
+
+The best first project is one piece of work your team does every week: reading supplier quotes, keying orders, sorting a shared inbox, chasing renewals. It has inputs you can show a partner, a result you can check, and a person who knows when the output is wrong.
+
+A partner who wants to start with a company-wide AI strategy before touching any real work is asking you to pay for a document. Ask them to pick the workflow with you instead.
+
+## Eight questions to ask
+
+- Will you show it working on our own documents before we commit to a full build?
+
+- Who approves what the AI produces, and where does that step sit in the workflow?
+
+- Which accounts and permissions does it need, and can we turn them off ourselves?
+
+- Who owns the prompts, code, configuration and accounts when the project ends?
+
+- What does it cost to run each month after it's built: software, AI usage and support?
+
+- How will we measure whether it worked, and who measures it?
+
+- What happens when it meets something it hasn't seen before?
+
+- If we stop working together, how do we keep it running or switch it off cleanly?
+
+## Red flags
+
+- A demo on the vendor's sample data, but no offer to test on yours.
+
+- Accuracy or savings figures quoted before anyone has seen your work.
+
+- No named person on your side who approves the AI's output.
+
+- Accounts, keys or code held by the vendor with no handover plan.
+
+- A large up-front build with no smaller first step you can judge.
+
+## Make the first step small enough to judge
+
+Ask for a short, paid first step with a defined deliverable: a prototype on a sample of your real inputs, a measure of success you agree up front, and a costed plan for what comes next. If it doesn't work, you've spent a little and learned a lot. If it does, you have evidence for the bigger decision.
+
+That is how our own Discovery Sprint works, and it's a fair test to apply to any partner, including us.
+
+## Questions
+
+Q: Which AI automation company is best for a small business?
+
+The one that will test on your own work before you commit, names who approves the output, hands over ownership of what it builds, and can tell you the monthly running cost. Use the eight questions above to compare any shortlist.
+
+Q: How much should an AI automation project cost?
+
+It depends on the workflow and how much help you want, from training your team to having a partner build and run it. Ask for a fixed price for a defined first step, and for the monthly running cost, before you sign anything larger.
+
+Q: Do we need a technical person on staff?
+
+Not to start. You need someone who knows the work well enough to judge the output. A good partner sets up the technical side and leaves you a playbook, or runs it for you.
+
+Q: Should we just use ChatGPT or Copilot ourselves?
+
+Often, yes, for individual tasks. A partner earns their fee when the work runs across systems, needs approval steps, or has to run reliably every day without someone prompting it.
+
+Keep reading
+
+## More guides and tools
+
+### Agent, automation or hire?
+
+A plain decision guide for small businesses: when rules-based automation is enough, when an AI agent with human approval fits, and when the work needs a person.
+
+→
+
+### Keeping a person in the loop
+
+Let the agent draft and a person send. Where to put the approval step, what the reviewer needs to see, and when it's safe to loosen it.
+
+→
+
+### AI quoting for machine shops
+
+What AI quoting tools for CNC and fabrication shops do today, what they cost, where they fall short on messy RFQs, and how to test one on your own work.
+
+→
+
+### Hours-back calculator
+
+Estimate what one workflow costs a year, and what could come back.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agent, Automation or a New Hire? How to Decide
+
+URL: https://visionzlab.com/guides/ai-agent-vs-automation-vs-hire/
+
+Guide
+
+# AI agent, automation tool or a new hire?
+
+Three different tools for three different kinds of work. Picking the wrong one is the most common reason automation projects disappoint.
+
+Book a free discovery call
+
+Published 2026-10-31 by VisionzLab
+
+## Rules-based automation: fixed inputs, fixed rules
+
+If the information arrives in the same shape every time and the steps never change, a rules-based tool is cheaper and more predictable than AI. Moving form submissions into a spreadsheet, sending a reminder three days before a due date, or copying a new customer into your CRM are rules-based jobs. Tools such as Zapier, Make, Power Automate or your own software's built-in rules do this well.
+
+## An AI agent: messy inputs, judgement within limits
+
+If the work starts with reading something written for people (emails, PDFs, scanned forms, supplier quotes) and needs judgement inside clear limits, that is where an AI agent helps. It can read the request, match it to your catalogue or records, draft the reply or the entry, and flag what it isn't sure about.
+
+The safe pattern is that the agent prepares and a person approves. Your team stops re-keying and starts checking, which is faster and keeps the decisions with them.
+
+## A person: relationships, accountability, rare cases
+
+Negotiating with a key customer, deciding on an exception that sets a precedent, or owning the result when something goes wrong is work for a person. So is any task that happens a few times a year: it isn't worth automating.
+
+## Signs a workflow is ready for an agent
+
+- It happens every week, often enough that the time adds up.
+
+- Someone re-keys or copies information from documents or email into a system.
+
+- You can show twenty real examples of the input and the correct result.
+
+- A person on the team can tell quickly whether the output is right.
+
+- The systems involved have an API, an import, or a usable screen workflow.
+
+## Most real workflows use all three
+
+A typical result: rules move the files, an agent reads them and drafts the entry, and a person approves the exceptions. Deciding which step belongs to which is most of the design work.
+
+## Questions
+
+Q: Is an AI agent cheaper than hiring?
+
+Sometimes, for the reading and re-keying part of a role, but not for the judgement and relationships. Compare the agent's build and monthly running cost with the hours it takes back, measured on your own work. Our hours-back calculator is a quick first estimate.
+
+Q: What is the difference between an AI agent and automation?
+
+Automation follows fixed rules on structured data. An AI agent can read unstructured input such as email and documents, and decide within limits you set. Many workflows combine both.
+
+Q: Can an AI agent make mistakes?
+
+Yes. That's why the agent should flag uncertain cases and a person should approve anything that matters before it is sent or saved.
+
+Keep reading
+
+## More guides and tools
+
+### Choosing an AI partner
+
+Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to keep the first project small.
+
+→
+
+### Keeping a person in the loop
+
+Let the agent draft and a person send. Where to put the approval step, what the reviewer needs to see, and when it's safe to loosen it.
+
+→
+
+### AI quoting for machine shops
+
+What AI quoting tools for CNC and fabrication shops do today, what they cost, where they fall short on messy RFQs, and how to test one on your own work.
+
+→
+
+### Hours-back calculator
+
+Estimate what one workflow costs a year, and what could come back.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Human Approval for AI-Drafted Quotes and Emails
+
+URL: https://visionzlab.com/guides/human-approval-for-ai-agents/
+
+Guide
+
+# Keeping a person in the loop when an AI agent drafts
+
+Let the agent prepare and a person send. The agent puts its draft quote or email in a review queue, and nothing reaches a customer until someone with authority approves it.
+
+Book a free discovery call
+
+Published 2026-11-01 by VisionzLab
+
+## The rule: the agent drafts, a person sends
+
+The simplest safe design gives the agent permission to create drafts and nothing more. It can read the request, look up your catalogue, prices and history, and write the quote or reply. Sending, committing a price, promising a date or changing a customer record stays with your team.
+
+Enforce this with permissions as well as instructions. If the agent's account can only save drafts, a bad prompt or an odd email can't make it send anything.
+
+## Where to put the approval step
+
+Approve everything at first. As your team learns where the agent is reliable, keep the approval step on the work where a mistake is expensive or hard to undo:
+
+- Anything that commits a price, a discount, a delivery date or credit terms.
+
+- First contact with a new customer or supplier.
+
+- Anything outside your rules: unknown items, substitutes, unusual quantities or terms.
+
+- Complaints, cancellations and anything with legal or safety wording.
+
+## What the reviewer needs to see
+
+An approval is only useful if the reviewer can check the draft quickly. Show these next to it:
+
+- The original request, so the draft can be compared with what the customer asked for.
+
+- What the agent matched and where it came from: the item, the price list, the past order.
+
+- What it wasn't sure about, flagged at the top rather than buried in the draft.
+
+- Anything that differs from your standard terms.
+
+- Approve, edit or reject in one step, with a short reason when they reject.
+
+## Building it with the tools you already have
+
+You rarely need new software for the review step. Drafts can sit in a shared mailbox's drafts folder, quotes can be saved in your ERP or CRM with a draft status, and a short message in Teams or Slack can point the reviewer to each one. What matters is that every draft, approval, edit and rejection is recorded.
+
+## When it's safe to loosen it
+
+Use the approval record to decide. For each type of work, track how often drafts are approved without edits. Where that stays high and the cost of a mistake is small, such as a repeat order of standard items at list price, you can let the agent release within limits you set. Keep checking a sample of what it releases.
+
+## Red flags
+
+- The agent sends from a mailbox with full send rights "just for now".
+
+- Reviewers approve without seeing the original request.
+
+- Nothing records who approved what.
+
+- Nobody can say which work the agent is allowed to release on its own.
+
+## Questions
+
+Q: Doesn't approving every draft cancel out the time saved?
+
+Checking a prepared draft against the original request is quicker than reading the request, looking everything up and typing the reply from scratch. The agent does the reading and matching; the decision stays with your team.
+
+Q: Can an AI agent ever send emails or quotes on its own?
+
+Only if you decide it should, within limits you set, for low-risk work where its approval record shows it is reliable. Keeping a person on every customer-facing message is also a sound permanent choice.
+
+Q: What should be logged?
+
+The incoming request, the agent's draft, who approved or changed it, what they changed, and when it was sent. That record is how you find problems and decide when to loosen the rules.
+
+Keep reading
+
+## More guides and tools
+
+### Choosing an AI partner
+
+Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to keep the first project small.
+
+→
+
+### Agent, automation or hire?
+
+A plain decision guide for small businesses: when rules-based automation is enough, when an AI agent with human approval fits, and when the work needs a person.
+
+→
+
+### AI quoting for machine shops
+
+What AI quoting tools for CNC and fabrication shops do today, what they cost, where they fall short on messy RFQs, and how to test one on your own work.
+
+→
+
+### Hours-back calculator
+
+Estimate what one workflow costs a year, and what could come back.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Quoting for Machine Shops: A 2026 Field Guide
+
+URL: https://visionzlab.com/guides/ai-quoting-for-machine-shops/
+
+White paper
+
+# AI quoting for machine shops
+
+Quoting takes up estimator hours in most job shops, and in 2026 AI quoting tools arrived in force. This paper covers what they do, what they cost, where they still fall short, and how a shop or a shop network can test one on its own requests.
+
+Book a free discovery call
+
+Published 2026-11-03 by VisionzLab
+
+## Why quoting is the bottleneck
+
+In a typical job shop, a few people quote everything, usually the same people who run the floor. Every RFQ has to be read, the print checked against the model, the material and stock size worked out, setups and outside processes estimated, and the missing details chased. Most quotes don't win, so most of that time goes to work the shop never makes.
+
+Buyers have also changed. An engineer who needs a bracket tomorrow can upload a model to an instant-quote website and see a price in seconds. A local shop that takes three days to answer, or replies with a list of questions, loses that job before anyone compares quality.
+
+Not every shop feels this. An owner who quotes a handful of jobs a week, mostly for repeat customers, may spend very little time on it. The pain sits with shops that quote often: dozens of parts a week, many of them from new buyers.
+
+## What's on the market (October 2026)
+
+There are two different markets, and it's easy to mix them up.
+
+Shop-side estimating tools work for the shop's estimator. They read the model and the print, estimate cycle time and cost, and build the quote. Examples: CloudNC Quote Agent, which launched in October 2026 (forward the RFQ or upload drawings and models, and it drafts a manufacturing plan, routing times and costs, and asks about anything missing), Paperless Parts, Machine Research, Toolpath, up2parts, Spanflug and DigiFabster (instant quoting on a shop's own website).
+
+Buyer-side instant-quote platforms work for the buyer. SendCutSend, Xometry and Protolabs Network give an instant price on upload, then make the part themselves or send it to their own suppliers. For a local shop, they are competitors, not tools.
+
+Published prices for shop-side tools, as listed by the vendors in October 2026:
+
+- Free for manual quoting, and US$2.50 a part for an AI agent (CloudNC).
+
+- About US$75–125 a month for small-shop quoting tools.
+
+- US$2,000–50,000 a year for white-label or enterprise quoting.
+
+- Many vendors don't publish prices and quote after a demo.
+
+## If a tool already fits, use it
+
+If your requests arrive as clean STEP files and your parts are mostly milled or turned, trial one of the shop-side tools before you build anything. They are good and cheap, and they improve quickly. We'd tell a shop that, and help it set one up.
+
+## Where off-the-shelf tools fall short
+
+The gaps we see are less about the estimating maths and more about everything around it:
+
+- Messy input. Real requests include a phone photo of a sketch, a PDF with no model, or an email with three attachments and a revision in the body. Most tools are built around clean CAD.
+
+- Questions asked too late. The missing tolerance, finish or quantity is usually found by the estimator, days in. The questions should go to the buyer first, before anyone prices the job.
+
+- Your own history. A draft is only as good as the rates, machines and past jobs behind it. Without your won and lost quotes and your actual hours, any tool is guessing.
+
+- Where files live. Several tools host in the United States only. Shops under Canada's Controlled Goods Program, or with customers who ask, may need Canadian hosting and clear deletion rules.
+
+- How it fits the day. Quotes have to come out of your inbox, into your quote template and your ERP (JobBOSS², ProShop, E2 or a spreadsheet), not into another login nobody opens.
+
+- Shop networks. No tool we found sits between one buyer and many local shops, cleaning up the request and routing it to the shops that fit.
+
+## How an AI quoting assistant works
+
+The design we build is a first pass that prepares the quote, with a person approving it:
+
+- Reads the request wherever it arrives: email, web form, PDF print, sketch photo or STEP file.
+
+- Pulls out the spec: material, quantity, tolerances, finish, outside processes and due date.
+
+- Measures the model with an open-source CAD kernel: bounding box, stock size, volume, material removed and basic features.
+
+- Lists what is missing or unclear, worded as questions the buyer can answer in one reply.
+
+- Drafts a cost from your machines, rates, materials and markups, and finds similar past jobs.
+
+- Puts the draft, its working and its doubts in front of your estimator to approve, edit or reject.
+
+## What stays with the estimator
+
+The assistant prepares; it never quotes on its own. The price, the delivery date, the decision not to quote, and anything it flags as uncertain stay with your people. Its account can save drafts and nothing more, so an odd request can't make it send anything.
+
+## For shop networks and associations
+
+A regional network of shops can put the same first pass at its front door. A buyer uploads a sketch, PDF or model once. The assistant asks the buyer for what's missing, produces a clean request package and suggests the member shops that fit. Each shop still sets its own price. That makes the local route almost as easy as an instant-quote website, without a markup.
+
+A network can also fund the build the way many associations launch member services: members pledge a founding rate, and nothing is charged unless enough shops sign up by a set date.
+
+## How to test it on your own requests
+
+Don't judge any quoting tool, ours included, on a vendor's sample part. Run a small test on your own work:
+
+- Pick twenty recent RFQs where you know what you quoted, whether you won, and the actual hours.
+
+- Leave out anything under the Controlled Goods Program, ITAR or a customer NDA that forbids it.
+
+- Measure the time to a first draft, the share of missing details it caught, and how close its cost came to your own quote.
+
+- Decide from the numbers: buy a tool, build around your workflow, or keep quoting by hand.
+
+## Red flags
+
+- Accuracy or savings figures before anyone has run your parts.
+
+- No clear answer on where drawings are stored, who can see them and when they're deleted.
+
+- Your drawings used to train the vendor's model by default.
+
+- Quotes sent to customers without a person approving them.
+
+- No way to use your own rates, machines and past jobs.
+
+## Questions
+
+Q: Can AI quote a CNC part from a sketch or a 3D model?
+
+It can draft one. From a STEP model it can measure stock size, volume and features and estimate cycle time; from a sketch or PDF it pulls out what it can and lists the questions for the buyer. An estimator should approve every price.
+
+Q: How much does AI quoting software cost for a machine shop?
+
+Published prices in October 2026 ran from free for manual quoting and US$2.50 a part for an AI agent, to about US$75–125 a month for small-shop tools and US$2,000–50,000 a year for white-label or enterprise quoting. A custom build is priced on scope.
+
+Q: Is it safe to upload customer drawings to an AI tool?
+
+Ask where files are stored, who can see them, whether they train the vendor's model and when they're deleted. Keep Controlled Goods Program and ITAR drawings out of any tool that isn't approved for them.
+
+Q: Will AI replace our estimator?
+
+No. It takes over the reading, measuring and chasing so your estimator spends their time on the judgement: the price, the risk and whether the job is worth taking.
+
+Keep reading
+
+## More guides and tools
+
+### Choosing an AI partner
+
+Eight questions to ask before you hire an AI automation company or consultant, the red flags to watch for, and how to keep the first project small.
+
+→
+
+### Agent, automation or hire?
+
+A plain decision guide for small businesses: when rules-based automation is enough, when an AI agent with human approval fits, and when the work needs a person.
+
+→
+
+### Keeping a person in the loop
+
+Let the agent draft and a person send. Where to put the approval step, what the reviewer needs to see, and when it's safe to loosen it.
+
+→
+
+### Hours-back calculator
+
+Estimate what one workflow costs a year, and what could come back.
+
+→
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Free tools
+
+URL: https://visionzlab.com/free-tools/
+
+Free tools
+
+# Free tools for deciding where AI fits
+
+No sign-up and nothing to install. Each one takes a couple of minutes and runs in your browser.
+
+Pick a tool Book a free discovery call
+
+Tools
+
+## Three free tools
+
+A workflow finder, an hours-back calculator and the 4S check. Each runs in your browser, with no sign-up and nothing to install.
+
+Calculator
+
+### Hours-back calculator
+
+Estimate what one repetitive workflow costs a year, and how much an agent could give back.
+
+→ Self-check
+
+### The 4S check
+
+Eight yes-or-no questions place one workflow at Strategy, Solution, Scale or Sustain.
+
+→ Finder
+
+### Workflow finder
+
+Describe a task in a few words and see the closest thing we build.
+
+→
+
+Workflow finder
+
+## What's taking your team's time?
+
+Describe the task in a few words. We'll point you to the closest thing we build. Nothing you type leaves your browser.
+
+The work you'd like off your plate
+
+Try:
+
+## Questions
+
+Q: Do these tools send what I type anywhere?
+
+No. The workflow finder and the calculator run in your browser. We record only that a tool was used, not what you entered.
+
+Q: Are the calculator's results a quote or a promise?
+
+No. They're your own numbers multiplied out. The Discovery Sprint measures the real effect on a sample of your work.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Hours-back calculator
+
+URL: https://visionzlab.com/free-tools/hours-back-calculator/
+
+Hours-back calculator
+
+# How many hours could come back?
+
+A two-minute estimate of what one repetitive workflow costs your team each year, and how much of it an AI agent with human review could give back.
+
+Use the calculator Book a free discovery call
+
+How many times does it happen a week? e.g. orders, quotes, documents or emails
+
+Minutes of handling each time reading, re-keying, checking, filing
+
+Working weeks a year
+
+Loaded hourly cost of the person doing it (optional) wage plus overhead, any currency
+
+Share of that time an agent could give back after your team reviews its work 30%
+
+## Questions
+
+Q: How is this calculated?
+
+Times per week × minutes each ÷ 60 gives weekly hours; × working weeks gives yearly hours; × the share you expect back gives the hours an agent could return. A 37.5-hour week converts hours to working weeks.
+
+Q: What share should I use?
+
+Start low. The agent prepares and a person still reviews, so the time that comes back is the reading and re-keying, not the checking. 30% is a cautious first guess; the Discovery Sprint measures the real figure on your own work.
+
+Q: Do these tools send what I type anywhere?
+
+No. The workflow finder and the calculator run in your browser. We record only that a tool was used, not what you entered.
+
+Q: Are the calculator's results a quote or a promise?
+
+No. They're your own numbers multiplied out. The Discovery Sprint measures the real effect on a sample of your work.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Security and privacy
+
+URL: https://visionzlab.com/security-and-privacy/
+
+Security and privacy
+
+# How we protect your data
+
+When you let an AI system work on your documents, the first question is the right one: where does my data go, and who can see it? Here is our answer for every system we build.
+
+Book a free discovery call
+
+## Only approved AI models
+
+We use AI models from an approved list, never whatever tool is handy. A model is approved only if it meets all of these:
+
+- Business-grade terms. We use the enterprise or API service, not the consumer app. Under those terms the provider does not use your data to train its models.
+
+- Known retention. We know how long the provider keeps a request, if at all, and we pick the shortest setting available.
+
+- Independent audits at the provider. The provider's own infrastructure is independently audited, for example with SOC 2 Type II or ISO 27001 reports, and we can share those reports with you.
+
+- A choice of region. Where you need it, data is processed in a region you choose, such as Canada or the US.
+
+- You approve the models. You approve which models touch your data before we start. To keep everything inside your own environment, we can run an open-weight model privately in your cloud account or on your own server. Free and consumer AI tools are never used with client data.
+
+## Your data is never used for training
+
+Your documents are used for one thing: doing your work.
+
+- No training. They are not used to train or improve any AI model, ours or a provider's.
+
+- No shared datasets. We don't build datasets from client material, and nothing from one client is ever used for another.
+
+## Your data stays private
+
+- Never public. Client data is never published, shared, or reachable from the open internet. It isn't pasted into public chat tools or kept on personal devices.
+
+- Encrypted in transit and at rest. Data moves only over encrypted connections between your systems and the approved model service, and it is encrypted wherever it's stored.
+
+- Your accounts where possible. We prefer to build inside accounts you own and control: your Microsoft 365, Google Workspace or cloud tenant. You keep the keys and can switch our access off at any time.
+
+- Least access. The system and our team get only the access the work needs, read-only wherever that's enough, and access is removed when the work ends.
+
+- Kept only as long as needed. Working copies are deleted or returned when the engagement ends, as agreed with you in writing.
+
+## People stay in charge
+
+- A person approves every action that matters. Nothing is filed, sent, deleted or changed without someone saying yes.
+
+- When unsure, it asks. Anything the system isn't confident about is set aside for a person. It is never guessed.
+
+- Every step is logged. What came in, what the system proposed, who approved or changed it, and when. You can review it at any time.
+
+- Stop at any time. Every system can be paused or switched off, and your work carries on the way it did before.
+
+## Guardrails built in
+
+- Defined boundaries. Each system can reach only the folders, mailboxes and tools named in its scope.
+
+- Protection against manipulation. Text inside a document is treated as content, never as an instruction, so a document can't tell the system to do something it shouldn't.
+
+- Sensitive details handled with care. Personal identifiers can be masked or left out wherever the work doesn't need them.
+
+- Tested before it goes live. We test each system on agreed samples, with results you can check, before it handles real work.
+
+## The standards we follow
+
+We design and run our work using the practices behind recognised security and privacy frameworks, including SOC 2 (security, availability and confidentiality controls), GDPR (data minimisation, purpose limitation, the rights of the people the data is about) and HIPAA (safeguards for sensitive personal information), along with Canada's PIPEDA and the confidentiality rules of your profession. These are practices we follow, not certifications we claim. Where you need a certified party, the certification belongs to the model and cloud providers we use, and we'll show you their reports.
+
+## If something goes wrong
+
+If we ever find a problem that affects your data, we tell you promptly, explain what happened and what we know, stop the affected system if needed, and work with you on the fix. Your contract sets out the details.
+
+## Ask us anything
+
+On request, we'll give you the list of providers that would handle your data, their audit reports, and a written description of how your system is set up. Email hello@visionzlab.com.
+
+This page covers the AI systems we build for clients. For this website itself, see our privacy notice. Last updated 2026-11-04.
+
+## Questions
+
+Q: Is our data used to train AI models?
+
+No. We use only business-grade AI services whose terms exclude training on customer data, or open-weight models run privately in your own environment. Your documents are used only to do your work.
+
+Q: Which AI models do you use?
+
+Models from an approved list: enterprise services from major providers with no-training terms, known retention and independent audits, or a private open-weight model. You approve which ones touch your data before we start.
+
+Q: Is VisionzLab SOC 2 or HIPAA certified?
+
+No. We follow the practices behind SOC 2, GDPR, HIPAA and PIPEDA in how we design and run systems, but we don't claim those certifications. The model and cloud providers we use hold their own, and we can share their reports.
+
+Q: Can the AI act on its own?
+
+Not on anything that matters. It proposes, a person approves, and every step is logged. Anything it isn't sure about goes to a person.
+
+Q: Can we keep everything in Canada?
+
+Where you need it, we choose services that process data in Canada, or run the system inside your own cloud account in a Canadian region.
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# Privacy
+
+URL: https://visionzlab.com/privacy/
+
+Privacy notice
+
+# Privacy
+
+What this website collects, why, and how to reach us about it.
+
+Book a free discovery call
+
+VisionzLab is a brand of VisionZone One Consulting Inc., an Ontario corporation. This notice covers visionzlab.com. Work we do for a client is covered by the agreement for that engagement.
+
+## The enquiry form
+
+When you book a call, the form collects the details you type in, plus the page or link you came from, so we know which part of the site was useful. The form is provided by HubSpot, which stores your submission for us and may set its own cookies; see HubSpot's privacy policy. We use these details to reply to you and arrange the call, and we don't sell them.
+
+## Analytics
+
+We count page views and button clicks with Umami, a privacy-focused analytics tool we host ourselves. It does not use cookies. The free tools on this site record only that they were used, never what you type into them.
+
+## Email
+
+If you email us, we keep the conversation so we can reply and follow up.
+
+## Hosting
+
+The site is served by GitHub Pages, which may log technical data such as IP addresses to run and protect the service. Fonts and images are served from this site, not from third parties.
+
+## Your choices
+
+To see, correct or delete what we hold about you, email hello@visionzlab.com.
+
+Last updated 2026-10-31.
+
+---
+
+# Book a free discovery call
+
+URL: https://visionzlab.com/book/
+
+Free discovery call
+
+# Let's talk about your work.
+
+A 60–90 minute conversation about where AI could take work off your team, and where it shouldn't. No preparation needed, and no obligation.
+
+Send the form, then pick a time from the calendar that appears, and the session is booked. If none of the times suit you, we'll reply within one business day to find one.
+
+## What we'll cover
+
+- The workflow taking up your team's time
+
+- Where AI could help and where people should stay in control
+
+- Whether a Discovery Sprint is a useful next step
+
+Prefer email? asal@visionzlab.com
+
+We use these details only to reply to you and arrange the call.
+
