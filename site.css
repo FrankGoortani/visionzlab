@@ -180,6 +180,9 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .ticks li::after { content: ""; position: absolute; left: 6px; top: 0.42em; width: 8px; height: 5px;
   border-left: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: rotate(-45deg); }
 .panel-lime .ticks li::before { background: var(--white); }
+.flags li::before { background: var(--white); }
+.flags li::after { content: "!"; left: 0; top: 0.2em; width: 20px; height: 20px; border: 0; transform: none;
+  text-align: center; font-weight: 800; font-size: 0.85rem; line-height: 20px; color: var(--ink); }
 .steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
 .steps li { counter-increment: s; position: relative; padding: 0 0 26px 60px; }
 .steps li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: -2px; width: 42px; height: 42px;
@@ -391,3 +394,11 @@ a.tile:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
   .tile-cap { top: 26px; right: 26px; font-size: 0.6rem; padding: 3px 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .tile, .go-box { transition: none; } }
+
+/* Current page in the main nav */
+.nav a[aria-current], .mobile-menu nav a[aria-current] { text-decoration: underline; text-decoration-color: var(--lime);
+  text-decoration-thickness: 4px; text-underline-offset: 6px; }
+.nav a.btn[aria-current] { text-decoration: none; }
+.btn-sub { font-weight: 500; opacity: 0.8; }
+/* FAQ block sits inside a section; no extra section padding */
+.faq-block > h2 { margin-top: 0; }

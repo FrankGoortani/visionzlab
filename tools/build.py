@@ -1475,7 +1475,10 @@ def breadcrumbs_ld(slug, title):
         {"@type": "ListItem", "position": i + 1, "name": n, "item": url(s)} for i, (s, n) in enumerate(crumbs)]}
 
 
-def contact(ref, label="Request a free discovery session", cls="btn", inner=None):
+NUM_WORDS = {2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight"}
+
+
+def contact(ref, label="Book a free discovery call", cls="btn", inner=None):
     """inner: pre-built HTML for the link body (the label is escaped otherwise)."""
     external = '' if CONTACT_URL.startswith(SITE) else ' target="_blank" rel="noopener"'
     return (f'<a class="{cls}" href="{CONTACT_URL}#ref={e(ref)}" data-contact data-ref="{e(ref)}" '
@@ -1485,7 +1488,7 @@ def contact(ref, label="Request a free discovery session", cls="btn", inner=None
 
 def faq_html(faq):
     items = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
-    return f'<section class="section"><h2>Questions</h2><div class="faq">{items}</div></section>'
+    return f'<div class="faq-block"><h2>Questions</h2><div class="faq">{items}</div></div>'
 
 
 def faq_ld(faq):
@@ -1512,7 +1515,7 @@ def ladder(slug, highlight=None, only=None):
         on = " card-on" if t["slug"] == highlight else ""
         cards.append(
             f'<a class="card tier{on}" href="{rel(slug, t["slug"])}">'
-            f'<span class="num">0{i + 1}</span><span class="tag">{e(t["tier"])}</span>'
+            f'<span class="num">0{len(cards) + 1}</span><span class="tag">{e(t["tier"])}</span>'
             f'<div class="thumb">{art(slug, t["art"])}</div>'
             f'<h3>{e(t["nav"])}</h3><p>{e(t["lead"])}</p><span class="arrow">→</span></a>')
     return f'<div class="cards cards-tiers">{"".join(cards)}</div>'
@@ -1523,7 +1526,9 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     full_title = f"{title} | {BRAND}" if slug else f"{BRAND} | {title}"
     nav = [("services/", "Services"), ("use-cases/", "Use Cases"), ("discovery-sprint/", "Discovery Sprint"),
            ("experience/", "Experience"), ("about/", "About")]
-    nav_html = "".join(f'<a href="{rel(slug, s)}">{e(n)}</a>' for s, n in nav)
+    def cur(s):
+        return ' aria-current="page"' if slug == s else (' aria-current="true"' if slug.startswith(s) else "")
+    nav_html = "".join(f'<a href="{rel(slug, s)}"{cur(s)}>{e(n)}</a>' for s, n in nav)
     foot_tiers = "".join(f'<li><a href="{rel(slug, t["slug"])}">{e(t["nav"])}</a></li>' for t in TIERS)
     foot_plays = "".join(f'<li><a href="{rel(slug, p["slug"])}">{e(p["nav"])}</a></li>' for p in PLAYS)
     foot_team = "".join(f'<li><a href="{rel(slug, m["slug"])}">{e(m["name"])}</a></li>' for m in TEAM)
@@ -1561,9 +1566,9 @@ def page(slug, title, description, main, ld=None, ref="site", image="public/og.j
     <header class="top">
       <div class="wrap top-in">
         <a class="brand" href="{rel(slug, '')}"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="#E1FF3F" stroke="#16052D" stroke-width="3.5" stroke-linejoin="round"><path d="M38 27 Q49.22 48.78 71 60 Q49.22 71.22 38 93 Q26.78 71.22 5 60 Q26.78 48.78 38 27 Z"/><path d="M79 9 Q84.1 18.9 94 24 Q84.1 29.1 79 39 Q73.9 29.1 64 24 Q73.9 18.9 79 9 Z"/></g></svg>{BRAND}</a>
-        <nav class="nav" aria-label="Main navigation">{nav_html}{contact(ref + '-nav', 'Request a call', 'btn btn-sm')}</nav>
+        <nav class="nav" aria-label="Main navigation">{nav_html}{contact(ref + '-nav', 'Book a free discovery call', 'btn btn-sm')}</nav>
         <details class="mobile-menu"><summary>Menu</summary>
-          <nav aria-label="Mobile navigation">{nav_html}{contact(ref + '-nav', 'Request a call', 'btn btn-sm')}</nav>
+          <nav aria-label="Mobile navigation">{nav_html}{contact(ref + '-nav', 'Book a free discovery call', 'btn btn-sm')}</nav>
         </details>
       </div>
     </header>
@@ -1651,7 +1656,7 @@ def headline(text, accent=None):
     return e(text)
 
 
-def hero(h1, lead, ref, eyebrow=None, cta="Request a free discovery session", slug="", img=None, alt="",
+def hero(h1, lead, ref, eyebrow=None, cta="Book a free discovery call", slug="", img=None, alt="",
          accent=None, tone="paper", second=None, stats=None):
     eb = f'<p class="eyebrow">{e(eyebrow)}</p>' if eyebrow else ""
     sec = f'<a class="btn btn-ghost" href="{rel(slug, second[0])}">{e(second[1])}</a>' if second else ""
@@ -1748,7 +1753,7 @@ def clients(slug=""):
 
 def cta_band(ref):
     return (f'<section class="band"><div class="wrap band-in"><div><h2>Not sure where to <span class="hl">start?</span></h2>'
-            f'<p>Request a free discovery session. We\'ll look at your work together and tell you plainly '
+            f'<p>Book a free discovery call. We\'ll look at your work together and tell you plainly '
             f'where AI would help — and where it wouldn\'t.</p></div>{contact(ref)}</div></section>')
 
 
@@ -2199,7 +2204,7 @@ def build_experience():
       slug=slug, img="build", alt="Isometric illustration of an AI system being assembled", accent="has built",
       second=(FRANK["slug"], "Meet our founder"))}
 <section class="section tone-lime"><div class="wrap">
-  {section_head("Before VisionzLab", "Experience behind the work", "Four examples from roles our founder held before "
+  {section_head("Before VisionzLab", "Experience behind the work", f"{NUM_WORDS[len(EXPERIENCE)]} examples from roles our founder held before "
                 "VisionzLab. Most of the organisations appear on our homepage and on his page.",
                 accent="the work")}
   <div class="cards cards-2">{cards}</div>
@@ -2240,7 +2245,7 @@ def build_person(m):
     <h1>{e(name)}</h1>
     <p class="lead">{e(lead)}</p>
     {body}
-    <div class="actions">{contact(ref, f"Request a conversation with {m['first']}")}
+    <div class="actions">{contact(ref, inner=f'Book a free discovery call <span class="btn-sub">with {e(m["first"])}</span>')}
       <a class="btn btn-ghost" href="mailto:{m['email']}">{m['email']}</a></div>
   </div>
   <div class="frame frame-photo"><picture><source srcset="{rel(slug, f'public/team/{photo}.webp')}" type="image/webp" />
@@ -2316,7 +2321,7 @@ BOOK_JS = """      (function () {
 
 def build_book():
     slug = BOOK_SLUG
-    desc = ("Request a free discovery session with VisionzLab. Tell us a little about your business and "
+    desc = ("Book a free discovery call with VisionzLab. Tell us a little about your business and "
             "we'll find a time to talk.")
     js = BOOK_JS.replace("__REGION__", HUBSPOT_REGION).replace("__PORTAL__", HUBSPOT_PORTAL_ID)
     if HUBSPOT_MEETINGS_URL:
@@ -2370,7 +2375,7 @@ def build_book():
 <script>
 {js}
 </script>"""
-    return page(slug, "Request a discovery session", desc, main, ref="book")
+    return page(slug, "Book a free discovery call", desc, main, ref="book")
 
 
 def page_title(slug):
@@ -2454,7 +2459,7 @@ def finder(slug, tone="paper"):
   <div class="finder-out" hidden><div class="cards cards-uc finder-hits"></div>
     <p class="big" data-none hidden>We don't have a page for that yet, which doesn't mean we can't help.
     Tell us about it.</p>
-    <div class="actions">{contact("finder", "Request a call about this").replace("<a ", "<a data-finder-cta ", 1)}
+    <div class="actions">{contact("finder", "Book a free discovery call").replace("<a ", "<a data-finder-cta ", 1)}
     <a class="btn btn-ghost" href="{rel(slug, CALC_SLUG)}">Estimate the hours it takes</a></div></div>
   <script type="application/json" id="finder-data">{blob}</script>
 </div></section>
@@ -2590,7 +2595,8 @@ def build_guide(g):
     body = []
     for head, paras, bullets in g["sections"]:
         ps = "".join(f"<p>{e(p)}</p>" for p in paras)
-        ul = f'<ul class="ticks">{"".join(f"<li>{e(b)}</li>" for b in bullets)}</ul>' if bullets else ""
+        cls = "ticks flags" if head.lower().startswith("red flag") else "ticks"
+        ul = f'<ul class="{cls}">{"".join(f"<li>{e(b)}</li>" for b in bullets)}</ul>' if bullets else ""
         body.append(f"<h2>{e(head)}</h2>{ps}{ul}")
     others = [x for x in GUIDES if x["slug"] != slug]
     more = rows(slug, [(x["slug"], x["nav"], x["description"]) for x in others] +
@@ -2631,12 +2637,12 @@ def build_privacy():
     desc = f"How the {BRAND} website handles the information you share with it: the enquiry form, analytics and email."
     main = f"""
 {hero("Privacy", "What this website collects, why, and how to reach us about it.", "privacy", "Privacy notice",
-      slug=slug, cta="Request a call")}
+      slug=slug, cta="Book a free discovery call")}
 <section class="section"><div class="wrap narrow prose big">
   <p>{BRAND} is a brand of {LEGAL_NAME}, an Ontario corporation. This notice covers visionzlab.com. Work we do for
   a client is covered by the agreement for that engagement.</p>
   <h2>The enquiry form</h2>
-  <p>When you request a call, the form collects the details you type in, plus the page or link you came from, so
+  <p>When you book a call, the form collects the details you type in, plus the page or link you came from, so
   we know which part of the site was useful. The form is provided by HubSpot, which stores your submission for us
   and may set its own cookies; see <a class="link" href="https://legal.hubspot.com/privacy-policy" rel="noopener">HubSpot's
   privacy policy</a>. We use these details to reply to you and arrange the call, and we don't sell them.</p>
@@ -2691,7 +2697,7 @@ def build_llms(pages):
              f"Who we serve: {WHO_WE_SERVE}", "", f"Pricing: {PRICING_SUMMARY}", "", "## Pages", ""]
     lines += [f"- [{t}]({url(s)}): {d}" for s, t, d in pages]
     lines += ["", "## Contact", "", f"- New business: {EMAIL_SALES}", f"- General: {EMAIL_GENERAL}",
-              f"- Request a discovery session: {CONTACT_URL}", "",
+              f"- Book a free discovery call: {CONTACT_URL}", "",
               f"{BRAND} is a brand of {LEGAL_NAME}, an Ontario corporation.", ""]
     return "\n".join(lines)
 
@@ -2764,7 +2770,7 @@ def main():
              "How we protect client data in the AI systems we build: approved models, no training, people approve.")]
     out += [(PRIVACY_SLUG, build_privacy(), "Privacy", "What this website collects and why.")]
     if HUBSPOT_FORM_ID:
-        out += [(BOOK_SLUG, build_book(), "Request a discovery session", "Request a free discovery session.")]
+        out += [(BOOK_SLUG, build_book(), "Book a free discovery call", "Book a free discovery call.")]
     for slug, body, _, _ in out:
         path = ROOT / slug / "index.html"
         path.parent.mkdir(parents=True, exist_ok=True)
