@@ -411,3 +411,8 @@ a.tile:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .hero.hero-compact h1 { font-size: clamp(2.2rem, 4.4vw, 3.6rem); }
 .hero.hero-compact .frame { max-width: 380px; justify-self: end; }
 .hero.hero-compact + .section { padding-top: clamp(40px, 4.5vw, 64px); }
+
+/* Answer-first block under the hero: the buyer question and the direct answer (idea 13). */
+.answer-first { padding-bottom: 3rem; }
+.answer-first h2 { margin-top: .25rem; }
+.answer-first .big { margin-top: .75rem; }

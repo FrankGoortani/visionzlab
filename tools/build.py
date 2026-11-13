@@ -1495,6 +1495,18 @@ def contact(ref, label="Book a free discovery call", cls="btn", inner=None):
             f'{inner if inner is not None else e(label)}</a>')
 
 
+def answer_first(qa):
+    """The page's buyer question and its direct answer, straight under the hero (idea 13, answer-first).
+    The pair stays first in FAQPage JSON-LD; the visible FAQ below lists only the follow-up questions."""
+    q, a = qa
+    return (f'<section class="section answer-first"><div class="wrap narrow"><p class="eyebrow">The short answer</p>'
+            f'<h2>{e(q)}</h2><p class="big">{e(a)}</p></div></section>')
+
+
+def faq_section(faq):
+    return f'<section class="section"><div class="wrap">{faq_html(faq)}</div></section>' if faq else ""
+
+
 def faq_html(faq):
     items = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
     return f'<div class="faq-block"><h2>Questions</h2><div class="faq">{items}</div></div>'
@@ -1940,6 +1952,7 @@ def build_security():
     how = "".join(f'<li><strong>{e(a)}</strong><span>{e(b)}</span></li>' for a, b in s["how"])
     main = f"""
 {hero(s["title"], s["lead"], s["ref"], f'Service · {s["tier"]}', slug=slug, img=s["art"], alt=s["alt"])}
+{answer_first(s["question"])}
 <section class="section tone-lime"><div class="wrap narrow prose big">
   <h2>Why now</h2>
   <p>AI has made it cheaper to find software flaws and quicker to exploit them, and phishing emails now read like
@@ -1963,7 +1976,7 @@ def build_security():
   incident response firm</li></ul>
   <p class="more"><a class="link" href="{rel(slug, EXPERIENCE_SLUG)}">Our security and privacy background →</a></p></div>
 </div></section>
-<section class="section"><div class="wrap">{faq_html(faq)}</div></section>
+{faq_section(s["faq"])}
 <section class="section tone-lime"><div class="wrap">{section_head("AI services", "Five ways to put AI to work", accent="put AI to work")}{ladder(slug)}</div></section>
 {cta_band(s["ref"] + "-band")}"""
     return page(slug, s["title"], s["description"], main,
@@ -1996,11 +2009,12 @@ def build_play(p):
                 f'{use_case_cards(slug, only=p["uses"])}</div></section>')
     main = f"""
 {hero(p["title"], p["lead"], p["ref"], "Who we help", slug=slug, img=p["art"], alt=f'Isometric illustration for {p["nav"]}')}
+{answer_first(p["question"])}
 <section class="section tone-lime"><div class="wrap narrow prose big">{body}</div>{moments}</section>
 <section class="section"><div class="wrap">{section_head("Where to start", "A recommended starting point", accent="starting point")}{ladder(slug, only=p["tiers"])}
 <p class="more"><a class="link" href="{rel(slug, 'services/')}">See all five services →</a></p></div></section>
 {uses}
-<section class="section"><div class="wrap">{faq_html([p["question"]] + p.get("faq", []))}</div></section>
+{faq_section(p.get("faq", []))}
 {cta_band(p["ref"] + "-band")}"""
     return page(slug, p["title"], p["description"], main, ld=[faq_ld([p["question"]] + p.get("faq", []))],
                 ref=p["ref"])
@@ -2037,12 +2051,13 @@ def build_use_case(u):
     ref = "uc-" + slug.split("/")[1]
     main = f"""
 {hero(u["title"], u["lead"], ref, "Use case", slug=slug, tone="lime")}
+{answer_first(u["question"])}
 <section class="section"><div class="wrap split">
   <div><h2>Who it's for</h2><p class="big">{e(u["for"])}</p><h2>What the agent does</h2><ul class="ticks">{does}</ul></div>
   <div class="panel panel-lime"><h2>What stays with your people</h2><p class="big">{e(u["people"])}</p></div>
 </div></section>
 <section class="section tone-lime"><div class="wrap">{section_head("How to get it", "Pick the level of help that fits", accent="that fits")}{ladder(slug, only=u["tiers"])}</div></section>
-<section class="section"><div class="wrap">{faq_html([u["question"]] + u["faq"])}</div></section>
+{faq_section(u["faq"])}
 <section class="section tone-lime"><div class="wrap">{section_head("More", "More use cases", accent="use cases")}{use_case_cards(slug, exclude=slug)}</div></section>
 {cta_band(ref + "-band")}"""
     return page(slug, u["title"], u["description"], main,

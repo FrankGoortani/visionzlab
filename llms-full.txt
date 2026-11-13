@@ -1058,6 +1058,12 @@ We find the gaps attackers try first, explain them in plain English and help you
 
 Book a free discovery call
 
+The short answer
+
+## How can a small business check its security now that AI is finding software flaws faster?
+
+Start with the gaps attackers try first: internet-facing systems that are behind on patches, email accounts without multi-factor sign-in, admin accounts, untested backups and files shared too widely. A security review checks those against a recognised baseline and gives you a short, ordered fix list.
+
 ## Why now
 
 AI has made it cheaper to find software flaws and quicker to exploit them, and phishing emails now read like they came from a colleague. Large companies have security teams to keep up. Most small businesses have an IT person, a provider, or nobody.
@@ -1119,10 +1125,6 @@ A fixed fee for the review, agreed before work starts. Fixes are quoted from the
 Our security and privacy background →
 
 ## Questions
-
-Q: How can a small business check its security now that AI is finding software flaws faster?
-
-Start with the gaps attackers try first: internet-facing systems that are behind on patches, email accounts without multi-factor sign-in, admin accounts, untested backups and files shared too widely. A security review checks those against a recognised baseline and gives you a short, ordered fix list.
 
 Q: Why does AI change our security risk?
 
@@ -1288,6 +1290,12 @@ An AI agent that reads incoming RFQs, matches items to your catalogue and drafts
 
 Book a free discovery call
 
+The short answer
+
+## Can AI read RFQs and supplier quotes and draft the quote for our sales team?
+
+Yes. An intake agent reads requests from email, PDFs and spreadsheets, matches the items to your catalogue, applies your pricing rules and drafts the quote. A salesperson reviews and sends it.
+
 ## Who it's for
 
 Distributors, manufacturers and brokers whose inside sales team re-keys requests from email, PDF and spreadsheets.
@@ -1325,10 +1333,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: Can AI read RFQs and supplier quotes and draft the quote for our sales team?
-
-Yes. An intake agent reads requests from email, PDFs and spreadsheets, matches the items to your catalogue, applies your pricing rules and drafts the quote. A salesperson reviews and sends it.
 
 Q: Does it work with our ERP?
 
@@ -1416,6 +1420,12 @@ An AI agent that enters purchase orders from email and PDF, and flags the ones t
 
 Book a free discovery call
 
+The short answer
+
+## How can a distributor stop retyping customer orders from email into the ERP?
+
+An order-entry agent reads each emailed or PDF purchase order, enters it in the ERP as a draft, checks it against the quote, price list and stock, and sends anything that doesn't match to a person. Your team approves instead of re-keying.
+
 ## Who it's for
 
 Customer service and order desk teams who re-key purchase orders and chase mismatches every day.
@@ -1453,10 +1463,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: How can a distributor stop retyping customer orders from email into the ERP?
-
-An order-entry agent reads each emailed or PDF purchase order, enters it in the ERP as a draft, checks it against the quote, price list and stock, and sends anything that doesn't match to a person. Your team approves instead of re-keying.
 
 Q: Can it release orders automatically?
 
@@ -1544,6 +1550,12 @@ An AI agent that reads the documents your team re-keys, and puts the data where 
 
 Book a free discovery call
 
+The short answer
+
+## Can AI pull data out of invoices, forms and PDFs and enter it into our system?
+
+Yes. A document-intake agent reads PDFs, scans, emails and spreadsheets, extracts the fields your system needs, checks them against rules you set and writes them in. Anything missing or mismatched goes to a person to resolve.
+
 ## Who it's for
 
 Any team that copies information out of invoices, applications, forms or shipping documents by hand.
@@ -1587,10 +1599,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: Can AI pull data out of invoices, forms and PDFs and enter it into our system?
-
-Yes. A document-intake agent reads PDFs, scans, emails and spreadsheets, extracts the fields your system needs, checks them against rules you set and writes them in. Anything missing or mismatched goes to a person to resolve.
 
 Q: Which documents can it handle?
 
@@ -1678,6 +1686,12 @@ An AI agent that sorts incoming messages, routes them using agreed rules and dra
 
 Book a free discovery call
 
+The short answer
+
+## Can AI sort a shared inbox and draft replies for my team?
+
+Yes. An inbox agent reads incoming messages, sorts them by type and urgency, routes each one to the right person and drafts a reply from your templates and past answers. Urgent messages are flagged straight away, and your team reviews replies before they're sent.
+
 ## Who it's for
 
 Teams working out of a shared inbox — sales, service, orders, claims or admin — where messages wait or get missed.
@@ -1721,10 +1735,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: Can AI sort a shared inbox and draft replies for my team?
-
-Yes. An inbox agent reads incoming messages, sorts them by type and urgency, routes each one to the right person and drafts a reply from your templates and past answers. Urgent messages are flagged straight away, and your team reviews replies before they're sent.
 
 Q: Does it send replies on its own?
 
@@ -1812,6 +1822,12 @@ An AI agent that tracks renewal dates in your records and prepares follow-ups fo
 
 Book a free discovery call
 
+The short answer
+
+## How can AI help us stay on top of renewals and client follow-ups?
+
+A renewals agent tracks renewal and maturity dates in your client records, prepares outreach at the right time with what the client needs to gather, and reminds your team when a lead goes quiet. Your team approves every message.
+
 ## Who it's for
 
 Brokers, agents and service firms whose revenue depends on renewals and fast follow-up.
@@ -1849,10 +1865,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: How can AI help us stay on top of renewals and client follow-ups?
-
-A renewals agent tracks renewal and maturity dates in your client records, prepares outreach at the right time with what the client needs to gather, and reminds your team when a lead goes quiet. Your team approves every message.
 
 Q: Does it contact clients directly?
 
@@ -1940,6 +1952,12 @@ An AI agent that watches your market and competitors, and turns it into a brief 
 
 Book a free discovery call
 
+The short answer
+
+## Can an AI agent monitor our competitors and send us a weekly market brief?
+
+Yes. It tracks competitor websites, pricing pages, releases, job postings and news, plus the publications you point it at, and delivers a weekly brief on what changed and why it may matter, with a source linked for every point.
+
 ## Who it's for
 
 Leadership, strategy and product teams that need to know what competitors and the market are doing.
@@ -1983,10 +2001,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: Can an AI agent monitor our competitors and send us a weekly market brief?
-
-Yes. It tracks competitor websites, pricing pages, releases, job postings and news, plus the publications you point it at, and delivers a weekly brief on what changed and why it may matter, with a source linked for every point.
 
 Q: Which sources can it use?
 
@@ -2074,6 +2088,12 @@ An AI agent that researches target accounts and drafts account plans, so your te
 
 Book a free discovery call
 
+The short answer
+
+## Can AI research target accounts and prepare account plans for our sales team?
+
+Yes. A research agent profiles each target account from public sources, finds recent events worth a conversation, maps the roles that matter and drafts an account plan with first-call questions for your team to edit.
+
 ## Who it's for
 
 Business development and sales teams who lose hours to research before every conversation.
@@ -2117,10 +2137,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: Can AI research target accounts and prepare account plans for our sales team?
-
-Yes. A research agent profiles each target account from public sources, finds recent events worth a conversation, maps the roles that matter and drafts an account plan with first-call questions for your team to edit.
 
 Q: Does it send emails or messages?
 
@@ -2208,6 +2224,12 @@ An AI assistant that turns your goals into tracked objectives, and keeps everyon
 
 Book a free discovery call
 
+The short answer
+
+## Can AI help us set OKRs and track progress without buying new software?
+
+Yes. An assistant helps turn goals into objectives, key results and owners, collects progress from the tools your team already uses, flags what is behind or blocked before the review, and drafts the monthly update for leadership.
+
 ## Who it's for
 
 Leadership teams who set goals well and then lose track of them between planning sessions.
@@ -2251,10 +2273,6 @@ We design and build a production AI agent or automation to your requirements, at
 →
 
 ## Questions
-
-Q: Can AI help us set OKRs and track progress without buying new software?
-
-Yes. An assistant helps turn goals into objectives, key results and owners, collects progress from the tools your team already uses, flags what is behind or blocked before the review, and drafts the monthly update for leadership.
 
 Q: Do we need OKR software?
 
@@ -2342,6 +2360,12 @@ An AI agent that prepares your monthly reporting and drafts the commentary, for 
 
 Book a free discovery call
 
+The short answer
+
+## Can AI prepare our monthly management reports and variance commentary?
+
+Yes. A reporting agent pulls figures from your accounting and business systems, prepares the monthly reports and drafts the variance commentary: what moved, by how much and the likely drivers. Your finance team reviews and signs off.
+
 ## Who it's for
 
 Owners and finance teams who spend days every month assembling the same reports.
@@ -2385,10 +2409,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 →
 
 ## Questions
-
-Q: Can AI prepare our monthly management reports and variance commentary?
-
-Yes. A reporting agent pulls figures from your accounting and business systems, prepares the monthly reports and drafts the variance commentary: what moved, by how much and the likely drivers. Your finance team reviews and signs off.
 
 Q: Which systems does it work with?
 
@@ -2476,6 +2496,12 @@ AI agents that turn emailed RFQs and purchase orders into draft quotes and enter
 
 Book a free discovery call
 
+The short answer
+
+## How are distributors and manufacturers using AI agents for quotes and orders?
+
+Mostly for the reading and re-keying. Agents read emailed RFQs and purchase orders, match items to the catalogue, draft the quote or enter the order in the ERP, and flag anything unusual. Inside sales and customer service approve each one before it goes out.
+
 Requests arrive as emails, PDFs and spreadsheets. Someone reads each one, looks up part numbers and pricing, re-keys it into the ERP, and chases what's missing. When volume spikes, quotes go out late and orders wait.
 
 We build agents that do the reading and the re-keying: they match items to your catalogue, draft the quote or the order, and flag anything unusual. Your inside sales and customer service teams approve every quote and every order before it goes anywhere.
@@ -2534,10 +2560,6 @@ An AI agent that reads the documents your team re-keys, and puts the data where 
 
 ## Questions
 
-Q: How are distributors and manufacturers using AI agents for quotes and orders?
-
-Mostly for the reading and re-keying. Agents read emailed RFQs and purchase orders, match items to the catalogue, draft the quote or enter the order in the ERP, and flag anything unusual. Inside sales and customer service approve each one before it goes out.
-
 Q: A customer sent us a cyber security questionnaire. Can you help?
 
 Yes. Our Security Review checks the controls these questionnaires and supplier certifications usually ask about, such as multi-factor sign-in, patching and backups, fixes the gaps with your team, and leaves you dated records to answer from.
@@ -2561,6 +2583,12 @@ Who we help
 An AI first pass on every RFQ: it reads the drawings and models, lists the missing details and drafts the quote, and your estimator approves it.
 
 Book a free discovery call
+
+The short answer
+
+## How can a machine shop use AI to quote jobs faster from drawings and 3D models?
+
+An AI quoting assistant reads the RFQ email, drawings, sketches and STEP files, lists what the buyer left out, and drafts a cost from the shop's own rates, machines and past jobs. The estimator checks it, sets the price and sends the quote.
 
 In most job shops, one or two busy people quote everything. Each RFQ arrives as an email with a PDF print, a STEP file, or sometimes a phone photo of a sketch. Someone works out the material, stock size, setups and outside processes, writes back for the missing tolerance or quantity, and prices it. Most of those quotes don't win, and buyers compare every reply with an instant-quote website.
 
@@ -2622,10 +2650,6 @@ An AI agent that sorts incoming messages, routes them using agreed rules and dra
 
 ## Questions
 
-Q: How can a machine shop use AI to quote jobs faster from drawings and 3D models?
-
-An AI quoting assistant reads the RFQ email, drawings, sketches and STEP files, lists what the buyer left out, and drafts a cost from the shop's own rates, machines and past jobs. The estimator checks it, sets the price and sends the quote.
-
 Q: We already use a quoting tool. Do we need you?
 
 Maybe not. If your tool handles your parts and your team trusts its numbers, keep it. We help where requests are messy (sketches, PDFs with no model), where you want the draft calibrated on your own past jobs, or where quoting has to fit your inbox, your ERP and your quote template.
@@ -2657,6 +2681,12 @@ Who we help
 AI agents that take submission, certificate and renewal paperwork off your brokers' desks.
 
 Book a free discovery call
+
+The short answer
+
+## How can an insurance brokerage use AI agents without losing the personal touch?
+
+Give the agents the paperwork, not the relationships: reading submissions and certificates, tracking renewal dates, preparing follow-ups and sorting the inbox. Brokers review and send every client message.
 
 A commercial submission means pulling details out of emails, applications and loss runs and re-keying them for every market. Certificate requests and renewal prep repeat the same work all year.
 
@@ -2716,10 +2746,6 @@ An AI agent that tracks renewal dates in your records and prepares follow-ups fo
 
 ## Questions
 
-Q: How can an insurance brokerage use AI agents without losing the personal touch?
-
-Give the agents the paperwork, not the relationships: reading submissions and certificates, tracking renewal dates, preparing follow-ups and sorting the inbox. Brokers review and send every client message.
-
 Q: Can you help clients who struggle with cyber insurance applications?
 
 We work with the business directly: our Security Review checks the controls insurers usually ask about and helps close the gaps, with dated records of what changed. The application and the coverage advice stay with the broker.
@@ -2743,6 +2769,12 @@ Who we help
 An AI employee for the routine bookkeeping work — so your team spends its time on clients.
 
 Book a free discovery call
+
+The short answer
+
+## What can AI automate for a small accounting or bookkeeping firm?
+
+The routine, rules-based work: reading receipts, invoices and statements, entering and matching the data, preparing monthly reports with draft commentary, and sorting client email. Your accountants review the output and keep the client relationships.
 
 Categorising transactions, chasing missing receipts, reconciling, preparing month-end packages: rules-based work that eats hours every week.
 
@@ -2802,10 +2834,6 @@ An AI agent that prepares your monthly reporting and drafts the commentary, for 
 
 ## Questions
 
-Q: What can AI automate for a small accounting or bookkeeping firm?
-
-The routine, rules-based work: reading receipts, invoices and statements, entering and matching the data, preparing monthly reports with draft commentary, and sorting client email. Your accountants review the output and keep the client relationships.
-
 Q: Can you check our firm's security too?
 
 Yes. Accounting firms hold exactly the data attackers want. Our Security Review checks email and sign-in, cloud settings, client portals and backups, and gives you a plain-English fix list. In the US it also helps you prepare the written information security plan tax preparers are expected to keep.
@@ -2829,6 +2857,12 @@ Who we help
 Practical AI for owner-run businesses — start small, keep control, grow from there.
 
 Book a free discovery call
+
+The short answer
+
+## Where should a small business start with AI?
+
+With one repetitive workflow that takes hours every week, such as answering the same emails or re-keying documents. Try it with tools you already pay for, keep a person approving the output, and measure the hours saved before doing more.
 
 You don't need an AI strategy deck. You need the repetitive work off your team's plate.
 
@@ -2860,12 +2894,6 @@ We organize how your company runs into a company brain you own, then put an alwa
 
 See all five services →
 
-## Questions
-
-Q: Where should a small business start with AI?
-
-With one repetitive workflow that takes hours every week, such as answering the same emails or re-keying documents. Try it with tools you already pay for, keep a person approving the output, and measure the hours saved before doing more.
-
 ## Not sure where to start?
 
 Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
@@ -2885,6 +2913,12 @@ Who we help
 Track renewals, organise document requests and prepare follow-ups for your team to review.
 
 Book a free discovery call
+
+The short answer
+
+## How can mortgage brokers use AI to track renewals and document requests?
+
+An agent tracks renewal and maturity dates, organises document requests and prepares follow-ups for your team to review, so clients hear from you at the right time and nothing is sent without your approval.
 
 Renewals are the business you already earned, and they are easy to lose when maturity dates live in a spreadsheet. Document collection and lead follow-up take the rest of the week.
 
@@ -2942,12 +2976,6 @@ An AI agent that tracks renewal dates in your records and prepares follow-ups fo
 
 →
 
-## Questions
-
-Q: How can mortgage brokers use AI to track renewals and document requests?
-
-An agent tracks renewal and maturity dates, organises document requests and prepares follow-ups for your team to review, so clients hear from you at the right time and nothing is sent without your approval.
-
 ## Not sure where to start?
 
 Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
@@ -2967,6 +2995,12 @@ Who we help
 Before you fill an operations or engineering role, find out which parts AI can take on, and which really need a person.
 
 Book a free discovery call
+
+The short answer
+
+## Should we hire an operations assistant or set up an AI agent instead?
+
+Split the role first. Reading, re-keying and chasing are often agent work; relationships, judgement and exceptions need a person. If most of the hours sit in the first group, test an agent with a person approving its work before you hire.
 
 Hiring takes months, and every new role starts with ramp-up. Before you post the job, or while you interview, it's worth knowing which parts of it need a person.
 
@@ -3031,12 +3065,6 @@ An AI agent that enters purchase orders from email and PDF, and flags the ones t
 An AI agent that reads the documents your team re-keys, and puts the data where it belongs.
 
 →
-
-## Questions
-
-Q: Should we hire an operations assistant or set up an AI agent instead?
-
-Split the role first. Reading, re-keying and chasing are often agent work; relationships, judgement and exceptions need a person. If most of the hours sit in the first group, test an agent with a person approving its work before you hire.
 
 ## Not sure where to start?
 
