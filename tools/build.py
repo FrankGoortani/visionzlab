@@ -1649,6 +1649,13 @@ TRACKER_JS = """      (function () {
         // source survives to the booking form (lead-source rules, section 3).
         var params = new URLSearchParams(location.search);
         var inbound = params.get('ref');
+        // Social and newsletter links carry UTM tags instead (career/_analytics/UTM.md):
+        // ?utm_source=linkedin&utm_campaign=order-entry becomes ref "utm-linkedin-order-entry".
+        var utmSource = params.get('utm_source');
+        if (!inbound && utmSource) {
+          var utmLabel = params.get('utm_campaign') || params.get('utm_content') || params.get('utm_medium');
+          inbound = ['utm', utmSource, utmLabel].filter(Boolean).join('-').slice(0, 80);
+        }
         if (inbound) { try { sessionStorage.setItem('vz_ref', inbound); } catch (_) {} }
         var stored = null;
         try { stored = sessionStorage.getItem('vz_ref'); } catch (_) {}
@@ -2927,9 +2934,11 @@ def committed(path):
 
 
 def lastmods(pages):
-    """Each page's lastmod: the committed sitemap's date if its HTML matches HEAD, otherwise today."""
+    """Each page's lastmod: the committed sitemap's date if its HTML matches HEAD, otherwise today.
+    <script> blocks are ignored, so a tracking or form-script change doesn't re-date every page."""
     prev = dict(re.findall(r"<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>", committed("sitemap.xml") or ""))
-    return {slug: prev.get(url(slug), TODAY) if body == committed(f"{slug}index.html") else TODAY
+    strip = lambda h: re.sub(r"<script\b.*?</script>", "", h or "", flags=re.S)
+    return {slug: prev.get(url(slug), TODAY) if strip(body) == strip(committed(f"{slug}index.html")) else TODAY
             for slug, body in pages}
 
 
