@@ -1781,7 +1781,7 @@ def clients(slug=""):
     li = "".join(f'<li><img src="{rel(slug, f"public/clients/{f}.svg")}" alt="{e(n)}" width="{w}" height="{h}" '
                  f'style="--h: {px}px" loading="lazy" decoding="async" /></li>' for n, f, w, h, px in CLIENTS)
     return (f'<section class="clients" aria-label="Organisations our team has worked for"><div class="wrap">'
-            f'<div class="clients-heading"><p>Our team’s experience before VisionzLab</p>'
+            f'<div class="clients-heading"><p>Our team’s experience</p>'
             f'<a class="link" href="{rel(slug, EXPERIENCE_SLUG)}">Explore that experience →</a></div>'
             f'<ul class="client-logos">{li}</ul></div></section>')
 
