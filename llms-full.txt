@@ -316,7 +316,7 @@ The first discovery session is free. The Discovery Sprint is a fixed fee agreed 
 
 - AI Development: a fixed price for a fixed scope, agreed before work starts
 
-- AI Employee: a setup fee plus a monthly fee, agreed before work starts
+- AI Employee: one monthly plan based on your team size, with setup included. We agree it before work starts
 
 - AI Team: a monthly retainer sized to the work
 
@@ -862,7 +862,17 @@ Owner-led businesses that want the result without having to maintain the technol
 
 ## How it's priced
 
-A setup fee plus a monthly fee, agreed before work starts.
+One monthly plan based on your team size, with setup included. We agree it before work starts.
+
+## Your data
+
+- Only approved business AI plans, whose terms exclude training on your data
+
+- Built inside accounts you own wherever possible, and you can switch our access off at any time
+
+- Every step is logged, and a person approves every action that matters
+
+How we protect your data →
 
 Need more? See AI Team →
 
@@ -886,6 +896,10 @@ Q: How is this different from ChatGPT or Copilot?
 
 Those tools only know what someone gives them. We organize what your company knows, keep it current and put it to work on a defined job.
 
+Q: Is an AI employee the same as an AI agent or an AI worker?
+
+Yes. AI employee, AI worker, AI agent and digital worker are different names for the same idea: software that does a defined job rather than just answering questions. Ours does one role in your business, inside the tools you already use, and your team approves the decisions that matter.
+
 Q: Who owns the company brain?
 
 You do. It lives in accounts you control wherever possible, and it stays with you if you change AI provider or stop working with us.
@@ -896,7 +910,7 @@ You choose from our approved list of business plans whose terms exclude training
 
 Q: Is this cheaper than hiring?
 
-It depends on the scope, usage and human review needed. We agree a setup fee and a monthly fee so you can compare the total cost with your alternatives.
+It depends on the scope, usage and human review needed. We agree one monthly plan based on your team size, with setup included, so you can compare the total cost with your alternatives.
 
 Q: What does maintenance include?
 
@@ -1282,7 +1296,7 @@ Book a free discovery call
 
 URL: https://visionzlab.com/use-cases/quote-rfq-intake/
 
-Use case
+Use case · Quoting and inside sales work
 
 # AI Quote and RFQ Intake Agent
 
@@ -1295,6 +1309,24 @@ The short answer
 ## Can AI read RFQs and supplier quotes and draft the quote for our sales team?
 
 Yes. An intake agent reads requests from email, PDFs and spreadsheets, matches the items to your catalogue, applies your pricing rules and drafts the quote. A salesperson reviews and sends it.
+
+Sound familiar?
+
+## The job posting usually says
+
+Postings for an inside sales associate or quoting coordinator often list duties like these.
+
+- Prepare accurate quotations from customer requests, drawings and specifications
+
+- Look up part numbers, prices and stock across the ERP and supplier lists
+
+- Keep customer and quote records up to date in the ERP and CRM
+
+- Follow up on open quotes
+
+This agent takes on the repetitive part of that list. The judgment calls stay with your people.
+
+Hiring for this role? Read this first →
 
 ## Who it's for
 
@@ -1313,6 +1345,38 @@ Distributors, manufacturers and brokers whose inside sales team re-keys requests
 ## What stays with your people
 
 Your team checks and approves every quote before it is sent. The agent prepares; it never commits to a price or a delivery date on its own.
+
+What it looks like
+
+## A concept example
+
+Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. Ask to see the clickable version on a call.
+
+What comes in
+
+### RFQ from Lakeshore Mechanical
+
+Email · 3 lines
+
+From: buyer@lakeshore-sample.example Please quote: 40 x 3/4 in ball valve, brass 120 ft 1 in type L copper 6 x pressure gauge 0-100 Need by Friday.
+
+What the agent prepares
+
+Requested Catalogue match Qty Sample price Status
+
+3/4 in ball valve, brass BV-075-BR 40 $18.40 OK
+
+1 in type L copper CP-100-L 120 ft $9.10/ft OK
+
+Pressure gauge 0-100 Two possible: PG-100-25, PG-100-40 6 — Check
+
+What goes to a person
+
+- Gauge face size is missing, so the line can't be matched.
+
+- Friday delivery needs a person to confirm stock.
+
+Hi, thanks for the request. Could you confirm the gauge face size, 2.5 in or 4 in? The other two lines are ready to quote.
 
 How to get it
 
@@ -1412,7 +1476,7 @@ Book a free discovery call
 
 URL: https://visionzlab.com/use-cases/order-entry/
 
-Use case
+Use case · Order entry clerk work
 
 # AI Order Entry and Exceptions Agent
 
@@ -1425,6 +1489,24 @@ The short answer
 ## How can a distributor stop retyping customer orders from email into the ERP?
 
 An order-entry agent reads each emailed or PDF purchase order, enters it in the ERP as a draft, checks it against the quote, price list and stock, and sends anything that doesn't match to a person. Your team approves instead of re-keying.
+
+Sound familiar?
+
+## The job posting usually says
+
+Postings for an order entry clerk or customer service representative often list duties like these.
+
+- Enter customer purchase orders into the ERP accurately and on time
+
+- Check prices, quantities and terms against quotes and price lists
+
+- Resolve order discrepancies with customers and the sales team
+
+- Keep order status up to date for customers and colleagues
+
+This agent takes on the repetitive part of that list. The judgment calls stay with your people.
+
+Hiring for this role? Read this first →
 
 ## Who it's for
 
@@ -1443,6 +1525,38 @@ Customer service and order desk teams who re-key purchase orders and chase misma
 ## What stays with your people
 
 Your team handles every exception and approves anything outside the rules. Clean orders can be held for approval or released automatically — your choice.
+
+What it looks like
+
+## A concept example
+
+Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. Ask to see the clickable version on a call.
+
+What comes in
+
+### PO 90077, Orchard Supply
+
+Email · 1 line
+
+Please ship 25 units FX-310 at $36.50. Same terms as usual.
+
+What the agent prepares
+
+Check On the PO Your records Status
+
+Price $36.50 $38.90 on the current list Mismatch
+
+Terms "As usual" Net 45 Check
+
+Credit Within limit Within limit OK
+
+What goes to a person
+
+- Price is $2.40 below the current list.
+
+- Order is held until a person decides.
+
+Reason held: price mismatch on FX-310.
 
 How to get it
 
@@ -1542,7 +1656,7 @@ Book a free discovery call
 
 URL: https://visionzlab.com/use-cases/document-intake/
 
-Use case
+Use case · Data entry work
 
 # AI Document Intake and Data Extraction Agent
 
@@ -1555,6 +1669,24 @@ The short answer
 ## Can AI pull data out of invoices, forms and PDFs and enter it into our system?
 
 Yes. A document-intake agent reads PDFs, scans, emails and spreadsheets, extracts the fields your system needs, checks them against rules you set and writes them in. Anything missing or mismatched goes to a person to resolve.
+
+Sound familiar?
+
+## The job posting usually says
+
+Postings for a data entry clerk or accounts payable clerk often list duties like these.
+
+- Enter invoices, forms and shipping documents into the system accurately
+
+- Match documents to purchase orders and existing records
+
+- Scan, file and maintain digital records
+
+- Flag missing or incorrect information and follow up on it
+
+This agent takes on the repetitive part of that list. The judgment calls stay with your people.
+
+Hiring for this role? Read this first →
 
 ## Who it's for
 
@@ -1573,6 +1705,40 @@ Any team that copies information out of invoices, applications, forms or shippin
 ## What stays with your people
 
 Your team reviews anything the agent isn't sure about, and owns every decision made on the data.
+
+What it looks like
+
+## A concept example
+
+Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. Ask to see the clickable version on a call.
+
+What comes in
+
+### Invoice INV-3381
+
+Scan · 1 page
+
+INVOICE INV-3381 Vendor: Prairie Packaging Ltd Date: 2026-10-14 Total: $1,284.50 PO ref: (smudged)
+
+What the agent prepares
+
+Field Value Found Status
+
+Invoice number INV-3381 Top of page OK
+
+Vendor Prairie Packaging Ltd Header OK
+
+Date 2026-10-14 Header OK
+
+Total $1,284.50 Totals box OK
+
+PO reference Left blank Smudged on the scan Check
+
+What goes to a person
+
+- PO reference left blank instead of guessed.
+
+The other four fields are ready to accept.
 
 How to get it
 

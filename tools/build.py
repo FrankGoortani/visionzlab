@@ -211,7 +211,13 @@ TIERS = [
         ],
     },
     {
-        "slug": "services/ai-employee/", "priced": "A setup fee plus a monthly fee, agreed before work starts.", "art": "employee",
+        "slug": "services/ai-employee/", "priced": "One monthly plan based on your team size, with setup included. "
+                                           "We agree it before work starts.", "art": "employee",
+        "trust": [
+            "Only approved business AI plans, whose terms exclude training on your data",
+            "Built inside accounts you own wherever possible, and you can switch our access off at any time",
+            "Every step is logged, and a person approves every action that matters",
+        ],
         "tier": "Build & maintain",
         "nav": "AI Employee",
         "title": "Always-On AI Employee for Your Business",
@@ -242,12 +248,16 @@ TIERS = [
              "anything that matters waits for a person to approve it. Our own support is scheduled, within business days."),
             ("How is this different from ChatGPT or Copilot?", "Those tools only know what someone gives them. We organize "
              "what your company knows, keep it current and put it to work on a defined job."),
+            ("Is an AI employee the same as an AI agent or an AI worker?", "Yes. AI employee, AI worker, AI agent and "
+             "digital worker are different names for the same idea: software that does a defined job rather than just "
+             "answering questions. Ours does one role in your business, inside the tools you already use, and your team "
+             "approves the decisions that matter."),
             ("Who owns the company brain?", "You do. It lives in accounts you control wherever possible, and it stays with "
              "you if you change AI provider or stop working with us."),
             ("Which AI does it use?", "You choose from our approved list of business plans whose terms exclude training "
              "on your data."),
-            ("Is this cheaper than hiring?", "It depends on the scope, usage and human review needed. We agree a setup fee and a "
-             "monthly fee so you can compare the total cost with your alternatives."),
+            ("Is this cheaper than hiring?", "It depends on the scope, usage and human review needed. We agree one monthly "
+             "plan based on your team size, with setup included, so you can compare the total cost with your alternatives."),
             ("What does maintenance include?", "Scheduled care: updates, fixes within business days, and "
              "improvements. It is not a 24/7 on-call service."),
             ("Who checks its work?", "Your team approves anything sensitive. The AI employee prepares; people decide."),
@@ -574,6 +584,26 @@ USE_CASES = [
         ],
         "people": "Your team checks and approves every quote before it is sent. The agent prepares; it never "
                   "commits to a price or a delivery date on its own.",
+        "role": "Quoting and inside sales work",
+        "posting": ("an inside sales associate or quoting coordinator", [
+            "Prepare accurate quotations from customer requests, drawings and specifications",
+            "Look up part numbers, prices and stock across the ERP and supplier lists",
+            "Keep customer and quote records up to date in the ERP and CRM",
+            "Follow up on open quotes",
+        ]),
+        "sample": {
+            "in": ("RFQ from Lakeshore Mechanical", "Email · 3 lines",
+                   "From: buyer@lakeshore-sample.example\nPlease quote:\n40 x 3/4 in ball valve, brass\n"
+                   "120 ft 1 in type L copper\n6 x pressure gauge 0-100\nNeed by Friday."),
+            "head": ["Requested", "Catalogue match", "Qty", "Sample price", "Status"],
+            "rows": [["3/4 in ball valve, brass", "BV-075-BR", "40", "$18.40", "ok"],
+                     ["1 in type L copper", "CP-100-L", "120 ft", "$9.10/ft", "ok"],
+                     ["Pressure gauge 0-100", "Two possible: PG-100-25, PG-100-40", "6", "—", "check"]],
+            "flags": ["Gauge face size is missing, so the line can't be matched.",
+                      "Friday delivery needs a person to confirm stock."],
+            "draft": "Hi, thanks for the request. Could you confirm the gauge face size, 2.5 in or 4 in? "
+                     "The other two lines are ready to quote.",
+        },
         "tiers": [2, 3],
         "faq": [
             ("Does it work with our ERP?", "Yes, where the ERP has an API, an import or a usable screen workflow. "
@@ -601,6 +631,23 @@ USE_CASES = [
         ],
         "people": "Your team handles every exception and approves anything outside the rules. Clean orders can be "
                   "held for approval or released automatically — your choice.",
+        "role": "Order entry clerk work",
+        "posting": ("an order entry clerk or customer service representative", [
+            "Enter customer purchase orders into the ERP accurately and on time",
+            "Check prices, quantities and terms against quotes and price lists",
+            "Resolve order discrepancies with customers and the sales team",
+            "Keep order status up to date for customers and colleagues",
+        ]),
+        "sample": {
+            "in": ("PO 90077, Orchard Supply", "Email · 1 line",
+                   "Please ship 25 units FX-310 at $36.50.\nSame terms as usual."),
+            "head": ["Check", "On the PO", "Your records", "Status"],
+            "rows": [["Price", "$36.50", "$38.90 on the current list", "bad"],
+                     ["Terms", "\"As usual\"", "Net 45", "check"],
+                     ["Credit", "Within limit", "Within limit", "ok"]],
+            "flags": ["Price is $2.40 below the current list.", "Order is held until a person decides."],
+            "draft": "Reason held: price mismatch on FX-310.",
+        },
         "tiers": [2, 3],
         "faq": [
             ("Can it release orders automatically?", "Only if you want it to, and only within limits you set. "
@@ -627,6 +674,25 @@ USE_CASES = [
             "Lists what is missing or doesn't match, for a person to resolve",
         ],
         "people": "Your team reviews anything the agent isn't sure about, and owns every decision made on the data.",
+        "role": "Data entry work",
+        "posting": ("a data entry clerk or accounts payable clerk", [
+            "Enter invoices, forms and shipping documents into the system accurately",
+            "Match documents to purchase orders and existing records",
+            "Scan, file and maintain digital records",
+            "Flag missing or incorrect information and follow up on it",
+        ]),
+        "sample": {
+            "in": ("Invoice INV-3381", "Scan · 1 page",
+                   "INVOICE INV-3381\nVendor: Prairie Packaging Ltd\nDate: 2026-10-14\nTotal: $1,284.50\nPO ref: (smudged)"),
+            "head": ["Field", "Value", "Found", "Status"],
+            "rows": [["Invoice number", "INV-3381", "Top of page", "ok"],
+                     ["Vendor", "Prairie Packaging Ltd", "Header", "ok"],
+                     ["Date", "2026-10-14", "Header", "ok"],
+                     ["Total", "$1,284.50", "Totals box", "ok"],
+                     ["PO reference", "Left blank", "Smudged on the scan", "check"]],
+            "flags": ["PO reference left blank instead of guessed."],
+            "draft": "The other four fields are ready to accept.",
+        },
         "tiers": [1, 2, 3],
         "faq": [
             ("Which documents can it handle?", "Most business documents with a recognisable structure: invoices, "
@@ -1935,12 +2001,17 @@ def build_tier(i):
     if t["next"]:
         n = next(x for x in TIERS if x["slug"] == t["next"])
         nxt = f'<p class="more"><a class="link" href="{rel(slug, n["slug"])}">Need more? See {e(n["nav"])} →</a></p>'
+    trust = ""
+    if t.get("trust"):
+        lis = "".join(f"<li>{e(x)}</li>" for x in t["trust"])
+        trust = (f'<h2>Your data</h2><ul class="ticks">{lis}</ul><p><a class="link" '
+                 f'href="{rel(slug, DATA_TRUST_SLUG)}">How we protect your data →</a></p>')
     ref = slug.split("/")[1]
     main = f"""
 {hero(t["title"], t["lead"], ref, f'Service 0{i + 1} · {t["tier"]}', slug=slug, img=t["art"],
       alt=f'Isometric illustration for {t["nav"]}')}
 <section class="section tone-lime"><div class="wrap split">
-  <div class="panel"><h2>Who it's for</h2><p class="big">{e(t["for"])}</p><h2>What you get</h2><ul class="ticks">{get}</ul><h2>How it's priced</h2><p class="big">{e(t["priced"])}</p>{nxt}</div>
+  <div class="panel"><h2>Who it's for</h2><p class="big">{e(t["for"])}</p><h2>What you get</h2><ul class="ticks">{get}</ul><h2>How it's priced</h2><p class="big">{e(t["priced"])}</p>{trust}{nxt}</div>
   <div class="panel"><h2>How it works</h2><ol class="steps">{how}</ol></div>
 </div></section>
 <section class="section"><div class="wrap">{faq_html(t["faq"])}</div></section>
@@ -2052,17 +2123,60 @@ def build_use_cases():
     return page(slug, "AI Agent Use Cases", desc, main, ref="use-cases")
 
 
+SAMPLE_STATUS = {"ok": "OK", "check": "Check", "bad": "Mismatch"}
+
+
+def posting_block(slug, u):
+    """'Sound familiar?': duties typical of the job posting for the role this agent covers (marblism pattern 4).
+    Generic wording on purpose: never quote a prospect's real posting on the site."""
+    if not u.get("posting"):
+        return ""
+    who, duties = u["posting"]
+    lis = "".join(f"<li>{e(x)}</li>" for x in duties)
+    return f"""<section class="section tone-lime"><div class="wrap split">
+  <div><p class="eyebrow">Sound familiar?</p><h2>The job posting usually says</h2>
+  <p class="big">Postings for {e(who)} often list duties like these.</p></div>
+  <div class="panel"><ul class="ticks">{lis}</ul>
+  <p>This agent takes on the repetitive part of that list. The judgment calls stay with your people.</p>
+  <p><a class="link" href="{rel(slug, 'instead-of-hiring/')}">Hiring for this role? Read this first →</a></p></div>
+</div></section>"""
+
+
+def sample_block(u):
+    """A labelled concept example: invented data and a pre-written result from the internal concept mocks
+    (proof ladder rung 1, marblism pattern 3). Never call it a demo."""
+    if not u.get("sample"):
+        return ""
+    s = u["sample"]
+    title, kind, text = s["in"]
+    head = "".join(f'<th scope="col">{e(h)}</th>' for h in s["head"])
+    body = "".join(f'<tr>{"".join(f"<td>{e(c)}</td>" for c in cells)}'
+                   f'<td><span class="st st-{status}">{SAMPLE_STATUS[status]}</span></td></tr>'
+                   for *cells, status in s["rows"])
+    flags = "".join(f"<li>{e(x)}</li>" for x in s["flags"])
+    return f"""<section class="section"><div class="wrap">
+{section_head("What it looks like", "A concept example", "Invented data and a pre-written result. Nothing here is "
+              "connected to a real system, and no AI is running. Ask to see the clickable version on a call.",
+              accent="concept example")}
+<div class="sample">
+  <div class="panel"><p class="tag">What comes in</p><h3>{e(title)}</h3><p class="muted small">{e(kind)}</p><pre>{e(text)}</pre></div>
+  <div class="panel"><p class="tag">What the agent prepares</p><div class="tbl"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div></div>
+  <div class="panel panel-lime"><p class="tag">What goes to a person</p><ul class="ticks flags">{flags}</ul><p>{e(s["draft"])}</p></div>
+</div></div></section>"""
+
+
 def build_use_case(u):
     slug = u["slug"]
     does = "".join(f"<li>{e(x)}</li>" for x in u["does"])
     ref = "uc-" + slug.split("/")[1]
+    eyebrow = f'Use case · {u["role"]}' if u.get("role") else "Use case"
     main = f"""
-{hero(u["title"], u["lead"], ref, "Use case", slug=slug, tone="lime")}
-{answer_first(u["question"])}
+{hero(u["title"], u["lead"], ref, eyebrow, slug=slug, tone="lime")}
+{answer_first(u["question"])}{posting_block(slug, u)}
 <section class="section"><div class="wrap split">
   <div><h2>Who it's for</h2><p class="big">{e(u["for"])}</p><h2>What the agent does</h2><ul class="ticks">{does}</ul></div>
   <div class="panel panel-lime"><h2>What stays with your people</h2><p class="big">{e(u["people"])}</p></div>
-</div></section>
+</div></section>{sample_block(u)}
 <section class="section tone-lime"><div class="wrap">{section_head("How to get it", "Pick the level of help that fits", accent="that fits")}{ladder(slug, only=u["tiers"])}</div></section>
 {faq_section(u["faq"])}
 <section class="section tone-lime"><div class="wrap">{section_head("More", "More use cases", accent="use cases")}{use_case_cards(slug, exclude=slug)}</div></section>
