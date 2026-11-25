@@ -6,8 +6,12 @@ is generated. Prospects can click through on their own or on a call.
 
 - **Served at** `visionzlab.com/demo/` (gallery) and `visionzlab.com/demo/<slug>/` once pushed to `main` (GitHub Pages).
 - **Not indexed:** every page carries `noindex, nofollow, noarchive`, is not in `sitemap.xml` or `llms*.txt`,
-  and nothing on the main site links here. Don't add a `robots.txt` Disallow: crawlers would then never see
-  the noindex tag, and the path would be advertised.
+  and the only links to them are the "Open the walkthrough" buttons on the indexed use-case pages. Don't add a
+  `robots.txt` Disallow: crawlers would then never see the noindex tag.
+- **Indexed use-case pages:** every case also gets a VisionzLab page at `use-cases/<slug>/`, plus browse hubs by
+  industry, business area, skill and type of work. `tools/build.py` (the site builder) generates them from the
+  generic fields only (title, tagline, flow, process steps, send-back reasons, outputs, `next`) and fails the build
+  if a case's company or person names reach them. Facets live in `taxonomy.py`.
 - **White-label:** the shell is "Acme" + "Assistant". No VisionzLab name, no tracker, no external request.
   The build fails if any of these appear.
 
@@ -30,6 +34,13 @@ Add `?fast` to a demo URL to skip the animations.
 | `mk.py` | Authoring helpers (`case`, `D`, `F`, `Tbl`, `Draft`, stage helpers, archetypes) and the stage reference |
 | `cases/<industry>.py` | One file per industry: `INDUSTRY = dict(name, brand, accent?, order)` and `CASES = [...]` |
 | `build.py` | Loads every case, validates it, writes pages and the gallery, and checks the output |
+
+## Adding a case end to end
+
+1. Write it in `cases/<industry>.py` (below), and add its facets to `taxonomy.py` `MAP` (a new industry also needs
+   an `INDUSTRY_SEO` entry). The demo build refuses a case without them.
+2. `python3 tools/mocks/build.py` (demos), then `python3 tools/mocks/smoke.py <slug>`.
+3. `python3 tools/build.py` (site): the use-case page, hub listings, sitemap and links update themselves.
 
 ## Writing a case
 

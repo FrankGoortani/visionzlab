@@ -1220,9 +1220,9 @@ Agents that do the reading, re-keying, tracking and reporting — so your people
 
 Browse the use cases Book a free discovery call
 
-Use cases
+Where most teams start
 
-## 9 workflows we build agents for
+## The workflows most teams start with
 
 Each one is a repetitive workflow where an agent reads, drafts or reconciles, and a person approves anything that reaches a customer, a supplier or the books.
 
@@ -1283,6 +1283,94 @@ An AI agent that prepares your monthly reporting and drafts the commentary, for 
 →
 
 Every use case can be taught, set up with you, built, or built and run for you. See the five ways to work with us →
+
+Browse
+
+## Find yours by industry, business area, skill or type of work
+
+Industry Accounting and bookkeeping firms Insurance and mortgage brokerage
+
+Business area Compliance, quality and risk 4 Customer service 12 Finance and accounting 10 Leadership and reporting 3 Operations and fulfilment 7 Sales and quoting 8
+
+What the AI does Building reports 9 Checking against your rules 17 Drafting replies and documents 17 Matching and reconciliation 10 Reading and extracting documents 15 Scheduling and reminders 5 Sorting and routing 7
+
+Type of work Applications and forms 9 Management and client reports 4 Month-end close and reporting 5 Renewals and follow-up 9 Shared inbox and enquiries 4 Statements and reconciliations 4
+
+The library
+
+## Every use case, by industry
+
+Each page explains the workflow, what a person decides and what you end up with, and links to a clickable concept walkthrough with invented data.
+
+### Core workflows
+
+- Quote and RFQ intake
+
+- Document intake
+
+- Market intelligence
+
+- Order entry and exceptions
+
+- Inbox triage
+
+- Renewals and follow-up
+
+- Prospect research and account planning
+
+- Planning and OKRs
+
+- Financial reporting
+
+### Accounting and bookkeeping firms
+
+- Client document intake
+
+- Trial balance first look
+
+- Vouching support
+
+- Flexible client reporting
+
+- Receipts to bank reconciliation
+
+- Year-end and tax-season document chase
+
+### Insurance and mortgage brokerage
+
+- Pending requirements chase desk
+
+- Pre-submission file completeness check
+
+- Carrier eDocs and service desk
+
+- Commercial submission package
+
+- Adjuster report first draft (property claims)
+
+- Group benefits renewal pack
+
+- Carrier commission statement reconciliation
+
+- In-force change paperwork
+
+- Issued policy vs binder check
+
+- Endorsement and policy-change intake
+
+- Certificate of insurance requests
+
+- Group enrolment forms to carrier
+
+- Bordereaux mapping and checks
+
+- Underwriting submission triage
+
+- P&C renewal list and remarketing
+
+- Mortgage file document chase
+
+- Mortgage renewal pipeline
 
 ## Not sure where to start?
 
@@ -1350,7 +1438,7 @@ What it looks like
 
 ## A concept example
 
-Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. Ask to see the clickable version on a call.
+Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. The full walkthrough is linked below.
 
 What comes in
 
@@ -1377,6 +1465,20 @@ What goes to a person
 - Friday delivery needs a person to confirm stock.
 
 Hi, thanks for the request. Could you confirm the gauge face size, 2.5 in or 4 in? The other two lines are ready to quote.
+
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Sales and quoting
+
+What the AI does Reading and extracting documents Matching and reconciliation Drafting replies and documents
 
 How to get it
 
@@ -1530,7 +1632,7 @@ What it looks like
 
 ## A concept example
 
-Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. Ask to see the clickable version on a call.
+Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. The full walkthrough is linked below.
 
 What comes in
 
@@ -1557,6 +1659,20 @@ What goes to a person
 - Order is held until a person decides.
 
 Reason held: price mismatch on FX-310.
+
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Sales and quoting Operations and fulfilment
+
+What the AI does Reading and extracting documents Checking against your rules Sorting and routing
 
 How to get it
 
@@ -1710,7 +1826,7 @@ What it looks like
 
 ## A concept example
 
-Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. Ask to see the clickable version on a call.
+Invented data and a pre-written result. Nothing here is connected to a real system, and no AI is running. The full walkthrough is linked below.
 
 What comes in
 
@@ -1739,6 +1855,22 @@ What goes to a person
 - PO reference left blank instead of guessed.
 
 The other four fields are ready to accept.
+
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Finance and accounting Operations and fulfilment
+
+What the AI does Reading and extracting documents Checking against your rules
+
+Type of work Applications and forms
 
 How to get it
 
@@ -1876,6 +2008,22 @@ Teams working out of a shared inbox — sales, service, orders, claims or admin 
 
 Your team reads and sends every reply, or approves which simple ones can go automatically.
 
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Customer service
+
+What the AI does Sorting and routing Drafting replies and documents Scheduling and reminders
+
+Type of work Shared inbox and enquiries
+
 How to get it
 
 ## Pick the level of help that fits
@@ -2012,6 +2160,22 @@ Brokers, agents and service firms whose revenue depends on renewals and fast fol
 
 You decide who is contacted and what is said. The agent reminds and drafts; advice and recommendations stay with you.
 
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Sales and quoting Customer service
+
+What the AI does Scheduling and reminders Drafting replies and documents Checking against your rules
+
+Type of work Renewals and follow-up
+
 How to get it
 
 ## Pick the level of help that fits
@@ -2141,6 +2305,22 @@ Leadership, strategy and product teams that need to know what competitors and th
 ## What stays with your people
 
 Your team decides what it means and what to do about it. The agent gathers, summarises and cites; it doesn't set strategy.
+
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Leadership and reporting
+
+What the AI does Building reports
+
+Type of work Management and client reports
 
 How to get it
 
@@ -2278,6 +2458,20 @@ Business development and sales teams who lose hours to research before every con
 
 Your team chooses the accounts, checks the research and owns every conversation. The agent prepares; it never contacts anyone on its own.
 
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Sales and quoting
+
+What the AI does Building reports Drafting replies and documents
+
 How to get it
 
 ## Pick the level of help that fits
@@ -2414,6 +2608,22 @@ Leadership teams who set goals well and then lose track of them between planning
 
 Leadership sets the goals and makes the calls. The assistant keeps the plan current and the reporting done.
 
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Leadership and reporting
+
+What the AI does Building reports
+
+Type of work Management and client reports
+
 How to get it
 
 ## Pick the level of help that fits
@@ -2549,6 +2759,22 @@ Owners and finance teams who spend days every month assembling the same reports.
 ## What stays with your people
 
 Your finance team reviews every report and owns every number and decision. The agent prepares; it does not give financial advice or sign off.
+
+Concept walkthrough
+
+## Click through it yourself
+
+A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected to a real system, no AI runs, and nothing you add is uploaded.
+
+Open the walkthrough
+
+## Related use cases
+
+Business area Finance and accounting Leadership and reporting
+
+What the AI does Building reports Matching and reconciliation Drafting replies and documents
+
+Type of work Month-end close and reporting Management and client reports
 
 How to get it
 
@@ -2910,6 +3136,102 @@ An AI agent that tracks renewal dates in your records and prepares follow-ups fo
 
 →
 
+More use cases
+
+## Workflows we can automate for you
+
+Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Pre-submission file completeness check
+
+Before a life application goes to the carrier, the assistant cross-checks the needs analysis, reason-why letter, KYC, application and the…
+
+→ Insurance and mortgage brokerage
+
+### Carrier eDocs and service desk
+
+Carrier eDocs and client service emails land in one queue. The assistant reads each attachment, not just its label, says what action is…
+
+→ Insurance and mortgage brokerage
+
+### Commercial submission package
+
+A commercial renewal arrives as an application, loss runs and a schedule of values, each in its own format. The assistant pulls out the…
+
+→ Insurance and mortgage brokerage
+
+### Adjuster report first draft (property claims)
+
+For a property claim, the assistant reads the adjuster's field notes, photo captions and the contractor and mitigation invoices, then…
+
+→ Insurance and mortgage brokerage
+
+### Group benefits renewal pack
+
+The carrier's renewal letter and the plan's aggregated claims experience arrive. The assistant turns them into the advisor's draft renewal…
+
+→ Insurance and mortgage brokerage
+
+### Carrier commission statement reconciliation
+
+Each carrier sends its commission statement in its own format. The assistant matches every line to a policy in the broker management…
+
+→ Insurance and mortgage brokerage
+
+### In-force change paperwork
+
+Clients ask to change an address, a beneficiary or who owns a policy. The assistant prepares the carrier form and checks it is complete.…
+
+→ Insurance and mortgage brokerage
+
+### Issued policy vs binder check
+
+When an issued policy arrives, the assistant checks it against the binder and the quote, flags every difference and prepares a renewal…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Certificate of insurance requests
+
+Venues, landlords and contractors email asking for certificates. The assistant drafts each certificate from the policy record and flags…
+
+→ Insurance and mortgage brokerage
+
+### Group enrolment forms to carrier
+
+Employers send paper enrolment forms, spreadsheets of changes and termination emails. The assistant extracts the details and prepares…
+
+→ Insurance and mortgage brokerage
+
+### Bordereaux mapping and checks
+
+Program administrators send monthly premium bordereaux, each in its own layout. The assistant maps every column to the insurer's required…
+
+→ Insurance and mortgage brokerage
+
+### Underwriting submission triage
+
+Broker submissions and change requests land in the underwriter's queue. The assistant summarises each one, checks it against your appetite…
+
+→ Insurance and mortgage brokerage
+
+### P&C renewal list and remarketing
+
+From the book export, the assistant builds the 90-day renewal list, compares each renewal offer with the expiring term and drafts…
+
+→
+
 ## Questions
 
 Q: Can you help clients who struggle with cyber insurance applications?
@@ -2995,6 +3317,48 @@ An AI agent that sorts incoming messages, routes them using agreed rules and dra
 ### Financial Reporting
 
 An AI agent that prepares your monthly reporting and drafts the commentary, for your finance team to review.
+
+→
+
+More use cases
+
+## Workflows we can automate for you
+
+Accounting and bookkeeping firms
+
+### Client document intake
+
+Clients upload slips, statements, combined PDFs and phone photos to the portal. The assistant splits, reads, names and files each one by…
+
+→ Accounting and bookkeeping firms
+
+### Trial balance first look
+
+The trial balance, GL detail and journal entry listing come in from the client. The assistant applies your firm's rules: movements above…
+
+→ Accounting and bookkeeping firms
+
+### Vouching support
+
+The audit senior picks a sample. The assistant finds each supporting document, compares vendor, date, amount and period, traces invoices…
+
+→ Accounting and bookkeeping firms
+
+### Flexible client reporting
+
+A client asks for their monthly pack in their own layout. The assistant maps the client's ledger to that layout, builds each section…
+
+→ Accounting and bookkeeping firms
+
+### Receipts to bank reconciliation
+
+A client's receipts and bank statement come in. The assistant matches receipts to bank lines, suggests categories from your rules, and…
+
+→ Accounting and bookkeeping firms
+
+### Year-end and tax-season document chase
+
+Before tax season, the assistant compares each client's file with last year's, builds a missing-documents list per client and stages…
 
 →
 
@@ -3139,6 +3503,24 @@ An AI agent that sorts incoming messages, routes them using agreed rules and dra
 ### Renewals & Follow-up
 
 An AI agent that tracks renewal dates in your records and prepares follow-ups for your team to approve.
+
+→
+
+More use cases
+
+## Workflows we can automate for you
+
+Insurance and mortgage brokerage
+
+### Mortgage file document chase
+
+Clients send pay stubs, letters and statements by email and upload. The assistant checks each one against the lender's conditions, lists…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage renewal pipeline
+
+From the book of maturity dates, the assistant builds a 120/90/60-day renewal calendar, checks consent before any email and drafts…
 
 →
 
@@ -4341,4 +4723,1780 @@ Send the form, then pick a time from the calendar that appears, and the session 
 Prefer email? asal@visionzlab.com
 
 We use these details only to reply to you and arrange the call.
+
+---
+
+# AI Use Cases By industry
+
+URL: https://visionzlab.com/use-cases/industries/
+
+Use cases
+
+# AI Use Cases By industry
+
+Browse AI agent use cases by industry: each page explains the workflow, what a person decides and what you end up with.
+
+Browse Book a free discovery call
+
+### Accounting and bookkeeping firms
+
+An AI employee for the routine bookkeeping work — so your team spends its time on clients.
+
+→
+
+### Insurance and mortgage brokerage
+
+AI agents that take submission, certificate and renewal paperwork off your brokers' desks.
+
+→
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases By business area
+
+URL: https://visionzlab.com/use-cases/functions/
+
+Use cases
+
+# AI Use Cases By business area
+
+Browse AI agent use cases by business area: each page explains the workflow, what a person decides and what you end up with.
+
+Browse Book a free discovery call
+
+### Finance and accounting
+
+10 use cases. Finance teams spend their days moving numbers between invoices, statements and the ledger. An AI agent reads the…
+
+→
+
+### Sales and quoting
+
+8 use cases. Quoting and order work starts with messy requests: emails, PDFs, spreadsheets and phone notes. An AI agent pulls out…
+
+→
+
+### Customer service
+
+12 use cases. Customer messages arrive through inboxes, portals, chat and the phone, and each one needs the right owner and a…
+
+→
+
+### Operations and fulfilment
+
+7 use cases. Fulfilment runs on paperwork that has to agree: orders, receiving counts, delivery tickets, schedules and work orders.…
+
+→
+
+### Compliance, quality and risk
+
+4 use cases. Quality and compliance work is mostly careful checking: is the file complete, does the record match the rule, has…
+
+→
+
+### Leadership and reporting
+
+3 use cases. Leaders need a clear weekly or monthly picture without someone rebuilding it by hand. An AI agent gathers figures from…
+
+→
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases By skill
+
+URL: https://visionzlab.com/use-cases/skills/
+
+Use cases
+
+# AI Use Cases By skill
+
+Browse AI agent use cases by skill: each page explains the workflow, what a person decides and what you end up with.
+
+Browse Book a free discovery call
+
+### Reading and extracting documents
+
+15 use cases. Invoices, forms, scans and emails hold the fields your systems need, buried in different layouts. The agent reads each…
+
+→
+
+### Matching and reconciliation
+
+10 use cases. Matching work compares one set of records with another: invoices with orders and receipts, payments with open items…
+
+→
+
+### Checking against your rules
+
+17 use cases. Many reviews are a checklist applied the same way every time. The agent tests each file or record against the rules…
+
+→
+
+### Sorting and routing
+
+7 use cases. Shared queues fill with requests that belong to different people and carry different urgency. The agent reads each…
+
+→
+
+### Drafting replies and documents
+
+17 use cases. Replies, reminders, quotes, notices and first drafts of reports take time to write from scratch. The agent writes them…
+
+→
+
+### Building reports
+
+9 use cases. Recurring reports mean pulling the same figures from several places, laying them out and explaining what moved. The…
+
+→
+
+### Scheduling and reminders
+
+5 use cases. Renewal dates, expiries, condition deadlines and service visits are easy to miss when they live in many files. The…
+
+→
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases By type of work
+
+URL: https://visionzlab.com/use-cases/tasks/
+
+Use cases
+
+# AI Use Cases By type of work
+
+Browse AI agent use cases by type of work: each page explains the workflow, what a person decides and what you end up with.
+
+Browse Book a free discovery call
+
+### Shared inbox and enquiries
+
+4 use cases. A shared inbox mixes questions, requests, complaints and documents, and some of them are urgent. The agent logs each…
+
+→
+
+### Applications and forms
+
+9 use cases. Applications, enrolments and account-opening forms stall when a page, signature or supporting document is missing. The…
+
+→
+
+### Renewals and follow-up
+
+9 use cases. Renewals, chases and follow-ups slip when the dates live in a book of business, a spreadsheet or someone's memory. The…
+
+→
+
+### Statements and reconciliations
+
+4 use cases. Statements and reconciliations compare what someone else says happened with what your books show. The agent compares…
+
+→
+
+### Month-end close and reporting
+
+5 use cases. Month-end and year-end close means chasing open tasks, explaining movements and building the same pack again. The…
+
+→
+
+### Management and client reports
+
+4 use cases. Weekly briefs, monthly packs and quarterly reviews pull from the same sources each time. The agent gathers the…
+
+→
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases in Finance and accounting
+
+URL: https://visionzlab.com/use-cases/functions/finance/
+
+Use cases · Business area
+
+# AI Use Cases in Finance and accounting
+
+Finance teams spend their days moving numbers between invoices, statements and the ledger. An AI agent reads the paperwork, matches it to orders and payments, suggests coding and drafts the entries, then lists anything that doesn't tie. Your controller or bookkeeper approves every posting, payment and adjustment before it reaches the books.
+
+See the use cases Book a free discovery call
+
+Business area
+
+## Finance and accounting
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Client document intake
+
+Clients upload slips, statements, combined PDFs and phone photos to the portal. The assistant splits, reads, names and files each one by…
+
+→ Accounting and bookkeeping firms
+
+### Trial balance first look
+
+The trial balance, GL detail and journal entry listing come in from the client. The assistant applies your firm's rules: movements above…
+
+→ Accounting and bookkeeping firms
+
+### Vouching support
+
+The audit senior picks a sample. The assistant finds each supporting document, compares vendor, date, amount and period, traces invoices…
+
+→ Accounting and bookkeeping firms
+
+### Flexible client reporting
+
+A client asks for their monthly pack in their own layout. The assistant maps the client's ledger to that layout, builds each section…
+
+→ Accounting and bookkeeping firms
+
+### Receipts to bank reconciliation
+
+A client's receipts and bank statement come in. The assistant matches receipts to bank lines, suggests categories from your rules, and…
+
+→ Accounting and bookkeeping firms
+
+### Year-end and tax-season document chase
+
+Before tax season, the assistant compares each client's file with last year's, builds a missing-documents list per client and stages…
+
+→ Core workflows
+
+### Document intake
+
+Invoices, bills of lading and forms arrive in every format. The assistant reads them, pulls out the fields your system needs and checks…
+
+→ Core workflows
+
+### Financial reporting
+
+At month end the assistant pulls the trial balance and budget, builds the variance table, matches variances to explanations it can find…
+
+→ Insurance and mortgage brokerage
+
+### Carrier commission statement reconciliation
+
+Each carrier sends its commission statement in its own format. The assistant matches every line to a policy in the broker management…
+
+→ Insurance and mortgage brokerage
+
+### Bordereaux mapping and checks
+
+Program administrators send monthly premium bordereaux, each in its own layout. The assistant maps every column to the insurer's required…
+
+→
+
+Related Reading and extracting documents Drafting replies and documents Checking against your rules Month-end close and reporting Matching and reconciliation Statements and reconciliations Building reports Customer service Compliance, quality and risk Management and client reports
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases in Sales and quoting
+
+URL: https://visionzlab.com/use-cases/functions/sales/
+
+Use cases · Business area
+
+# AI Use Cases in Sales and quoting
+
+Quoting and order work starts with messy requests: emails, PDFs, spreadsheets and phone notes. An AI agent pulls out what the customer asked for, matches it to your catalogue and price rules, and prepares a first version of the quote or proposal with gaps called out. A salesperson sets every price, date and discount and decides what goes out.
+
+See the use cases Book a free discovery call
+
+Business area
+
+## Sales and quoting
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Core workflows
+
+### Quote and RFQ intake
+
+Requests for quote arrive by email, PDF and spreadsheet. The assistant matches every line to the catalogue, prices it from the price file…
+
+→ Core workflows
+
+### Order entry and exceptions
+
+Purchase orders arrive by email, PDF, the online store and the customer portal, with the odd return mixed in. The assistant enters each…
+
+→ Core workflows
+
+### Renewals and follow-up
+
+The assistant reads the book of business, builds the renewal calendar and drafts the outreach, including what each client needs to gather.…
+
+→ Core workflows
+
+### Prospect research and account planning
+
+Name a target account. The assistant gathers public sources, builds a profile where every fact has a source, lists recent events and…
+
+→ Insurance and mortgage brokerage
+
+### Commercial submission package
+
+A commercial renewal arrives as an application, loss runs and a schedule of values, each in its own format. The assistant pulls out the…
+
+→ Insurance and mortgage brokerage
+
+### Group benefits renewal pack
+
+The carrier's renewal letter and the plan's aggregated claims experience arrive. The assistant turns them into the advisor's draft renewal…
+
+→ Insurance and mortgage brokerage
+
+### P&C renewal list and remarketing
+
+From the book export, the assistant builds the 90-day renewal list, compares each renewal offer with the expiring term and drafts…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage renewal pipeline
+
+From the book of maturity dates, the assistant builds a 120/90/60-day renewal calendar, checks consent before any email and drafts…
+
+→
+
+Related Drafting replies and documents Renewals and follow-up Reading and extracting documents Checking against your rules Scheduling and reminders Matching and reconciliation Customer service Building reports Operations and fulfilment Sorting and routing
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases in Customer service
+
+URL: https://visionzlab.com/use-cases/functions/service/
+
+Use cases · Business area
+
+# AI Use Cases in Customer service
+
+Customer messages arrive through inboxes, portals, chat and the phone, and each one needs the right owner and a sensible reply. An AI agent logs and sorts them, finds the order or account behind each one and drafts a response from your policies. Service staff own every customer conversation and decide each refund, credit or exception.
+
+See the use cases Book a free discovery call
+
+Business area
+
+## Customer service
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Client document intake
+
+Clients upload slips, statements, combined PDFs and phone photos to the portal. The assistant splits, reads, names and files each one by…
+
+→ Accounting and bookkeeping firms
+
+### Year-end and tax-season document chase
+
+Before tax season, the assistant compares each client's file with last year's, builds a missing-documents list per client and stages…
+
+→ Core workflows
+
+### Inbox triage
+
+Messages come into the shared inbox and the front desks of three offices: emails, phone calls and walk-ins. The assistant logs each one…
+
+→ Core workflows
+
+### Renewals and follow-up
+
+The assistant reads the book of business, builds the renewal calendar and drafts the outreach, including what each client needs to gather.…
+
+→ Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Carrier eDocs and service desk
+
+Carrier eDocs and client service emails land in one queue. The assistant reads each attachment, not just its label, says what action is…
+
+→ Insurance and mortgage brokerage
+
+### Group benefits renewal pack
+
+The carrier's renewal letter and the plan's aggregated claims experience arrive. The assistant turns them into the advisor's draft renewal…
+
+→ Insurance and mortgage brokerage
+
+### In-force change paperwork
+
+Clients ask to change an address, a beneficiary or who owns a policy. The assistant prepares the carrier form and checks it is complete.…
+
+→ Insurance and mortgage brokerage
+
+### Issued policy vs binder check
+
+When an issued policy arrives, the assistant checks it against the binder and the quote, flags every difference and prepares a renewal…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Certificate of insurance requests
+
+Venues, landlords and contractors email asking for certificates. The assistant drafts each certificate from the policy record and flags…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage file document chase
+
+Clients send pay stubs, letters and statements by email and upload. The assistant checks each one against the lender's conditions, lists…
+
+→
+
+Related Drafting replies and documents Checking against your rules Renewals and follow-up Reading and extracting documents Sorting and routing Shared inbox and enquiries Applications and forms Scheduling and reminders Finance and accounting Sales and quoting
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases in Operations and fulfilment
+
+URL: https://visionzlab.com/use-cases/functions/operations/
+
+Use cases · Business area
+
+# AI Use Cases in Operations and fulfilment
+
+Fulfilment runs on paperwork that has to agree: orders, receiving counts, delivery tickets, schedules and work orders. An AI agent checks each document against the others and your rules, prepares the next record and holds anything that doesn't line up. Supervisors and dispatchers release the work, book the jobs and settle each exception.
+
+See the use cases Book a free discovery call
+
+Business area
+
+## Operations and fulfilment
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Core workflows
+
+### Document intake
+
+Invoices, bills of lading and forms arrive in every format. The assistant reads them, pulls out the fields your system needs and checks…
+
+→ Core workflows
+
+### Order entry and exceptions
+
+Purchase orders arrive by email, PDF, the online store and the customer portal, with the odd return mixed in. The assistant enters each…
+
+→ Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Adjuster report first draft (property claims)
+
+For a property claim, the assistant reads the adjuster's field notes, photo captions and the contractor and mitigation invoices, then…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Group enrolment forms to carrier
+
+Employers send paper enrolment forms, spreadsheets of changes and termination emails. The assistant extracts the details and prepares…
+
+→ Insurance and mortgage brokerage
+
+### Underwriting submission triage
+
+Broker submissions and change requests land in the underwriter's queue. The assistant summarises each one, checks it against your appetite…
+
+→
+
+Related Reading and extracting documents Checking against your rules Applications and forms Sorting and routing Customer service Drafting replies and documents Finance and accounting Sales and quoting Matching and reconciliation Renewals and follow-up
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases in Compliance, quality and risk
+
+URL: https://visionzlab.com/use-cases/functions/compliance/
+
+Use cases · Business area
+
+# AI Use Cases in Compliance, quality and risk
+
+Quality and compliance work is mostly careful checking: is the file complete, does the record match the rule, has anything expired? An AI agent runs those checks against your own checklists and policies, cites where each finding came from and marks what it can't confirm. Your quality, compliance or risk lead judges each finding and signs off.
+
+See the use cases Book a free discovery call
+
+Business area
+
+## Compliance, quality and risk
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Vouching support
+
+The audit senior picks a sample. The assistant finds each supporting document, compares vendor, date, amount and period, traces invoices…
+
+→ Insurance and mortgage brokerage
+
+### Pre-submission file completeness check
+
+Before a life application goes to the carrier, the assistant cross-checks the needs analysis, reason-why letter, KYC, application and the…
+
+→ Insurance and mortgage brokerage
+
+### Issued policy vs binder check
+
+When an issued policy arrives, the assistant checks it against the binder and the quote, flags every difference and prepares a renewal…
+
+→ Insurance and mortgage brokerage
+
+### Bordereaux mapping and checks
+
+Program administrators send monthly premium bordereaux, each in its own layout. The assistant maps every column to the insurer's required…
+
+→
+
+Related Matching and reconciliation Checking against your rules Finance and accounting Reading and extracting documents Building reports Month-end close and reporting Applications and forms Customer service Renewals and follow-up Statements and reconciliations
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Use Cases in Leadership and reporting
+
+URL: https://visionzlab.com/use-cases/functions/leadership/
+
+Use cases · Business area
+
+# AI Use Cases in Leadership and reporting
+
+Leaders need a clear weekly or monthly picture without someone rebuilding it by hand. An AI agent gathers figures from your systems, lays out results against goals and budget, and writes a plain summary that marks any number it couldn't verify. The owners of each figure check it, and leadership decides what the results mean and what happens next.
+
+See the use cases Book a free discovery call
+
+Business area
+
+## Leadership and reporting
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Core workflows
+
+### Market intelligence
+
+The assistant watches the competitors and sources you name, notices what changed and writes a weekly brief where every point links to its…
+
+→ Core workflows
+
+### Planning and OKRs
+
+Leadership sets the objectives. The assistant turns them into tracked key results with owners, collects progress from your tools every…
+
+→ Core workflows
+
+### Financial reporting
+
+At month end the assistant pulls the trial balance and budget, builds the variance table, matches variances to explanations it can find…
+
+→
+
+Related Building reports Management and client reports Finance and accounting Matching and reconciliation Drafting replies and documents Month-end close and reporting
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agents for Reading and extracting documents
+
+URL: https://visionzlab.com/use-cases/skills/extract/
+
+Use cases · What the AI does
+
+# AI Agents for Reading and extracting documents
+
+Invoices, forms, scans and emails hold the fields your systems need, buried in different layouts. The agent reads each document, pulls out those fields, links every value back to where it appears on the page and marks anything it is unsure of. A person fills in or confirms the uncertain values before a record is created.
+
+See the use cases Book a free discovery call
+
+What the AI does
+
+## Reading and extracting documents
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Client document intake
+
+Clients upload slips, statements, combined PDFs and phone photos to the portal. The assistant splits, reads, names and files each one by…
+
+→ Accounting and bookkeeping firms
+
+### Vouching support
+
+The audit senior picks a sample. The assistant finds each supporting document, compares vendor, date, amount and period, traces invoices…
+
+→ Accounting and bookkeeping firms
+
+### Receipts to bank reconciliation
+
+A client's receipts and bank statement come in. The assistant matches receipts to bank lines, suggests categories from your rules, and…
+
+→ Core workflows
+
+### Quote and RFQ intake
+
+Requests for quote arrive by email, PDF and spreadsheet. The assistant matches every line to the catalogue, prices it from the price file…
+
+→ Core workflows
+
+### Document intake
+
+Invoices, bills of lading and forms arrive in every format. The assistant reads them, pulls out the fields your system needs and checks…
+
+→ Core workflows
+
+### Order entry and exceptions
+
+Purchase orders arrive by email, PDF, the online store and the customer portal, with the odd return mixed in. The assistant enters each…
+
+→ Insurance and mortgage brokerage
+
+### Carrier eDocs and service desk
+
+Carrier eDocs and client service emails land in one queue. The assistant reads each attachment, not just its label, says what action is…
+
+→ Insurance and mortgage brokerage
+
+### Commercial submission package
+
+A commercial renewal arrives as an application, loss runs and a schedule of values, each in its own format. The assistant pulls out the…
+
+→ Insurance and mortgage brokerage
+
+### Adjuster report first draft (property claims)
+
+For a property claim, the assistant reads the adjuster's field notes, photo captions and the contractor and mitigation invoices, then…
+
+→ Insurance and mortgage brokerage
+
+### Group benefits renewal pack
+
+The carrier's renewal letter and the plan's aggregated claims experience arrive. The assistant turns them into the advisor's draft renewal…
+
+→ Insurance and mortgage brokerage
+
+### In-force change paperwork
+
+Clients ask to change an address, a beneficiary or who owns a policy. The assistant prepares the carrier form and checks it is complete.…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Group enrolment forms to carrier
+
+Employers send paper enrolment forms, spreadsheets of changes and termination emails. The assistant extracts the details and prepares…
+
+→ Insurance and mortgage brokerage
+
+### Bordereaux mapping and checks
+
+Program administrators send monthly premium bordereaux, each in its own layout. The assistant maps every column to the insurer's required…
+
+→ Insurance and mortgage brokerage
+
+### Underwriting submission triage
+
+Broker submissions and change requests land in the underwriter's queue. The assistant summarises each one, checks it against your appetite…
+
+→
+
+Related Checking against your rules Operations and fulfilment Applications and forms Finance and accounting Customer service Sorting and routing Drafting replies and documents Sales and quoting Statements and reconciliations Matching and reconciliation
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agents for Matching and reconciliation
+
+URL: https://visionzlab.com/use-cases/skills/match/
+
+Use cases · What the AI does
+
+# AI Agents for Matching and reconciliation
+
+Matching work compares one set of records with another: invoices with orders and receipts, payments with open items, statements with the ledger. The agent lines them up, explains every difference it finds and proposes how each could be resolved. Your team decides which differences are acceptable and approves every posting or correction.
+
+See the use cases Book a free discovery call
+
+What the AI does
+
+## Matching and reconciliation
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Vouching support
+
+The audit senior picks a sample. The assistant finds each supporting document, compares vendor, date, amount and period, traces invoices…
+
+→ Accounting and bookkeeping firms
+
+### Flexible client reporting
+
+A client asks for their monthly pack in their own layout. The assistant maps the client's ledger to that layout, builds each section…
+
+→ Accounting and bookkeeping firms
+
+### Receipts to bank reconciliation
+
+A client's receipts and bank statement come in. The assistant matches receipts to bank lines, suggests categories from your rules, and…
+
+→ Core workflows
+
+### Quote and RFQ intake
+
+Requests for quote arrive by email, PDF and spreadsheet. The assistant matches every line to the catalogue, prices it from the price file…
+
+→ Core workflows
+
+### Financial reporting
+
+At month end the assistant pulls the trial balance and budget, builds the variance table, matches variances to explanations it can find…
+
+→ Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Pre-submission file completeness check
+
+Before a life application goes to the carrier, the assistant cross-checks the needs analysis, reason-why letter, KYC, application and the…
+
+→ Insurance and mortgage brokerage
+
+### Carrier commission statement reconciliation
+
+Each carrier sends its commission statement in its own format. The assistant matches every line to a policy in the broker management…
+
+→ Insurance and mortgage brokerage
+
+### Issued policy vs binder check
+
+When an issued policy arrives, the assistant checks it against the binder and the quote, flags every difference and prepares a renewal…
+
+→ Insurance and mortgage brokerage
+
+### P&C renewal list and remarketing
+
+From the book export, the assistant builds the 90-day renewal list, compares each renewal offer with the expiring term and drafts…
+
+→
+
+Related Finance and accounting Drafting replies and documents Month-end close and reporting Compliance, quality and risk Reading and extracting documents Building reports Renewals and follow-up Checking against your rules Management and client reports Statements and reconciliations
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agents for Checking against your rules
+
+URL: https://visionzlab.com/use-cases/skills/check/
+
+Use cases · What the AI does
+
+# AI Agents for Checking against your rules
+
+Many reviews are a checklist applied the same way every time. The agent tests each file or record against the rules you write down, such as required documents, dates, limits and thresholds, and shows the evidence behind every pass or flag. The reviewer who owns the rule makes the final call on anything flagged.
+
+See the use cases Book a free discovery call
+
+What the AI does
+
+## Checking against your rules
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Trial balance first look
+
+The trial balance, GL detail and journal entry listing come in from the client. The assistant applies your firm's rules: movements above…
+
+→ Accounting and bookkeeping firms
+
+### Year-end and tax-season document chase
+
+Before tax season, the assistant compares each client's file with last year's, builds a missing-documents list per client and stages…
+
+→ Core workflows
+
+### Document intake
+
+Invoices, bills of lading and forms arrive in every format. The assistant reads them, pulls out the fields your system needs and checks…
+
+→ Core workflows
+
+### Order entry and exceptions
+
+Purchase orders arrive by email, PDF, the online store and the customer portal, with the odd return mixed in. The assistant enters each…
+
+→ Core workflows
+
+### Renewals and follow-up
+
+The assistant reads the book of business, builds the renewal calendar and drafts the outreach, including what each client needs to gather.…
+
+→ Insurance and mortgage brokerage
+
+### Pre-submission file completeness check
+
+Before a life application goes to the carrier, the assistant cross-checks the needs analysis, reason-why letter, KYC, application and the…
+
+→ Insurance and mortgage brokerage
+
+### Commercial submission package
+
+A commercial renewal arrives as an application, loss runs and a schedule of values, each in its own format. The assistant pulls out the…
+
+→ Insurance and mortgage brokerage
+
+### Carrier commission statement reconciliation
+
+Each carrier sends its commission statement in its own format. The assistant matches every line to a policy in the broker management…
+
+→ Insurance and mortgage brokerage
+
+### In-force change paperwork
+
+Clients ask to change an address, a beneficiary or who owns a policy. The assistant prepares the carrier form and checks it is complete.…
+
+→ Insurance and mortgage brokerage
+
+### Issued policy vs binder check
+
+When an issued policy arrives, the assistant checks it against the binder and the quote, flags every difference and prepares a renewal…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Certificate of insurance requests
+
+Venues, landlords and contractors email asking for certificates. The assistant drafts each certificate from the policy record and flags…
+
+→ Insurance and mortgage brokerage
+
+### Group enrolment forms to carrier
+
+Employers send paper enrolment forms, spreadsheets of changes and termination emails. The assistant extracts the details and prepares…
+
+→ Insurance and mortgage brokerage
+
+### Bordereaux mapping and checks
+
+Program administrators send monthly premium bordereaux, each in its own layout. The assistant maps every column to the insurer's required…
+
+→ Insurance and mortgage brokerage
+
+### Underwriting submission triage
+
+Broker submissions and change requests land in the underwriter's queue. The assistant summarises each one, checks it against your appetite…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage file document chase
+
+Clients send pay stubs, letters and statements by email and upload. The assistant checks each one against the lender's conditions, lists…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage renewal pipeline
+
+From the book of maturity dates, the assistant builds a 120/90/60-day renewal calendar, checks consent before any email and drafts…
+
+→
+
+Related Reading and extracting documents Applications and forms Drafting replies and documents Customer service Renewals and follow-up Finance and accounting Operations and fulfilment Sales and quoting Building reports Scheduling and reminders
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agents for Sorting and routing
+
+URL: https://visionzlab.com/use-cases/skills/triage/
+
+Use cases · What the AI does
+
+# AI Agents for Sorting and routing
+
+Shared queues fill with requests that belong to different people and carry different urgency. The agent reads each item, tags its type and priority using your rules, links related messages and sends it to the right owner with a suggested next step. Staff can change any routing, and nothing is answered or closed without them.
+
+See the use cases Book a free discovery call
+
+What the AI does
+
+## Sorting and routing
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Client document intake
+
+Clients upload slips, statements, combined PDFs and phone photos to the portal. The assistant splits, reads, names and files each one by…
+
+→ Core workflows
+
+### Order entry and exceptions
+
+Purchase orders arrive by email, PDF, the online store and the customer portal, with the odd return mixed in. The assistant enters each…
+
+→ Core workflows
+
+### Inbox triage
+
+Messages come into the shared inbox and the front desks of three offices: emails, phone calls and walk-ins. The assistant logs each one…
+
+→ Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Carrier eDocs and service desk
+
+Carrier eDocs and client service emails land in one queue. The assistant reads each attachment, not just its label, says what action is…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Underwriting submission triage
+
+Broker submissions and change requests land in the underwriter's queue. The assistant summarises each one, checks it against your appetite…
+
+→
+
+Related Customer service Reading and extracting documents Drafting replies and documents Operations and fulfilment Checking against your rules Shared inbox and enquiries Applications and forms Finance and accounting Statements and reconciliations Sales and quoting
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agents for Drafting replies and documents
+
+URL: https://visionzlab.com/use-cases/skills/draft/
+
+Use cases · What the AI does
+
+# AI Agents for Drafting replies and documents
+
+Replies, reminders, quotes, notices and first drafts of reports take time to write from scratch. The agent writes them from your templates, past examples and the facts in the file, and lists anything it had to leave open. Someone on your team edits each draft and decides whether and when it is sent.
+
+See the use cases Book a free discovery call
+
+What the AI does
+
+## Drafting replies and documents
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Client document intake
+
+Clients upload slips, statements, combined PDFs and phone photos to the portal. The assistant splits, reads, names and files each one by…
+
+→ Accounting and bookkeeping firms
+
+### Trial balance first look
+
+The trial balance, GL detail and journal entry listing come in from the client. The assistant applies your firm's rules: movements above…
+
+→ Accounting and bookkeeping firms
+
+### Flexible client reporting
+
+A client asks for their monthly pack in their own layout. The assistant maps the client's ledger to that layout, builds each section…
+
+→ Accounting and bookkeeping firms
+
+### Year-end and tax-season document chase
+
+Before tax season, the assistant compares each client's file with last year's, builds a missing-documents list per client and stages…
+
+→ Core workflows
+
+### Quote and RFQ intake
+
+Requests for quote arrive by email, PDF and spreadsheet. The assistant matches every line to the catalogue, prices it from the price file…
+
+→ Core workflows
+
+### Inbox triage
+
+Messages come into the shared inbox and the front desks of three offices: emails, phone calls and walk-ins. The assistant logs each one…
+
+→ Core workflows
+
+### Renewals and follow-up
+
+The assistant reads the book of business, builds the renewal calendar and drafts the outreach, including what each client needs to gather.…
+
+→ Core workflows
+
+### Prospect research and account planning
+
+Name a target account. The assistant gathers public sources, builds a profile where every fact has a source, lists recent events and…
+
+→ Core workflows
+
+### Financial reporting
+
+At month end the assistant pulls the trial balance and budget, builds the variance table, matches variances to explanations it can find…
+
+→ Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Carrier eDocs and service desk
+
+Carrier eDocs and client service emails land in one queue. The assistant reads each attachment, not just its label, says what action is…
+
+→ Insurance and mortgage brokerage
+
+### Adjuster report first draft (property claims)
+
+For a property claim, the assistant reads the adjuster's field notes, photo captions and the contractor and mitigation invoices, then…
+
+→ Insurance and mortgage brokerage
+
+### In-force change paperwork
+
+Clients ask to change an address, a beneficiary or who owns a policy. The assistant prepares the carrier form and checks it is complete.…
+
+→ Insurance and mortgage brokerage
+
+### Certificate of insurance requests
+
+Venues, landlords and contractors email asking for certificates. The assistant drafts each certificate from the policy record and flags…
+
+→ Insurance and mortgage brokerage
+
+### P&C renewal list and remarketing
+
+From the book export, the assistant builds the 90-day renewal list, compares each renewal offer with the expiring term and drafts…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage file document chase
+
+Clients send pay stubs, letters and statements by email and upload. The assistant checks each one against the lender's conditions, lists…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage renewal pipeline
+
+From the book of maturity dates, the assistant builds a 120/90/60-day renewal calendar, checks consent before any email and drafts…
+
+→
+
+Related Customer service Checking against your rules Renewals and follow-up Finance and accounting Reading and extracting documents Matching and reconciliation Scheduling and reminders Sales and quoting Sorting and routing Building reports
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agents for Building reports
+
+URL: https://visionzlab.com/use-cases/skills/report/
+
+Use cases · What the AI does
+
+# AI Agents for Building reports
+
+Recurring reports mean pulling the same figures from several places, laying them out and explaining what moved. The agent assembles tables and charts, works out variances against plan or last period and writes first-draft notes on the biggest movements, each tied to its source. Nobody else sees the report until the person responsible for it has reviewed the numbers and the wording.
+
+See the use cases Book a free discovery call
+
+What the AI does
+
+## Building reports
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Trial balance first look
+
+The trial balance, GL detail and journal entry listing come in from the client. The assistant applies your firm's rules: movements above…
+
+→ Accounting and bookkeeping firms
+
+### Flexible client reporting
+
+A client asks for their monthly pack in their own layout. The assistant maps the client's ledger to that layout, builds each section…
+
+→ Core workflows
+
+### Market intelligence
+
+The assistant watches the competitors and sources you name, notices what changed and writes a weekly brief where every point links to its…
+
+→ Core workflows
+
+### Prospect research and account planning
+
+Name a target account. The assistant gathers public sources, builds a profile where every fact has a source, lists recent events and…
+
+→ Core workflows
+
+### Planning and OKRs
+
+Leadership sets the objectives. The assistant turns them into tracked key results with owners, collects progress from your tools every…
+
+→ Core workflows
+
+### Financial reporting
+
+At month end the assistant pulls the trial balance and budget, builds the variance table, matches variances to explanations it can find…
+
+→ Insurance and mortgage brokerage
+
+### Group benefits renewal pack
+
+The carrier's renewal letter and the plan's aggregated claims experience arrive. The assistant turns them into the advisor's draft renewal…
+
+→ Insurance and mortgage brokerage
+
+### Issued policy vs binder check
+
+When an issued policy arrives, the assistant checks it against the binder and the quote, flags every difference and prepares a renewal…
+
+→ Insurance and mortgage brokerage
+
+### Bordereaux mapping and checks
+
+Program administrators send monthly premium bordereaux, each in its own layout. The assistant maps every column to the insurer's required…
+
+→
+
+Related Finance and accounting Drafting replies and documents Management and client reports Checking against your rules Month-end close and reporting Matching and reconciliation Leadership and reporting Sales and quoting Customer service Reading and extracting documents
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI Agents for Scheduling and reminders
+
+URL: https://visionzlab.com/use-cases/skills/schedule/
+
+Use cases · What the AI does
+
+# AI Agents for Scheduling and reminders
+
+Renewal dates, expiries, condition deadlines and service visits are easy to miss when they live in many files. The agent reads the dates out of the documents, builds a calendar of what is due and drafts the reminders ahead of time. A person confirms each date and approves every reminder before it goes out.
+
+See the use cases Book a free discovery call
+
+What the AI does
+
+## Scheduling and reminders
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Year-end and tax-season document chase
+
+Before tax season, the assistant compares each client's file with last year's, builds a missing-documents list per client and stages…
+
+→ Core workflows
+
+### Inbox triage
+
+Messages come into the shared inbox and the front desks of three offices: emails, phone calls and walk-ins. The assistant logs each one…
+
+→ Core workflows
+
+### Renewals and follow-up
+
+The assistant reads the book of business, builds the renewal calendar and drafts the outreach, including what each client needs to gather.…
+
+→ Insurance and mortgage brokerage
+
+### P&C renewal list and remarketing
+
+From the book export, the assistant builds the 90-day renewal list, compares each renewal offer with the expiring term and drafts…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage renewal pipeline
+
+From the book of maturity dates, the assistant builds a 120/90/60-day renewal calendar, checks consent before any email and drafts…
+
+→
+
+Related Drafting replies and documents Renewals and follow-up Customer service Checking against your rules Sales and quoting Finance and accounting Sorting and routing Shared inbox and enquiries Matching and reconciliation
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI for Shared inbox and enquiries
+
+URL: https://visionzlab.com/use-cases/tasks/shared-inbox/
+
+Use cases · Type of work
+
+# AI for Shared inbox and enquiries
+
+A shared inbox mixes questions, requests, complaints and documents, and some of them are urgent. The agent logs each message, works out what it is and who owns it, routes it and prepares a suggested reply from your templates and the customer's history. Your team reviews each draft before it is sent, so no message leaves the inbox on its own.
+
+See the use cases Book a free discovery call
+
+Type of work
+
+## Shared inbox and enquiries
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Core workflows
+
+### Inbox triage
+
+Messages come into the shared inbox and the front desks of three offices: emails, phone calls and walk-ins. The assistant logs each one…
+
+→ Insurance and mortgage brokerage
+
+### Carrier eDocs and service desk
+
+Carrier eDocs and client service emails land in one queue. The assistant reads each attachment, not just its label, says what action is…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Certificate of insurance requests
+
+Venues, landlords and contractors email asking for certificates. The assistant drafts each certificate from the policy record and flags…
+
+→
+
+Related Customer service Sorting and routing Drafting replies and documents Reading and extracting documents Checking against your rules Scheduling and reminders Operations and fulfilment Applications and forms
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI for Applications and forms
+
+URL: https://visionzlab.com/use-cases/tasks/applications/
+
+Use cases · Type of work
+
+# AI for Applications and forms
+
+Applications, enrolments and account-opening forms stall when a page, signature or supporting document is missing. The agent checks each file against the requirement list, compares names, dates and figures across documents and drafts the request for whatever is missing. The person responsible for the file decides when it is complete and makes every approval decision.
+
+See the use cases Book a free discovery call
+
+Type of work
+
+## Applications and forms
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Core workflows
+
+### Document intake
+
+Invoices, bills of lading and forms arrive in every format. The assistant reads them, pulls out the fields your system needs and checks…
+
+→ Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Pre-submission file completeness check
+
+Before a life application goes to the carrier, the assistant cross-checks the needs analysis, reason-why letter, KYC, application and the…
+
+→ Insurance and mortgage brokerage
+
+### Commercial submission package
+
+A commercial renewal arrives as an application, loss runs and a schedule of values, each in its own format. The assistant pulls out the…
+
+→ Insurance and mortgage brokerage
+
+### In-force change paperwork
+
+Clients ask to change an address, a beneficiary or who owns a policy. The assistant prepares the carrier form and checks it is complete.…
+
+→ Insurance and mortgage brokerage
+
+### Endorsement and policy-change intake
+
+Brokers email requests to add a vehicle, add an insured, cancel or renew with changes. The assistant reads each one and prepares the…
+
+→ Insurance and mortgage brokerage
+
+### Group enrolment forms to carrier
+
+Employers send paper enrolment forms, spreadsheets of changes and termination emails. The assistant extracts the details and prepares…
+
+→ Insurance and mortgage brokerage
+
+### Underwriting submission triage
+
+Broker submissions and change requests land in the underwriter's queue. The assistant summarises each one, checks it against your appetite…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage file document chase
+
+Clients send pay stubs, letters and statements by email and upload. The assistant checks each one against the lender's conditions, lists…
+
+→
+
+Related Checking against your rules Reading and extracting documents Operations and fulfilment Customer service Drafting replies and documents Sorting and routing Renewals and follow-up Matching and reconciliation Finance and accounting Compliance, quality and risk
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI for Renewals and follow-up
+
+URL: https://visionzlab.com/use-cases/tasks/renewals/
+
+Use cases · Type of work
+
+# AI for Renewals and follow-up
+
+Renewals, chases and follow-ups slip when the dates live in a book of business, a spreadsheet or someone's memory. The agent builds a list of what is coming due or overdue, checks consent before any outreach and drafts each reminder or follow-up with what the other side needs to send. Your staff decide who is contacted, and where the work is regulated, advice comes only from the licensed person.
+
+See the use cases Book a free discovery call
+
+Type of work
+
+## Renewals and follow-up
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Year-end and tax-season document chase
+
+Before tax season, the assistant compares each client's file with last year's, builds a missing-documents list per client and stages…
+
+→ Core workflows
+
+### Renewals and follow-up
+
+The assistant reads the book of business, builds the renewal calendar and drafts the outreach, including what each client needs to gather.…
+
+→ Insurance and mortgage brokerage
+
+### Pending requirements chase desk
+
+Carrier, MGA and exam-booking notices arrive all day. The assistant matches each one to its case, keeps one pending list per case and…
+
+→ Insurance and mortgage brokerage
+
+### Commercial submission package
+
+A commercial renewal arrives as an application, loss runs and a schedule of values, each in its own format. The assistant pulls out the…
+
+→ Insurance and mortgage brokerage
+
+### Group benefits renewal pack
+
+The carrier's renewal letter and the plan's aggregated claims experience arrive. The assistant turns them into the advisor's draft renewal…
+
+→ Insurance and mortgage brokerage
+
+### Issued policy vs binder check
+
+When an issued policy arrives, the assistant checks it against the binder and the quote, flags every difference and prepares a renewal…
+
+→ Insurance and mortgage brokerage
+
+### P&C renewal list and remarketing
+
+From the book export, the assistant builds the 90-day renewal list, compares each renewal offer with the expiring term and drafts…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage file document chase
+
+Clients send pay stubs, letters and statements by email and upload. The assistant checks each one against the lender's conditions, lists…
+
+→ Insurance and mortgage brokerage
+
+### Mortgage renewal pipeline
+
+From the book of maturity dates, the assistant builds a 120/90/60-day renewal calendar, checks consent before any email and drafts…
+
+→
+
+Related Customer service Checking against your rules Drafting replies and documents Sales and quoting Scheduling and reminders Matching and reconciliation Applications and forms Reading and extracting documents Building reports Finance and accounting
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI for Statements and reconciliations
+
+URL: https://visionzlab.com/use-cases/tasks/statements/
+
+Use cases · Type of work
+
+# AI for Statements and reconciliations
+
+Statements and reconciliations compare what someone else says happened with what your books show. The agent compares each statement, remittance or settlement with your ledger line by line, lists missing items, duplicates and rate differences and drafts a query to the other party for each one. Finance decides every adjustment and sends any query.
+
+See the use cases Book a free discovery call
+
+Type of work
+
+## Statements and reconciliations
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Client document intake
+
+Clients upload slips, statements, combined PDFs and phone photos to the portal. The assistant splits, reads, names and files each one by…
+
+→ Accounting and bookkeeping firms
+
+### Receipts to bank reconciliation
+
+A client's receipts and bank statement come in. The assistant matches receipts to bank lines, suggests categories from your rules, and…
+
+→ Insurance and mortgage brokerage
+
+### Carrier commission statement reconciliation
+
+Each carrier sends its commission statement in its own format. The assistant matches every line to a policy in the broker management…
+
+→ Insurance and mortgage brokerage
+
+### Bordereaux mapping and checks
+
+Program administrators send monthly premium bordereaux, each in its own layout. The assistant maps every column to the insurer's required…
+
+→
+
+Related Finance and accounting Reading and extracting documents Matching and reconciliation Checking against your rules Customer service Sorting and routing Drafting replies and documents Month-end close and reporting Compliance, quality and risk Building reports
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI for Month-end close and reporting
+
+URL: https://visionzlab.com/use-cases/tasks/month-end/
+
+Use cases · Type of work
+
+# AI for Month-end close and reporting
+
+Month-end and year-end close means chasing open tasks, explaining movements and building the same pack again. The agent tracks the close checklist, finds account movements above your threshold, drafts explanations from the documents behind them and fills the report template. The controller reviews every explanation and signs off the close.
+
+See the use cases Book a free discovery call
+
+Type of work
+
+## Month-end close and reporting
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Trial balance first look
+
+The trial balance, GL detail and journal entry listing come in from the client. The assistant applies your firm's rules: movements above…
+
+→ Accounting and bookkeeping firms
+
+### Vouching support
+
+The audit senior picks a sample. The assistant finds each supporting document, compares vendor, date, amount and period, traces invoices…
+
+→ Accounting and bookkeeping firms
+
+### Flexible client reporting
+
+A client asks for their monthly pack in their own layout. The assistant maps the client's ledger to that layout, builds each section…
+
+→ Accounting and bookkeeping firms
+
+### Receipts to bank reconciliation
+
+A client's receipts and bank statement come in. The assistant matches receipts to bank lines, suggests categories from your rules, and…
+
+→ Core workflows
+
+### Financial reporting
+
+At month end the assistant pulls the trial balance and budget, builds the variance table, matches variances to explanations it can find…
+
+→
+
+Related Finance and accounting Matching and reconciliation Building reports Drafting replies and documents Reading and extracting documents Management and client reports Checking against your rules Compliance, quality and risk Statements and reconciliations Leadership and reporting
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
+
+---
+
+# AI for Management and client reports
+
+URL: https://visionzlab.com/use-cases/tasks/report-packs/
+
+Use cases · Type of work
+
+# AI for Management and client reports
+
+Weekly briefs, monthly packs and quarterly reviews pull from the same sources each time. The agent gathers the figures, compares them with plan, peers or last period, writes a draft narrative and links every number to where it came from. The report owner edits that narrative, checks the figures and decides who receives it.
+
+See the use cases Book a free discovery call
+
+Type of work
+
+## Management and client reports
+
+Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves anything that reaches a customer, a supplier or the books.
+
+Accounting and bookkeeping firms
+
+### Flexible client reporting
+
+A client asks for their monthly pack in their own layout. The assistant maps the client's ledger to that layout, builds each section…
+
+→ Core workflows
+
+### Market intelligence
+
+The assistant watches the competitors and sources you name, notices what changed and writes a weekly brief where every point links to its…
+
+→ Core workflows
+
+### Planning and OKRs
+
+Leadership sets the objectives. The assistant turns them into tracked key results with owners, collects progress from your tools every…
+
+→ Core workflows
+
+### Financial reporting
+
+At month end the assistant pulls the trial balance and budget, builds the variance table, matches variances to explanations it can find…
+
+→
+
+Related Building reports Leadership and reporting Finance and accounting Matching and reconciliation Drafting replies and documents Month-end close and reporting
+
+All use cases →
+
+## Not sure where to start?
+
+Book a free discovery call. We'll look at your work together and tell you plainly where AI would help — and where it wouldn't.
+
+Book a free discovery call
 

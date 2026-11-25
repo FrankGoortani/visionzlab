@@ -430,3 +430,21 @@ a.tile:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .st { font-weight: 700; white-space: nowrap; }
 .st-check, .st-bad { background: var(--lime); padding: 1px 6px; border: 2px solid var(--ink); }
 @media (max-width: 1080px) { .sample { grid-template-columns: 1fr; } }
+
+/* Use-case library: facet chips and the all-use-cases list (2026-11-25) */
+.facets { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin: 0 0 28px; text-align: left; }
+.facet-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.facet-row > .muted { min-width: 130px; font-weight: 600; text-decoration: none; color: var(--muted); }
+.facet { display: inline-block; padding: 5px 12px; border: 2px solid var(--ink); background: var(--white);
+  color: var(--ink); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+.facet:hover { background: var(--lime); }
+.facet span { color: var(--muted); font-size: 0.82rem; margin-left: 4px; }
+.browse .facet-row { padding-bottom: 12px; border-bottom: 1px solid rgba(22, 5, 45, 0.15); }
+.lib-list { columns: 3 280px; column-gap: 32px; }
+.lib-group { break-inside: avoid; margin: 0 0 24px; }
+.lib-group h3 { font-size: 1.02rem; margin: 0 0 6px; }
+.lib-group h3 a { color: var(--ink); }
+.lib-group ul { list-style: none; padding: 0; margin: 0; }
+.lib-group li { margin: 0 0 4px; font-size: 0.95rem; }
+.lib-group li a { color: var(--ink); text-decoration-color: rgba(22, 5, 45, 0.3); }
+@media (max-width: 860px) { .facet-row > .muted { min-width: 100%; } }

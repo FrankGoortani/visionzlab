@@ -188,6 +188,19 @@ def main():
             raise SystemExit(f"duplicate slug {c['slug']}")
         seen.add(c["slug"])
         validate(c, by_id[c["ind"]])
+    import taxonomy  # every case needs browse facets: they drive its indexed page and hubs under /use-cases/
+    vocab = {"fn": taxonomy.FUNCTIONS, "skills": taxonomy.SKILLS, "tasks": taxonomy.TASKS}
+    for c in all_cases:
+        f = taxonomy.MAP.get(c["slug"])
+        if f is None:
+            raise SystemExit(f"{c['slug']}: add it to tools/mocks/taxonomy.py MAP (fn, skills, tasks)")
+        for k, ids in f.items():
+            bad = [i for i in ids if i not in vocab[k]]
+            if bad or not ids:
+                raise SystemExit(f"{c['slug']}: taxonomy {k} {ids} has unknown or no ids {bad}")
+    for i in inds:
+        if i["id"] not in taxonomy.INDUSTRY_SEO:
+            raise SystemExit(f"industry {i['id']}: add audience and intro to taxonomy.INDUSTRY_SEO")
     print(f"ok: {len(all_cases)} cases in {len(inds)} industries")
     if "--check" in sys.argv or only:
         return

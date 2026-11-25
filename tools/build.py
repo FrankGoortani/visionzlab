@@ -14,6 +14,7 @@ import json
 import pathlib
 import re
 import subprocess
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://visionzlab.com"
@@ -1545,6 +1546,9 @@ def breadcrumbs_ld(slug, title):
     section = slug.split("/")[0] + "/"
     if slug.count("/") > 1 and section in SECTION_NAMES:
         crumbs.append((section, SECTION_NAMES[section]))
+    parts = slug.split("/")
+    if section == "use-cases/" and len(parts) > 3 and parts[1] in HUB_KINDS:
+        crumbs.append((f"use-cases/{parts[1]}/", f"Use cases {HUB_KINDS[parts[1]][1].lower()}"))
     crumbs.append((slug, title))
     return {"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": url(s)} for i, (s, n) in enumerate(crumbs)]}
@@ -1686,7 +1690,7 @@ def page(slug, title, description, main, ld=None, ref="site", image=None, og_typ
         <div><h2>Services</h2><ul>{foot_tiers}<li><a href="{rel(slug, SECURITY["slug"])}">{SECURITY["nav"]}</a></li>
           <li><a href="{rel(slug, 'discovery-sprint/')}">Discovery Sprint</a></li>
           <li><a href="{rel(slug, MATURITY_SLUG)}">The 4S check</a></li></ul></div>
-        <div><h2>Use cases</h2><ul>{foot_uses}</ul></div>
+        <div><h2>Use cases</h2><ul>{foot_uses}<li><a href="{rel(slug, 'use-cases/')}#all">All use cases</a></li></ul></div>
         <div><h2>Who we help</h2><ul>{foot_plays}</ul></div>
         <div><h2>Resources</h2><ul><li><a href="{rel(slug, GUIDES_SLUG)}">Guides</a></li>
           {foot_guides}<li><a href="{rel(slug, TOOLS_SLUG)}">Free tools</a></li>
@@ -2085,6 +2089,11 @@ def build_play(p):
         uses = (f'<section class="section tone-lime"><div class="wrap">'
                 f'{section_head("Use cases", "What we usually build first", accent="build first")}'
                 f'{use_case_cards(slug, only=p["uses"])}</div></section>')
+    lib = [c for c in LIB["cases"] if facet_link("industries", c["ind"], c) == slug]
+    if lib:
+        uses += (f'<section class="section"><div class="wrap">'
+                 f'{section_head("More use cases", "Workflows we can automate for you", accent="for you")}'
+                 f'{lib_cards(slug, lib)}</div></section>')
     main = f"""
 {hero(p["title"], p["lead"], p["ref"], "Who we help", slug=slug, img=p["art"], alt=f'Isometric illustration for {p["nav"]}')}
 {answer_first(p["question"])}
@@ -2114,11 +2123,16 @@ def build_use_cases():
 {hero("AI agents for operations, growth and finance teams", "Agents that do the reading, re-keying, tracking "
       "and reporting — so your people can spend their time on the decisions.", "use-cases",
       "Use cases", slug=slug, tone="lime", task=("#list", "Browse the use cases"))}
-<section class="section" id="list"><div class="wrap">{section_head("Use cases", f"{len(USE_CASES)} workflows we build agents for", intro=(
+<section class="section" id="list"><div class="wrap">{section_head("Where most teams start", "The workflows most teams start with", intro=(
     "Each one is a repetitive workflow where an agent reads, drafts or reconciles, and a person approves "
-    "anything that reaches a customer, a supplier or the books."), accent="build agents for")}{use_case_cards(slug)}
+    "anything that reaches a customer, a supplier or the books."), accent="start with")}{use_case_cards(slug)}
 <p class="more">Every use case can be taught, set up with you, built, or built and run for you.
 <a class="link" href="{rel(slug, 'services/')}">See the five ways to work with us →</a></p></div></section>
+<section class="section tone-lime"><div class="wrap">{section_head("Browse", "Find yours by industry, business area, skill or type of work", accent="type of work")}
+{browse_block(slug)}</div></section>
+<section class="section" id="all"><div class="wrap">{section_head("The library", "Every use case, by industry", intro=(
+    "Each page explains the workflow, what a person decides and what you end up with, and links to a "
+    "clickable concept walkthrough with invented data."), accent="by industry")}{library_list(slug)}</div></section>
 {cta_band("use-cases-band")}"""
     return page(slug, "AI Agent Use Cases", desc, main, ref="use-cases")
 
@@ -2156,13 +2170,31 @@ def sample_block(u):
     flags = "".join(f"<li>{e(x)}</li>" for x in s["flags"])
     return f"""<section class="section"><div class="wrap">
 {section_head("What it looks like", "A concept example", "Invented data and a pre-written result. Nothing here is "
-              "connected to a real system, and no AI is running. Ask to see the clickable version on a call.",
+              "connected to a real system, and no AI is running. The full walkthrough is linked below.",
               accent="concept example")}
 <div class="sample">
   <div class="panel"><p class="tag">What comes in</p><h3>{e(title)}</h3><p class="muted small">{e(kind)}</p><pre>{e(text)}</pre></div>
   <div class="panel"><p class="tag">What the agent prepares</p><div class="tbl"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div></div>
   <div class="panel panel-lime"><p class="tag">What goes to a person</p><ul class="ticks flags">{flags}</ul><p>{e(s["draft"])}</p></div>
 </div></div></section>"""
+
+
+def walkthrough_panel(slug, c, location):
+    """The "Open the walkthrough" panel: the only inbound link to a case's noindex demo."""
+    return f"""<div class="panel panel-lime"><p class="tag">Concept walkthrough</p><h2>Click through it yourself</h2>
+  <p>A clickable walkthrough of this workflow with invented data and pre-written results. Nothing in it is connected
+  to a real system, no AI runs, and nothing you add is uploaded.</p>
+  <p><a class="btn btn-ink" href="{rel(slug, f'demo/{c["slug"]}/')}" data-umami-event="demo_open" data-umami-event-location="{e(location)}">Open the walkthrough</a></p></div>"""
+
+
+def walkthrough_block(slug):
+    c = next((c for c in LIB["cases"] if c["page"] == slug), None)
+    if c is None:
+        return ""
+    return f"""<section class="section"><div class="wrap split">
+  {walkthrough_panel(slug, c, "uc-" + c["slug"])}
+  <div><h2>Related use cases</h2><div class="facets">{facet_chips(slug, c)}</div></div>
+</div></section>"""
 
 
 def build_use_case(u):
@@ -2176,13 +2208,324 @@ def build_use_case(u):
 <section class="section"><div class="wrap split">
   <div><h2>Who it's for</h2><p class="big">{e(u["for"])}</p><h2>What the agent does</h2><ul class="ticks">{does}</ul></div>
   <div class="panel panel-lime"><h2>What stays with your people</h2><p class="big">{e(u["people"])}</p></div>
-</div></section>{sample_block(u)}
+</div></section>{sample_block(u)}{walkthrough_block(slug)}
 <section class="section tone-lime"><div class="wrap">{section_head("How to get it", "Pick the level of help that fits", accent="that fits")}{ladder(slug, only=u["tiers"])}</div></section>
 {faq_section(u["faq"])}
 <section class="section tone-lime"><div class="wrap">{section_head("More", "More use cases", accent="use cases")}{use_case_cards(slug, exclude=slug)}</div></section>
 {cta_band(ref + "-band")}"""
     return page(slug, u["title"], u["description"], main,
                 ld=[service_ld(slug, u["title"], u["description"]), faq_ld([u["question"]] + u["faq"])], ref=ref)
+
+
+# --------------------------------------------------------------------------
+# Use-case library (added 2026-11-25): one indexed page per demo case in tools/mocks/cases, plus browse hubs by
+# industry, business area, skill and type of work (facets in tools/mocks/taxonomy.py). Pages use only the generic
+# fields of a case (title, tagline, flow, process steps, send-back reasons, outputs, `next`). Document contents,
+# company and person names stay inside the noindex walkthrough at /demo/<slug>/; check_library() enforces that.
+# --------------------------------------------------------------------------
+HUB_KINDS = {"industries": ("Industry", "By industry"), "functions": ("Business area", "By business area"),
+             "skills": ("What the AI does", "By skill"), "tasks": ("Type of work", "By type of work")}
+HUB_MIN = 3  # a hub needs at least this many use cases, or it isn't built (no thin pages)
+# Industries that already have a hand-written "Who we help" page: that page is their landing, not a second hub.
+INDUSTRY_LANDING = {"insurance": "for/insurance-brokers/", "accounting": "for/accountants-bookkeepers/",
+                    "manufacturing": "for/machine-shops/", "distribution": "for/distributors-manufacturers/"}
+PREFIX_LANDING = {"mtg-": "for/mortgage-brokers/"}
+NO_INDUSTRY_HUB = {"core"}  # the nine site use cases are the featured list on /use-cases/
+LIB = {}  # filled by load_library()
+# Gradual launch (plan: career/_active/visionzlab-use-case-library-rollout-2026-11.md). Only industries in released
+# waves get pages, hub listings and links; the rest stay as noindex walkthroughs until their wave. To release the
+# next wave: check its gates in the plan, bump LIBRARY_RELEASED, build, push. Never lower it to roll back: that
+# 404s indexed pages (see the plan's rollback section).
+LIBRARY_WAVES = [
+    ("Wave 1: industries with live conversations", ["core", "insurance", "accounting"]),
+    ("Wave 2: back-office finance and industrial", ["finance_ops", "manufacturing", "distribution"]),
+    ("Wave 3: real estate and food service", ["real_estate", "food"]),
+    ("Wave 4: services, logistics, retail and property", ["field_service", "professional", "knowledge", "public_sector",
+                                                          "logistics_3pl", "freight_customs", "retail", "hospitality",
+                                                          "auto_dealers", "property_mgmt"]),
+    ("Wave 5: primary industries, education and services", ["agriculture", "fuel_distribution", "education", "nonprofit",
+                                                            "staffing", "agencies", "lending"]),
+    ("Wave 6: regulated and technical industries", ["pharmacy", "med_device", "wealth", "msp", "saas", "environmental",
+                                                    "beverage"]),
+]
+LIBRARY_RELEASED = 1  # number of waves live
+
+
+def load_library():
+    import importlib
+    import pkgutil
+    sys.dont_write_bytecode = True
+    sys.path.insert(0, str(ROOT / "tools" / "mocks"))
+    import cases  # noqa: E402  (tools/mocks/cases)
+    import taxonomy  # noqa: E402  (tools/mocks/taxonomy.py)
+    inds, all_cases = {}, []
+    for m in sorted(pkgutil.iter_modules(cases.__path__), key=lambda m: m.name):
+        mod = importlib.import_module(f"cases.{m.name}")
+        inds[m.name] = dict(mod.INDUSTRY, id=m.name)
+        all_cases += [dict(c, ind=m.name) for c in mod.CASES]
+    waves = [ind for _, inds_ in LIBRARY_WAVES for ind in inds_]
+    if sorted(waves) != sorted(inds):  # inds keys are unique, so this also rejects duplicates
+        dupes = sorted({w for w in waves if waves.count(w) > 1})
+        raise SystemExit(f"LIBRARY_WAVES must list every industry exactly once: missing or unknown "
+                         f"{sorted(set(inds) ^ set(waves))}, repeated {dupes}")
+    live = {ind for _, inds_ in LIBRARY_WAVES[:LIBRARY_RELEASED] for ind in inds_}
+    all_cases = [c for c in all_cases if c["ind"] in live]
+    site = {u["slug"] for u in USE_CASES}
+    for c in all_cases:
+        c["page"] = f"use-cases/{c['slug']}/"
+        c["own"] = c["page"] not in site  # False for the nine hand-written use cases
+        f = taxonomy.MAP[c["slug"]]
+        c["facets"] = {"industries": [c["ind"]], "functions": f["fn"], "skills": f["skills"], "tasks": f["tasks"]}
+    vocab = {"industries": {k: dict(name=v["name"], **taxonomy.INDUSTRY_SEO[k]) for k, v in inds.items()},
+             "functions": taxonomy.FUNCTIONS, "skills": taxonomy.SKILLS, "tasks": taxonomy.TASKS}
+    hubs = {}
+    for kind in HUB_KINDS:
+        for fid in vocab[kind]:
+            if kind == "industries" and (fid in NO_INDUSTRY_HUB or fid in INDUSTRY_LANDING):
+                continue
+            members = [c for c in all_cases if fid in c["facets"][kind]]
+            if len(members) >= HUB_MIN:
+                hubs[(kind, fid)] = members
+    order = {k: (v.get("order", 50), v["name"]) for k, v in inds.items()}
+    all_cases.sort(key=lambda c: order[c["ind"]])
+    inds = {k: v for k, v in inds.items() if k in live}
+    LIB.update(cases=all_cases, inds=inds, vocab=vocab, hubs=hubs, order=order)
+
+
+def hub_slug(kind, fid):
+    return f"use-cases/{kind}/{fid}/"
+
+
+def facet_link(kind, fid, c=None):
+    """Where a facet chip points: the hub, the industry's own landing page, or nowhere (None)."""
+    if kind == "industries":
+        if c is not None:
+            for pre, target in PREFIX_LANDING.items():
+                if c["slug"].startswith(pre):
+                    return target
+        if fid in INDUSTRY_LANDING:
+            return INDUSTRY_LANDING[fid]
+    return hub_slug(kind, fid) if (kind, fid) in LIB["hubs"] else None
+
+
+def hub_title(kind, fid):
+    v = LIB["vocab"][kind][fid]
+    if kind == "industries":
+        return f"AI Use Cases for {v['audience'][0].upper()}{v['audience'][1:]}"
+    if kind == "functions":
+        return f"AI Use Cases in {v['name']}"
+    if kind == "skills":
+        return f"AI Agents for {v['name']}"
+    return f"AI for {v['name']}"
+
+
+def lib_title(c):
+    aud = LIB["vocab"]["industries"][c["ind"]]["audience"]
+    t = f"{c['title']} with AI for {aud}"
+    return t if len(t) <= 72 else f"{c['title']} with AI"
+
+
+def clip(text, n=158):
+    return text if len(text) <= n else text[: text.rfind(" ", 0, n - 1)].rstrip(",;:") + "…"
+
+
+def lib_cards(slug, cs):
+    cards = "".join(f'<a class="card" href="{rel(slug, c["page"])}"><span class="tag">{e(LIB["inds"][c["ind"]]["name"])}</span>'
+                    f'<h3>{e(c["title"])}</h3><p>{e(clip(c["tagline"], 140))}</p><span class="arrow">→</span></a>' for c in cs)
+    return f'<div class="cards cards-uc">{cards}</div>'
+
+
+def facet_chips(slug, c):
+    groups = []
+    for kind, (label, _) in HUB_KINDS.items():
+        links = []
+        for fid in c["facets"][kind]:
+            target = facet_link(kind, fid, c)
+            name = LIB["vocab"][kind][fid]["name"]
+            if target:
+                links.append(f'<a class="facet" href="{rel(slug, target)}">{e(name)}</a>')
+        if links:
+            groups.append(f'<div class="facet-row"><span class="muted small">{e(label)}</span>{"".join(links)}</div>')
+    return "".join(groups)
+
+
+def related(c, n=6):
+    def score(o):
+        return sum(len(set(c["facets"][k]) & set(o["facets"][k])) for k in ("skills", "tasks", "functions")) + \
+               (1.5 if o["ind"] == c["ind"] else 0)
+    others = sorted((o for o in LIB["cases"] if o["slug"] != c["slug"]), key=lambda o: -score(o))
+    return others[:n]
+
+
+OUTPUT_TEXT = {
+    "draft": "Drafts written in your voice, ready for a person to edit and send",
+    "calendar": "A schedule of what is due next, with reminders",
+    "ask": "Answers to follow-up questions, each linked to the document it came from",
+    "compare": "A side-by-side comparison with every difference marked",
+    "exceptions": "A short list of exceptions for your team to decide, each with the reason",
+    "feed": "A running log of what changed and where it was seen",
+}
+
+
+def lib_outputs(c):
+    out = [c["flow"]["end"]]
+    for st in c["stages"]:
+        t = st["type"]
+        if t == "write":
+            system = re.sub(r"\s*\(.*?\)", "", st["system"]).strip()
+            if system[:2] != system[:2].upper():  # lower-case the first letter unless it starts an acronym
+                system = system[0].lower() + system[1:]
+            out.append(f"Approved records saved in your {system}")
+        elif t == "report":
+            out.append(f"A {(st.get('format') or 'report').lower()} you can read, print or share")
+        elif t in OUTPUT_TEXT:
+            out.append(OUTPUT_TEXT[t])
+    seen, uniq = set(), []
+    for x in out:
+        if x.lower() not in seen:
+            seen.add(x.lower())
+            uniq.append(x)
+    return uniq
+
+
+def build_lib_case(c):
+    slug = c["page"]
+    ref = "ucl-" + c["slug"]
+    ind = LIB["inds"][c["ind"]]
+    title = lib_title(c)
+    fl = c["flow"]
+    flow = "".join(f"<li><strong>{e(h)}</strong>{e(t)}</li>" for h, t in
+                   (("It starts with", fl["start"]), ("The AI agent", fl["agent"]),
+                    ("Your team", fl["person"]), ("It ends with", fl["end"])))
+    proc = next((st for st in c["stages"] if st["type"] == "process" and st.get("steps")), None)
+    steps = "".join(f"<li><strong>{e(a)}</strong> {e(b)}</li>" if b else f"<li>{e(a)}</li>" for a, b, *_ in proc["steps"]) if proc else ""
+    rv = next((st for st in c["stages"] if st["type"] == "review"), None)
+    reasons = rv.get("reasons") if rv else None
+    reasons_html = (f'<p>Anything can be sent back with a reason, for example:</p>'
+                    f'<ul class="ticks">{"".join(f"<li>{e(r)}</li>" for r in reasons)}</ul>') if reasons else ""
+    role = c["persona"].get("role")
+    who = f'<p class="big">Built around the person who does this work today: <strong>{e(role)}</strong>.</p>' if role else ""
+    outputs = "".join(f"<li>{e(x)}</li>" for x in lib_outputs(c))
+    nxt = "".join(f"<li>{e(x)}</li>" for x in c.get("next", []))
+    main = f"""
+{hero(title, c["tagline"], ref, f"Use case · {ind['name']}", slug=slug, tone="lime")}
+<section class="section"><div class="wrap split">
+  <div><h2>How it works</h2><ol class="steps">{flow}</ol></div>
+  <div><h2>What the agent does, step by step</h2>{f'<ul class="ticks">{steps}</ul>' if steps else f'<p class="big">{e(fl["agent"])}</p>'}</div>
+</div></section>
+<section class="section tone-lime"><div class="wrap split">
+  <div><h2>What stays with your people</h2><p class="big">{e(fl["person"])}</p>{reasons_html}</div>
+  <div class="panel"><h2>What you end up with</h2><ul class="ticks">{outputs}</ul>{who}</div>
+</div></section>
+<section class="section"><div class="wrap split">
+  <div><h2>In a real setup</h2><ul class="ticks">{nxt}</ul>
+  <p><a class="link" href="{rel(slug, 'security-and-privacy/')}">How we handle your data →</a></p></div>
+  {walkthrough_panel(slug, c, ref)}
+</div></section>
+<section class="section"><div class="wrap">{section_head("Browse", "Related use cases", accent="use cases")}
+<div class="facets">{facet_chips(slug, c)}</div>{lib_cards(slug, related(c))}</div></section>
+{cta_band(ref + "-band")}"""
+    desc = clip(c["tagline"])
+    return page(slug, title, desc, main, ld=[service_ld(slug, title, desc)], ref=ref,
+                image="public/og/use-cases.png"), title, desc
+
+
+def build_hub(kind, fid):
+    slug = hub_slug(kind, fid)
+    v = LIB["vocab"][kind][fid]
+    members = LIB["hubs"][(kind, fid)]
+    title = hub_title(kind, fid)
+    ref = f"hub-{kind}-{fid}"
+    # Other hubs that share the most use cases with this one: the cross-links between entry points.
+    near = {}
+    for c in members:
+        for k2 in HUB_KINDS:
+            for f2 in c["facets"][k2]:
+                if (k2, f2) != (kind, fid) and (k2, f2) in LIB["hubs"]:
+                    near[(k2, f2)] = near.get((k2, f2), 0) + 1
+    near = sorted(near, key=lambda x: -near[x])[:10]
+    chips = "".join(f'<a class="facet" href="{rel(slug, hub_slug(k2, f2))}">{e(LIB["vocab"][k2][f2]["name"])}</a>' for k2, f2 in near)
+    main = f"""
+{hero(title, v["intro"], ref, f"Use cases · {HUB_KINDS[kind][0]}", slug=slug, tone="lime", task=("#list", "See the use cases"))}
+<section class="section" id="list"><div class="wrap">{section_head(HUB_KINDS[kind][0], v["name"], intro=(
+    "Each one is a workflow where an AI agent does the reading, matching and drafting, and a person approves "
+    "anything that reaches a customer, a supplier or the books."))}{lib_cards(slug, members)}
+{f'<div class="facets"><div class="facet-row"><span class="muted small">Related</span>{chips}</div></div>' if chips else ''}
+<p class="more"><a class="link" href="{rel(slug, 'use-cases/')}">All use cases →</a></p></div></section>
+{cta_band(ref + "-band")}"""
+    desc = clip(v["intro"])
+    return page(slug, title, desc, main, ref=ref, image="public/og/use-cases.png"), title, desc
+
+
+def build_hub_index(kind):
+    slug = f"use-cases/{kind}/"
+    browse = HUB_KINDS[kind][1]
+    items =[(hub_slug(k, f), LIB["vocab"][k][f]["name"], f'{len(m)} use cases. {clip(LIB["vocab"][k][f]["intro"], 120)}')
+             for (k, f), m in LIB["hubs"].items() if k == kind]
+    if kind == "industries":
+        for fid, target in INDUSTRY_LANDING.items():
+            if fid in LIB["inds"]:
+                items.append((target, LIB["inds"][fid]["name"], next(p["lead"] for p in PLAYS if p["slug"] == target)))
+        items.sort(key=lambda x: x[1])
+    title = f"AI Use Cases {browse}"
+    desc = f"Browse AI agent use cases {browse.lower()}: each page explains the workflow, what a person decides and what you end up with."
+    main = f"""
+{hero(title, desc, "hubs-" + kind, "Use cases", slug=slug, tone="lime", task=("#list", "Browse"))}
+<section class="section" id="list"><div class="wrap">{rows(slug, items)}
+<p class="more"><a class="link" href="{rel(slug, 'use-cases/')}">All use cases →</a></p></div></section>
+{cta_band("hubs-" + kind + "-band")}"""
+    return page(slug, title, desc, main, ref="hubs-" + kind, image="public/og/use-cases.png"), title, desc
+
+
+def browse_block(slug):
+    blocks = []
+    for kind, (label, _) in HUB_KINDS.items():
+        links = []
+        for (k, f), m in LIB["hubs"].items():
+            if k == kind:
+                links.append((LIB["vocab"][k][f]["name"], hub_slug(k, f), len(m)))
+        if kind == "industries":
+            for fid, target in INDUSTRY_LANDING.items():
+                if fid in LIB["inds"]:
+                    links.append((LIB["inds"][fid]["name"], target, None))
+        links.sort()
+        chips = "".join(f'<a class="facet" href="{rel(slug, t)}">{e(n)}{f" <span>{c}</span>" if c else ""}</a>' for n, t, c in links)
+        blocks.append(f'<div class="facet-row"><a class="muted small" href="{rel(slug, f"use-cases/{kind}/")}">{e(label)}</a>{chips}</div>')
+    return f'<div class="facets browse">{"".join(blocks)}</div>'
+
+
+def library_list(slug):
+    out = []
+    for ind_id, ind in sorted(LIB["inds"].items(), key=lambda x: LIB["order"][x[0]]):
+        cs = [c for c in LIB["cases"] if c["ind"] == ind_id]
+        target = facet_link("industries", ind_id)
+        head = f'<a href="{rel(slug, target)}">{e(ind["name"])}</a>' if target else e(ind["name"])
+        lis = "".join(f'<li><a href="{rel(slug, c["page"])}">{e(c["title"])}</a></li>' for c in cs)
+        out.append(f'<div class="lib-group"><h3>{head}</h3><ul>{lis}</ul></div>')
+    return f'<div class="lib-list">{"".join(out)}</div>'
+
+
+LEAK_ALLOW = {"Winter LTO"}  # generic phrases the proper-name heuristic catches; review before adding one
+
+
+def check_library(built):
+    """Fail the build if a library page leaks a case's invented names, or any title/description repeats."""
+    names_by_page = {}
+    for c in (c for c in LIB["cases"] if c["own"]):  # hand-written pages carry their own labelled concept example
+        names = {c["persona"]["name"]}
+        for d in c["docs"]:  # proper names in document labels: two or more capitalised words, e.g. "Lakeshore Mechanical"
+            for part in re.split(r"\s*[·:,(/]\s*|\s+-\s+", d.get("label", "")):
+                if sum(w[:1].isupper() for w in part.split()) >= 2:
+                    names.add(part.strip())
+        names_by_page[c["page"]] = {n for n in names if len(n) > 3}
+    for slug, body in built.items():
+        main = body.split('<main id="main-content"', 1)[1].split("</main>", 1)[0]
+        for n in names_by_page.get(slug, ()):
+            if n in main and n not in LEAK_ALLOW:
+                raise SystemExit(f"{slug}: case name {n!r} leaked into an indexed page")
+    for c in LIB["cases"]:
+        if not (ROOT / "demo" / c["slug"] / "index.html").exists():
+            raise SystemExit(f"missing walkthrough demo/{c['slug']}/ (run tools/mocks/build.py first)")
 
 
 def build_sprint():
@@ -3083,6 +3426,7 @@ def build_redirect(from_slug, to_slug):
 def main():
     global TRACKER_JS, CONTACT_URL
     check_questions()
+    load_library()
     if HUBSPOT_FORM_ID:
         CONTACT_URL = url(BOOK_SLUG)
     TRACKER_JS = (TRACKER_JS.replace("__UMAMI_HOST__", UMAMI_HOST)
@@ -3112,6 +3456,39 @@ def main():
     out += [(PRIVACY_SLUG, build_privacy(), "Privacy", "What this website collects and why.")]
     if HUBSPOT_FORM_ID:
         out += [(BOOK_SLUG, build_book(), "Book a free discovery call", "Book a free discovery call.")]
+    # Use-case library: generated pages and hubs. Listed in the sitemap; llms.txt lists the hubs, not every page.
+    lib_pages = [(c["page"], *build_lib_case(c)) for c in LIB["cases"] if c["own"]]
+    hub_pages = [(f"use-cases/{k}/", *build_hub_index(k)) for k in HUB_KINDS]
+    hub_pages += [(hub_slug(k, f), *build_hub(k, f)) for (k, f) in LIB["hubs"]]
+    out += lib_pages + hub_pages
+    check_library({s: b for s, b, *_ in out})
+    for tag, end in (("<title>", "</title>"), ('<meta name="description" content="', '"')):
+        seen = {}
+        for s_, b, *_ in out:
+            v = b.split(tag, 1)[1].split(end, 1)[0]
+            if v in seen:
+                raise SystemExit(f"duplicate {tag!r} on {s_} and {seen[v]}: {v}")
+            seen[v] = s_
+    lib_only = {s_ for s_, *_ in lib_pages}
+    # The weekly analytics job (career/_analytics fetch-gsc) inspects these URLs for the rollout gates.
+    wave_of = {ind: i + 1 for i, (_, inds_) in enumerate(LIBRARY_WAVES) for ind in inds_}
+    lib_urls = [(c["page"], f"wave{wave_of[c['ind']]}") for c in LIB["cases"] if c["own"]]
+    lib_urls += [(s_, "hub") for s_, *_ in hub_pages] + [("use-cases/", "hub")]
+    (ROOT / "tools" / "library-urls.txt").write_text(
+        f"# Live use-case library URLs and their wave, waves 1-{LIBRARY_RELEASED} (written by tools/build.py)\n"
+        + "".join(f"{url(x)}\t{w}\n" for x, w in lib_urls))
+    curated = [x for x in out if x[0] not in lib_only]
+    # Every page under use-cases/ is generated: remove the ones this build no longer makes (unreleased waves,
+    # renamed or deleted cases), so they can't linger on the site outside the sitemap.
+    written = {slug for slug, *_ in out}
+    for f in sorted((ROOT / "use-cases").glob("**/index.html"), reverse=True):
+        slug = str(f.parent.relative_to(ROOT)) + "/"
+        if slug not in written:
+            f.unlink()
+            for d in (f.parent, *f.parent.parents):
+                if d == ROOT / "use-cases" or any(d.iterdir()):
+                    break
+                d.rmdir()
     for slug, body, _, _ in out:
         path = ROOT / slug / "index.html"
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -3121,8 +3498,8 @@ def main():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(build_redirect(old, new))
     (ROOT / "sitemap.xml").write_text(build_sitemap(lastmods([(s, b) for s, b, *_ in out])))
-    (ROOT / "llms.txt").write_text(build_llms([(s, t, d) for s, _, t, d in out]))
-    (ROOT / "llms-full.txt").write_text(build_llms_full(out))
+    (ROOT / "llms.txt").write_text(build_llms([(s, t, d) for s, _, t, d in curated]))
+    (ROOT / "llms-full.txt").write_text(build_llms_full(curated))
     cards = render_og_cards()
     (ROOT / GUIDES_SLUG / "feed.xml").write_text(build_guides_feed())
     print(f"wrote {len(out)} pages, sitemap.xml, llms.txt, llms-full.txt, {GUIDES_SLUG}feed.xml; "
