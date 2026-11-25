@@ -50,3 +50,7 @@ package-lock.json
 dist/
 build/
 *.cache
+
+# Use-case demos: private banned-terms list and Python caches
+tools/mocks/private_terms.txt
+__pycache__/
