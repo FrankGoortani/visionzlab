@@ -1,0 +1,372 @@
+"""Automotive dealerships: deal jackets before funding, warranty claims from repair orders, and used-vehicle appraisals.
+
+Rules for this file: no real vehicle makes or models (generic descriptions only, e.g. "2022 compact SUV"); no real
+lender, insurer, history-report service, price guide or listing site. VINs are plainly invented ("DEMO-VIN-...").
+No credit scores and no full licence numbers. Disclosure and ID steps are "your checklist", never the law.
+The business manager submits deals, the warranty administrator submits claims, the used-car manager sets prices.
+"""
+from mk import (D, F, Tbl, Draft, upload, process, review, X, exceptions, compare, draft, approve, R, write,
+                Sec, Chart, report, case)
+
+INDUSTRY = dict(name="Automotive dealerships", brand="Acme Motors", order=104,
+                blurb="F&I, service and used-vehicle desks. Your managers submit, price and decide.")
+
+CASES = [
+    case("auto-deal-jacket", "Deal jacket check before funding",
+         "Before a deal goes to the lender, every document in the jacket has to be there and agree. The assistant reads "
+         "the bill of sale, finance contract, ID checklist, trade appraisal and insurance confirmation, matches the VIN, "
+         "prices and names across them and lists every gap. The business manager fixes them and submits.",
+         ("A scanned deal jacket", "Checks every required document and matches VIN, price and names across them",
+          "Fixes the gaps and submits the deal to the lender", "A funding checklist and a clean jacket"),
+         area="Finance and insurance office", persona=("Delphine Ashcroft", "Business manager"), unit="Documents checked",
+         docs=[
+             D("Bill of sale - deal 26-1184.pdf", "pdf", meta="PDF · 2 pages · signed Sat 21 Nov", label="Bill of sale", sub="Deal 26-1184 · clean",
+               body="ACME MOTORS · BILL OF SALE · DEAL [[26-1184|Deal]]\nPurchaser: [[Marcus T. Oyelaran|Buyer]]\n"
+                    "Vehicle: 2023 mid-size SUV, AWD, grey · stock S-23118 · [[31,880 km|Odometer]]\nVIN: [[DEMO-VIN-23-01184|VIN]]\n\n"
+                    "Selling price                     [[$38,450.00|Cash price]]\nAdministration fee                   $499.00\n"
+                    "Trade allowance                  [[-$9,000.00|Trade allowance]]\nTaxable amount                    $29,949.00\nHST 13%                            $3,893.37\n"
+                    "Lien payout on trade             [[$4,210.00|Lien payout]]\nDown payment                     -$3,000.00\n"
+                    "Balance to finance               [[$35,052.37|Balance to finance]]\n\nSigned by purchaser and dealer · 21 Nov 2026",
+               fields=[F("Deal", "26-1184", "Header"), F("Buyer", "Marcus T. Oyelaran", "Purchaser line"),
+                       F("VIN", "DEMO-VIN-23-01184", "Vehicle line, matches stock S-23118", 0.99), F("Odometer", "31,880 km", "Vehicle line"),
+                       F("Cash price", "$38,450.00", "Price block"), F("Trade allowance", "$9,000.00", "Price block"),
+                       F("Lien payout", "$4,210.00", "Price block"), F("Balance to finance", "$35,052.37", "Price block")],
+               table=Tbl("Checks", ["Check", "Result"],
+                         ["Arithmetic", "Adds up: $29,949.00 taxable, $3,893.37 HST", "ok"],
+                         ["VIN matches the stock record", "Yes", "ok"], ["Signatures", "Purchaser and dealer", "ok"]),
+               notes="The bill of sale is complete and adds up. It's the reference for the other documents.", yes="Mark checked"),
+             D("Finance contract - Tamberlane Auto Finance.pdf", "pdf", meta="PDF · 4 pages", label="Finance contract", sub="Contract · VIN differs",
+               body="CONDITIONAL SALES CONTRACT · Tamberlane Auto Finance\nBuyer: [[Marcus T. Oyelaran|Buyer]]\n"
+                    "Vehicle: 2023 mid-size SUV · VIN [[DEMO-VIN-23-01148|VIN]]\n\nCash price $38,450.00 · Trade $9,000.00 · Down $3,000.00\n"
+                    "Amount financed [[$35,052.37|Amount financed]] · Term [[72 months|Term]] · Rate as approved by the lender\n"
+                    "Monthly payment $597.44\n\nPage 3, buyer's initials beside the payment schedule: [[(blank)|Page 3 initials]]\nPage 4: signed by buyer and dealer",
+               fields=[F("Buyer", "Marcus T. Oyelaran", "Page 1"), F("VIN", "DEMO-VIN-23-01148", "Page 1"),
+                       F("Amount financed", "$35,052.37", "Page 1, matches the bill of sale"), F("Term", "72 months", "Page 1"),
+                       F("Page 3 initials", "Missing", "Page 3")],
+               table=Tbl("Checks", ["Check", "Contract", "Bill of sale"],
+                         ["VIN", "DEMO-VIN-23-01148", "DEMO-VIN-23-01184", "bad"],
+                         ["Amount financed", "$35,052.37", "$35,052.37", "ok"],
+                         ["Cash price, trade, down", "Same", "Same", "ok"],
+                         ["Initials, page 3", "Blank", "Your checklist: required", "check"]),
+               flags=[("bad", "The VIN on the contract has the last two digits swapped (…01148, not …01184). A lender won't fund a contract that doesn't match the vehicle."),
+                      "The buyer's initials are missing beside the payment schedule on page 3."],
+               yes="Mark checked"),
+             D("ID and documents checklist - 26-1184.jpg", "scan", meta="Scan · 1 page", label="ID and documents checklist", sub="Checklist · 1 stipulation",
+               body="DEAL JACKET CHECKLIST · 26-1184\n\n[✓] Driver's licence sighted, name matches · number not copied here\n"
+                    "[✓] Proof of income: 2 recent pay stubs\n[✓] Proof of residence: [[utility bill, dated 8 Aug 2026|Proof of residence]]\n"
+                    "[✓] Lender approval printed · stipulation: [[proof of residence dated within 60 days|Lender stipulation]]\n"
+                    "[✓] Extended warranty: declined, waiver signed\nChecked by: D.A.",
+               fields=[F("Proof of residence", "Utility bill dated 8 Aug 2026", "Checklist line 3", 0.9),
+                       F("Lender stipulation", "Proof of residence within 60 days", "Lender approval"),
+                       F("Licence", "Sighted, name matches; number not stored", "Checklist line 1")],
+               table=Tbl("Checks", ["Check", "Result"],
+                         ["Licence sighted", "Yes", "ok"], ["Proof of income", "2 pay stubs", "ok"],
+                         ["Proof of residence age", "105 days old on 21 Nov; lender asks for 60", "bad"],
+                         ["Warranty waiver", "Signed", "ok"]),
+               flags=[("bad", "The utility bill is older than the lender's 60-day stipulation. A newer one is needed before submitting."),
+                      ("info", "The jacket keeps only that the licence was sighted. No licence number or image is stored by the assistant.")],
+               draft=Draft("Hi Marcus,\n\nThanks again for choosing us. To finish your financing, could you send a [[utility bill or bank statement dated in the last 60 days]]? "
+                           "A photo by email is fine.\n\nDelphine Ashcroft\nBusiness manager", label="Request to buyer", to="Marcus Oyelaran"),
+               yes="Mark checked"),
+             D("Trade appraisal - 2017 compact sedan.pdf", "pdf", meta="PDF · 1 page", label="Trade appraisal", sub="Trade · payout letter dated",
+               body="TRADE APPRAISAL · DEAL 26-1184\nVehicle: 2017 compact sedan, FWD · VIN [[DEMO-VIN-17-77310|Trade VIN]] · 142,600 km\n"
+                    "Actual cash value: [[$9,000.00|Trade value]] (set by used-car manager)\n"
+                    "Lien holder: Kestrel Valley Credit Union · payout [[$4,210.00|Payout]] · good until [[Sat 28 Nov 2026|Payout good until]]",
+               fields=[F("Trade VIN", "DEMO-VIN-17-77310", "Appraisal header"), F("Trade value", "$9,000.00, matches the bill of sale", "Appraisal"),
+                       F("Payout", "$4,210.00, matches the bill of sale", "Payout letter"), F("Payout good until", "Sat 28 Nov 2026", "Payout letter")],
+               table=Tbl("Checks", ["Check", "Result"],
+                         ["Trade value matches the bill of sale", "Yes", "ok"], ["Payout matches", "Yes", "ok"],
+                         ["Payout letter still valid at funding", "Only if funded by Sat 28 Nov", "check"]),
+               flags=["The payout letter expires Sat 28 Nov. If the deal isn't funded by then, ask the credit union for a new one."], yes="Mark checked"),
+             D("Insurance confirmation - Alderbrook Brokers.eml", "email", from_="autodesk@alderbrook-brokers.example", to="fi@acme-motors.example",
+               subject="Insurance confirmation, M. Oyelaran", meta="Email · Mon 23 Nov 11:20", label="Insurance confirmation", sub="Email · start date unclear",
+               body="Hello,\n\nConfirming coverage for [[Marcus Oyelaran|Insured]] on a 2023 mid-size SUV, VIN [[DEMO-VIN-23-01184|VIN]].\n"
+                    "Coverage: liability, collision and comprehensive.\nLoss payee: [[Tamberlane Auto Finance|Loss payee]]\n"
+                    "Effective: [[on delivery|Effective date]]\n\nAlderbrook Insurance Brokers",
+               fields=[F("Insured", "Marcus Oyelaran", "Email text", 0.95), F("VIN", "DEMO-VIN-23-01184, matches the bill of sale", "Email text"),
+                       F("Loss payee", "Tamberlane Auto Finance, matches the contract", "Email text"),
+                       F("Effective date", "?\"On delivery\": no calendar date given", "Email text", 0.4)],
+               table=Tbl("Checks", ["Check", "Result"],
+                         ["VIN matches the bill of sale", "Yes", "ok"], ["Loss payee is the lender", "Yes", "ok"],
+                         ["Effective date", "No date", "check"]),
+               flags=["Your checklist asks for a calendar date on the insurance confirmation. The delivery date is booked for Thu 26 Nov; the broker can confirm it."],
+               yes="Mark checked"),
+         ],
+         stages=[
+             upload("Deal jacket scanned", "The signed documents for deal 26-1184, scanned at the F&I office. Use the samples, or drop a file to see what happens."),
+             process([("Reading each document", "Bill of sale, contract, checklist, appraisal, insurance"),
+                      ("Checking the jacket is complete", "Against your funding checklist for this lender"),
+                      ("Matching across documents", "VIN, names, cash price, trade, payout, amount financed"),
+                      ("Checking dates and stipulations", "Lender stipulations, payout letter, insurance start"),
+                      ("Listing the gaps", "Nothing is sent to the lender")],
+                     log=[("Contract VIN …01148 differs from bill of sale …01184", "y", 2),
+                          ("Proof of residence 105 days old; lender asks for 60", "y", 3),
+                          ("Amount financed $35,052.37 matches on both documents", "g", 2)]),
+             review("Check each document", "The document on the left, what was read and checked on the right.",
+                    yes="Mark checked", reasons=["Needs a re-sign", "Ask the buyer", "Ask the broker or lender", "I'll check this one myself"]),
+             compare(Tbl("Fields across the jacket", ["Field", "Bill of sale", "Contract", "Insurance"],
+                         ["Buyer name", "Marcus T. Oyelaran", "Marcus T. Oyelaran", "Marcus Oyelaran", "ok"],
+                         ["VIN", "DEMO-VIN-23-01184", "DEMO-VIN-23-01148", "DEMO-VIN-23-01184", "bad"],
+                         ["Cash price", "$38,450.00", "$38,450.00", "—", "ok"],
+                         ["Trade allowance", "$9,000.00", "$9,000.00", "—", "ok"],
+                         ["Down payment", "$3,000.00", "$3,000.00", "—", "ok"],
+                         ["Amount financed", "$35,052.37", "$35,052.37", "—", "ok"],
+                         ["Lender", "—", "Tamberlane Auto Finance", "Loss payee: same", "ok"],
+                         ["Insurance start", "Delivery Thu 26 Nov", "—", "\"On delivery\"", "check"]),
+                     "Match the jacket", "Every field that must agree, side by side. Filter by status."),
+             exceptions([
+                 X("VIN on the contract is wrong", "Contract shows DEMO-VIN-23-01148; the vehicle is DEMO-VIN-23-01184.",
+                   ["Reprint the contract and have the buyer re-sign", "Correct by hand and have the buyer initial"], rec=0, tone="bad",
+                   why="Your lender's funding guide asks for a reprinted contract when the VIN is wrong."),
+                 X("Proof of residence too old", "Utility bill dated 8 Aug 2026; the stipulation asks for 60 days.",
+                   ["Ask the buyer for a newer bill", "Ask the lender to waive the stipulation"], rec=0, tone="bad",
+                   why="The stipulation is printed on the lender's approval."),
+                 X("Initials missing on page 3", "Beside the payment schedule.",
+                   ["Collect with the re-signed contract", "Collect at delivery"], rec=0,
+                   why="The contract is being reprinted anyway."),
+                 X("Insurance has no start date", "Says \"on delivery\".",
+                   ["Ask the broker to confirm Thu 26 Nov", "Accept as is"], rec=0,
+                   why="Your checklist asks for a calendar date."),
+             ], "Gaps to fix", "The business manager decides how each gap is fixed. Nothing goes to the lender until they're closed."),
+             write("Dealer management system (test copy)", [
+                 R("Deal 26-1184 · funding checklist", [("Documents", "5 of 5 received"), ("Gaps", "4 open"), ("Owner", "Delphine Ashcroft")], "Not ready to submit", "bad"),
+                 R("Task · reprint contract", [("Reason", "VIN digits swapped"), ("With", "buyer, at delivery Thu 26 Nov")], "Task created", "info"),
+                 R("Task · proof of residence", [("Ask", "bill dated within 60 days"), ("Request", "drafted for Delphine to send")], "Task created", "info"),
+                 R("Task · payout letter", [("Good until", "Sat 28 Nov"), ("Action", "refresh if not funded by then")], "Reminder set", "check")],
+                 sub="The checklist and tasks are saved. The deal is submitted to the lender by the business manager.", cta="Save the checklist"),
+             report("Funding checklist · deal 26-1184", [
+                 Sec("Result", p="Not ready to submit. Five documents received; two blocking gaps and two smaller ones."),
+                 Sec("Checklist", table=Tbl(None, ["Item", "Result", "Owner"],
+                                            ["Bill of sale", "Complete, adds up", "—"],
+                                            ["Finance contract", "VIN wrong; page 3 initials missing", "Business manager"],
+                                            ["ID and documents", "Proof of residence too old", "Buyer"],
+                                            ["Trade appraisal and payout", "Matches; payout good until Sat 28 Nov", "Business manager"],
+                                            ["Insurance confirmation", "No calendar start date", "Broker"])),
+                 Sec("Checks by result", chart=Chart("Checks", ["Passed", "Needs a person", "Blocking"], [12, 3, 2], tones=["ok", "check", "bad"])),
+                 Sec("Before submitting", list=["Reprint and re-sign the contract with the correct VIN.",
+                                                "Get proof of residence dated within 60 days.",
+                                                "Fund by Sat 28 Nov or refresh the payout letter."])],
+                 title="Funding checklist", subtitle="F&I office · invented data",
+                 kpis=[(5, "Documents"), (17, "Checks"), (2, "Blocking", "bad"), (3, "Needs a person", "check")], format="Funding checklist"),
+         ],
+         next=["Jackets are read from the deal folder as they are scanned at the F&I office.",
+               "The checklist follows each lender's funding guide and your own deal checklist.",
+               "The business manager fixes every gap and submits the deal; the assistant never sends anything to a lender.",
+               "Licence numbers and credit details are not stored by the assistant."],
+         tags=["deal jacket", "funding", "f&i", "vin", "lender", "dealership"]),
+
+    case("auto-warranty-claims", "Service repair order to warranty claim",
+         "Closed repair orders come in with the technician's story: complaint, cause and correction. The assistant "
+         "drafts the warranty claim with labour operations and parts, checks coverage and flags any story that is "
+         "missing a cause or correction. The warranty administrator submits every claim.",
+         ("Closed repair orders and technician story lines", "Drafts claims with labour ops and parts, checks coverage and the story",
+          "Fixes stories with the technician and submits every claim", "Claim drafts ready to submit"),
+         area="Service department", persona=("Gwen Thackeray", "Warranty administrator"), unit="Repair orders handled",
+         docs=[
+             D("RO 58821 - full-size pickup.pdf", "pdf", meta="Repair order · closed Mon 23 Nov", label="RO 58821 · check engine light", sub="Repair order · clean",
+               body="REPAIR ORDER [[58821|RO]] · 2024 full-size pickup · VIN DEMO-VIN-24-55821 · [[18,420 km|Odometer]] · in service 14 Mar 2024\n\n"
+                    "Complaint: [[customer states check engine light on|Complaint]]\n"
+                    "Cause: [[found code P0117; coolant temperature sensor connector corroded|Cause]]\n"
+                    "Correction: [[replaced connector pigtail and sealed; cleared code, road tested OK|Correction]]\n\n"
+                    "Labour: op [[EL-2210 · 0.8 h|Labour op]]   Parts: [[1 x connector pigtail, $34.60|Parts]]\nTechnician: #214",
+               fields=[F("RO", "58821", "Header"), F("Odometer", "18,420 km", "Header"),
+                       F("Coverage", "Basic: within 3 years / 60,000 km", "In-service date and odometer"),
+                       F("Complaint", "Check engine light on", "Story line"), F("Cause", "Corroded coolant temp sensor connector, code P0117", "Story line"),
+                       F("Correction", "Replaced pigtail, sealed, road tested", "Story line"),
+                       F("Labour op", "EL-2210 · 0.8 h · $132.00 at $165.00/h", "Labour line"), F("Parts", "Connector pigtail · $34.60", "Parts line")],
+               table=Tbl("Claim draft", ["Line", "Detail", "Amount"],
+                         ["Labour", "EL-2210, 0.8 h", "$132.00", "ok"], ["Parts", "Connector pigtail", "$34.60", "ok"],
+                         ["Story", "Complaint, cause, correction", "Complete", "ok"], ["Total", "", "$166.60", "ok"]),
+               notes="Covered, story complete, labour time matches the standard. Ready for the administrator to submit.", yes="Approve claim draft"),
+             D("RO 58834 - mid-size sedan.jpg", "scan", meta="Scan · technician story handwritten · closed Mon 23 Nov", label="RO 58834 · display goes black", sub="Repair order · cause missing",
+               body="REPAIR ORDER [[58834|RO]] · 2023 mid-size sedan · VIN DEMO-VIN-23-58834 · 31,050 km\n\n"
+                    "Complaint: [[centre display goes black on and off|Complaint]]\nCause: [[(blank)|Cause]]\n"
+                    "Correction: [[replaced display unit, tested OK|Correction]]\n\nLabour: op [[EL-4410 · 1.4 h|Labour op]]   Parts: [[1 x display unit, $1,186.40|Parts]]\nTechnician: #208",
+               fields=[F("RO", "58834", "Header"), F("Complaint", "Display goes black intermittently", "Story line"),
+                       F("Cause", "?Not written", "Story line blank", 0.1), F("Correction", "Replaced display unit", "Story line"),
+                       F("Labour op", "EL-4410 · 1.4 h · $231.00", "Labour line"), F("Parts", "Display unit · $1,186.40", "Parts line")],
+               table=Tbl("Claim draft", ["Line", "Detail", "Amount"],
+                         ["Labour", "EL-4410, 1.4 h", "$231.00", "ok"], ["Parts", "Display unit", "$1,186.40", "ok"],
+                         ["Story", "Cause missing", "—", "bad"], ["Diagnostic proof", "No test result noted", "—", "check"]),
+               flags=[("bad", "No cause is written. Your warranty policy manual needs complaint, cause and correction, and a high-value part with no cause is likely to be charged back."),
+                      "A note to technician #208 is drafted asking for the cause and the test that confirmed it."],
+               yes="Approve claim draft"),
+             D("RO 58840 - compact SUV.pdf", "pdf", meta="Repair order · closed Tue 24 Nov", label="RO 58840 · water leak", sub="Repair order · coverage unclear",
+               body="REPAIR ORDER [[58840|RO]] · 2024 compact SUV · VIN DEMO-VIN-24-58840 · [[61,200 km|Odometer]] · in service 2 Sep 2024\n\n"
+                    "Complaint: [[water on rear passenger floor after rain|Complaint]]\nCause: [[right rear door seal not seated at lower corner|Cause]]\n"
+                    "Correction: [[reseated seal, water test passed|Correction]]\n\nLabour: op [[BD-1120 · 1.0 h|Labour op]]   Parts: none",
+               fields=[F("RO", "58840", "Header"), F("Odometer", "61,200 km", "Header"),
+                       F("Coverage", "?Basic coverage ended at 60,000 km; goodwill possible", "In-service date and odometer", 0.4),
+                       F("Complaint", "Water on rear floor after rain", "Story line"), F("Cause", "Rear door seal not seated", "Story line"),
+                       F("Correction", "Reseated seal, water tested", "Story line"), F("Labour op", "BD-1120 · 1.0 h · $165.00", "Labour line")],
+               table=Tbl("Claim draft", ["Line", "Detail", "Amount"],
+                         ["Labour", "BD-1120, 1.0 h", "$165.00", "ok"], ["Story", "Complete", "—", "ok"],
+                         ["Coverage", "Within 3 years; 1,200 km over basic", "—", "check"]),
+               flags=["The vehicle is 1,200 km past basic coverage. Whether to ask for goodwill, or bill the customer, is the warranty administrator's and service manager's call."],
+               yes="Approve claim draft"),
+             D("RO 58847 - full-size pickup campaign.pdf", "pdf", meta="Repair order · closed Tue 24 Nov", label="RO 58847 · campaign 26C-14", sub="Repair order · time over standard",
+               body="REPAIR ORDER [[58847|RO]] · 2024 full-size pickup · VIN DEMO-VIN-24-58847 · 9,870 km\n\n"
+                    "Complaint: [[campaign 26C-14, software update to transmission module|Complaint]]\nCause: campaign\n"
+                    "Correction: [[performed update, verified version, road tested|Correction]]\n\n"
+                    "Labour: op [[CA-26C14 · 1.2 h claimed|Labour time]] (campaign standard 0.8 h)\nTech note: [[battery charger needed during update, extra 0.4 h|Tech note]]",
+               fields=[F("RO", "58847", "Header"), F("Complaint", "Campaign 26C-14 software update", "Story line"),
+                       F("Correction", "Update done, version verified, road tested", "Story line"),
+                       F("Labour time", "1.2 h on the RO; 0.8 h standard", "Labour line, campaign bulletin"),
+                       F("Tech note", "Charger needed, extra 0.4 h", "Technician note")],
+               table=Tbl("Claim draft", ["Line", "Detail", "Amount"],
+                         ["Labour at standard", "CA-26C14, 0.8 h", "$132.00", "ok"],
+                         ["Extra time", "0.4 h, needs an additional-time request", "$66.00", "check"],
+                         ["Story", "Complete", "—", "ok"]),
+               flags=["The draft claims the 0.8 h standard. The extra 0.4 h needs an additional-time request with the technician's note; the administrator decides whether to add it."],
+               yes="Approve claim draft"),
+         ],
+         stages=[
+             upload("Closed repair orders", "Warranty repair orders closed since yesterday, with the technicians' story lines. Use the samples, or drop a file to see what happens.",
+                    cta="Load closed ROs"),
+             process([("Reading each repair order", "Printed ROs and handwritten story lines"),
+                      ("Checking the story", "Complaint, cause and correction all present"),
+                      ("Checking coverage", "In-service date, odometer, campaign list"),
+                      ("Drafting the claim", "Labour ops, standard times, parts at your warranty rates"),
+                      ("Flagging what needs a person", "Nothing is submitted")],
+                     log=[("RO 58834: cause line blank on a $1,186.40 part", "y", 1),
+                          ("RO 58840: 61,200 km, basic coverage ends at 60,000 km", "y", 2),
+                          ("RO 58847: 1.2 h claimed against a 0.8 h standard", "y", 3),
+                          ("RO 58821: story complete, within coverage", "g", 1)]),
+             review("Review each claim draft", "The repair order on the left, the claim draft on the right.",
+                    yes="Approve claim draft", reasons=["Back to the technician", "Service manager decides", "Not a warranty repair", "I'll write this claim myself"]),
+             draft("Hi #208,\n\nRO 58834, 2023 mid-size sedan, centre display goes black. The story has the complaint and correction, but [[no cause]]. "
+                   "Before I can submit the claim, could you add:\n\n- what you found (the cause)\n- the test or code that confirmed the display unit had failed\n\n"
+                   "Thanks,\nGwen", "Note to the technician", "Stories missing a cause go back to the technician before the claim is submitted.",
+                   to="Technician #208", subject="RO 58834: cause needed for the warranty claim"),
+             write("Dealer management system (test copy)", [
+                 R("Claim draft · RO 58821", [("Labour", "$132.00"), ("Parts", "$34.60"), ("Total", "$166.60")], "Ready to submit"),
+                 R("Claim draft · RO 58847", [("Labour", "0.8 h standard"), ("Extra time", "as decided by Gwen")], "Ready to submit", "check"),
+                 R("Claim draft · RO 58840", [("Labour", "$165.00"), ("Coverage", "goodwill or customer pay, as decided")], "Waiting on service manager", "check"),
+                 R("Claim draft · RO 58834", [("Total", "$1,417.40"), ("Waiting on", "cause from technician #208")], "Held", "bad")],
+                 sub="Drafts are saved in the warranty module. The administrator submits each claim to the manufacturer's system.", cta="Save claim drafts"),
+             report("Warranty claims · ROs closed 23 and 24 Nov", [
+                 Sec("What came in", p="Four warranty repair orders: one handwritten scan and three printed. $1,881.00 drafted at standard times, plus 0.4 h ($66.00) waiting on an additional-time decision."),
+                 Sec("Claim value by RO", chart=Chart("Claim draft value, nearest dollar", ["RO 58821", "RO 58834", "RO 58840", "RO 58847"],
+                                                      [167, 1417, 165, 132], prefix="$", tones=["ok", "bad", "check", "check"])),
+                 Sec("Where each one stands", table=Tbl(None, ["RO", "Repair", "Draft", "Waiting on"],
+                                                         ["58821", "Coolant sensor connector", "$166.60", "—"],
+                                                         ["58834", "Display unit", "$1,417.40", "Cause from technician"],
+                                                         ["58840", "Rear door seal", "$165.00", "Coverage decision"],
+                                                         ["58847", "Campaign 26C-14", "$132.00 + 0.4 h?", "Additional-time decision"])),
+                 Sec("Follow-ups", list=["Technician #208 to add the cause on RO 58834.",
+                                         "Service manager to decide goodwill or customer pay on RO 58840."])],
+                 title="Claims summary", subtitle="Service department · invented data",
+                 kpis=[(4, "Repair orders"), (1, "Ready as is", "ok"), (2, "Need a decision", "check"), (1, "Held", "bad")], format="Daily claims summary"),
+         ],
+         next=["Closed warranty ROs are read from your dealer management system each morning.",
+               "Labour ops, standard times and rates come from your warranty manual and price files.",
+               "The warranty administrator submits every claim; nothing goes to the manufacturer automatically.",
+               "Stories missing a cause or correction go back to the technician first."],
+         tags=["warranty", "repair order", "claims", "service", "labour ops", "dealership"]),
+
+    case("auto-used-appraisal", "Used vehicle appraisal and listing draft",
+         "A trade-in arrives with appraisal notes, an inspection checklist, a recon estimate and a history summary. The "
+         "assistant builds the recon summary and the listing draft and flags anything that must be disclosed under your "
+         "checklist. The used-car manager sets the price.",
+         ("Appraisal notes, inspection, recon estimate and history", "Builds the recon summary and listing draft, flags disclosures",
+          "Approves the recon and sets the price", "A recon summary and a listing ready for a price"),
+         area="Used vehicles", persona=("Rafael Morrow", "Used-car manager"), unit="Documents handled",
+         docs=[
+             D("Appraisal notes - U-30562.txt", "note", meta="Appraiser note · Mon 23 Nov", label="Appraisal notes", sub="Notes · one key",
+               body="TRADE-IN APPRAISAL · stock [[U-30562|Stock]]\n2021 compact SUV, AWD, white · VIN [[DEMO-VIN-21-30562|VIN]] · [[84,300 km|Odometer]]\n\n"
+                    "Exterior: [[scrapes on rear bumper, small dent left rear door|Exterior]]\nInterior: clean, no smoke smell\n"
+                    "Keys: [[1 only|Keys]]\nTires: worn\nActual cash value: [[$19,500.00|Trade value]], set by R. Morrow at trade-in",
+               fields=[F("Stock", "U-30562", "Header"), F("VIN", "DEMO-VIN-21-30562", "Header"), F("Odometer", "84,300 km", "Header"),
+                       F("Exterior", "Rear bumper scrapes, small dent left rear door", "Notes"), F("Keys", "1", "Notes"),
+                       F("Trade value", "$19,500.00", "Notes")],
+               table=Tbl("Checks", ["Check", "Result"], ["VIN matches the inspection", "Yes", "ok"],
+                         ["Odometer matches the inspection", "Yes", "ok"], ["Second key", "Missing: added to recon", "check"]),
+               yes="Accept"),
+             D("Inspection checklist - U-30562.xlsx", "sheet", meta="Service inspection · Tue 24 Nov", label="Inspection checklist", sub="Inspection · 4 items to fix",
+               rows=[["Item", "Result", "Measure", "Action"],
+                     ["Front brakes", "[[Fail|Front brakes]]", "3 mm pads, rotors scored", "Replace pads and rotors"],
+                     ["Rear brakes", "Pass", "6 mm", "—"],
+                     ["Tires", "[[Fail|Tires]]", "4/32 in", "Replace 4"],
+                     ["Windshield", "[[Chip, passenger side|Windshield]]", "Outside wiper path", "Repair"],
+                     ["Battery and charging", "Pass", "Tested OK", "—"],
+                     ["Warning lights", "None", "Scan clean", "—"],
+                     ["Keys", "[[1 of 2|Second key]]", "—", "Cut and program"]],
+               fields=[F("Front brakes", "Fail: pads 3 mm, rotors scored", "Row 1"), F("Tires", "Fail: 4/32 in", "Row 3"),
+                       F("Windshield", "Chip outside the wiper path: repair", "Row 4"), F("Second key", "Missing", "Row 7")],
+               table=Tbl("Checks", ["Check", "Result"], ["Safety items found", "Brakes and tires", "check"],
+                         ["Each fail has a recon line", "Yes, 4 of 4", "ok"]),
+               yes="Accept"),
+             D("Recon estimate - U-30562.pdf", "pdf", meta="PDF · service and detail", label="Recon estimate", sub="Estimate · clean",
+               body="RECONDITIONING ESTIMATE · U-30562\n\nFront brake pads and rotors      [[$612.40|Brakes]]\nTires, set of 4, installed        [[$868.00|Tires]]\n"
+                    "Windshield chip repair            $89.00\nSecond key, cut and program       $385.00\nPaintless dent repair, left rear door   $175.00\n"
+                    "Full detail                       $249.00\n\nTOTAL                             [[$2,378.40|Recon total]]",
+               fields=[F("Brakes", "$612.40", "Line 1"), F("Tires", "$868.00", "Line 2"), F("Recon total", "$2,378.40", "Total, lines add up")],
+               table=Tbl("Checks", ["Check", "Result"],
+                         ["Lines add up", "$2,378.40", "ok"], ["Covers every inspection fail", "Yes", "ok"],
+                         ["Within your recon budget for this unit", "$2,378.40 of $2,500.00", "ok"]),
+               notes="The estimate covers every fail on the inspection and adds up. Ready for the manager to approve.", yes="Accept"),
+             D("History summary - U-30562.pdf", "pdf", meta="Vehicle history summary", label="History summary", sub="History · damage on record",
+               body="VEHICLE HISTORY SUMMARY · VIN DEMO-VIN-21-30562\nOwners: [[2|Owners]]\nOdometer readings: consistent\n\n"
+                    "Reported damage: [[Jun 2023, rear impact, repair estimate $4,800|Damage]]\n"
+                    "Registration: 2021-2022 [[\"commercial\" registration noted|Prior use]]; 2022 onward personal\nLiens: none after trade payout",
+               fields=[F("Owners", "2", "Summary"), F("Damage", "Jun 2023 rear impact, $4,800 estimate", "Damage section", 0.95),
+                       F("Prior use", "?Commercial registration 2021-22: fleet or rental not stated", "One registration record", 0.35),
+                       F("Odometer", "Consistent", "Odometer section")],
+               table=Tbl("Disclosure checklist", ["Item", "Found", "Your checklist"],
+                         ["Damage over $3,000", "$4,800, Jun 2023", "Disclose on the listing and bill of sale", "bad"],
+                         ["Prior commercial or rental use", "Possible", "Disclose if confirmed", "check"],
+                         ["Odometer", "Consistent", "Nothing to disclose", "ok"]),
+               flags=[("bad", "Your disclosure checklist says damage over $3,000 goes on the listing and the bill of sale. The listing draft includes it."),
+                      "Prior use is unclear from one record. A person confirms it with the previous owner's documents before anything is written about it."],
+               yes="Accept"),
+         ],
+         stages=[
+             upload("Trade-in documents", "Appraisal notes, the service inspection, the recon estimate and the history summary. Use the samples, or drop a file to see what happens."),
+             process([("Reading each document", "Notes, inspection sheet, estimate, history summary"),
+                      ("Matching the vehicle", "VIN, odometer and stock number across documents"),
+                      ("Building the recon summary", "Each inspection fail against an estimate line"),
+                      ("Checking disclosures", "Against your disclosure checklist"),
+                      ("Drafting the listing", "Features and disclosures; price left blank")],
+                     log=[("History: rear impact Jun 2023, $4,800: disclosure needed", "y", 3),
+                          ("Prior use: commercial registration 2021-22, type not stated", "y", 3),
+                          ("Recon $2,378.40 against a $2,500.00 budget", "g", 2)]),
+             review("Check each document", "Source on the left, what was read and checked on the right.",
+                    yes="Accept", reasons=["Ask service to re-inspect", "Ask for the previous owner's documents", "Wholesale this unit", "I'll handle this myself"]),
+             compare(Tbl("Recon summary · U-30562", ["Inspection finding", "Recon line", "Cost"],
+                         ["Front brakes 3 mm, rotors scored", "Pads and rotors", "$612.40", "ok"],
+                         ["Tires 4/32 in", "Set of 4", "$868.00", "ok"],
+                         ["Windshield chip", "Chip repair", "$89.00", "ok"],
+                         ["One key", "Cut and program a second", "$385.00", "ok"],
+                         ["Dent, left rear door", "Paintless dent repair", "$175.00", "ok"],
+                         ["Rear bumper scrapes", "Not in estimate", "—", "check"],
+                         ["Appearance", "Full detail", "$249.00", "ok"]),
+                     "Recon summary", "Each finding against the estimate. The bumper scrapes aren't on the estimate: the manager decides."),
+             draft("2021 compact SUV, AWD · white · 84,300 km · stock U-30562\n\n"
+                   "Clean interior, no smoke. New front brakes and rotors, four new tires, two keys. Fully detailed and inspected by our service team.\n\n"
+                   "Price: [[set by the used-car manager]]\n\n"
+                   "Disclosure: this vehicle has a reported rear-impact repair from June 2023 ([[$4,800 estimate]]). Details are available on request.\n\n"
+                   "Vehicle history summary and inspection report available at the dealership.",
+                   "Listing draft", "Written from the inspection and recon. Price is blank; prior use is left out until it's confirmed.",
+                   alt=["2021 compact SUV, AWD, white, 84,300 km. Fresh brakes and tires, two keys, detailed and inspected.\n\n"
+                        "Price: [[set by the used-car manager]]\n\nDisclosure: reported rear-impact repair, June 2023 ([[$4,800 estimate]])."]),
+             approve("Approve the recon and the listing draft?", "Used-car manager sign-off",
+                     summary=[("Unit", "U-30562 · 2021 compact SUV"), ("Recon", "$2,378.40"), ("Disclosure", "Rear impact, Jun 2023"), ("Price", "to be set by Rafael")],
+                     checks=["I approve the recon lines", "The damage disclosure is on the listing and will go on the bill of sale", "Prior use stays off the listing until confirmed", "I will set the price"],
+                     yes="Approve recon"),
+             report("Recon summary · U-30562", [
+                 Sec("Unit", table=Tbl(None, ["Item", "Detail"], ["Vehicle", "2021 compact SUV, AWD, white"], ["Odometer", "84,300 km"],
+                                         ["Trade value", "$19,500.00"], ["Recon", "$2,378.40"], ["Cost to date", "$21,878.40"])),
+                 Sec("Recon by line", chart=Chart("Recon cost, nearest dollar", ["Tires", "Brakes", "Second key", "Detail", "Dent repair", "Windshield"],
+                                                  [868, 612, 385, 249, 175, 89], prefix="$")),
+                 Sec("Disclosures", list=["Reported rear impact, June 2023, $4,800 estimate: on the listing and bill of sale.",
+                                          "Possible prior commercial use: being confirmed; not on the listing yet."]),
+                 Sec("Open items", list=["Decide on the rear bumper scrapes (not in the estimate).", "Set the listing price."])],
+                 title="Recon summary", subtitle="Used vehicles · invented data",
+                 kpis=[(4, "Documents"), (6, "Recon lines"), (1, "Disclosure", "bad"), (2, "Open items", "check")], format="Recon summary"),
+         ],
+         next=["Appraisals, inspections and estimates are read from your dealer management system and service folder.",
+               "Disclosures follow your own disclosure checklist, as set up by your compliance lead.",
+               "The used-car manager approves the recon and sets every price.",
+               "Listings go to your website team only after the manager has priced them."],
+         tags=["used vehicles", "appraisal", "reconditioning", "listing", "disclosure", "trade-in"]),
+]

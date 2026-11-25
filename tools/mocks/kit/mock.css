@@ -251,13 +251,17 @@ sup.c{color:var(--accent);font-weight:700;cursor:help}
 /* Gallery */
 .gal{max-width:1180px;margin:0 auto;padding:26px 18px 60px}
 .gal h1{font-size:28px}
-.gal .ind{margin-top:26px}
+.gal .ind{margin-top:26px;scroll-margin-top:12px}
 .gal .ind h2{font-size:17px;margin:0 0 8px}
+.gal .ind h2 small{color:var(--faint);font-weight:500;font-size:13px}
 .gal .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
 .gal a.tile{display:block;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;text-decoration:none;color:inherit;box-shadow:var(--shadow)}
 .gal a.tile:hover{border-color:var(--accent)}
 .gal a.tile b{display:block;margin-bottom:3px}
 .gal a.tile small{color:var(--muted);font-size:12.5px}
+.gal .jump{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px}
+.gal .jump a{font-size:12.5px;text-decoration:none;border:1px solid var(--line);background:var(--white);border-radius:20px;padding:3px 11px;color:var(--ink)}
+.gal .jump a:hover{border-color:var(--accent);color:var(--accent)}
 .gal .search{width:100%;max-width:420px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;margin-top:10px}
 
 @media (max-width:900px){

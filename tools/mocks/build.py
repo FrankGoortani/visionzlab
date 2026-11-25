@@ -151,21 +151,23 @@ def page(c, ind, kit_v):
 
 def gallery(inds, all_cases, kit_v):
     e = html.escape
-    secs = []
+    secs, nav = [], []
     for ind in inds:
         cs = [c for c in all_cases if c["ind"] == ind["id"]]
         if not cs:
             continue
         tiles = "".join(f'<a class="tile" href="{c["slug"]}/" data-q="{e((c["title"] + " " + c["tagline"] + " " + " ".join(c["tags"])).lower())}">'
                         f'<b>{e(c["title"])}</b><small>{e(c["tagline"])}</small></a>' for c in cs)
-        secs.append(f'<section class="ind"><h2>{e(ind["name"])}</h2><div class="grid">{tiles}</div></section>')
+        secs.append(f'<section class="ind" id="{ind["id"]}"><h2>{e(ind["name"])} <small>{len(cs)}</small></h2><div class="grid">{tiles}</div></section>')
+        nav.append(f'<a href="#{ind["id"]}">{e(ind["name"])}</a>')
     return f"""<!doctype html>
 <html lang="en"><head>{HEAD}<title>Use-case demos</title>
 <link rel="stylesheet" href="kit/mock.css?v={kit_v}"></head><body>
 <div class="demo-note"><b>Demos</b> · invented data, pre-written results, nothing connected to a real system.</div>
 <main class="gal"><h1>See how it works, end to end</h1>
-<p class="tagline">{len(all_cases)} walkthroughs. Each one shows documents arriving, the assistant preparing the work, and a person deciding. Pick one that looks like your week.</p>
+<p class="tagline">{len(all_cases)} walkthroughs across {len(nav)} industries. Each one shows documents arriving, the assistant preparing the work, and a person deciding. Pick one that looks like your week.</p>
 <input class="search" id="q" placeholder="Search: invoices, quotes, renewals, claims…" aria-label="Search demos">
+<nav class="jump">{''.join(nav)}</nav>
 {''.join(secs)}</main>
 <script>document.getElementById('q').oninput=e=>{{const v=e.target.value.toLowerCase().trim();document.querySelectorAll('.tile').forEach(t=>t.style.display=!v||t.dataset.q.includes(v)?'':'none');document.querySelectorAll('.ind').forEach(s=>s.style.display=[...s.querySelectorAll('.tile')].some(t=>t.style.display!=='none')?'':'none')}}</script>
 </body></html>
