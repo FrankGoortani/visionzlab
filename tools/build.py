@@ -965,8 +965,8 @@ ASAL = {
     "email": EMAIL_SALES,
     "photo": "asal",
     "description": "Asal Matin is VP Business Development at VisionzLab, the first point of contact for new clients.",
-    "bio": ["Asal leads business development at VisionzLab. She is the first person most clients speak to, and "
-            "stays their point of contact from the first conversation through delivery and beyond.",
+    "bio": ["Asal leads business development at VisionzLab. She is the first person you'll speak to, and "
+            "stays your point of contact from the first conversation through delivery and beyond.",
             "She works with owners and leadership teams to find where AI can take real work off their people — "
             "and is just as quick to say when it can't. Her job is to make sure every engagement starts at the "
             "right size, with a clear outcome both sides can measure."],
