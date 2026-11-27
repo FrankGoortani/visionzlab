@@ -2890,12 +2890,18 @@ def build_book():
     <p>Prefer email? <a class="link" href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a></p>
   </div>
   <div class="panel book-form">
+    <div class="book-who">
+      <img src="{rel(slug, "public/team/asal-160.webp")}" alt="" width="64" height="80" loading="lazy" />
+      <div><p class="book-who-name">You'll talk to Asal Matin</p>
+      <p class="muted small">VP Business Development. She reads every request and stays your point of contact
+      from the first call on. <a class="link" href="{rel(slug, "team/asal-matin/")}">About Asal</a></p></div>
+    </div>
+    <p class="small book-privacy">We use these details only to reply to you and arrange the call.</p>
     <div class="hs-form-frame" data-region="{HUBSPOT_REGION}" data-form-id="{HUBSPOT_FORM_ID}"
       data-portal-id="{HUBSPOT_PORTAL_ID}"></div>
     <p id="hs-form-fallback" hidden>The form didn't load. Email <a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a>
     and we'll set up a time.</p>
     <noscript><p>Email <a href="mailto:{EMAIL_SALES}">{EMAIL_SALES}</a> and we'll set up a time.</p></noscript>
-    <p class="muted small">We use these details only to reply to you and arrange the call.</p>
   </div>
 </div></section>{calendar}
 <script>

@@ -217,6 +217,12 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .foot-in { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.2fr; gap: 28px; padding-bottom: 40px; }
 .foot h2 { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
 /* Reserve the HubSpot form's rendered height (measured 2026-10-20) so it doesn't push the footer as it loads */
+.book-who { display: flex; gap: 16px; align-items: center; padding-bottom: 18px; margin-bottom: 18px;
+  border-bottom: var(--stroke); }
+.book-who img { width: 64px; height: 80px; object-fit: cover; border: var(--stroke); flex: none; }
+.book-who-name { font-weight: 600; font-size: 1.1rem; margin: 0 0 4px; }
+.book-who .small { margin: 0; }
+.book-privacy { margin: 0 0 8px; }
 .book-form .hs-form-frame { min-height: 633px; }
 @media (max-width: 860px) { .book-form .hs-form-frame { min-height: 725px; } }
 /* Until HubSpot injects its iframe the frame is empty: show a placeholder instead of a blank panel (V5) */
