@@ -1467,12 +1467,20 @@ GUIDES = [
 
 # Workflow finder (homepage and /tools/): words a visitor might type, mapped to the page that answers them.
 FINDER = {
-    "use-cases/quote-rfq-intake/": ["quote", "rfq", "estimate", "pricing", "price list", "tender", "bid"],
+    "use-cases/quote-rfq-intake/": ["quote", "quotation", "rfq", "rfp", "estimate", "pricing", "price list",
+                                    "tender", "bid", "bids"],
     "for/machine-shops/": ["machin", "cnc", "job shop", "fabricat", "sheet metal", "sketch", "drawing", "step file",
                            "3d model", "cad", "cycle time", "estimator"],
-    "use-cases/order-entry/": ["order", "purchase order", "po", "erp", "re-key", "rekey", "data entry", "sales order"],
+    "for/distributors-manufacturers/": ["distribut", "wholesal", "manufactur", "inventory", "warehouse", "stock"],
+    "for/insurance-brokers/": ["insurance", "broker", "certific", "coi", "policy", "policies", "claim", "carrier"],
+    "for/accountants-bookkeepers/": ["accountant", "accounting firm", "accounting practice", "bookkeep", "cpa",
+                                     "tax", "year-end", "year end", "client document"],
+    "for/mortgage-brokers/": ["mortgage", "lender", "pre-approval", "preapproval", "refinanc"],
+    "use-cases/order-entry/": ["order", "purchase order", "po", "erp", "re-key", "rekey", "retyp", "re-typ",
+                               "re-enter", "typing", "copying", "data entry", "sales order"],
     "use-cases/document-intake/": ["invoice", "pdf", "document", "paperwork", "scan", "form", "application",
-                                   "receipt", "bill", "shipping"],
+                                   "receipt", "bill", "shipping", "packing", "slip", "quickbooks",
+                                   "sage", "xero"],
     "use-cases/inbox-triage/": ["email", "inbox", "mailbox", "e-mail", "customer service", "support", "enquir",
                                 "inquir"],
     "use-cases/renewals-follow-up/": ["renewal", "follow up", "follow-up", "remind", "chas", "overdue",
@@ -2581,7 +2589,10 @@ MATURITY_JS = """      (function () {
           document.getElementById('check-skip').hidden = !skipped;
           var out = document.getElementById('check-result');
           out.hidden = false;
-          out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          out.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+          var heading = out.querySelector('[data-result]:not([hidden]) h3');
+          if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
           if (window.umami && typeof window.umami.track === 'function') {
             try { window.umami.track('maturity_result', { stage: String(stage + 1), skipped: skipped }); } catch (_) {}
           }
@@ -2821,7 +2832,8 @@ BOOK_JS = """      (function () {
             if (meet) showMeetings(meet, ev);
             box.hidden = false;
             shown = true;
-            setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+            var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            setTimeout(function () { box.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' }); }, 300);
           }
           if (window.umami && typeof window.umami.track === 'function') {
             try {
@@ -2914,16 +2926,22 @@ FINDER_JS = """      (function () {
         var input = root.querySelector('input');
         var out = root.querySelector('.finder-out');
         var cta = root.querySelector('[data-finder-cta]');
+        var status = root.querySelector('[data-finder-status]');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         var base = cta.href.split('#')[0];
         function show(ev) {
           if (ev) ev.preventDefault();
           // Keywords match at the start of a word ("reconcil" finds "reconciling"; "chase" doesn't match
           // "purchase"); keywords of three letters or fewer ("po", "erp") must be the whole word.
           var text = ' ' + input.value.toLowerCase().replace(/[^a-z0-9-]+/g, ' ') + ' ';
+          // A one-word keyword of five letters or more that ends in "e" also matches its stem, so "quote" finds
+          // "quoting" and "invoice" finds "invoicing".
+          function hit(k) {
+            if (text.indexOf(' ' + k + (k.length <= 3 ? ' ' : '')) >= 0) return true;
+            return k.length > 4 && k.slice(-1) === 'e' && k.indexOf(' ') < 0 && text.indexOf(' ' + k.slice(0, -1)) >= 0;
+          }
           var hits = data.map(function (d) {
-            var score = d.k.filter(function (k) {
-              return text.indexOf(' ' + k + (k.length <= 3 ? ' ' : '')) >= 0;
-            }).length;
+            var score = d.k.filter(hit).length;
             return { d: d, score: score };
           }).filter(function (h) { return h.score > 0; })
             .sort(function (a, b) { return b.score - a.score; }).slice(0, 3);
@@ -2938,6 +2956,16 @@ FINDER_JS = """      (function () {
           });
           out.querySelector('[data-none]').hidden = hits.length > 0;
           out.hidden = false;
+          var msg = hits.length
+            ? (hits.length === 1 ? 'Closest match: ' : 'Closest matches: ') +
+              hits.map(function (h) { return h.d.n; }).join(', ') + '.'
+            : "We don't have a page for that yet. You can book a free discovery call to tell us about it.";
+          status.textContent = '';
+          setTimeout(function () { status.textContent = msg; }, 60);
+          var top = out.getBoundingClientRect().top;
+          if (top < 0 || top > window.innerHeight * 0.7) {
+            out.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+          }
           var match = hits.length ? h0(hits) : 'none';
           var stored = null;
           try { stored = sessionStorage.getItem('vz_ref'); } catch (_) {}
@@ -2970,6 +2998,7 @@ def finder(slug, tone="paper"):
       <button class="btn btn-ink" type="submit">Find it</button></div>
     <div class="chips"><span class="muted small">Try:</span>{chips}</div>
   </form>
+  <p class="sr-only" role="status" aria-live="polite" data-finder-status></p>
   <div class="finder-out" hidden><div class="cards cards-uc finder-hits"></div>
     <p class="big" data-none hidden>We don't have a page for that yet, which doesn't mean we can't help.
     Tell us about it.</p>

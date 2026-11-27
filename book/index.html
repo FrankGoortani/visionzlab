@@ -119,7 +119,8 @@
             if (meet) showMeetings(meet, ev);
             box.hidden = false;
             shown = true;
-            setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+            var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            setTimeout(function () { box.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' }); }, 300);
           }
           if (window.umami && typeof window.umami.track === 'function') {
             try {

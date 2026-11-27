@@ -3,6 +3,7 @@
 :root {
   --lime: #e1ff3f;
   --ink: #16052d;
+  --focus: var(--ink);
   --paper: #fafaf7;
   --white: #ffffff;
   --muted: rgba(22, 5, 45, 0.7);
@@ -18,7 +19,9 @@
   ascent-override: 90.44%; descent-override: 22.52%; line-gap-override: 0%; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+/* Focus ring: ink on light surfaces, lime on ink (.band). currentColor vanished on ink and lime. */
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+.band { --focus: var(--lime); }
 .skip-link { position: fixed; top: 8px; left: 16px; z-index: 30; transform: translateY(-150%);
   padding: 12px 20px; background: var(--ink); color: var(--paper); font-weight: 600; }
 .skip-link:focus { transform: none; }
@@ -263,6 +266,8 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .check label .tag { display: block; margin-bottom: 4px; }
 .check input { width: 24px; height: 24px; margin: 2px 0 0; flex: none; accent-color: var(--ink); }
 .result { margin-top: 32px; scroll-margin-top: 96px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .result h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
 .skip { font-weight: 600; border-left: 6px solid var(--lime); padding-left: 14px; }
 @media (max-width: 1080px) { .cards-4 { grid-template-columns: 1fr 1fr; } }
@@ -304,7 +309,7 @@ a.card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink
 .finder-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .finder-row input, .field input[type=number] { flex: 1 1 240px; min-width: 0; font: inherit; font-size: 1.05rem;
   padding: 12px 14px; border: var(--stroke); background: var(--white); color: var(--ink); border-radius: 0; }
-.finder-row input:focus-visible, .field input:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
+.finder-row input:focus-visible, .field input:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 16px; }
 .chip { font: inherit; font-size: 0.9rem; padding: 6px 12px; border: 2px solid var(--ink); border-radius: 999px;
   background: var(--paper); color: var(--ink); cursor: pointer; }

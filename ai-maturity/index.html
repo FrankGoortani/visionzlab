@@ -80,7 +80,10 @@
           document.getElementById('check-skip').hidden = !skipped;
           var out = document.getElementById('check-result');
           out.hidden = false;
-          out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          out.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+          var heading = out.querySelector('[data-result]:not([hidden]) h3');
+          if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
           if (window.umami && typeof window.umami.track === 'function') {
             try { window.umami.track('maturity_result', { stage: String(stage + 1), skipped: skipped }); } catch (_) {}
           }
