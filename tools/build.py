@@ -1914,7 +1914,7 @@ def build_home():
       "We build AI-assisted workflows for documents, quotes, orders and follow-up — with your team "
       "approving the decisions that matter.", "home", "AI agents & automation",
       img="hero", alt="Isometric illustration of an AI agent handling documents, email, calendar and reports",
-      accent="off your team's plate.", second=("experience/", "Explore our experience"),
+      accent="off your team's plate.", second=(MATURITY_SLUG + "#check", "Take the free 4S check"),
       stats=[("2–4 weeks", "to a working prototype"), ("1 workflow", "to start with"),
              ("Free", "first discovery session")])}
 {clients()}
